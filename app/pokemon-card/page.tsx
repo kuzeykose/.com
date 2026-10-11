@@ -16,7 +16,7 @@ import { TYPE_COLORS } from './lib/constants'
 import { usdMarket } from './lib/prices'
 import type { EnrichedCard } from './lib/types'
 
-export const revalidate = 86400
+export const revalidate = 300
 
 export const metadata = {
   title: 'Pokémon cards',

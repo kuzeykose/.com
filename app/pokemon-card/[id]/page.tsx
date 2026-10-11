@@ -1,4 +1,3 @@
-import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import {
   BackLink,
@@ -8,16 +7,23 @@ import {
   SourceCredit,
   TypeDot,
 } from '../components/ui'
+import { DetailEdit } from '../components/detail-edit'
 import { OwnerActions } from '../components/owner-actions'
-import { getEnrichedCard, isWritable, readCollection } from '../lib/collection'
+import { getEnrichedCard, isWritable, listCollectionEntries, readCollection } from '../lib/collection'
 import { canShowOwnerTools } from '../lib/owner'
 import { CONDITION_LABELS } from '../lib/constants'
 import { formatLongDate, formatMoney, formatUpdated, priceCaption, printingLabel } from '../lib/format'
 
-export const revalidate = 86400
+export const revalidate = 300
+export const dynamicParams = true
 
-export function generateStaticParams() {
-  return readCollection().cards.map((card) => ({ id: card.id }))
+export async function generateStaticParams() {
+  try {
+    const cards = await listCollectionEntries()
+    return cards.map((card) => ({ id: card.id }))
+  } catch {
+    return readCollection().cards.map((card) => ({ id: card.id }))
+  }
 }
 
 export async function generateMetadata({ params }: { params: Promise<{ id: string }> }) {
@@ -39,6 +45,7 @@ export default async function Page({ params }: { params: Promise<{ id: string }>
 
   const writable = isWritable()
   const owner = await canShowOwnerTools()
+  const canEdit = owner && writable
   const name = card.tcg?.name ?? card.id
   const setName = card.tcg?.set.name ?? 'Unknown set'
   const number = card.tcg?.number ?? '—'
@@ -88,19 +95,13 @@ export default async function Page({ params }: { params: Promise<{ id: string }>
               'Trainer'
             )}
           </ListRow>
-          <ListRow label="Condition">{CONDITION_LABELS[card.condition] ?? card.condition}</ListRow>
-          <ListRow label="Quantity">{card.quantity}</ListRow>
+          {canEdit ? null : (
+            <>
+              <ListRow label="Condition">{CONDITION_LABELS[card.condition] ?? card.condition}</ListRow>
+              <ListRow label="Quantity">{card.quantity}</ListRow>
+            </>
+          )}
           <ListRow label="Added">{formatLongDate(card.added)}</ListRow>
-          {writable ? (
-            <p className="text-sm mt-2">
-              <Link
-                href={`/pokemon-card/add?id=${encodeURIComponent(card.id)}`}
-                className="underline decoration-neutral-400 dark:decoration-neutral-600 underline-offset-2 text-neutral-600 dark:text-neutral-400"
-              >
-                edit
-              </Link>
-            </p>
-          ) : null}
         </div>
       </div>
 
@@ -121,10 +122,24 @@ export default async function Page({ params }: { params: Promise<{ id: string }>
         </div>
       </div>
 
-      <h2 className="text-base font-medium mt-8 mb-2">Notes</h2>
-      <p className="text-neutral-700 dark:text-neutral-300">
-        {card.notes?.trim() ? card.notes : 'No notes yet.'}
-      </p>
+      {canEdit ? (
+        <>
+          <h2 className="text-base font-medium mt-8 mb-2">Your copy</h2>
+          <DetailEdit
+            id={card.id}
+            quantity={card.quantity}
+            condition={card.condition}
+            notes={card.notes}
+          />
+        </>
+      ) : (
+        <>
+          <h2 className="text-base font-medium mt-8 mb-2">Notes</h2>
+          <p className="text-neutral-700 dark:text-neutral-300">
+            {card.notes?.trim() ? card.notes : 'No notes yet.'}
+          </p>
+        </>
+      )}
 
       <SourceCredit />
     </section>

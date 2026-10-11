@@ -4,7 +4,7 @@ import { gateOwnerPage } from '../lib/owner'
 
 export const metadata = {
   title: 'Add a Pokémon card',
-  description: 'Search TCGdex and add a card to the local collection file.',
+  description: 'Search TCGdex and add a card to the collection.',
 }
 
 export default async function Page({
