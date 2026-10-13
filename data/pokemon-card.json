@@ -1,7 +1,7 @@
 {
   "cards": [
     {
-      "id": "sv8-40",
+      "id": "sv08-040",
       "quantity": 3,
       "condition": "NM",
       "printing": "normal",
@@ -9,23 +9,24 @@
       "added": "2026-10-09",
       "catalog": {
         "name": "Mantine",
-        "number": "40",
+        "number": "040",
         "rarity": "Common",
         "types": [
           "Water"
         ],
-        "setId": "sv8",
+        "setId": "sv08",
         "setName": "Surging Sparks",
         "printedTotal": 191,
-        "image": "https://images.pokemontcg.io/sv8/40.png",
-        "imageLarge": "https://images.pokemontcg.io/sv8/40_hires.png",
-        "market": 0.32,
+        "image": "https://assets.tcgdex.net/en/sv/sv08/040/low.webp",
+        "imageLarge": "https://assets.tcgdex.net/en/sv/sv08/040/high.webp",
+        "market": 0.07,
+        "currency": "USD",
         "variant": "normal",
-        "updatedAt": "2026/10/10"
+        "updatedAt": "2026-10-12T22:55:10.810Z"
       }
     },
     {
-      "id": "sv8pt5-30",
+      "id": "sv08.5-030",
       "quantity": 2,
       "condition": "NM",
       "printing": "holofoil",
@@ -33,23 +34,24 @@
       "added": "2026-10-08",
       "catalog": {
         "name": "Jolteon ex",
-        "number": "30",
-        "rarity": "Double Rare",
+        "number": "030",
+        "rarity": "Double rare",
         "types": [
           "Lightning"
         ],
-        "setId": "sv8pt5",
+        "setId": "sv08.5",
         "setName": "Prismatic Evolutions",
         "printedTotal": 131,
-        "image": "https://images.pokemontcg.io/sv8pt5/30.png",
-        "imageLarge": "https://images.pokemontcg.io/sv8pt5/30_hires.png",
-        "market": 3.92,
+        "image": "https://assets.tcgdex.net/en/sv/sv08.5/030/low.webp",
+        "imageLarge": "https://assets.tcgdex.net/en/sv/sv08.5/030/high.webp",
+        "market": 4.14,
+        "currency": "USD",
         "variant": "holofoil",
-        "updatedAt": "2026/10/10"
+        "updatedAt": "2026-10-12T22:55:11.077Z"
       }
     },
     {
-      "id": "sv5-81",
+      "id": "sv05-081",
       "quantity": 1,
       "condition": "NM",
       "printing": "holofoil",
@@ -57,47 +59,49 @@
       "added": "2026-10-06",
       "catalog": {
         "name": "Iron Crown ex",
-        "number": "81",
-        "rarity": "Double Rare",
+        "number": "081",
+        "rarity": "Double rare",
         "types": [
           "Psychic"
         ],
-        "setId": "sv5",
+        "setId": "sv05",
         "setName": "Temporal Forces",
         "printedTotal": 162,
-        "image": "https://images.pokemontcg.io/sv5/81.png",
-        "imageLarge": "https://images.pokemontcg.io/sv5/81_hires.png",
-        "market": 0.9,
+        "image": "https://assets.tcgdex.net/en/sv/sv05/081/low.webp",
+        "imageLarge": "https://assets.tcgdex.net/en/sv/sv05/081/high.webp",
+        "market": 0.98,
+        "currency": "USD",
         "variant": "holofoil",
-        "updatedAt": "2026/10/10"
+        "updatedAt": "2026-10-12T22:55:09.751Z"
       }
     },
     {
-      "id": "me1-133",
+      "id": "me01-133",
       "quantity": 1,
       "condition": "NM",
       "printing": "holofoil",
-      "notes": "Illustration Rare Bulbasaur \u2014 favorite art in the set.",
+      "notes": "Illustration Rare Bulbasaur — favorite art in the set.",
       "added": "2026-10-02",
       "catalog": {
         "name": "Bulbasaur",
         "number": "133",
-        "rarity": "Illustration Rare",
+        "rarity": "Illustration rare",
         "types": [
           "Grass"
         ],
-        "setId": "me1",
+        "setId": "me01",
         "setName": "Mega Evolution",
         "printedTotal": 132,
-        "image": "https://images.pokemontcg.io/me1/133.png",
-        "imageLarge": "https://images.pokemontcg.io/me1/133_hires.png",
-        "market": 15.28,
+        "image": "https://assets.tcgdex.net/en/me/me01/133/low.webp",
+        "imageLarge": "https://assets.tcgdex.net/en/me/me01/133/high.webp",
+        "market": 16.11,
+        "currency": "USD",
         "variant": "holofoil",
-        "updatedAt": "2026/10/10"
+        "updatedAt": "2026-10-12T22:55:12.230Z"
       }
     },
     {
-      "id": "sv6-25",
+      "id": "sv06-025",
       "quantity": 1,
       "condition": "NM",
       "printing": "holofoil",
@@ -105,23 +109,24 @@
       "added": "2026-09-28",
       "catalog": {
         "name": "Teal Mask Ogerpon ex",
-        "number": "25",
-        "rarity": "Double Rare",
+        "number": "025",
+        "rarity": "Double rare",
         "types": [
           "Grass"
         ],
-        "setId": "sv6",
+        "setId": "sv06",
         "setName": "Twilight Masquerade",
         "printedTotal": 167,
-        "image": "https://images.pokemontcg.io/sv6/25.png",
-        "imageLarge": "https://images.pokemontcg.io/sv6/25_hires.png",
-        "market": 2.88,
+        "image": "https://assets.tcgdex.net/en/sv/sv06/025/low.webp",
+        "imageLarge": "https://assets.tcgdex.net/en/sv/sv06/025/high.webp",
+        "market": 2.58,
+        "currency": "USD",
         "variant": "holofoil",
-        "updatedAt": "2026/10/10"
+        "updatedAt": "2026-10-12T22:55:09.970Z"
       }
     },
     {
-      "id": "sv6-78",
+      "id": "sv06-078",
       "quantity": 1,
       "condition": "NM",
       "printing": "normal",
@@ -129,23 +134,24 @@
       "added": "2026-09-20",
       "catalog": {
         "name": "Clefairy",
-        "number": "78",
+        "number": "078",
         "rarity": "Common",
         "types": [
           "Psychic"
         ],
-        "setId": "sv6",
+        "setId": "sv06",
         "setName": "Twilight Masquerade",
         "printedTotal": 167,
-        "image": "https://images.pokemontcg.io/sv6/78.png",
-        "imageLarge": "https://images.pokemontcg.io/sv6/78_hires.png",
-        "market": 0.29,
+        "image": "https://assets.tcgdex.net/en/sv/sv06/078/low.webp",
+        "imageLarge": "https://assets.tcgdex.net/en/sv/sv06/078/high.webp",
+        "market": 0.2,
+        "currency": "USD",
         "variant": "normal",
-        "updatedAt": "2026/10/10"
+        "updatedAt": "2026-10-12T22:55:09.970Z"
       }
     },
     {
-      "id": "sv3pt5-199",
+      "id": "sv03.5-199",
       "quantity": 1,
       "condition": "NM",
       "printing": "holofoil",
@@ -154,22 +160,23 @@
       "catalog": {
         "name": "Charizard ex",
         "number": "199",
-        "rarity": "Special Illustration Rare",
+        "rarity": "Special illustration rare",
         "types": [
           "Fire"
         ],
-        "setId": "sv3pt5",
+        "setId": "sv03.5",
         "setName": "151",
         "printedTotal": 165,
-        "image": "https://images.pokemontcg.io/sv3pt5/199.png",
-        "imageLarge": "https://images.pokemontcg.io/sv3pt5/199_hires.png",
-        "market": 322.26,
+        "image": "https://assets.tcgdex.net/en/sv/sv03.5/199/low.webp",
+        "imageLarge": "https://assets.tcgdex.net/en/sv/sv03.5/199/high.webp",
+        "market": 321.7,
+        "currency": "USD",
         "variant": "holofoil",
-        "updatedAt": "2026/10/10"
+        "updatedAt": "2026-10-12T22:55:09.014Z"
       }
     },
     {
-      "id": "sv4-91",
+      "id": "sv04-091",
       "quantity": 2,
       "condition": "NM",
       "printing": "normal",
@@ -177,19 +184,20 @@
       "added": "2026-08-22",
       "catalog": {
         "name": "Gligar",
-        "number": "91",
+        "number": "091",
         "rarity": "Common",
         "types": [
           "Fighting"
         ],
-        "setId": "sv4",
+        "setId": "sv04",
         "setName": "Paradox Rift",
         "printedTotal": 182,
-        "image": "https://images.pokemontcg.io/sv4/91.png",
-        "imageLarge": "https://images.pokemontcg.io/sv4/91_hires.png",
-        "market": 0.17,
+        "image": "https://assets.tcgdex.net/en/sv/sv04/091/low.webp",
+        "imageLarge": "https://assets.tcgdex.net/en/sv/sv04/091/high.webp",
+        "market": 0.14,
+        "currency": "USD",
         "variant": "normal",
-        "updatedAt": "2026/10/10"
+        "updatedAt": "2026-10-12T22:55:09.256Z"
       }
     },
     {
@@ -209,11 +217,12 @@
         "setId": "dp1",
         "setName": "Diamond & Pearl",
         "printedTotal": 130,
-        "image": "https://images.pokemontcg.io/dp1/1.png",
-        "imageLarge": "https://images.pokemontcg.io/dp1/1_hires.png",
+        "image": "https://assets.tcgdex.net/en/dp/dp1/1/low.webp",
+        "imageLarge": "https://assets.tcgdex.net/en/dp/dp1/1/high.webp",
         "market": 44.41,
+        "currency": "USD",
         "variant": "holofoil",
-        "updatedAt": "2026/10/10"
+        "updatedAt": "2026-10-12T22:54:44.557Z"
       }
     },
     {
@@ -221,7 +230,7 @@
       "quantity": 1,
       "condition": "MP",
       "printing": "normal",
-      "notes": "Base Set Pikachu. Childhood card \u2014 creased corner, keeping it anyway.",
+      "notes": "Base Set Pikachu. Childhood card — creased corner, keeping it anyway.",
       "added": "2026-07-18",
       "catalog": {
         "name": "Pikachu",
@@ -231,17 +240,18 @@
           "Lightning"
         ],
         "setId": "base1",
-        "setName": "Base",
+        "setName": "Base Set",
         "printedTotal": 102,
-        "image": "https://images.pokemontcg.io/base1/58.png",
-        "imageLarge": "https://images.pokemontcg.io/base1/58_hires.png",
-        "market": 10.05,
+        "image": "https://assets.tcgdex.net/en/base/base1/58/low.webp",
+        "imageLarge": "https://assets.tcgdex.net/en/base/base1/58/high.webp",
+        "market": 11.71,
+        "currency": "USD",
         "variant": "normal",
-        "updatedAt": "2026/10/10"
+        "updatedAt": "2026-10-12T22:54:34.240Z"
       }
     },
     {
-      "id": "swsh9-29",
+      "id": "swsh9-029",
       "quantity": 1,
       "condition": "LP",
       "printing": "holofoil",
@@ -249,19 +259,20 @@
       "added": "2026-06-11",
       "catalog": {
         "name": "Kingler VMAX",
-        "number": "29",
-        "rarity": "Rare Holo VMAX",
+        "number": "029",
+        "rarity": "Holo Rare VMAX",
         "types": [
           "Water"
         ],
         "setId": "swsh9",
         "setName": "Brilliant Stars",
         "printedTotal": 172,
-        "image": "https://images.pokemontcg.io/swsh9/29.png",
-        "imageLarge": "https://images.pokemontcg.io/swsh9/29_hires.png",
-        "market": 2.24,
+        "image": "https://assets.tcgdex.net/en/swsh/swsh9/029/low.webp",
+        "imageLarge": "https://assets.tcgdex.net/en/swsh/swsh9/029/high.webp",
+        "market": 2.26,
+        "currency": "USD",
         "variant": "holofoil",
-        "updatedAt": "2026/10/10"
+        "updatedAt": "2026-10-12T22:55:06.663Z"
       }
     },
     {
@@ -274,16 +285,16 @@
       "catalog": {
         "name": "Professor's Research (Professor Oak)",
         "number": "24",
-        "rarity": "Rare Ultra",
-        "types": null,
+        "rarity": "Ultra Rare",
         "setId": "cel25",
         "setName": "Celebrations",
         "printedTotal": 25,
-        "image": "https://images.pokemontcg.io/cel25/24.png",
-        "imageLarge": "https://images.pokemontcg.io/cel25/24_hires.png",
-        "market": 0.95,
+        "image": "https://assets.tcgdex.net/en/swsh/cel25/24/low.webp",
+        "imageLarge": "https://assets.tcgdex.net/en/swsh/cel25/24/high.webp",
+        "market": 0.93,
+        "currency": "USD",
         "variant": "holofoil",
-        "updatedAt": "2026/10/10"
+        "updatedAt": "2026-10-12T22:55:06.057Z"
       }
     }
   ]

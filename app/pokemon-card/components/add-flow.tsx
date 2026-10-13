@@ -1,7 +1,9 @@
 'use client'
 
 import { useEffect, useMemo, useState, useSyncExternalStore } from 'react'
+import Link from 'next/link'
 import { useRouter } from 'next/navigation'
+import { Camera, UploadSimple } from '@phosphor-icons/react'
 import {
   BackLink,
   CardArt,
@@ -16,7 +18,7 @@ import {
   SourceCredit,
 } from './ui'
 import { CONDITIONS } from '../lib/types'
-import { formatShortDate, formatUsd, printingLabel } from '../lib/format'
+import { formatMoney, formatShortDate, priceCaption, printingLabel } from '../lib/format'
 import type { EnrichedCard, SearchCard, TcgSet } from '../lib/types'
 
 type RecentSearch = { q: string; at: string }
@@ -64,13 +66,15 @@ function useRecentSearches() {
 export function AddFlow({
   writable,
   editing,
+  initialQuery,
 }: {
   writable: boolean
   editing: EnrichedCard | null
+  initialQuery?: string
 }) {
   const router = useRouter()
   const [step, setStep] = useState<1 | 2 | 3>(editing ? 3 : 1)
-  const [query, setQuery] = useState(editing?.tcg?.name ?? '')
+  const [query, setQuery] = useState(editing?.tcg?.name ?? initialQuery ?? '')
   const [setId, setSetId] = useState('')
   const [sets, setSets] = useState<TcgSet[]>([])
   const [results, setResults] = useState<SearchCard[]>([])
@@ -86,13 +90,23 @@ export function AddFlow({
           setId: editing.tcg.set.id,
           printedTotal: editing.tcg.set.printedTotal,
           image: editing.tcg.images?.large ?? editing.tcg.images?.small,
-          printings: editing.tcg.tcgplayer?.prices ? Object.keys(editing.tcg.tcgplayer.prices) : [],
-          quotes: Object.fromEntries(
-            Object.entries(editing.tcg.tcgplayer?.prices ?? {})
-              .filter(([, value]) => value?.market != null)
-              .map(([key, value]) => [key, value!.market as number])
-          ),
-          updatedAt: editing.tcg.tcgplayer?.updatedAt ?? null,
+          printings: editing.tcg.tcgplayer?.prices
+            ? Object.keys(editing.tcg.tcgplayer.prices)
+            : editing.tcg.cardmarket?.avg != null
+              ? ['cardmarket']
+              : [],
+          quotes: {
+            ...Object.fromEntries(
+              Object.entries(editing.tcg.tcgplayer?.prices ?? {})
+                .filter(([, value]) => value?.market != null)
+                .map(([key, value]) => [key, value!.market as number])
+            ),
+            ...(editing.tcg.tcgplayer?.prices || editing.tcg.cardmarket?.avg == null
+              ? {}
+              : { cardmarket: editing.tcg.cardmarket.avg }),
+          },
+          quoteUnit: editing.tcg.tcgplayer?.prices ? 'USD' : editing.tcg.cardmarket?.avg != null ? 'EUR' : undefined,
+          updatedAt: editing.tcg.tcgplayer?.updatedAt ?? editing.tcg.cardmarket?.updatedAt ?? null,
         }
       : null
   )
@@ -102,7 +116,15 @@ export function AddFlow({
   const [notes, setNotes] = useState(editing?.notes ?? '')
   const recent = useRecentSearches()
   const [busy, setBusy] = useState(false)
+  const [saving, setSaving] = useState(false)
   const [error, setError] = useState<string | null>(null)
+
+  useEffect(() => {
+    if (!editing && initialQuery?.trim()) {
+      runSearch(initialQuery)
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [])
 
   useEffect(() => {
     let cancelled = false
@@ -148,8 +170,8 @@ export function AddFlow({
   }
 
   async function save() {
-    if (!selected) return
-    setBusy(true)
+    if (!writable || !selected || saving) return
+    setSaving(true)
     setError(null)
     try {
       const res = await fetch('/api/pokemon-card/collection', {
@@ -172,6 +194,7 @@ export function AddFlow({
             printedTotal: selected.printedTotal,
             image: selected.image,
             market: selected.quotes[activePrinting],
+            currency: selected.quoteUnit,
             variant: activePrinting,
             updatedAt: selected.updatedAt ?? undefined,
           },
@@ -184,7 +207,7 @@ export function AddFlow({
     } catch (err) {
       setError(err instanceof Error ? err.message : 'Could not save')
     } finally {
-      setBusy(false)
+      setSaving(false)
     }
   }
 
@@ -202,7 +225,11 @@ export function AddFlow({
       </div>
       <div className="mt-4">
         <PageIntro title={editing ? 'Edit a card' : 'Add a card'}>
-          <p className="text-sm text-neutral-600 dark:text-neutral-400 mt-2 mb-6">{stepLabel}</p>
+          <p className="text-sm text-neutral-600 dark:text-neutral-400 mt-2 mb-6">
+            {step === 1 && !editing
+              ? 'Scan it, upload a photo, or search by hand.'
+              : stepLabel}
+          </p>
         </PageIntro>
       </div>
 
@@ -219,12 +246,42 @@ export function AddFlow({
             runSearch()
           }}
         >
+          <div className="grid gap-3 mb-6">
+            <Link
+              href="/pokemon-card/scan"
+              className="rounded-lg border border-orange-600 px-4 py-4 block"
+            >
+              <div className="flex items-start gap-3">
+                <Camera className="mt-0.5 shrink-0" />
+                <div>
+                  <div className="text-sm font-medium">Scan card</div>
+                  <p className="text-sm text-neutral-600 dark:text-neutral-400 mt-1">
+                    Use your camera. Reads the name and set number.
+                  </p>
+                </div>
+              </div>
+            </Link>
+            <Link
+              href="/pokemon-card/scan?mode=upload"
+              className="rounded-lg border border-neutral-200 dark:border-neutral-800 px-4 py-4 block"
+            >
+              <div className="flex items-start gap-3">
+                <UploadSimple className="mt-0.5 shrink-0" />
+                <div>
+                  <div className="text-sm font-medium">Upload photo</div>
+                  <p className="text-sm text-neutral-600 dark:text-neutral-400 mt-1">
+                    Pick an existing photo of the card front.
+                  </p>
+                </div>
+              </div>
+            </Link>
+          </div>
+          <p className="text-sm text-neutral-600 dark:text-neutral-400 mb-2">or search by hand</p>
           <SearchField
             autoFocus
             value={query}
             onChange={(event) => setQuery(event.target.value)}
             placeholder='Name, set or number — e.g. “Pikachu 58”'
-            accent
           />
           <div className="flex flex-wrap items-center gap-2 mt-3">
             <SelectPill
@@ -235,12 +292,15 @@ export function AddFlow({
               selectClassName="max-w-[12rem]"
             />
             <span className="text-xs text-neutral-600 dark:text-neutral-400">
-              Searches the Pokémon TCG API (pokemontcg.io)
+              Searches TCGdex (api.tcgdex.net)
             </span>
             <PrimaryButton type="submit" disabled={busy || !query.trim()} className="ml-auto">
               {busy ? 'Searching…' : 'Search'}
             </PrimaryButton>
           </div>
+          <p className="text-xs text-neutral-600 dark:text-neutral-400 mt-4">
+            Photos are only used to read the card and aren&apos;t saved.
+          </p>
         </form>
       ) : null}
 
@@ -357,20 +417,25 @@ export function AddFlow({
           </div>
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mt-4 pt-4 border-t border-neutral-200 dark:border-neutral-800">
             <div className="tabular-nums">
-              {formatUsd(market)}{' '}
+              {formatMoney(market, selected.quoteUnit)}{' '}
               <span className="text-xs text-neutral-600 dark:text-neutral-400">
-                TCGplayer market · USD · near mint
+                {priceCaption(market == null ? null : selected.quoteUnit, activePrinting)}
               </span>
             </div>
             <div className="flex gap-2">
               <GhostButton type="button" onClick={() => setStep(editing ? 1 : 2)}>
                 Back
               </GhostButton>
-              <PrimaryButton type="button" disabled={!writable || busy} onClick={save}>
-                {busy ? 'Saving…' : editing ? 'Save changes' : 'Add to collection'}
+              <PrimaryButton type="button" disabled={!writable || saving} onClick={save}>
+                {saving ? 'Saving…' : editing ? 'Save changes' : 'Add to collection'}
               </PrimaryButton>
             </div>
           </div>
+          {!writable ? (
+            <p className="text-sm text-neutral-600 dark:text-neutral-400 mt-3">
+              Saving only works in local development (`pnpm dev`). Production is read-only.
+            </p>
+          ) : null}
         </>
       ) : null}
 

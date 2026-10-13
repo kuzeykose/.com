@@ -1,6 +1,8 @@
 export const CONDITIONS = ['NM', 'LP', 'MP', 'HP', 'DMG'] as const
 export type Condition = (typeof CONDITIONS)[number]
 
+export type PriceUnit = 'USD' | 'EUR'
+
 export type CatalogSnapshot = {
   name: string
   number: string
@@ -12,6 +14,7 @@ export type CatalogSnapshot = {
   image?: string
   imageLarge?: string
   market?: number
+  currency?: PriceUnit
   variant?: string
   updatedAt?: string
 }
@@ -38,12 +41,26 @@ export type TcgPrice = {
   directLow?: number
 }
 
+export type TcgAttack = {
+  name: string
+  damage?: string
+  text?: string
+}
+
+export type TcgAbility = {
+  name: string
+  text?: string
+}
+
 export type TcgCard = {
   id: string
   name: string
   number: string
+  hp?: string
   rarity?: string
   types?: string[]
+  attacks?: TcgAttack[]
+  abilities?: TcgAbility[]
   images?: {
     small?: string
     large?: string
@@ -60,11 +77,18 @@ export type TcgCard = {
     updatedAt?: string
     prices?: Record<string, TcgPrice>
   }
+  cardmarket?: {
+    unit?: string
+    avg?: number
+    updatedAt?: string
+  }
+  source?: 'tcgdex'
 }
 
 export type TcgSet = {
   id: string
   name: string
+  printedTotal?: number
   releaseDate?: string
   series?: string
 }
@@ -73,6 +97,7 @@ export type MarketQuote = {
   market: number | null
   variant: string | null
   updatedAt: string | null
+  unit?: PriceUnit | null
 }
 
 export type EnrichedCard = CollectionEntry & {
@@ -92,5 +117,6 @@ export type SearchCard = {
   image?: string
   printings: string[]
   quotes: Record<string, number>
+  quoteUnit?: PriceUnit
   updatedAt: string | null
 }

@@ -1,7 +1,8 @@
 import { Suspense } from 'react'
 import { CollectionBrowser } from '../components/collection-browser'
 import { PageIntro, SectionTabs, SourceCredit } from '../components/ui'
-import { getEnrichedCollection, isWritable } from '../lib/collection'
+import { getEnrichedCollection } from '../lib/collection'
+import { canShowOwnerTools } from '../lib/owner'
 
 export const revalidate = 86400
 
@@ -12,7 +13,7 @@ export const metadata = {
 
 export default async function Page() {
   const cards = await getEnrichedCollection()
-  const writable = isWritable()
+  const owner = await canShowOwnerTools()
 
   return (
     <section>
@@ -21,7 +22,7 @@ export default async function Page() {
           A small record of what&apos;s in my binders. Prices are estimates.
         </p>
       </PageIntro>
-      <SectionTabs active="collection" writable={writable} />
+      <SectionTabs active="collection" owner={owner} />
       <Suspense>
         <CollectionBrowser cards={cards} />
       </Suspense>

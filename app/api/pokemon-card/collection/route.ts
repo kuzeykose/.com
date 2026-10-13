@@ -1,24 +1,17 @@
 import { NextResponse } from 'next/server'
-import { isWritable, upsertCard } from 'app/pokemon-card/lib/collection'
-import { CONDITIONS, type CatalogSnapshot, type CollectionEntry, type Condition } from 'app/pokemon-card/lib/types'
+import { getCardSaver, type SaveMode } from 'app/pokemon-card/lib/save'
+import { CONDITIONS, type CatalogSnapshot, type Condition } from 'app/pokemon-card/lib/types'
 
 export const runtime = 'nodejs'
 
 export async function POST(request: Request) {
-  if (!isWritable()) {
-    return NextResponse.json(
-      { error: 'Collection writes only work in local development (pnpm dev).' },
-      { status: 403 }
-    )
-  }
-
   let body: {
     id?: string
     quantity?: number
     condition?: string
     printing?: string
     notes?: string
-    mode?: 'add' | 'edit'
+    mode?: SaveMode
     catalog?: CatalogSnapshot
   }
 
@@ -28,28 +21,22 @@ export async function POST(request: Request) {
     return NextResponse.json({ error: 'Invalid JSON' }, { status: 400 })
   }
 
-  const id = typeof body.id === 'string' ? body.id.trim() : ''
-  const quantity = Number(body.quantity)
-  const condition = body.condition
-  const mode = body.mode === 'edit' ? 'edit' : 'add'
-
-  if (!id || !Number.isFinite(quantity) || quantity < 1 || quantity > 99) {
-    return NextResponse.json({ error: 'id and quantity (1–99) are required' }, { status: 400 })
-  }
-  if (!CONDITIONS.includes(condition as Condition)) {
-    return NextResponse.json({ error: 'Invalid condition' }, { status: 400 })
-  }
-
-  const entry: CollectionEntry = {
-    id,
-    quantity,
-    condition: condition as Condition,
+  const saver = getCardSaver()
+  const result = saver.save({
+    id: typeof body.id === 'string' ? body.id : '',
+    quantity: Number(body.quantity),
+    condition: body.condition as Condition,
     printing: typeof body.printing === 'string' ? body.printing : undefined,
     notes: typeof body.notes === 'string' ? body.notes : '',
-    added: new Date().toISOString().slice(0, 10),
-    catalog: body.catalog && typeof body.catalog.name === 'string' ? body.catalog : undefined,
+    mode: body.mode === 'edit' || body.mode === 'undo' ? body.mode : 'add',
+    catalog: body.catalog,
+  })
+
+  if (!result.ok) {
+    const status =
+      result.error.includes('local development') ? 403 : !CONDITIONS.includes(body.condition as Condition) ? 400 : 400
+    return NextResponse.json({ error: result.error }, { status })
   }
 
-  const file = upsertCard(entry, mode)
-  return NextResponse.json({ ok: true, cards: file.cards })
+  return NextResponse.json({ ok: true })
 }

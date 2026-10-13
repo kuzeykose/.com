@@ -10,8 +10,9 @@ import {
 } from '../components/ui'
 import { OwnerActions } from '../components/owner-actions'
 import { getEnrichedCard, isWritable, readCollection } from '../lib/collection'
+import { canShowOwnerTools } from '../lib/owner'
 import { CONDITION_LABELS } from '../lib/constants'
-import { formatLongDate, formatUpdated, formatUsd, printingLabel } from '../lib/format'
+import { formatLongDate, formatMoney, formatUpdated, priceCaption, printingLabel } from '../lib/format'
 
 export const revalidate = 86400
 
@@ -37,6 +38,7 @@ export default async function Page({ params }: { params: Promise<{ id: string }>
   if (!card) notFound()
 
   const writable = isWritable()
+  const owner = await canShowOwnerTools()
   const name = card.tcg?.name ?? card.id
   const setName = card.tcg?.set.name ?? 'Unknown set'
   const number = card.tcg?.number ?? '—'
@@ -50,7 +52,7 @@ export default async function Page({ params }: { params: Promise<{ id: string }>
     <section>
       <div className="flex items-center justify-between gap-3">
         <BackLink />
-        <OwnerActions writable={writable} />
+        <OwnerActions owner={owner} />
       </div>
       <div className="mt-4">
         <PageIntro title={name}>
@@ -65,7 +67,9 @@ export default async function Page({ params }: { params: Promise<{ id: string }>
         <div>
           <CardArt src={image} name={name} type={type} />
           <p className="text-xs text-neutral-600 dark:text-neutral-400 mt-2">
-            Official image via images.pokemontcg.io
+            {card.tcg?.images?.small?.includes('tcgplayer')
+              ? 'Image via TCGplayer (TCGdex has no asset for this printing)'
+              : 'Image via TCGdex'}
           </p>
         </div>
         <div className="pt-1">
@@ -103,14 +107,15 @@ export default async function Page({ params }: { params: Promise<{ id: string }>
       <div className="rounded-lg border border-neutral-200 dark:border-neutral-800 p-4 mt-8">
         <div className="flex justify-between items-baseline gap-3">
           <span className="text-sm text-neutral-600 dark:text-neutral-400">Market value</span>
-          <span className="text-sm">TCGplayer</span>
+          <span className="text-sm">{card.quote.unit === 'EUR' ? 'Cardmarket' : card.quote.unit === 'USD' ? 'TCGplayer' : 'Price'}</span>
         </div>
         <div className="text-2xl font-semibold tracking-tight tabular-nums mt-1">
-          {formatUsd(card.quote.market)}
+          {formatMoney(card.quote.market, card.quote.unit)}
         </div>
         <div className="flex justify-between gap-3 text-xs text-neutral-600 dark:text-neutral-400 mt-3">
           <span>
-            TCGplayer · {printingLabel(card.quote.variant) ?? '—'} · Market price · USD · near mint
+            {priceCaption(card.quote.unit, card.quote.variant)}
+            {card.quote.variant && card.quote.variant !== 'cardmarket' ? ` · ${printingLabel(card.quote.variant)}` : ''}
             {updated ? ` · updated ${updated}` : ''}
           </span>
         </div>

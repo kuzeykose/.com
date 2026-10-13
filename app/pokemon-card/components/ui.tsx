@@ -2,7 +2,7 @@ import type { ButtonHTMLAttributes, InputHTMLAttributes, ReactNode } from 'react
 import Link from 'next/link'
 import { OwnerActions } from './owner-actions'
 import { TYPE_COLORS } from '../lib/constants'
-import { formatUsd } from '../lib/format'
+import { formatMoney } from '../lib/format'
 import type { EnrichedCard } from '../lib/types'
 
 export function PageIntro({
@@ -22,10 +22,10 @@ export function PageIntro({
 
 export function SectionTabs({
   active,
-  writable = false,
+  owner = false,
 }: {
   active: 'overview' | 'collection'
-  writable?: boolean
+  owner?: boolean
 }) {
   const tabs = [
     { href: '/pokemon-card', id: 'overview', label: 'overview' },
@@ -53,18 +53,24 @@ export function SectionTabs({
           )
         })}
       </div>
-      <OwnerActions writable={writable} />
+      <OwnerActions owner={owner} />
     </div>
   )
 }
 
-export function BackLink({ href = '/pokemon-card/collection' }: { href?: string }) {
+export function BackLink({
+  href = '/pokemon-card/collection',
+  children = '← collection',
+}: {
+  href?: string
+  children?: ReactNode
+}) {
   return (
     <Link
       href={href}
       className="text-sm text-neutral-600 dark:text-neutral-400 underline decoration-neutral-400 dark:decoration-neutral-600 underline-offset-2"
     >
-      ← collection
+      {children}
     </Link>
   )
 }
@@ -80,16 +86,16 @@ export function PrivateBadge() {
 export function SourceCredit() {
   return (
     <p className="mt-8 mb-16 text-sm text-neutral-600 dark:text-neutral-400">
-      Card data and images from the{' '}
+      Card data, images and prices from{' '}
       <a
-        href="https://pokemontcg.io"
+        href="https://tcgdex.dev"
         target="_blank"
         rel="noopener noreferrer"
         className="underline decoration-neutral-400 dark:decoration-neutral-600 underline-offset-2"
       >
-        Pokémon TCG API
+        TCGdex
       </a>
-      . Market prices are TCGplayer near-mint estimates, in USD.
+      {' '}(api.tcgdex.net). Market prices use TCGplayer USD when present, otherwise Cardmarket EUR, and show as — when unknown.
     </p>
   )
 }
@@ -205,7 +211,7 @@ export function tileFromEntry(card: EnrichedCard) {
     image: card.tcg?.images?.small,
     type: card.tcg?.types?.[0],
     line: `${shortSet} · ${card.tcg?.number ?? '—'}`,
-    price: formatUsd(card.quote.market),
+    price: formatMoney(card.quote.market, card.quote.unit),
   }
 }
 

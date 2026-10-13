@@ -5,7 +5,8 @@ import Link from 'next/link'
 import { usePathname, useRouter, useSearchParams } from 'next/navigation'
 import { List, SquaresFour } from '@phosphor-icons/react'
 import { CardTile, ListRow, SearchField, SelectPill, tileFromEntry } from './ui'
-import { formatCopyCount, formatFilteredCount, formatUsd } from '../lib/format'
+import { formatCopyCount, formatFilteredCount, formatMoney } from '../lib/format'
+import { usdMarket } from '../lib/prices'
 import type { EnrichedCard } from '../lib/types'
 
 type SortKey = 'value' | 'value-asc' | 'name' | 'added' | 'set' | 'number'
@@ -97,8 +98,8 @@ export function CollectionBrowser({ cards }: { cards: EnrichedCard[] }) {
     })
 
     next = [...next].sort((a, b) => {
-      const aValue = a.quote.market ?? -1
-      const bValue = b.quote.market ?? -1
+      const aValue = usdMarket(a.quote) ?? -1
+      const bValue = usdMarket(b.quote) ?? -1
       if (sort === 'value') return bValue - aValue
       if (sort === 'value-asc') return aValue - bValue
       if (sort === 'name') return (a.tcg?.name ?? a.id).localeCompare(b.tcg?.name ?? b.id)
@@ -228,7 +229,7 @@ export function CollectionBrowser({ cards }: { cards: EnrichedCard[] }) {
           <div className="hidden sm:block">
             {filtered.map((card) => (
               <Link key={card.id} href={`/pokemon-card/${card.id}`} className="block">
-                <ListRow label={formatUsd(card.quote.market)}>
+                <ListRow label={formatMoney(card.quote.market, card.quote.unit)}>
                   <span className="block">{card.tcg?.name ?? card.id}</span>
                   <span className="block text-neutral-600 dark:text-neutral-400 font-normal tracking-normal">
                     {card.tcg?.set.name ?? 'Unknown set'} · {card.tcg?.number ?? '—'}

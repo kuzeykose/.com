@@ -5,7 +5,15 @@ const nextConfig: NextConfig = {
     remotePatterns: [
       {
         protocol: 'https',
-        hostname: 'images.pokemontcg.io',
+        hostname: 'assets.tcgdex.net',
+      },
+      {
+        protocol: 'https',
+        hostname: 'product-images.tcgplayer.com',
+      },
+      {
+        protocol: 'https',
+        hostname: 'tcgplayer-cdn.tcgplayer.com',
       },
     ],
   },

@@ -8,6 +8,23 @@ export function formatUsd(value: number | null | undefined) {
   }).format(value)
 }
 
+export function formatMoney(value: number | null | undefined, unit?: string | null) {
+  if (value == null || Number.isNaN(value)) return '—'
+  if (unit === 'EUR') {
+    return new Intl.NumberFormat('en-US', {
+      style: 'currency',
+      currency: 'EUR',
+    }).format(value)
+  }
+  return formatUsd(value)
+}
+
+export function priceCaption(unit?: string | null, variant?: string | null) {
+  if (unit === 'EUR' || variant === 'cardmarket') return 'Cardmarket · EUR'
+  if (unit === 'USD') return 'TCGplayer market · USD · near mint'
+  return 'price unknown'
+}
+
 export function formatCount(value: number) {
   return new Intl.NumberFormat('en-US').format(value)
 }

@@ -5,19 +5,20 @@ type OwnerLink = {
   label: string
 }
 
-/** Local-dev collection tools. Add `{ href: '/pokemon-card/scan', label: 'Scan' }` when that page exists. */
+/** Add/Scan entry points. Visible in local dev, and in production after the owner cookie. */
 export const OWNER_LINKS: OwnerLink[] = [
   { href: '/pokemon-card/add', label: 'Add card' },
+  { href: '/pokemon-card/scan', label: 'Scan' },
 ]
 
 export function OwnerActions({
-  writable,
+  owner,
   links = OWNER_LINKS,
 }: {
-  writable: boolean
+  owner: boolean
   links?: readonly OwnerLink[]
 }) {
-  if (!writable || links.length === 0) return null
+  if (!owner || links.length === 0) return null
 
   return (
     <nav aria-label="Collection tools" className="flex items-center gap-3 text-sm">

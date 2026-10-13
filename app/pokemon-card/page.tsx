@@ -9,9 +9,11 @@ import {
   TypeDot,
   tileFromEntry,
 } from './components/ui'
-import { collectionTotals, getEnrichedCollection, isWritable } from './lib/collection'
-import { formatCopyCount, formatCount, formatShortDate, formatUsd } from './lib/format'
+import { collectionTotals, getEnrichedCollection } from './lib/collection'
+import { canShowOwnerTools } from './lib/owner'
+import { formatCopyCount, formatCount, formatMoney, formatShortDate, formatUsd } from './lib/format'
 import { TYPE_COLORS } from './lib/constants'
+import { usdMarket } from './lib/prices'
 import type { EnrichedCard } from './lib/types'
 
 export const revalidate = 86400
@@ -24,12 +26,12 @@ export const metadata = {
 export default async function Page() {
   const cards = await getEnrichedCollection()
   const totals = collectionTotals(cards)
-  const writable = isWritable()
+  const owner = await canShowOwnerTools()
 
   const bySet = aggregate(
     cards,
     (card) => card.tcg?.set.name ?? 'Unknown set',
-    (card) => (card.quote.market ?? 0) * card.quantity
+    (card) => (usdMarket(card.quote) ?? 0) * card.quantity
   )
   const byType = aggregate(
     cards,
@@ -43,7 +45,7 @@ export default async function Page() {
   )
   const typeTotal = byType.reduce((sum, item) => sum + item.value, 0) || 1
   const mostValuable = [...cards]
-    .sort((a, b) => (b.quote.market ?? 0) * b.quantity - (a.quote.market ?? 0) * a.quantity)
+    .sort((a, b) => (usdMarket(b.quote) ?? 0) * b.quantity - (usdMarket(a.quote) ?? 0) * a.quantity)
     .slice(0, 5)
   const recent = [...cards].sort((a, b) => b.added.localeCompare(a.added)).slice(0, 4)
   const maxSet = Math.max(...bySet.map((item) => item.value), 1)
@@ -55,7 +57,7 @@ export default async function Page() {
           A small record of what&apos;s in my binders. Prices are estimates.
         </p>
       </PageIntro>
-      <SectionTabs active="overview" writable={writable} />
+      <SectionTabs active="overview" owner={owner} />
 
       <div className="rounded-lg border border-neutral-200 dark:border-neutral-800 p-4">
         <div className="grid grid-cols-3 gap-4">
@@ -131,7 +133,7 @@ export default async function Page() {
       </div>
       {mostValuable.map((card) => (
         <Link key={card.id} href={`/pokemon-card/${card.id}`} className="block">
-          <ListRow label={formatUsd(card.quote.market)}>
+          <ListRow label={formatMoney(card.quote.market, card.quote.unit)}>
             {card.tcg?.name ?? card.id}
             <span className="text-neutral-600 dark:text-neutral-400">
               {' '}

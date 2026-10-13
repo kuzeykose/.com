@@ -9,7 +9,7 @@ import {
   type TcgCard,
 } from './types'
 import { fetchCardById, fetchCardsByIds } from './tcg'
-import { quoteFor } from './prices'
+import { quoteFor, usdMarket } from './prices'
 
 export const COLLECTION_PATH = path.join(process.cwd(), 'data/pokemon-card.json')
 
@@ -57,6 +57,7 @@ function enrich(entry: CollectionEntry, live: TcgCard | null): EnrichedCard {
           market: entry.catalog?.market ?? liveQuote?.market ?? null,
           variant: entry.printing ?? entry.catalog?.variant ?? liveQuote?.variant ?? null,
           updatedAt: liveQuote?.updatedAt ?? entry.catalog?.updatedAt ?? null,
+          unit: entry.catalog?.currency ?? liveQuote?.unit ?? null,
         }
   return { ...entry, tcg, quote }
 }
@@ -96,8 +97,8 @@ function guessFromId(id: string): TcgCard | null {
     name: id,
     number,
     images: {
-      small: `https://images.pokemontcg.io/${setId}/${number}.png`,
-      large: `https://images.pokemontcg.io/${setId}/${number}_hires.png`,
+      small: `https://assets.tcgdex.net/en/${setId}/${number}/low.webp`,
+      large: `https://assets.tcgdex.net/en/${setId}/${number}/high.webp`,
     },
     set: { id: setId, name: setId },
   }
@@ -116,6 +117,7 @@ export function catalogFromCard(card: TcgCard, printing?: string): CatalogSnapsh
     image: card.images?.small,
     imageLarge: card.images?.large,
     market: quote.market ?? undefined,
+    currency: quote.unit ?? undefined,
     variant: quote.variant ?? undefined,
     updatedAt: quote.updatedAt ?? undefined,
   }
@@ -127,10 +129,20 @@ export function writeCollection(file: CollectionFile) {
 
 export function upsertCard(
   incoming: CollectionEntry,
-  mode: 'add' | 'edit'
+  mode: 'add' | 'edit' | 'undo'
 ): CollectionFile {
   const file = readCollection()
   const index = file.cards.findIndex((card) => card.id === incoming.id)
+
+  if (mode === 'undo') {
+    if (index === -1) return file
+    const current = file.cards[index]
+    const quantity = current.quantity - incoming.quantity
+    if (quantity <= 0) file.cards.splice(index, 1)
+    else file.cards[index] = { ...current, quantity }
+    writeCollection(file)
+    return file
+  }
 
   if (index === -1) {
     file.cards.unshift({
@@ -166,7 +178,8 @@ export function collectionTotals(cards: EnrichedCard[]) {
   const unique = cards.length
   const copies = cards.reduce((sum, card) => sum + card.quantity, 0)
   const value = cards.reduce((sum, card) => {
-    return sum + (card.quote.market != null ? card.quote.market * card.quantity : 0)
+    const market = usdMarket(card.quote)
+    return sum + (market != null ? market * card.quantity : 0)
   }, 0)
   const sets = new Set(
     cards.map((card) => card.tcg?.set.id).filter((id): id is string => Boolean(id))

@@ -4,7 +4,10 @@
         "dev": "next dev",
         "build": "next build",
         "start": "next start",
-        "lint": "eslint app/pokemon-card app/api/pokemon-card app/components/nav.tsx next.config.ts"
+        "lint": "eslint app/pokemon-card app/api/pokemon-card app/components/nav.tsx next.config.ts",
+        "test": "pnpm test:scan",
+        "test:scan": "node --experimental-strip-types --import ./app/pokemon-card/lib/scan/test-loader.mjs --test app/pokemon-card/lib/scan/*.test.mjs app/pokemon-card/lib/owner.test.mjs",
+        "map:tcgdex": "node --experimental-strip-types --import ./app/pokemon-card/lib/scan/test-loader.mjs scripts/map-to-tcgdex.ts"
     },
     "dependencies": {
         "@phosphor-icons/react": "^2.1.10",
@@ -21,6 +24,7 @@
         "react-dom": "19.2.7",
         "sugar-high": "^0.6.0",
         "tailwindcss": "4.0.0-alpha.13",
+        "tesseract.js": "^7.0.0",
         "three": "^0.186.1",
         "typescript": "5.3.3"
     },
@@ -29,6 +33,13 @@
         "@types/react-dom": "19.2.3",
         "@types/three": "^0.186.0",
         "eslint": "^10.12.0",
-        "eslint-config-next": "^16.4.0"
+        "eslint-config-next": "^16.4.0",
+        "jpeg-js": "^0.4.4",
+        "pngjs": "^7.0.0"
+    },
+    "pnpm": {
+        "onlyBuiltDependencies": [
+            "unrs-resolver"
+        ]
     }
 }
