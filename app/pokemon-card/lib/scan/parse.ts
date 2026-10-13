@@ -1,6 +1,7 @@
 import type { NumberRead, ScanQuery } from './types'
 
-const STOP = /^(basic|stage|evolves|from|hp|put|on|the|v|ex|gx|vmax|vstar|trainer|gallery)$/i
+const STOP =
+  /^(basic|stage|evolves|from|hp|put|on|the|v|ex|gx|vmax|vstar|trainer|gallery|luminous|shooting|moons|command|coiling|encouragement|prevent|discard|resistance|retreat|weakness|forest|nintendo|creatures)$/i
 
 export function levenshtein(a: string, b: string) {
   const d = Array.from({ length: b.length + 1 }, (_, i) => i)
@@ -25,10 +26,21 @@ export function nameSim(a: string, b: string) {
   const right = normalizeName(b)
   if (!left || !right) return 0
   const words = [right, ...right.split(/(?=ex$|vstar$|vmax$|gx$)/)]
-  return Math.max(
+  let best = Math.max(
     ...words.map((word) => 1 - levenshtein(left, word) / Math.max(left.length, word.length)),
     right.startsWith(left) && left.length >= 4 ? 0.95 : 0
   )
+  // "Clefable" vs "Mega Clefable ex", "Mega" vs "Mega Clefable ex"
+  if (left.length >= 4 && right.includes(left)) best = Math.max(best, 0.9)
+  if (right.length >= 4 && left.includes(right)) best = Math.max(best, 0.85)
+  return best
+}
+
+function nameQuality(word: string) {
+  if (/^[A-Z][a-z]{3,}(?:[A-Z][a-z]+)?$/.test(word)) return 3
+  if (/^[A-Z][a-z]{2,}/.test(word) && word.length >= 5) return 2
+  if (word.length >= 6) return 1
+  return 0
 }
 
 export function pickNameToken(text: string) {
@@ -36,7 +48,7 @@ export function pickNameToken(text: string) {
     .replace(/[^A-Za-z'.\-é ]/g, ' ')
     .split(/\s+/)
     .filter((word) => word.length > 2 && !STOP.test(word))
-    .sort((a, b) => b.length - a.length)[0]
+    .sort((a, b) => nameQuality(b) - nameQuality(a) || b.length - a.length)[0]
 }
 
 /**
@@ -99,10 +111,25 @@ export function parseNumbers(text: string, totals?: Set<number>): NumberRead[] {
       out.push(...found.filter((r) => r.number.length === maxLen).slice(0, 1))
     }
   }
+  // Promo codes: "MEP EN 072", "SVP 045", "SWSH020", plus 1-edit OCR ("JEN 72").
+  // Regular "POR EN 031/088" still wins via std matches above.
+  for (const match of Array.from(
+    cleaned.matchAll(/(?<![A-Z])([A-Z]{3}|MEP|SVP|SWSH|SM|XY|BW|DP|HGSS)(?:\s*EN)?\s*-?\s*(\d{1,3})(?!\d)/gi)
+  )) {
+    const rawCode = match[1].toUpperCase()
+    const setCode = PROMO_SET_ID[rawCode] ? rawCode : PROMO_ALIAS[rawCode]
+    if (!setCode) continue
+    out.push({
+      number: String(Number(match[2])),
+      setCode,
+      kind: 'promo',
+    })
+  }
   if (!out.length) {
     for (const match of Array.from(cleaned.matchAll(/\b(SVP|SWSH|SM|XY|BW|DP|HGSS)\s?-?(\d{1,3})\b/gi))) {
       out.push({
         number: match[1].toUpperCase() + match[2].padStart(3, '0'),
+        setCode: match[1].toUpperCase(),
         kind: 'promo',
       })
     }
@@ -111,20 +138,58 @@ export function parseNumbers(text: string, totals?: Set<number>): NumberRead[] {
   return out
 }
 
+/** Black Star promo set ids on pokemontcg.io (MEP may land after the live set list). */
+export const PROMO_SET_ID: Record<string, string> = {
+  MEP: 'mep',
+  SVP: 'svp',
+  SWSH: 'swshp',
+  SM: 'smp',
+  XY: 'xyp',
+  BW: 'bwp',
+  DP: 'dpp',
+  HGSS: 'hsp',
+}
+
+/** OCR aliases seen on sleeved Mega Evolution promo stamps (MEP EN 072 → JEN 72). */
+const PROMO_ALIAS: Record<string, string> = {
+  JEN: 'MEP',
+  NEP: 'MEP',
+  MEN: 'MEP',
+  MFP: 'MEP',
+  MEF: 'MEP',
+  '5VP': 'SVP',
+  SYP: 'SVP',
+}
+
+export const COMMON_TOTALS = new Set([86, 88, 94, 102, 108, 132, 146, 159, 165, 193, 198, 202, 215])
+
+export const PROMO_SET_IDS = Array.from(new Set(Object.values(PROMO_SET_ID)))
+
+export function splitPromo(number: string, setCode?: string) {
+  const prefixed = number.match(/^(MEP|SVP|SWSH|SM|XY|BW|DP|HGSS)(\d+)$/i)
+  const code = (setCode || prefixed?.[1] || '').toUpperCase()
+  const digits = prefixed ? prefixed[2] : /^\d+$/.test(number) ? number : ''
+  const n = digits ? String(Number(digits)) : number
+  return { setCode: code || undefined, n, setId: code ? PROMO_SET_ID[code] || code.toLowerCase() : undefined }
+}
+
 export function voteNumber(reads: NumberRead[]) {
   const tally = new Map<string, NumberRead & { votes: number }>()
   for (const read of reads) {
-    const key = `${read.number}|${read.total ?? ''}`
+    const key = `${read.kind}|${read.setCode ?? ''}|${read.number}|${read.total ?? ''}`
     const existing = tally.get(key) ?? { ...read, votes: 0 }
     existing.votes += 1
+    if (read.setCode && !existing.setCode) existing.setCode = read.setCode
     tally.set(key, existing)
   }
 
-  // A dropped leading digit ("99/165" vs "199/165") supports the longer read with the same total.
+  // A dropped leading digit ("99/165" vs "199/165") supports the longer secret-rare.
+  // Do not credit "16/88" from "6/88" — that OCR error is the other direction.
   const rows = Array.from(tally.values())
   for (const long of rows) for (const short of rows)
     if (long !== short && long.kind === 'std' && short.kind === 'std' && long.total === short.total &&
-        long.number.length > short.number.length && long.number.endsWith(short.number)) long.votes += short.votes
+        long.number.length === 3 && short.number.length === 2 &&
+        long.number.endsWith(short.number) && Number(long.number) > Number(long.total)) long.votes += short.votes
 
   const plausible = (read: NumberRead) =>
     read.kind !== 'std' ||
@@ -134,7 +199,12 @@ export function voteNumber(reads: NumberRead[]) {
 
   const ranked = Array.from(tally.values())
     .filter(plausible)
-    .sort((a, b) => b.votes - a.votes || b.number.length - a.number.length)
+    .sort(
+      (a, b) =>
+        b.votes - a.votes ||
+        (a.kind === 'promo' ? 1 : 0) - (b.kind === 'promo' ? 1 : 0) ||
+        b.number.length - a.number.length
+    )
 
   return {
     pick: ranked[0],
@@ -148,7 +218,8 @@ export function readsFromQuery(query: ScanQuery): NumberRead[] {
     ? {
         number: query.number,
         total: query.total,
-        kind: query.kind ?? (query.total ? 'std' : 'promo'),
+        kind: query.kind ?? (query.setCode || !query.total ? 'promo' : 'std'),
+        setCode: query.setCode,
       }
     : undefined
   return [primary, ...(query.alts ?? [])].filter((read): read is NumberRead => Boolean(read?.number))
@@ -157,8 +228,22 @@ export function readsFromQuery(query: ScanQuery): NumberRead[] {
 export function buildQueries(query: ScanQuery): string[] {
   const name = query.name
   const tries: string[] = []
+  const promoLock = Boolean(query.setCode || query.kind === 'promo')
   for (const candidate of readsFromQuery(query)) {
-    if (candidate.kind !== 'std') {
+    const promo = splitPromo(candidate.number, candidate.setCode || query.setCode)
+    if (candidate.kind === 'promo' || promo.setId) {
+      const n = promo.n
+      const padded = /^\d+$/.test(n) ? n.padStart(3, '0') : n
+      const combined = promo.setCode ? `${promo.setCode}${padded}` : candidate.number
+      if (promo.setId) {
+        if (name) tries.push(`set.id:${promo.setId} number:${n} name:"${name}*"`)
+        tries.push(`set.id:${promo.setId} number:${n}`)
+        if (padded !== n) tries.push(`set.id:${promo.setId} number:${padded}`)
+      }
+      if (name) tries.push(`number:${combined} name:"${name}*"`)
+      tries.push(`number:${combined}`)
+      if (n !== combined && name) tries.push(`number:${n} name:"${name}*"`)
+    } else if (candidate.kind !== 'std') {
       if (name) tries.push(`number:${candidate.number} name:"${name}*"`)
       tries.push(`number:${candidate.number}`)
     } else {
@@ -169,27 +254,80 @@ export function buildQueries(query: ScanQuery): string[] {
       if (name) tries.push(`number:${candidate.number} name:"${name}*"`)
     }
   }
-  if (name) tries.push(`name:"${name}"`, `name:${name.slice(0, 4)}*`)
-  return tries
+  // Unscoped name search would collapse a promo (MEP 072) onto the regular-set printing.
+  if (name && !promoLock) tries.push(`name:"${name}"`, `name:${name.slice(0, 4)}*`)
+  return Array.from(new Set(tries))
+}
+
+function numbersEqual(cardNumber: string, pick: NumberRead) {
+  if (cardNumber.toUpperCase() === pick.number.toUpperCase()) return true
+  const promo = splitPromo(pick.number, pick.setCode)
+  if (/^\d+$/.test(cardNumber) && /^\d+$/.test(promo.n) && Number(cardNumber) === Number(promo.n)) return true
+  if (promo.setCode) {
+    const combined = `${promo.setCode}${promo.n.padStart(3, '0')}`
+    if (cardNumber.toUpperCase() === combined) return true
+    if (cardNumber.toUpperCase() === `${promo.setCode}${promo.n}`) return true
+  }
+  return false
+}
+
+function blobOf(query: ScanQuery) {
+  return [query.rawText?.join(' '), ...(query.attacks ?? []), ...(query.abilities ?? [])]
+    .filter(Boolean)
+    .join(' ')
+    .toLowerCase()
 }
 
 export function scoreMatch(
-  card: { name: string; number: string; printedTotal?: number },
+  card: {
+    name: string
+    number: string
+    printedTotal?: number
+    hp?: string
+    attacks?: { name?: string }[]
+    abilities?: { name?: string }[]
+    setId?: string
+    rarity?: string
+  },
   query: ScanQuery
 ) {
   const pick = readsFromQuery(query)[0]
   const name = query.name
   const agreement = query.agreement ?? 0
   const similarity = name ? nameSim(name, card.name) : 0
-  const numberOk = Boolean(pick && card.number.toUpperCase() === pick.number.toUpperCase())
+  const numberOk = Boolean(pick && numbersEqual(card.number, pick))
   const totalOk =
     pick && pick.kind !== 'std' ? numberOk : Boolean(pick && String(card.printedTotal) === pick.total)
+  const promo = pick ? splitPromo(pick.number, pick.setCode || query.setCode) : { setId: undefined, setCode: query.setCode }
+  const setOk = Boolean(promo.setId && card.setId && card.setId.toLowerCase() === promo.setId)
+  const hpOk = Boolean(query.hp && card.hp && String(query.hp) === String(card.hp))
+  const blob = blobOf(query)
+  const moveOk = [...(card.attacks ?? []), ...(card.abilities ?? [])].some(
+    (row) => row.name && blob.includes(row.name.toLowerCase())
+  )
   let score = 0.1 + 0.25 * similarity
   if (numberOk) score += 0.25
   if (numberOk && totalOk) score += 0.2
   if (numberOk && totalOk && similarity >= 0.8) score += 0.1
   if (numberOk && totalOk && agreement >= 0.5) score += 0.05
-  return Number(Math.min(1, score).toFixed(3))
+  if (setOk) score += 0.15
+  if (hpOk) score += 0.08
+  if (moveOk) score += 0.08
+  // Number OCR weak: HP / attack / ability still separates Chespin vs Serperior vs Clefable.
+  if (!numberOk && similarity >= 0.8 && (hpOk || moveOk)) score += 0.12
+  // Promo lock: a regular-set printing of the same Pokémon must not outrank the promo.
+  if (promo.setId && card.setId && card.setId.toLowerCase() !== promo.setId) score -= 0.45
+  return Number(Math.min(1, Math.max(0, score)).toFixed(3))
+}
+
+export function parseHp(text: string): string | undefined {
+  const cleaned = text.replace(/[Oo]/g, '0').replace(/[Il|]/g, '1')
+  const tagged = cleaned.match(/\bHP\s*[:.]?\s*(\d{2,3})\b/i)
+  const lone = tagged ? tagged[1] : cleaned.match(/\b(\d{2,3})\b/)?.[1]
+  if (!lone) return undefined
+  const n = Number(lone)
+  if (n >= 30 && n <= 400) return String(n)
+  return undefined
 }
 
 const NOISE = /^(pok[eé]mon|rule|when|your|knocked|opponent|takes|prize|cards?|illus|nintendo|creatures|game|freak|weakness|resistance|retreat|ability|damage|attack|this|that|energy|card|turn)$/i
@@ -212,7 +350,8 @@ export function parseRawText(lines: string[], totals?: Set<number>) {
   const reads: NumberRead[] = []
   const names: string[] = []
   const loose: string[] = []
-  for (const line of lines) {
+  const joined = lines.join(' ')
+  for (const line of [...lines, joined]) {
     reads.push(...parseNumbers(line, totals))
     names.push(...nameTokens(line))
     for (const m of Array.from(line.matchAll(/(?<![\d/])(\d{2,3})(?![\d/])/g))) loose.push(String(Number(m[1])))

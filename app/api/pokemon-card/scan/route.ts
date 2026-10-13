@@ -18,7 +18,8 @@ function asRead(value: unknown): NumberRead | null {
   if (!number) return null
   const kind = row.kind === 'subset' || row.kind === 'promo' || row.kind === 'std' ? row.kind : undefined
   const total = asString(row.total) || undefined
-  return { number, total, kind: kind ?? (total ? 'std' : 'promo') }
+  const setCode = asString(row.setCode).toUpperCase() || undefined
+  return { number, total, kind: kind ?? (total ? 'std' : 'promo'), setCode }
 }
 
 function parseQuery(body: unknown): ScanQuery | null {
@@ -31,14 +32,26 @@ function parseQuery(body: unknown): ScanQuery | null {
     : undefined
   const agreement = typeof raw.agreement === 'number' && Number.isFinite(raw.agreement) ? raw.agreement : undefined
   const rawText = cleanRawText(raw.rawText)
+  const setCode = asString(raw.setCode).toUpperCase() || undefined
+  const hp = asString(raw.hp) || undefined
+  const attacks = Array.isArray(raw.attacks)
+    ? raw.attacks.filter((s): s is string => typeof s === 'string').map((s) => s.slice(0, 40)).slice(0, 6)
+    : undefined
+  const abilities = Array.isArray(raw.abilities)
+    ? raw.abilities.filter((s): s is string => typeof s === 'string').map((s) => s.slice(0, 40)).slice(0, 6)
+    : undefined
   if (!name && !primary && !rawText.length) return null
   return {
     name,
     number: primary?.number,
     total: primary?.total,
     kind: primary?.kind,
+    setCode,
     alts,
     agreement,
+    hp,
+    attacks: attacks?.length ? attacks : undefined,
+    abilities: abilities?.length ? abilities : undefined,
     rawText: rawText.length ? rawText : undefined,
   }
 }

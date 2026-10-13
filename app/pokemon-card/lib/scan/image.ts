@@ -114,3 +114,42 @@ export function pad(img: Img, px = 20): Img {
   for (let y = 0; y < img.height; y++) out.data.set(img.data.subarray(y * img.width * 4, (y + 1) * img.width * 4), ((y + px) * out.width + px) * 4)
   return out
 }
+
+/** Clockwise 90°. */
+export function rotate90cw(img: Img): Img {
+  const out = make(img.height, img.width)
+  const { data, width, height } = img
+  for (let y = 0; y < height; y++) {
+    for (let x = 0; x < width; x++) {
+      const si = (y * width + x) * 4
+      const di = (x * out.width + (height - 1 - y)) * 4
+      out.data[di] = data[si]
+      out.data[di + 1] = data[si + 1]
+      out.data[di + 2] = data[si + 2]
+      out.data[di + 3] = data[si + 3]
+    }
+  }
+  return out
+}
+
+export function rotate180(img: Img): Img {
+  const out = make(img.width, img.height)
+  const n = img.width * img.height
+  for (let p = 0; p < n; p++) {
+    const q = n - 1 - p
+    out.data[q * 4] = img.data[p * 4]
+    out.data[q * 4 + 1] = img.data[p * 4 + 1]
+    out.data[q * 4 + 2] = img.data[p * 4 + 2]
+    out.data[q * 4 + 3] = img.data[p * 4 + 3]
+  }
+  return out
+}
+
+/** Rotate by `k` quarter-turns clockwise (0/1/2/3). */
+export function rotateK(img: Img, k: number): Img {
+  const n = ((k % 4) + 4) % 4
+  if (n === 0) return img
+  if (n === 1) return rotate90cw(img)
+  if (n === 2) return rotate180(img)
+  return rotate90cw(rotate180(img))
+}

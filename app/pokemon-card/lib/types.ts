@@ -38,12 +38,26 @@ export type TcgPrice = {
   directLow?: number
 }
 
+export type TcgAttack = {
+  name: string
+  damage?: string
+  text?: string
+}
+
+export type TcgAbility = {
+  name: string
+  text?: string
+}
+
 export type TcgCard = {
   id: string
   name: string
   number: string
+  hp?: string
   rarity?: string
   types?: string[]
+  attacks?: TcgAttack[]
+  abilities?: TcgAbility[]
   images?: {
     small?: string
     large?: string

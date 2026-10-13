@@ -46,7 +46,7 @@ export async function cropVideoToGuide(video: HTMLVideoElement, guide: HTMLEleme
 
 /** Downscale an uploaded photo before client-side OCR. Photos are never uploaded. */
 export async function preparePhoto(file: Blob): Promise<Blob> {
-  const bitmap = await createImageBitmap(file)
+  const bitmap = await createImageBitmap(file, { imageOrientation: 'from-image' })
   try {
     const canvas = document.createElement('canvas')
     drawCoverCrop(bitmap, bitmap.width, bitmap.height, canvas, 0, 0, bitmap.width, bitmap.height)

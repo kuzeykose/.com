@@ -43,8 +43,13 @@ export type ScanQuery = {
   number?: string
   total?: string
   kind?: NumberRead['kind']
+  /** Promo set prefix from the card (MEP, SVP, SWSH, …), when OCR saw one. */
+  setCode?: string
   alts?: NumberRead[]
   agreement?: number
+  hp?: string
+  attacks?: string[]
+  abilities?: string[]
   /** Raw OCR lines (name band + number strips), used only for server fallbacks. Text only, never pixels. Max 24 x 200 chars. */
   rawText?: string[]
 }
@@ -53,5 +58,7 @@ export type NumberRead = {
   number: string
   total?: string
   kind: 'std' | 'subset' | 'promo'
+  /** MEP / SVP / SWSH / … when the read is a Black Star promo code. */
+  setCode?: string
   votes?: number
 }

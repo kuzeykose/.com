@@ -2,7 +2,7 @@ import { TCG_API } from '../constants'
 import { availablePrintings } from '../prices'
 import { tcgApiHeaders, tcgApiKey } from '../tcg-key'
 import type { TcgCard } from '../types'
-import { buildQueries, fuzzyNames, nameSim, parseRawText, readsFromQuery, scoreMatch } from './parse'
+import { buildQueries, fuzzyNames, nameSim, parseRawText, readsFromQuery, scoreMatch, splitPromo } from './parse'
 import type { Match, RecognizeOptions, ScanQuery, ScanResult } from './types'
 
 export const BEST_THRESHOLD = 0.9
@@ -10,7 +10,11 @@ export { buildQueries, scoreMatch } from './parse'
 
 const CACHE_TTL = 24 * 3600 * 1000
 const queryCache = new Map<string, { t: number; data: unknown }>()
-const SELECT = 'id,name,number,set,images,rarity,types,tcgplayer'
+const SELECT = 'id,name,number,hp,attacks,abilities,set,images,rarity,types,tcgplayer'
+
+export function clearScanCache() {
+  queryCache.clear()
+}
 
 async function getJson<T>(path: string, apiKey?: string): Promise<T | null> {
   const hit = queryCache.get(path)
@@ -69,7 +73,22 @@ export function toMatch(card: TcgCard, score: number): Match {
 
 export function rankCards(cards: TcgCard[], query: ScanQuery): Match[] {
   return cards
-    .map((card) => toMatch(card, scoreMatch({ ...card, printedTotal: card.set?.printedTotal }, query)))
+    .map((card) =>
+      toMatch(
+        card,
+        scoreMatch(
+          {
+            ...card,
+            printedTotal: card.set?.printedTotal,
+            setId: card.set?.id,
+            hp: card.hp,
+            attacks: card.attacks,
+            abilities: card.abilities,
+          },
+          query
+        )
+      )
+    )
     .sort((a, b) => b.score - a.score)
 }
 
@@ -105,22 +124,34 @@ export async function matchScan(query: ScanQuery, opts: RecognizeOptions = {}): 
     }
   }
 
-  const sets = query.rawText?.length || !query.number ? await allSets(apiKey) : []
+  const promo = splitPromo(query.number || '', query.setCode)
+  const promoLock = Boolean(query.kind === 'promo' || query.setCode || promo.setId)
+
+  const sets = query.rawText?.length || !query.number || promoLock ? await allSets(apiKey) : []
   const raw = parseRawText(query.rawText ?? [], sets.length ? new Set(sets.map((s) => s.printedTotal)) : undefined)
 
   await runTries(query, 'exact')
+
+  if (promoLock && promo.setId) {
+    const n = promo.n
+    const padded = /^\d+$/.test(n) ? n.padStart(3, '0') : n
+    add(await queryCards(`set.id:${promo.setId} number:${n}`, apiKey), `set.id:${promo.setId} number:${n}`, 'exact')
+    if (padded !== n) {
+      add(await queryCards(`set.id:${promo.setId} number:${padded}`, apiKey), `set.id:${promo.setId} number:${padded}`, 'exact')
+    }
+  }
 
   const nameTokens = Array.from(new Set([query.name, ...raw.names].filter((n): n is string => Boolean(n && n.length >= 3))))
   let effective: ScanQuery = query
 
   if ((!seen.size || !query.number) && raw.reads.length && raw.reads[0].number !== query.number) {
     const r = raw.reads[0]
-    effective = { ...query, number: r.number, total: r.total, kind: r.kind, alts: raw.reads.slice(1, 3) }
+    effective = { ...query, number: r.number, total: r.total, kind: r.kind, setCode: r.setCode || query.setCode, alts: raw.reads.slice(1, 3) }
     await runTries(effective, 'raw-text')
   }
 
   const total = effective.total ?? raw.reads.find((r) => r.total)?.total
-  if (!seen.size && total) {
+  if (!seen.size && total && !promoLock) {
     const matching = (sets.length ? sets : await allSets(apiKey)).filter((s) => String(s.printedTotal) === total)
     for (const set of matching.slice(0, 3)) {
       const rows = await queryCards(`set.id:${set.id}`, apiKey, 250)
@@ -135,7 +166,19 @@ export async function matchScan(query: ScanQuery, opts: RecognizeOptions = {}): 
   const weak = seen.size > 0 && !Array.from(seen.values()).some((c) =>
     (effective.number && c.number === effective.number) || nameTokens.some((n) => nameSim(n, c.name) >= 0.75))
   if (weak) { seen.clear(); used = undefined; stage = 'none' }
-  if (!seen.size && nameTokens.length) {
+
+  if (promoLock && promo.setId) {
+    const locked = Array.from(seen.values()).filter((c) => c.set?.id?.toLowerCase() === promo.setId)
+    seen.clear()
+    if (locked.length) {
+      for (const card of locked) seen.set(card.id, card)
+    } else {
+      used = undefined
+      stage = 'none'
+    }
+  }
+
+  if (!seen.size && nameTokens.length && !promoLock) {
     const pool = new Map<string, TcgCard>()
     for (const len of [4, 3]) {
       for (const token of nameTokens.slice(0, 3)) {
@@ -154,7 +197,7 @@ export async function matchScan(query: ScanQuery, opts: RecognizeOptions = {}): 
     add(picked, 'fuzzy-name', 'fuzzy-name')
   }
 
-  if (!seen.size) {
+  if (!seen.size && !promoLock) {
     const nums = [effective.number, ...raw.loose].filter((n): n is string => Boolean(n))
     for (const n of nums.slice(0, 3)) {
       add(await queryCards(`number:${n}`, apiKey), `number:${n}`, 'number-only')
