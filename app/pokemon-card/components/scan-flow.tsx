@@ -280,6 +280,7 @@ export function ScanFlow({
             setName: selected.set,
             printedTotal: selected.printedTotal || undefined,
             image: selected.image,
+            imageLarge: selected.imageLarge ?? selected.image,
             market: selected.quotes?.[activePrinting],
             variant: activePrinting,
             updatedAt: selected.updatedAt ?? undefined,
@@ -718,7 +719,7 @@ function ReadingStage({
         <div className="flex justify-between">
           <dt className="text-neutral-600 dark:text-neutral-400">Matching</dt>
           <dd className="text-neutral-600 dark:text-neutral-400">
-            {checks.matching ? 'Searching pokemontcg.io…' : '…'}
+            {checks.matching ? 'Searching card catalogs…' : '…'}
           </dd>
         </div>
       </dl>

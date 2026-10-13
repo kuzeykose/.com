@@ -278,19 +278,18 @@ function blobOf(query: ScanQuery) {
     .toLowerCase()
 }
 
-export function scoreMatch(
-  card: {
-    name: string
-    number: string
-    printedTotal?: number
-    hp?: string
-    attacks?: { name?: string }[]
-    abilities?: { name?: string }[]
-    setId?: string
-    rarity?: string
-  },
-  query: ScanQuery
-) {
+export type ScoreCard = {
+  name: string
+  number: string
+  printedTotal?: number
+  hp?: string
+  attacks?: { name?: string }[]
+  abilities?: { name?: string }[]
+  setId?: string
+  rarity?: string
+}
+
+export function matchSignals(card: ScoreCard, query: ScanQuery) {
   const pick = readsFromQuery(query)[0]
   const name = query.name
   const agreement = query.agreement ?? 0
@@ -305,18 +304,33 @@ export function scoreMatch(
   const moveOk = [...(card.attacks ?? []), ...(card.abilities ?? [])].some(
     (row) => row.name && blob.includes(row.name.toLowerCase())
   )
-  let score = 0.1 + 0.25 * similarity
-  if (numberOk) score += 0.25
-  if (numberOk && totalOk) score += 0.2
-  if (numberOk && totalOk && similarity >= 0.8) score += 0.1
-  if (numberOk && totalOk && agreement >= 0.5) score += 0.05
-  if (setOk) score += 0.15
-  if (hpOk) score += 0.08
-  if (moveOk) score += 0.08
+  return { pick, promo, agreement, similarity, numberOk, totalOk, setOk, hpOk, moveOk }
+}
+
+/** Number+set/total plus HP, attack, or a decent name — unique enough to auto-pick. */
+export function distinctiveMatch(card: ScoreCard, query: ScanQuery) {
+  const s = matchSignals(card, query)
+  const uniquePrint = s.numberOk && (s.totalOk || s.setOk)
+  const corroboration = s.hpOk || s.moveOk || s.similarity >= 0.75
+  return uniquePrint && corroboration
+}
+
+export function scoreMatch(card: ScoreCard, query: ScanQuery) {
+  const s = matchSignals(card, query)
+  let score = 0.1 + 0.25 * s.similarity
+  if (s.numberOk) score += 0.25
+  if (s.numberOk && s.totalOk) score += 0.2
+  if (s.numberOk && s.totalOk && s.similarity >= 0.8) score += 0.1
+  if (s.numberOk && s.totalOk && s.agreement >= 0.5) score += 0.05
+  if (s.setOk) score += 0.15
+  if (s.hpOk) score += 0.08
+  if (s.moveOk) score += 0.08
+  // Exact printing + HP/attack is enough even when the name OCR is junk.
+  if (s.numberOk && (s.totalOk || s.setOk) && (s.hpOk || s.moveOk)) score += 0.18
   // Number OCR weak: HP / attack / ability still separates Chespin vs Serperior vs Clefable.
-  if (!numberOk && similarity >= 0.8 && (hpOk || moveOk)) score += 0.12
+  if (!s.numberOk && s.similarity >= 0.8 && (s.hpOk || s.moveOk)) score += 0.12
   // Promo lock: a regular-set printing of the same Pokémon must not outrank the promo.
-  if (promo.setId && card.setId && card.setId.toLowerCase() !== promo.setId) score -= 0.45
+  if (s.promo.setId && card.setId && card.setId.toLowerCase() !== s.promo.setId) score -= 0.45
   return Number(Math.min(1, Math.max(0, score)).toFixed(3))
 }
 

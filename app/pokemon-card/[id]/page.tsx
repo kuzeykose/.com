@@ -67,7 +67,9 @@ export default async function Page({ params }: { params: Promise<{ id: string }>
         <div>
           <CardArt src={image} name={name} type={type} />
           <p className="text-xs text-neutral-600 dark:text-neutral-400 mt-2">
-            Official image via images.pokemontcg.io
+            {card.tcg?.source === 'tcgdex'
+              ? 'Image via TCGdex / TCGplayer (pokemontcg.io does not list this printing yet)'
+              : 'Official image via images.pokemontcg.io'}
           </p>
         </div>
         <div className="pt-1">

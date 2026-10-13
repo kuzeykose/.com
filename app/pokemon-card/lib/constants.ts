@@ -42,4 +42,5 @@ export const PRINTING_ORDER = [
 
 export const TCG_API = 'https://api.pokemontcg.io/v2'
 export const TCG_IMAGES = 'https://images.pokemontcg.io'
+export const TCGDEX_API = 'https://api.tcgdex.net/v2/en'
 export const PRICE_REVALIDATE = 86400

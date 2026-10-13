@@ -74,6 +74,8 @@ export type TcgCard = {
     updatedAt?: string
     prices?: Record<string, TcgPrice>
   }
+  /** pokemontcg.io first; tcgdex when that catalog is missing the printing. */
+  source?: 'pokemontcg' | 'tcgdex'
 }
 
 export type TcgSet = {

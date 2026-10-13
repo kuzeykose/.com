@@ -105,18 +105,28 @@ export async function runOcrPlan(
 
   // HP (top-right) + attack/ability band: tie-break when the collector number is weak.
   let hp: string | undefined
-  for (const v of ['gray', 'white'] as Variant[]) {
-    const r = await run(prep(card, 0.58, 0.02, 0.38, 0.08, v, 800), '7')
-    hp = hp || parseHp(r.text)
+  for (const v of ['gray', 'white', 'otsuInv'] as Variant[]) {
+    for (const t of [0.02, 0.055]) {
+      const r = await run(prep(card, 0.58, t, 0.38, 0.08, v, 800), '7')
+      hp = hp || parseHp(r.text)
+      if (hp) break
+    }
+    if (hp) break
   }
-  const moveBand = await run(prep(card, 0.06, 0.5, 0.88, 0.36, 'otsu', 1200), '6')
+  const moveTexts: string[] = []
+  for (const v of ['otsu', 'gray', 'otsuInv'] as Variant[]) {
+    const r = await run(prep(card, 0.06, 0.42, 0.88, 0.42, v, 1200), '6')
+    if (r.text.trim()) moveTexts.push(r.text.replace(/\s+/g, ' ').trim())
+  }
   const attacks = Array.from(
     new Set(
-      (moveBand.text.match(/\b[A-Z][A-Za-z']+(?:\s+[A-Z][A-Za-z']+){0,2}\b/g) ?? [])
-        .map((s) => s.trim())
-        .filter((s) => s.length >= 5)
+      moveTexts.flatMap((text) =>
+        (text.match(/\b[A-Z][A-Za-z']+(?:\s+[A-Z][A-Za-z']+){0,2}\b/g) ?? []).map((s) => s.trim())
+      )
     )
-  ).slice(0, 6)
+  )
+    .filter((s) => s.length >= 5 && s.length <= 28 && !/^(Abilit|Energy|Pokemon|When|Your)/i.test(s))
+    .slice(0, 6)
 
   const { pick, agreement, alts } = voteNumber(reads)
   let name = names[0]?.n

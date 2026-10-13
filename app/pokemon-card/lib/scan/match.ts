@@ -1,8 +1,19 @@
 import { TCG_API } from '../constants'
 import { availablePrintings } from '../prices'
+import { fetchTcgdexPromo } from '../tcgdex'
 import { tcgApiHeaders, tcgApiKey } from '../tcg-key'
 import type { TcgCard } from '../types'
-import { buildQueries, fuzzyNames, nameSim, parseRawText, readsFromQuery, scoreMatch, splitPromo } from './parse'
+import {
+  buildQueries,
+  distinctiveMatch,
+  fuzzyNames,
+  matchSignals,
+  nameSim,
+  parseRawText,
+  readsFromQuery,
+  scoreMatch,
+  splitPromo,
+} from './parse'
 import type { Match, RecognizeOptions, ScanQuery, ScanResult } from './types'
 
 export const BEST_THRESHOLD = 0.9
@@ -48,9 +59,10 @@ async function allSets(apiKey?: string): Promise<SetRow[]> {
 }
 
 export function toMatch(card: TcgCard, score: number): Match {
-  const printings = availablePrintings(card)
+  const priced = availablePrintings(card)
+  const printings = priced.length ? priced : card.source === 'tcgdex' ? ['holofoil'] : priced
   const quotes: Record<string, number> = {}
-  for (const key of printings) {
+  for (const key of priced) {
     const market = card.tcgplayer?.prices?.[key]?.market
     if (market != null) quotes[key] = market
   }
@@ -63,32 +75,30 @@ export function toMatch(card: TcgCard, score: number): Match {
     printedTotal: card.set?.printedTotal ?? 0,
     rarity: card.rarity,
     image: card.images?.small,
+    imageLarge: card.images?.large,
     score,
     types: card.types,
     printings,
     quotes,
     updatedAt: card.tcgplayer?.updatedAt ?? null,
+    source: card.source ?? 'pokemontcg',
+  }
+}
+
+function scoreCard(card: TcgCard) {
+  return {
+    ...card,
+    printedTotal: card.set?.printedTotal,
+    setId: card.set?.id,
+    hp: card.hp,
+    attacks: card.attacks,
+    abilities: card.abilities,
   }
 }
 
 export function rankCards(cards: TcgCard[], query: ScanQuery): Match[] {
   return cards
-    .map((card) =>
-      toMatch(
-        card,
-        scoreMatch(
-          {
-            ...card,
-            printedTotal: card.set?.printedTotal,
-            setId: card.set?.id,
-            hp: card.hp,
-            attacks: card.attacks,
-            abilities: card.abilities,
-          },
-          query
-        )
-      )
-    )
+    .map((card) => toMatch(card, scoreMatch(scoreCard(card), query)))
     .sort((a, b) => b.score - a.score)
 }
 
@@ -105,6 +115,7 @@ export function cleanRawText(raw: unknown): string[] {
  *  set-total  sets whose printedTotal == total -> all cards in those sets, ranked by fuzzy name / number
  *  fuzzy-name 4-char substrings of every name token as wildcards, Levenshtein-ranked
  *  number-only number:<n> (and loose 2-3 digit groups from raw text)
+ *  tcgdex     promo lock with empty pokemontcg.io results (e.g. MEP 072)
  * candidates is empty only if OCR produced no usable text at all.
  */
 export async function matchScan(query: ScanQuery, opts: RecognizeOptions = {}): Promise<ScanResult> {
@@ -205,11 +216,40 @@ export async function matchScan(query: ScanQuery, opts: RecognizeOptions = {}): 
     }
   }
 
-  const scored = rankCards(Array.from(seen.values()), effective)
+  if (!seen.size && promoLock && promo.setId) {
+    const fallback = await fetchTcgdexPromo(promo.setId, promo.n)
+    if (fallback) add([fallback], `tcgdex:${fallback.id}`, 'tcgdex')
+  }
+
+  const pool = Array.from(seen.values())
+  const scored = rankCards(pool, effective)
   const top = scored[0]
   const gap = top ? top.score - (scored[1]?.score ?? 0) : 0
   let confidence = top ? Number(Math.min(1, top.score - (gap < 0.1 ? 0.15 : 0)).toFixed(2)) : 0
-  if (stage !== 'exact' && stage !== 'raw-text') confidence = Math.min(confidence, 0.6)
+  if (stage !== 'exact' && stage !== 'raw-text' && stage !== 'tcgdex') confidence = Math.min(confidence, 0.6)
+
+  const distinctiveTop = top
+    ? pool.find((card) => card.id === top.id && distinctiveMatch(scoreCard(card), effective))
+    : undefined
+  const distinctiveCount = pool.filter((card) => distinctiveMatch(scoreCard(card), effective)).length
+  if (distinctiveTop && distinctiveCount === 1) {
+    confidence = Math.max(confidence, 0.92)
+  } else if (top) {
+    const s = matchSignals(scoreCard(pool.find((card) => card.id === top.id) ?? pool[0]), effective)
+    const uniquePrint = pool.filter((card) => {
+      const row = matchSignals(scoreCard(card), effective)
+      return row.numberOk && (row.totalOk || row.setOk)
+    })
+    if (
+      s.numberOk &&
+      (s.totalOk || s.setOk) &&
+      uniquePrint.length === 1 &&
+      uniquePrint[0].id === top.id &&
+      (s.agreement >= 0.5 || s.hpOk || s.moveOk || s.similarity >= 0.6)
+    ) {
+      confidence = Math.max(confidence, 0.92)
+    }
+  }
 
   return {
     best: confidence >= BEST_THRESHOLD ? top : null,

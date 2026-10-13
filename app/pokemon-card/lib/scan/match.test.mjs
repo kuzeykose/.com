@@ -69,6 +69,117 @@ test('HP and attack text tie-break when the number is missing', () => {
   assert.ok(score >= 0.5)
 })
 
+test('same number+total across different sets does not auto-pick on a junk name', async () => {
+  const { clearScanCache, matchScan } = await import('./match.ts')
+  const rows = [
+    { id: 'me4-87', name: 'Chespin', number: '87', set: { id: 'me4', name: 'Chaos Rising', printedTotal: 86 }, images: {} },
+    { id: 'rsv10pt5-87', name: 'Gimmighoul', number: '87', set: { id: 'rsv10pt5', name: 'Phantasmal Flames', printedTotal: 86 }, images: {} },
+  ]
+  const orig = globalThis.fetch
+  globalThis.fetch = async (url) => {
+    const u = decodeURIComponent(String(url))
+    if (u.includes('api.tcgdex.net')) return { ok: false, status: 404, json: async () => ({}) }
+    const data = u.includes('/sets?')
+      ? [
+          { id: 'me4', printedTotal: 86, total: 108, name: 'Chaos Rising' },
+          { id: 'rsv10pt5', printedTotal: 86, total: 108, name: 'Phantasmal Flames' },
+        ]
+      : u.includes('number:87')
+        ? rows
+        : []
+    return { ok: true, status: 200, json: async () => ({ data }) }
+  }
+  try {
+    clearScanCache()
+    const result = await matchScan({
+      name: 'Boikelicing',
+      number: '87',
+      total: '86',
+      kind: 'std',
+      agreement: 1,
+    })
+    assert.equal(result.best, null)
+    assert.ok(result.confidence < BEST_THRESHOLD)
+    assert.equal(result.candidates[0]?.id, 'me4-87')
+  } finally {
+    globalThis.fetch = orig
+    clearScanCache()
+  }
+})
+
+test('unique number+total among same-number printings can auto-pick', async () => {
+  const { clearScanCache, matchScan } = await import('./match.ts')
+  const me487 = {
+    id: 'me4-87',
+    name: 'Chespin',
+    number: '87',
+    set: { id: 'me4', name: 'Chaos Rising', printedTotal: 86 },
+    images: {},
+  }
+  const other87 = {
+    id: 'rsv10pt5-87',
+    name: 'Gimmighoul',
+    number: '87',
+    set: { id: 'rsv10pt5', name: 'Phantasmal Flames', printedTotal: 94 },
+    images: {},
+  }
+  const orig = globalThis.fetch
+  globalThis.fetch = async (url) => {
+    const u = decodeURIComponent(String(url))
+    let data = []
+    if (u.includes('api.tcgdex.net')) {
+      return { ok: false, status: 404, json: async () => ({}) }
+    }
+    if (u.includes('/sets?')) {
+      data = [
+        { id: 'me4', printedTotal: 86, total: 108, name: 'Chaos Rising' },
+        { id: 'rsv10pt5', printedTotal: 94, total: 108, name: 'Phantasmal Flames' },
+      ]
+    } else if (u.includes('number:87')) data = [me487, other87]
+    return { ok: true, status: 200, json: async () => ({ data }) }
+  }
+  try {
+    clearScanCache()
+    const result = await matchScan({
+      name: 'Boikelicing',
+      number: '87',
+      total: '86',
+      kind: 'std',
+      agreement: 1,
+    })
+    assert.equal(result.best?.id, 'me4-87')
+    assert.ok(result.confidence >= BEST_THRESHOLD)
+    assert.ok(result.candidates.some((c) => c.id === 'rsv10pt5-87'))
+  } finally {
+    globalThis.fetch = orig
+    clearScanCache()
+  }
+})
+
+test('number+total+attack reaches auto-pick even with a garbled name', () => {
+  const score = scoreMatch(
+    {
+      name: 'Serperior',
+      number: '6',
+      printedTotal: 88,
+      setId: 'me3',
+      hp: '160',
+      attacks: [{ name: 'Regal Command' }, { name: 'Solar Coiling' }],
+    },
+    {
+      name: 'SerperiofiNL',
+      number: '6',
+      total: '88',
+      kind: 'std',
+      hp: '160',
+      attacks: ['Regal Command', 'Solar Coiling'],
+      rawText: ['Regal Command', 'Solar Coiling'],
+      agreement: 0.8,
+    }
+  )
+  assert.ok(score >= BEST_THRESHOLD)
+})
+
 test('MEP promo outranks the regular-set Mega Clefable ex', () => {
   const query = {
     name: 'Clefable',
@@ -138,7 +249,7 @@ test('matchScan promo lock returns mep-72 not me3-31', async () => {
   }
   const orig = globalThis.fetch
   globalThis.fetch = async (url) => {
-    const u = String(url)
+    const u = decodeURIComponent(String(url))
     let data = []
     if (u.includes('/sets?')) {
       data = [
@@ -146,11 +257,12 @@ test('matchScan promo lock returns mep-72 not me3-31', async () => {
         { id: 'me3', name: 'Perfect Order', printedTotal: 88, total: 124 },
         { id: 'svp', name: 'Scarlet & Violet Black Star Promos', printedTotal: 215, total: 196 },
       ]
+    } else if (u.includes('api.tcgdex.net')) {
+      return { ok: false, status: 404, json: async () => ({}) }
     } else if (u.includes('set.id:mep') && u.includes('number:72')) data = [mep72]
-    else if (u.includes('name') && u.includes('Clef')) data = [me331, mep72]
+    else if (u.includes('name:"Clef') || u.includes('name:Clef')) data = [me331, mep72]
     else if (u.includes('number:31')) data = [me331]
-    const body = { data }
-    return { ok: true, status: 200, json: async () => body }
+    return { ok: true, status: 200, json: async () => ({ data }) }
   }
   try {
     const result = await matchScan({

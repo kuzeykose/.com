@@ -95,7 +95,16 @@ export function SourceCredit() {
       >
         Pokémon TCG API
       </a>
-      . Market prices are TCGplayer near-mint estimates, in USD.
+      , with{' '}
+      <a
+        href="https://tcgdex.dev"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="underline decoration-neutral-400 dark:decoration-neutral-600 underline-offset-2"
+      >
+        TCGdex
+      </a>{' '}
+      as a free fallback when a printing is missing. Market prices are TCGplayer near-mint estimates, in USD (shown as — when unknown).
     </p>
   )
 }

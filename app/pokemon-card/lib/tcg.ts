@@ -2,6 +2,7 @@ import { PRICE_REVALIDATE, TCG_API } from './constants'
 import type { SearchCard, TcgCard, TcgSet } from './types'
 import { availablePrintings } from './prices'
 import { tcgApiHeaders } from './tcg-key'
+import { fetchTcgdexCard } from './tcgdex'
 
 type FetchOptions = {
   revalidate?: number
@@ -38,10 +39,11 @@ async function tcgFetch<T>(path: string, options: FetchOptions = {}): Promise<T>
 export async function fetchCardById(id: string): Promise<TcgCard | null> {
   try {
     const body = await tcgFetch<{ data: TcgCard }>(`/cards/${encodeURIComponent(id)}`)
-    return body.data ?? null
+    if (body.data) return { ...body.data, source: 'pokemontcg' }
   } catch {
-    return null
+    // pokemontcg.io is missing some promo sets (MEP); fall through to TCGdex.
   }
+  return fetchTcgdexCard(id)
 }
 
 export async function fetchCardsByIds(ids: string[]): Promise<Map<string, TcgCard>> {

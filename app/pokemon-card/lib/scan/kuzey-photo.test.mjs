@@ -121,15 +121,19 @@ for (const [key, spec] of Object.entries(CARDS)) {
           kind: 'promo',
           setCode: query.setCode || 'MEP',
         })
+        const picked = result.best || result.candidates[0]
+        assert.ok(picked, `promo mep-72 missing: ${JSON.stringify({ ocr: query, result })}`)
+        assert.equal(picked.id, 'mep-72')
+        assert.equal(picked.setId, 'mep')
+        assert.equal(String(Number(picked.number)), '72')
+        assert.match(picked.name, /clefable/i)
+        assert.ok(picked.image, 'promo image missing')
+        assert.equal(picked.source, 'tcgdex')
         assert.ok(
           result.candidates.every((c) => c.setId === 'mep' && /clefable/i.test(c.name)),
           `promo must not resolve to another printing: ${result.candidates.map((c) => c.id)}`
         )
-        if (result.best) {
-          assert.equal(result.best.id, 'mep-72')
-          assert.equal(result.best.setId, 'mep')
-          assert.equal(String(Number(result.best.number)), '72')
-        }
+        if (result.confidence >= 0.9) assert.equal(result.best?.id, 'mep-72')
         return
       }
       assert.equal(query.number, spec.number, JSON.stringify(query))
