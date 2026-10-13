@@ -330,7 +330,7 @@ export async function searchTcgdexCards(filter: TcgdexSearch, limit = 20): Promi
   if (filter.name) params.set('name', filter.name)
   if (filter.set) params.set('set', LEGACY_SET_ID[filter.set.toLowerCase()] || filter.set)
   if (filter.localId) params.set('localId', filter.localId)
-  if (![...params.keys()].length) return []
+  if (!params.toString()) return []
   params.set('pagination:page', '1')
   params.set('pagination:itemsPerPage', String(limit))
   const list = (await tcgdexGet<TcgdexCard[]>(`/cards?${params.toString()}`)) ?? []
