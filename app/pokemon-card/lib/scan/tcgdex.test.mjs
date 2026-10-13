@@ -9,7 +9,7 @@ import {
   fetchTcgdexPromo,
   toTcgdexId,
 } from '../tcgdex.ts'
-import { catalogFromCard } from '../collection.ts'
+import { quoteFor } from '../prices.ts'
 import { BEST_THRESHOLD, clearScanCache, matchScan } from './match.ts'
 import { distinctiveMatch, scoreMatch } from './parse.ts'
 
@@ -19,6 +19,7 @@ test('canonical ids use native padded TCGdex ids', () => {
   assert.equal(canonicalCardId('me4', '87'), 'me04-087')
   assert.ok(cardIdVariants('mep-72').includes('mep-072'))
   assert.ok(cardIdVariants('mep-072').includes('mep-72'))
+  assert.ok(cardIdVariants('sv08-040').includes('sv8-40'))
 })
 
 test('legacy pokemontcg.io collection ids map to TCGdex', () => {
@@ -93,18 +94,18 @@ test('fetchTcgdexCard accepts unpadded MEP ids', { timeout: 20_000 }, async () =
 test('promo catalog snapshot has an image; USD price unknown when tcgplayer is empty', { timeout: 20_000 }, async () => {
   const card = await fetchTcgdexPromo('mep', '72')
   assert.ok(card)
-  const catalog = catalogFromCard(card)
-  assert.equal(catalog.setId, 'mep')
-  assert.equal(String(Number(catalog.number)), '72')
-  assert.ok(catalog.image)
+  const quote = quoteFor(card)
+  assert.equal(card.set.id, 'mep')
+  assert.equal(String(Number(card.number)), '72')
+  assert.ok(card.images?.small)
   if (card.tcgplayer) {
-    assert.ok(catalog.market != null)
-    assert.equal(catalog.currency, 'USD')
+    assert.ok(quote.market != null)
+    assert.equal(quote.unit, 'USD')
   } else if (card.cardmarket?.avg != null) {
-    assert.equal(catalog.market, card.cardmarket.avg)
-    assert.equal(catalog.currency, 'EUR')
+    assert.equal(quote.market, card.cardmarket.avg)
+    assert.equal(quote.unit, 'EUR')
   } else {
-    assert.equal(catalog.market, undefined)
+    assert.equal(quote.market, null)
   }
 })
 

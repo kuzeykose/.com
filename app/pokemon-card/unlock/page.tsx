@@ -1,5 +1,6 @@
 import { notFound, redirect } from 'next/navigation'
 import { BackLink, PageIntro, PrimaryButton, nativeFieldClass } from '../components/ui'
+import { isNotionConfigured } from '../lib/store'
 import { hasOwnerCookie, isDevOpen, ownerPassword, safeNext } from '../lib/owner'
 import { unlockOwner } from './actions'
 
@@ -28,8 +29,10 @@ export default async function Page({
       <div className="mt-4">
         <PageIntro title="Owner access">
           <p className="text-sm text-neutral-600 dark:text-neutral-400 mt-2 mb-6">
-            Enter the collection password to add or scan cards. Saving still only writes the local
-            JSON in development.
+            Enter the collection password to add or scan cards.
+            {isNotionConfigured()
+              ? ' Saves go to the Notion collection database.'
+              : ' Saving only writes the local JSON in development unless Notion is configured.'}
           </p>
         </PageIntro>
       </div>

@@ -5,11 +5,14 @@
         "build": "next build",
         "start": "next start",
         "lint": "eslint app/pokemon-card app/api/pokemon-card app/components/nav.tsx next.config.ts",
-        "test": "pnpm test:scan",
+        "test": "pnpm test:scan && pnpm test:store",
         "test:scan": "node --experimental-strip-types --import ./app/pokemon-card/lib/scan/test-loader.mjs --test app/pokemon-card/lib/scan/*.test.mjs app/pokemon-card/lib/owner.test.mjs",
-        "map:tcgdex": "node --experimental-strip-types --import ./app/pokemon-card/lib/scan/test-loader.mjs scripts/map-to-tcgdex.ts"
+        "test:store": "node --experimental-strip-types --import ./app/pokemon-card/lib/scan/test-loader.mjs --test app/pokemon-card/lib/store-notion.test.mjs app/pokemon-card/lib/notion.test.mjs",
+        "map:tcgdex": "node --experimental-strip-types --import ./app/pokemon-card/lib/scan/test-loader.mjs scripts/map-to-tcgdex.ts",
+        "import-notion": "node --experimental-strip-types --import ./app/pokemon-card/lib/scan/test-loader.mjs scripts/import-json-to-notion.ts"
     },
     "dependencies": {
+        "@notionhq/client": "^5.27.0",
         "@phosphor-icons/react": "^2.1.10",
         "@tailwindcss/postcss": "4.0.0-alpha.13",
         "@types/node": "20.11.17",
@@ -20,6 +23,7 @@
         "next": "16.2.10",
         "next-mdx-remote": "^6.0.0",
         "postcss": "^8.4.35",
+        "server-only": "^0.0.1",
         "react": "19.2.7",
         "react-dom": "19.2.7",
         "sugar-high": "^0.6.0",

@@ -1,47 +1,62 @@
-import { readFileSync, writeFileSync } from 'fs'
-import path from 'path'
+import 'server-only'
+
+import { revalidatePath, revalidateTag, unstable_cache } from 'next/cache'
 import {
-  CONDITIONS,
   type CatalogSnapshot,
   type CollectionEntry,
-  type CollectionFile,
   type EnrichedCard,
   type TcgCard,
 } from './types'
 import { fetchCardById, fetchCardsByIds } from './tcg'
 import { quoteFor, usdMarket } from './prices'
+import { COLLECTION_CACHE_TAG, COLLECTION_REVALIDATE } from './notion'
+import { getCardStore, isNotionConfigured } from './store'
+import { jsonStore, readJsonCollection } from './store-json'
 
-export const COLLECTION_PATH = path.join(process.cwd(), 'data/pokemon-card.json')
+export { COLLECTION_PATH, readJsonCollection as readCollection } from './store-json'
+export { isWritable } from './store'
+export { COLLECTION_CACHE_TAG, COLLECTION_REVALIDATE } from './notion'
 
-export function isWritable() {
-  return process.env.NODE_ENV === 'development'
+const loadCollectionEntries = unstable_cache(
+  async () => {
+    try {
+      return await getCardStore().list()
+    } catch (error) {
+      if (isNotionConfigured()) {
+        console.error('Notion collection read failed; falling back to JSON', error)
+        return jsonStore.list()
+      }
+      throw error
+    }
+  },
+  ['pokemon-card-collection'],
+  { revalidate: COLLECTION_REVALIDATE, tags: [COLLECTION_CACHE_TAG] }
+)
+
+export async function listCollectionEntries(): Promise<CollectionEntry[]> {
+  try {
+    return await loadCollectionEntries()
+  } catch {
+    return getCardStore().list().catch(() => readJsonCollection().cards)
+  }
 }
 
-export function readCollection(): CollectionFile {
-  const raw = readFileSync(COLLECTION_PATH, 'utf8')
-  const parsed = JSON.parse(raw) as CollectionFile
-  const cards = Array.isArray(parsed.cards) ? parsed.cards : []
-  return { cards: cards.filter(isEntry) }
-}
-
-function isEntry(value: CollectionEntry): value is CollectionEntry {
-  return (
-    Boolean(value) &&
-    typeof value.id === 'string' &&
-    typeof value.quantity === 'number' &&
-    CONDITIONS.includes(value.condition) &&
-    typeof value.added === 'string'
-  )
+export function revalidateCollection(id?: string) {
+  revalidateTag(COLLECTION_CACHE_TAG, 'max')
+  revalidatePath('/pokemon-card')
+  revalidatePath('/pokemon-card/collection')
+  if (id) revalidatePath(`/pokemon-card/${id}`)
 }
 
 export async function getEnrichedCollection(): Promise<EnrichedCard[]> {
-  const { cards } = readCollection()
+  const cards = await listCollectionEntries()
   const tcgById = await fetchCardsByIds(cards.map((card) => card.id))
   return cards.map((entry) => enrich(entry, tcgById.get(entry.id) ?? null))
 }
 
 export async function getEnrichedCard(id: string): Promise<EnrichedCard | null> {
-  const entry = readCollection().cards.find((card) => card.id === id)
+  const cards = await listCollectionEntries()
+  const entry = cards.find((card) => card.id === id)
   if (!entry) return null
   const tcg = await fetchCardById(id)
   return enrich(entry, tcg)
@@ -65,9 +80,7 @@ function enrich(entry: CollectionEntry, live: TcgCard | null): EnrichedCard {
 function snapshotToCard(entry: CollectionEntry): TcgCard | null {
   const catalog = entry.catalog
   if (!catalog?.name) {
-    const guessed = guessFromId(entry.id)
-    if (!guessed) return null
-    return guessed
+    return guessFromId(entry.id)
   }
   return {
     id: entry.id,
@@ -123,57 +136,6 @@ export function catalogFromCard(card: TcgCard, printing?: string): CatalogSnapsh
   }
 }
 
-export function writeCollection(file: CollectionFile) {
-  writeFileSync(COLLECTION_PATH, `${JSON.stringify(file, null, 2)}\n`, 'utf8')
-}
-
-export function upsertCard(
-  incoming: CollectionEntry,
-  mode: 'add' | 'edit' | 'undo'
-): CollectionFile {
-  const file = readCollection()
-  const index = file.cards.findIndex((card) => card.id === incoming.id)
-
-  if (mode === 'undo') {
-    if (index === -1) return file
-    const current = file.cards[index]
-    const quantity = current.quantity - incoming.quantity
-    if (quantity <= 0) file.cards.splice(index, 1)
-    else file.cards[index] = { ...current, quantity }
-    writeCollection(file)
-    return file
-  }
-
-  if (index === -1) {
-    file.cards.unshift({
-      ...incoming,
-      added: incoming.added || new Date().toISOString().slice(0, 10),
-    })
-    writeCollection(file)
-    return file
-  }
-
-  const current = file.cards[index]
-  const quantity =
-    mode === 'add' ? current.quantity + incoming.quantity : incoming.quantity
-
-  if (quantity <= 0) {
-    file.cards.splice(index, 1)
-  } else {
-    file.cards[index] = {
-      ...current,
-      quantity,
-      condition: incoming.condition,
-      printing: incoming.printing ?? current.printing,
-      notes: incoming.notes ?? current.notes,
-      catalog: incoming.catalog ?? current.catalog,
-    }
-  }
-
-  writeCollection(file)
-  return file
-}
-
 export function collectionTotals(cards: EnrichedCard[]) {
   const unique = cards.length
   const copies = cards.reduce((sum, card) => sum + card.quantity, 0)
@@ -186,3 +148,4 @@ export function collectionTotals(cards: EnrichedCard[]) {
   )
   return { unique, copies, value, sets: sets.size }
 }
+

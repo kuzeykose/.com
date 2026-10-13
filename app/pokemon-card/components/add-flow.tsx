@@ -235,7 +235,7 @@ export function AddFlow({
 
       {!writable ? (
         <p className="text-sm text-neutral-600 dark:text-neutral-400 mb-6">
-          Saving only works in local development (`pnpm dev`). Production is read-only.
+          Saving only works in local development (`pnpm dev`), or when Notion is configured.
         </p>
       ) : null}
 
@@ -433,7 +433,7 @@ export function AddFlow({
           </div>
           {!writable ? (
             <p className="text-sm text-neutral-600 dark:text-neutral-400 mt-3">
-              Saving only works in local development (`pnpm dev`). Production is read-only.
+              Saving only works in local development (`pnpm dev`), or when Notion is configured.
             </p>
           ) : null}
         </>

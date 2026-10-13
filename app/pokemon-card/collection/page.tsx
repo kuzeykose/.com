@@ -4,7 +4,7 @@ import { PageIntro, SectionTabs, SourceCredit } from '../components/ui'
 import { getEnrichedCollection } from '../lib/collection'
 import { canShowOwnerTools } from '../lib/owner'
 
-export const revalidate = 86400
+export const revalidate = 300
 
 export const metadata = {
   title: 'Pokémon card collection',
