@@ -1,7 +1,6 @@
 import { NextResponse } from 'next/server'
 import { cleanRawText, matchScan } from 'app/pokemon-card/lib/scan/match'
 import type { NumberRead, ScanQuery } from 'app/pokemon-card/lib/scan/types'
-import { tcgApiKey } from 'app/pokemon-card/lib/tcg-key'
 import { gateOwnerApi } from 'app/pokemon-card/lib/owner'
 
 export const runtime = 'nodejs'
@@ -73,7 +72,7 @@ export async function POST(request: Request) {
   }
 
   try {
-    const result = await matchScan(query, { apiKey: tcgApiKey() || undefined })
+    const result = await matchScan(query)
     return NextResponse.json(result, { headers: { 'Cache-Control': 'no-store' } })
   } catch (error) {
     const message = error instanceof Error ? error.message : 'scan failed'

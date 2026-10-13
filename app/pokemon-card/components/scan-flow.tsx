@@ -17,7 +17,7 @@ import {
 import { cropVideoToGuide, preparePhoto } from '../lib/scan/crop'
 import type { Match, ScanQuery, ScanResult } from '../lib/scan/types'
 import { CONDITIONS, type Condition } from '../lib/types'
-import { formatUsd, printingLabel } from '../lib/format'
+import { formatMoney, priceCaption, printingLabel } from '../lib/format'
 
 type Stage =
   | 'camera'
@@ -282,6 +282,7 @@ export function ScanFlow({
             image: selected.image,
             imageLarge: selected.imageLarge ?? selected.image,
             market: selected.quotes?.[activePrinting],
+            currency: selected.quoteUnit,
             variant: activePrinting,
             updatedAt: selected.updatedAt ?? undefined,
           },
@@ -764,8 +765,11 @@ function MatchStage({
             </p>
             <p className="mt-2">High confidence · {Math.round(result.confidence * 100)}%</p>
             <p className="text-xs text-neutral-600 dark:text-neutral-400 mt-1">
-              {formatUsd(selected.quotes?.[selected.printings?.[0] ?? ''] ?? null)} · TCGplayer
-              market · USD
+              {formatMoney(
+                selected.quotes?.[selected.printings?.[0] ?? ''] ?? null,
+                selected.quoteUnit
+              )}{' '}
+              · {priceCaption(selected.quotes?.[selected.printings?.[0] ?? ''] == null ? null : selected.quoteUnit)}
             </p>
           </div>
         </div>
@@ -955,9 +959,9 @@ function ConfirmStage({
       </Field>
       <div className="pt-4 border-t border-neutral-200 dark:border-neutral-800">
         <p className="text-sm tabular-nums mb-3">
-          {formatUsd(market)}{' '}
+          {formatMoney(market, selected.quoteUnit)}{' '}
           <span className="text-xs text-neutral-600 dark:text-neutral-400">
-            TCGplayer · example
+            {priceCaption(market == null ? null : selected.quoteUnit, activePrinting)}
           </span>
         </p>
         <PrimaryButton type="button" disabled={!writable || saving} onClick={onSave} className="w-full">

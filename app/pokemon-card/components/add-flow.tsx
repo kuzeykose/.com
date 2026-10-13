@@ -18,7 +18,7 @@ import {
   SourceCredit,
 } from './ui'
 import { CONDITIONS } from '../lib/types'
-import { formatShortDate, formatUsd, printingLabel } from '../lib/format'
+import { formatMoney, formatShortDate, priceCaption, printingLabel } from '../lib/format'
 import type { EnrichedCard, SearchCard, TcgSet } from '../lib/types'
 
 type RecentSearch = { q: string; at: string }
@@ -90,13 +90,23 @@ export function AddFlow({
           setId: editing.tcg.set.id,
           printedTotal: editing.tcg.set.printedTotal,
           image: editing.tcg.images?.large ?? editing.tcg.images?.small,
-          printings: editing.tcg.tcgplayer?.prices ? Object.keys(editing.tcg.tcgplayer.prices) : [],
-          quotes: Object.fromEntries(
-            Object.entries(editing.tcg.tcgplayer?.prices ?? {})
-              .filter(([, value]) => value?.market != null)
-              .map(([key, value]) => [key, value!.market as number])
-          ),
-          updatedAt: editing.tcg.tcgplayer?.updatedAt ?? null,
+          printings: editing.tcg.tcgplayer?.prices
+            ? Object.keys(editing.tcg.tcgplayer.prices)
+            : editing.tcg.cardmarket?.avg != null
+              ? ['cardmarket']
+              : [],
+          quotes: {
+            ...Object.fromEntries(
+              Object.entries(editing.tcg.tcgplayer?.prices ?? {})
+                .filter(([, value]) => value?.market != null)
+                .map(([key, value]) => [key, value!.market as number])
+            ),
+            ...(editing.tcg.tcgplayer?.prices || editing.tcg.cardmarket?.avg == null
+              ? {}
+              : { cardmarket: editing.tcg.cardmarket.avg }),
+          },
+          quoteUnit: editing.tcg.tcgplayer?.prices ? 'USD' : editing.tcg.cardmarket?.avg != null ? 'EUR' : undefined,
+          updatedAt: editing.tcg.tcgplayer?.updatedAt ?? editing.tcg.cardmarket?.updatedAt ?? null,
         }
       : null
   )
@@ -184,6 +194,7 @@ export function AddFlow({
             printedTotal: selected.printedTotal,
             image: selected.image,
             market: selected.quotes[activePrinting],
+            currency: selected.quoteUnit,
             variant: activePrinting,
             updatedAt: selected.updatedAt ?? undefined,
           },
@@ -281,7 +292,7 @@ export function AddFlow({
               selectClassName="max-w-[12rem]"
             />
             <span className="text-xs text-neutral-600 dark:text-neutral-400">
-              Searches the Pokémon TCG API (pokemontcg.io)
+              Searches TCGdex (api.tcgdex.net)
             </span>
             <PrimaryButton type="submit" disabled={busy || !query.trim()} className="ml-auto">
               {busy ? 'Searching…' : 'Search'}
@@ -406,9 +417,9 @@ export function AddFlow({
           </div>
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mt-4 pt-4 border-t border-neutral-200 dark:border-neutral-800">
             <div className="tabular-nums">
-              {formatUsd(market)}{' '}
+              {formatMoney(market, selected.quoteUnit)}{' '}
               <span className="text-xs text-neutral-600 dark:text-neutral-400">
-                TCGplayer market · USD · near mint
+                {priceCaption(market == null ? null : selected.quoteUnit, activePrinting)}
               </span>
             </div>
             <div className="flex gap-2">

@@ -2,7 +2,7 @@ import type { ButtonHTMLAttributes, InputHTMLAttributes, ReactNode } from 'react
 import Link from 'next/link'
 import { OwnerActions } from './owner-actions'
 import { TYPE_COLORS } from '../lib/constants'
-import { formatUsd } from '../lib/format'
+import { formatMoney } from '../lib/format'
 import type { EnrichedCard } from '../lib/types'
 
 export function PageIntro({
@@ -86,16 +86,7 @@ export function PrivateBadge() {
 export function SourceCredit() {
   return (
     <p className="mt-8 mb-16 text-sm text-neutral-600 dark:text-neutral-400">
-      Card data and images from the{' '}
-      <a
-        href="https://pokemontcg.io"
-        target="_blank"
-        rel="noopener noreferrer"
-        className="underline decoration-neutral-400 dark:decoration-neutral-600 underline-offset-2"
-      >
-        Pokémon TCG API
-      </a>
-      , with{' '}
+      Card data, images and prices from{' '}
       <a
         href="https://tcgdex.dev"
         target="_blank"
@@ -103,8 +94,8 @@ export function SourceCredit() {
         className="underline decoration-neutral-400 dark:decoration-neutral-600 underline-offset-2"
       >
         TCGdex
-      </a>{' '}
-      as a free fallback when a printing is missing. Market prices are TCGplayer near-mint estimates, in USD (shown as — when unknown).
+      </a>
+      {' '}(api.tcgdex.net). Market prices use TCGplayer USD when present, otherwise Cardmarket EUR, and show as — when unknown.
     </p>
   )
 }
@@ -220,7 +211,7 @@ export function tileFromEntry(card: EnrichedCard) {
     image: card.tcg?.images?.small,
     type: card.tcg?.types?.[0],
     line: `${shortSet} · ${card.tcg?.number ?? '—'}`,
-    price: formatUsd(card.quote.market),
+    price: formatMoney(card.quote.market, card.quote.unit),
   }
 }
 

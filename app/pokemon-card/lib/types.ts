@@ -1,6 +1,8 @@
 export const CONDITIONS = ['NM', 'LP', 'MP', 'HP', 'DMG'] as const
 export type Condition = (typeof CONDITIONS)[number]
 
+export type PriceUnit = 'USD' | 'EUR'
+
 export type CatalogSnapshot = {
   name: string
   number: string
@@ -12,6 +14,7 @@ export type CatalogSnapshot = {
   image?: string
   imageLarge?: string
   market?: number
+  currency?: PriceUnit
   variant?: string
   updatedAt?: string
 }
@@ -74,8 +77,12 @@ export type TcgCard = {
     updatedAt?: string
     prices?: Record<string, TcgPrice>
   }
-  /** pokemontcg.io first; tcgdex when that catalog is missing the printing. */
-  source?: 'pokemontcg' | 'tcgdex'
+  cardmarket?: {
+    unit?: string
+    avg?: number
+    updatedAt?: string
+  }
+  source?: 'tcgdex'
 }
 
 export type TcgSet = {
@@ -90,6 +97,7 @@ export type MarketQuote = {
   market: number | null
   variant: string | null
   updatedAt: string | null
+  unit?: PriceUnit | null
 }
 
 export type EnrichedCard = CollectionEntry & {
@@ -109,5 +117,6 @@ export type SearchCard = {
   image?: string
   printings: string[]
   quotes: Record<string, number>
+  quoteUnit?: PriceUnit
   updatedAt: string | null
 }

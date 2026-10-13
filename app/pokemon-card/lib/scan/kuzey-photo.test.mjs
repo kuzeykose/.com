@@ -26,31 +26,31 @@ function loadJpeg(name) {
 const CARDS = {
   chespin: {
     file: 'chespin-me4-87.jpg',
-    id: 'me4-87',
+    id: 'me04-087',
     name: /chespin/i,
     number: '87',
     total: '86',
-    setId: 'me4',
+    setId: 'me04',
   },
   clefableSet: {
     file: 'mega-clefable-ex-me3-31.jpg',
-    id: 'me3-31',
+    id: 'me03-031',
     name: /clefable/i,
     number: '31',
     total: '88',
-    setId: 'me3',
+    setId: 'me03',
   },
   serperior: {
     file: 'serperior-me3-6.jpg',
-    id: 'me3-6',
+    id: 'me03-006',
     name: /serperior/i,
     number: '6',
     total: '88',
-    setId: 'me3',
+    setId: 'me03',
   },
   clefablePromo: {
     file: 'mega-clefable-ex-mep-072.jpg',
-    id: 'mep-72',
+    id: 'mep-072',
     name: /clefable/i,
     number: '72',
     setId: 'mep',
@@ -122,8 +122,8 @@ for (const [key, spec] of Object.entries(CARDS)) {
           setCode: query.setCode || 'MEP',
         })
         const picked = result.best || result.candidates[0]
-        assert.ok(picked, `promo mep-72 missing: ${JSON.stringify({ ocr: query, result })}`)
-        assert.equal(picked.id, 'mep-72')
+        assert.ok(picked, `promo mep-072 missing: ${JSON.stringify({ ocr: query, result })}`)
+        assert.equal(picked.id, 'mep-072')
         assert.equal(picked.setId, 'mep')
         assert.equal(String(Number(picked.number)), '72')
         assert.match(picked.name, /clefable/i)
@@ -133,7 +133,7 @@ for (const [key, spec] of Object.entries(CARDS)) {
           result.candidates.every((c) => c.setId === 'mep' && /clefable/i.test(c.name)),
           `promo must not resolve to another printing: ${result.candidates.map((c) => c.id)}`
         )
-        if (result.confidence >= 0.9) assert.equal(result.best?.id, 'mep-72')
+        if (result.confidence >= 0.9) assert.equal(result.best?.id, 'mep-072')
         return
       }
       assert.equal(query.number, spec.number, JSON.stringify(query))

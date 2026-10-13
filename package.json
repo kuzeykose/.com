@@ -6,7 +6,8 @@
         "start": "next start",
         "lint": "eslint app/pokemon-card app/api/pokemon-card app/components/nav.tsx next.config.ts",
         "test": "pnpm test:scan",
-        "test:scan": "node --experimental-strip-types --import ./app/pokemon-card/lib/scan/test-loader.mjs --test app/pokemon-card/lib/scan/*.test.mjs app/pokemon-card/lib/owner.test.mjs"
+        "test:scan": "node --experimental-strip-types --import ./app/pokemon-card/lib/scan/test-loader.mjs --test app/pokemon-card/lib/scan/*.test.mjs app/pokemon-card/lib/owner.test.mjs",
+        "map:tcgdex": "node --experimental-strip-types --import ./app/pokemon-card/lib/scan/test-loader.mjs scripts/map-to-tcgdex.ts"
     },
     "dependencies": {
         "@phosphor-icons/react": "^2.1.10",

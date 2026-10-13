@@ -69,26 +69,88 @@ test('HP and attack text tie-break when the number is missing', () => {
   assert.ok(score >= 0.5)
 })
 
+function tcgdexPayload(card) {
+  return {
+    id: card.id,
+    localId: card.number,
+    name: card.name,
+    hp: card.hp,
+    rarity: card.rarity,
+    attacks: card.attacks,
+    abilities: card.abilities,
+    set: {
+      id: card.set.id,
+      name: card.set.name,
+      cardCount: { official: card.set.printedTotal, total: card.set.printedTotal },
+    },
+  }
+}
+
+function mockTcgdex({ sets, cards }) {
+  return async (url) => {
+    const u = decodeURIComponent(String(url))
+    const inSet = u.match(/\/sets\/([^/?]+)\/([^/?]+)/)
+    if (inSet) {
+      const card = cards.find(
+        (row) =>
+          row.set.id === inSet[1] &&
+          (String(row.number) === inSet[2] || String(Number(row.number)) === String(Number(inSet[2])))
+      )
+      return card
+        ? { ok: true, status: 200, json: async () => tcgdexPayload(card) }
+        : { ok: false, status: 404, json: async () => ({}) }
+    }
+    if (/\/v2\/en\/sets\/?(\?|$)/.test(u) || u.endsWith('/v2/en/sets')) {
+      return {
+        ok: true,
+        status: 200,
+        json: async () =>
+          sets.map((row) => ({
+            id: row.id,
+            name: row.name,
+            cardCount: { official: row.printedTotal, total: row.total ?? row.printedTotal },
+          })),
+      }
+    }
+    const byId = u.match(/\/cards\/([^/?]+)$/)
+    if (byId) {
+      const card = cards.find((row) => row.id === byId[1])
+      return card
+        ? { ok: true, status: 200, json: async () => tcgdexPayload(card) }
+        : { ok: false, status: 404, json: async () => ({}) }
+    }
+    if (u.includes('/cards?')) {
+      const set = u.match(/[?&]set=([^&]+)/)?.[1]
+      const localId = u.match(/[?&]localId=([^&]+)/)?.[1]
+      const name = u.match(/[?&]name=([^&]+)/)?.[1]
+      let filtered = cards
+      if (set) filtered = filtered.filter((row) => row.set.id === set)
+      if (localId) {
+        filtered = filtered.filter(
+          (row) => String(row.number) === localId || String(Number(row.number)) === String(Number(localId))
+        )
+      }
+      if (name) filtered = filtered.filter((row) => row.name.toLowerCase().includes(name.toLowerCase()))
+      return { ok: true, status: 200, json: async () => filtered.map(tcgdexPayload) }
+    }
+    return { ok: false, status: 404, json: async () => ({}) }
+  }
+}
+
 test('same number+total across different sets does not auto-pick on a junk name', async () => {
   const { clearScanCache, matchScan } = await import('./match.ts')
   const rows = [
-    { id: 'me4-87', name: 'Chespin', number: '87', set: { id: 'me4', name: 'Chaos Rising', printedTotal: 86 }, images: {} },
-    { id: 'rsv10pt5-87', name: 'Gimmighoul', number: '87', set: { id: 'rsv10pt5', name: 'Phantasmal Flames', printedTotal: 86 }, images: {} },
+    { id: 'me04-087', name: 'Chespin', number: '087', set: { id: 'me04', name: 'Chaos Rising', printedTotal: 86 } },
+    { id: 'sv10.5b-087', name: 'Gimmighoul', number: '087', set: { id: 'sv10.5b', name: 'Phantasmal Flames', printedTotal: 86 } },
   ]
   const orig = globalThis.fetch
-  globalThis.fetch = async (url) => {
-    const u = decodeURIComponent(String(url))
-    if (u.includes('api.tcgdex.net')) return { ok: false, status: 404, json: async () => ({}) }
-    const data = u.includes('/sets?')
-      ? [
-          { id: 'me4', printedTotal: 86, total: 108, name: 'Chaos Rising' },
-          { id: 'rsv10pt5', printedTotal: 86, total: 108, name: 'Phantasmal Flames' },
-        ]
-      : u.includes('number:87')
-        ? rows
-        : []
-    return { ok: true, status: 200, json: async () => ({ data }) }
-  }
+  globalThis.fetch = mockTcgdex({
+    sets: [
+      { id: 'me04', printedTotal: 86, total: 108, name: 'Chaos Rising' },
+      { id: 'sv10.5b', printedTotal: 86, total: 108, name: 'Phantasmal Flames' },
+    ],
+    cards: rows,
+  })
   try {
     clearScanCache()
     const result = await matchScan({
@@ -100,7 +162,8 @@ test('same number+total across different sets does not auto-pick on a junk name'
     })
     assert.equal(result.best, null)
     assert.ok(result.confidence < BEST_THRESHOLD)
-    assert.equal(result.candidates[0]?.id, 'me4-87')
+    assert.ok(result.candidates.some((c) => c.id === 'me04-087'))
+    assert.ok(result.candidates.some((c) => c.id === 'sv10.5b-087'))
   } finally {
     globalThis.fetch = orig
     clearScanCache()
@@ -109,35 +172,26 @@ test('same number+total across different sets does not auto-pick on a junk name'
 
 test('unique number+total among same-number printings can auto-pick', async () => {
   const { clearScanCache, matchScan } = await import('./match.ts')
-  const me487 = {
-    id: 'me4-87',
+  const me04087 = {
+    id: 'me04-087',
     name: 'Chespin',
-    number: '87',
-    set: { id: 'me4', name: 'Chaos Rising', printedTotal: 86 },
-    images: {},
+    number: '087',
+    set: { id: 'me04', name: 'Chaos Rising', printedTotal: 86 },
   }
   const other87 = {
-    id: 'rsv10pt5-87',
+    id: 'rsv10pt5-087',
     name: 'Gimmighoul',
-    number: '87',
+    number: '087',
     set: { id: 'rsv10pt5', name: 'Phantasmal Flames', printedTotal: 94 },
-    images: {},
   }
   const orig = globalThis.fetch
-  globalThis.fetch = async (url) => {
-    const u = decodeURIComponent(String(url))
-    let data = []
-    if (u.includes('api.tcgdex.net')) {
-      return { ok: false, status: 404, json: async () => ({}) }
-    }
-    if (u.includes('/sets?')) {
-      data = [
-        { id: 'me4', printedTotal: 86, total: 108, name: 'Chaos Rising' },
-        { id: 'rsv10pt5', printedTotal: 94, total: 108, name: 'Phantasmal Flames' },
-      ]
-    } else if (u.includes('number:87')) data = [me487, other87]
-    return { ok: true, status: 200, json: async () => ({ data }) }
-  }
+  globalThis.fetch = mockTcgdex({
+    sets: [
+      { id: 'me04', printedTotal: 86, total: 108, name: 'Chaos Rising' },
+      { id: 'rsv10pt5', printedTotal: 94, total: 108, name: 'Phantasmal Flames' },
+    ],
+    cards: [me04087, other87],
+  })
   try {
     clearScanCache()
     const result = await matchScan({
@@ -147,9 +201,9 @@ test('unique number+total among same-number printings can auto-pick', async () =
       kind: 'std',
       agreement: 1,
     })
-    assert.equal(result.best?.id, 'me4-87')
+    assert.equal(result.best?.id, 'me04-087')
     assert.ok(result.confidence >= BEST_THRESHOLD)
-    assert.ok(result.candidates.some((c) => c.id === 'rsv10pt5-87'))
+    assert.ok(!result.candidates.some((c) => c.id === 'rsv10pt5-087'))
   } finally {
     globalThis.fetch = orig
     clearScanCache()
@@ -222,48 +276,38 @@ test('stage-2 full-art OCR stays capped at 24 passes', () => {
   assert.equal(STAGE2_PASS_CAP, 24)
 })
 
-test('matchScan promo lock returns mep-72 not me3-31', async () => {
+test('matchScan promo lock returns mep-072 not me03-031', async () => {
   const { clearScanCache, matchScan } = await import('./match.ts')
   clearScanCache()
-  const mep72 = {
-    id: 'mep-72',
+  const mep072 = {
+    id: 'mep-072',
     name: 'Mega Clefable ex',
-    number: '72',
+    number: '072',
     hp: '320',
     rarity: 'Promo',
     attacks: [{ name: 'Shooting Moons' }],
     abilities: [{ name: 'Luminous Wing' }],
     set: { id: 'mep', name: 'MEP Black Star Promos', printedTotal: 113 },
-    images: {},
   }
-  const me331 = {
-    id: 'me3-31',
+  const me03031 = {
+    id: 'me03-031',
     name: 'Mega Clefable ex',
-    number: '31',
+    number: '031',
     hp: '320',
     rarity: 'Double Rare',
     attacks: [{ name: 'Shooting Moons' }],
     abilities: [{ name: 'Luminous Wing' }],
-    set: { id: 'me3', name: 'Perfect Order', printedTotal: 88 },
-    images: {},
+    set: { id: 'me03', name: 'Perfect Order', printedTotal: 88 },
   }
   const orig = globalThis.fetch
-  globalThis.fetch = async (url) => {
-    const u = decodeURIComponent(String(url))
-    let data = []
-    if (u.includes('/sets?')) {
-      data = [
-        { id: 'mep', name: 'MEP Black Star Promos', printedTotal: 113, total: 113 },
-        { id: 'me3', name: 'Perfect Order', printedTotal: 88, total: 124 },
-        { id: 'svp', name: 'Scarlet & Violet Black Star Promos', printedTotal: 215, total: 196 },
-      ]
-    } else if (u.includes('api.tcgdex.net')) {
-      return { ok: false, status: 404, json: async () => ({}) }
-    } else if (u.includes('set.id:mep') && u.includes('number:72')) data = [mep72]
-    else if (u.includes('name:"Clef') || u.includes('name:Clef')) data = [me331, mep72]
-    else if (u.includes('number:31')) data = [me331]
-    return { ok: true, status: 200, json: async () => ({ data }) }
-  }
+  globalThis.fetch = mockTcgdex({
+    sets: [
+      { id: 'mep', name: 'MEP Black Star Promos', printedTotal: 113, total: 113 },
+      { id: 'me03', name: 'Perfect Order', printedTotal: 88, total: 124 },
+      { id: 'svp', name: 'Scarlet & Violet Black Star Promos', printedTotal: 215, total: 196 },
+    ],
+    cards: [mep072, me03031],
+  })
   try {
     const result = await matchScan({
       name: 'Clefable',
@@ -275,11 +319,11 @@ test('matchScan promo lock returns mep-72 not me3-31', async () => {
       agreement: 0.8,
       rawText: ['MEP EN 072', 'Mega Clefable', 'Luminous Wing'],
     })
-    assert.equal(result.best?.id, 'mep-72')
+    assert.equal(result.best?.id, 'mep-072')
     assert.equal(result.best?.setId, 'mep')
-    assert.equal(result.best?.number, '72')
+    assert.equal(String(Number(result.best?.number)), '72')
     assert.ok(result.confidence >= 0.9)
-    assert.ok(result.candidates.every((c) => c.id !== 'me3-31'))
+    assert.ok(result.candidates.every((c) => c.id !== 'me03-031'))
   } finally {
     globalThis.fetch = orig
     clearScanCache()

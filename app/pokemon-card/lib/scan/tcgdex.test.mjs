@@ -7,25 +7,36 @@ import {
   clearTcgdexCache,
   fetchTcgdexCard,
   fetchTcgdexPromo,
+  toTcgdexId,
 } from '../tcgdex.ts'
 import { catalogFromCard } from '../collection.ts'
 import { BEST_THRESHOLD, clearScanCache, matchScan } from './match.ts'
 import { distinctiveMatch, scoreMatch } from './parse.ts'
 
-test('canonical ids strip promo padding to pokemontcg.io style', () => {
-  assert.equal(canonicalCardId('mep', '072'), 'mep-72')
-  assert.equal(canonicalCardId('mep', '72'), 'mep-72')
+test('canonical ids use native padded TCGdex ids', () => {
+  assert.equal(canonicalCardId('mep', '072'), 'mep-072')
+  assert.equal(canonicalCardId('mep', '72'), 'mep-072')
+  assert.equal(canonicalCardId('me4', '87'), 'me04-087')
   assert.ok(cardIdVariants('mep-72').includes('mep-072'))
   assert.ok(cardIdVariants('mep-072').includes('mep-72'))
+})
+
+test('legacy pokemontcg.io collection ids map to TCGdex', () => {
+  assert.equal(toTcgdexId('sv8-40'), 'sv08-040')
+  assert.equal(toTcgdexId('sv8pt5-30'), 'sv08.5-030')
+  assert.equal(toTcgdexId('swsh9-29'), 'swsh9-029')
+  assert.equal(toTcgdexId('dp1-1'), 'dp1-1')
+  assert.equal(toTcgdexId('me4-87'), 'me04-087')
+  assert.equal(toTcgdexId('mep-72'), 'mep-072')
 })
 
 test('live TCGdex has MEP 072 Mega Clefable ex with an image', { timeout: 30_000 }, async () => {
   clearTcgdexCache()
   const card = await fetchTcgdexPromo('mep', '72')
-  assert.ok(card, 'TCGdex returned no mep-72')
-  assert.equal(card.id, 'mep-72')
+  assert.ok(card, 'TCGdex returned no mep-072')
+  assert.equal(card.id, 'mep-072')
   assert.equal(card.set.id, 'mep')
-  assert.equal(card.number, '72')
+  assert.equal(String(Number(card.number)), '72')
   assert.match(card.name, /mega clefable ex/i)
   assert.equal(card.hp, '320')
   assert.equal(card.source, 'tcgdex')
@@ -37,16 +48,18 @@ test('live TCGdex has MEP 072 Mega Clefable ex with an image', { timeout: 30_000
   assert.equal(res.ok, true, `image HEAD ${res.status} ${card.images.small}`)
 })
 
-test('fetchCardById falls back to live TCGdex for mep-72', { timeout: 30_000 }, async () => {
-  const card = await fetchCardById('mep-72')
-  assert.ok(card)
-  assert.equal(card.id, 'mep-72')
-  assert.equal(card.source, 'tcgdex')
-  assert.match(card.name, /clefable/i)
-  assert.ok(card.images?.small)
+test('fetchCardById uses live TCGdex for mep-72 and mep-072', { timeout: 30_000 }, async () => {
+  const padded = await fetchCardById('mep-072')
+  const legacy = await fetchCardById('mep-72')
+  assert.ok(padded)
+  assert.equal(padded.id, 'mep-072')
+  assert.equal(padded.source, 'tcgdex')
+  assert.match(padded.name, /clefable/i)
+  assert.ok(padded.images?.small)
+  assert.equal(legacy?.id, 'mep-072')
 })
 
-test('live matchScan promo lock returns mep-72 from TCGdex, not me3-31', { timeout: 120_000 }, async () => {
+test('live matchScan promo lock returns mep-072 from TCGdex, not me03-031', { timeout: 120_000 }, async () => {
   clearScanCache()
   clearTcgdexCache()
   const result = await matchScan({
@@ -62,38 +75,62 @@ test('live matchScan promo lock returns mep-72 from TCGdex, not me3-31', { timeo
   })
   const picked = result.best || result.candidates[0]
   assert.ok(picked, JSON.stringify(result))
-  assert.equal(picked.id, 'mep-72')
+  assert.equal(picked.id, 'mep-072')
   assert.equal(picked.setId, 'mep')
   assert.equal(String(Number(picked.number)), '72')
   assert.equal(picked.source, 'tcgdex')
   assert.ok(picked.image)
   assert.ok(result.confidence >= BEST_THRESHOLD)
-  assert.equal(result.best?.id, 'mep-72')
-  assert.ok(result.candidates.every((c) => c.id !== 'me3-31' && c.setId === 'mep'))
-  assert.deepEqual(picked.quotes ?? {}, {})
+  assert.equal(result.best?.id, 'mep-072')
+  assert.ok(result.candidates.every((c) => c.id !== 'me03-031' && c.setId === 'mep'))
 })
 
-test('fetchTcgdexCard accepts padded MEP ids', { timeout: 20_000 }, async () => {
-  const card = await fetchTcgdexCard('mep-072')
-  assert.equal(card?.id, 'mep-72')
+test('fetchTcgdexCard accepts unpadded MEP ids', { timeout: 20_000 }, async () => {
+  const card = await fetchTcgdexCard('mep-72')
+  assert.equal(card?.id, 'mep-072')
 })
 
-test('fallback catalog snapshot has an image and unknown USD price', { timeout: 20_000 }, async () => {
+test('promo catalog snapshot has an image; USD price unknown when tcgplayer is empty', { timeout: 20_000 }, async () => {
   const card = await fetchTcgdexPromo('mep', '72')
   assert.ok(card)
   const catalog = catalogFromCard(card)
   assert.equal(catalog.setId, 'mep')
-  assert.equal(catalog.number, '72')
-  assert.equal(catalog.market, undefined)
+  assert.equal(String(Number(catalog.number)), '72')
   assert.ok(catalog.image)
+  if (card.tcgplayer) {
+    assert.ok(catalog.market != null)
+    assert.equal(catalog.currency, 'USD')
+  } else if (card.cardmarket?.avg != null) {
+    assert.equal(catalog.market, card.cardmarket.avg)
+    assert.equal(catalog.currency, 'EUR')
+  } else {
+    assert.equal(catalog.market, undefined)
+  }
+})
+
+test('live Kuzey cards resolve on TCGdex with images', { timeout: 60_000 }, async () => {
+  clearTcgdexCache()
+  const expected = [
+    { id: 'me04-087', name: /chespin/i },
+    { id: 'me03-031', name: /clefable/i },
+    { id: 'me03-006', name: /serperior/i },
+    { id: 'mep-072', name: /clefable/i },
+  ]
+  for (const spec of expected) {
+    const card = await fetchTcgdexCard(spec.id)
+    assert.ok(card, `missing ${spec.id}`)
+    assert.equal(card.id, spec.id)
+    assert.match(card.name, spec.name)
+    assert.ok(card.images?.small, `${spec.id} missing image`)
+  }
 })
 
 test('distinctive number+total+attack can auto-pick without a clean name', () => {
   const card = {
     name: 'Chespin',
-    number: '87',
+    number: '087',
     printedTotal: 86,
-    setId: 'me4',
+    setId: 'me04',
     hp: '70',
     attacks: [{ name: 'Spike Sting' }],
   }

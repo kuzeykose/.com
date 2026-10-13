@@ -138,7 +138,7 @@ export function parseNumbers(text: string, totals?: Set<number>): NumberRead[] {
   return out
 }
 
-/** Black Star promo set ids on pokemontcg.io (MEP may land after the live set list). */
+/** Black Star promo set ids on TCGdex. */
 export const PROMO_SET_ID: Record<string, string> = {
   MEP: 'mep',
   SVP: 'svp',
@@ -147,7 +147,7 @@ export const PROMO_SET_ID: Record<string, string> = {
   XY: 'xyp',
   BW: 'bwp',
   DP: 'dpp',
-  HGSS: 'hsp',
+  HGSS: 'hgssp',
 }
 
 /** OCR aliases seen on sleeved Mega Evolution promo stamps (MEP EN 072 → JEN 72). */
@@ -261,6 +261,7 @@ export function buildQueries(query: ScanQuery): string[] {
 
 function numbersEqual(cardNumber: string, pick: NumberRead) {
   if (cardNumber.toUpperCase() === pick.number.toUpperCase()) return true
+  if (/^\d+$/.test(cardNumber) && /^\d+$/.test(pick.number) && Number(cardNumber) === Number(pick.number)) return true
   const promo = splitPromo(pick.number, pick.setCode)
   if (/^\d+$/.test(cardNumber) && /^\d+$/.test(promo.n) && Number(cardNumber) === Number(promo.n)) return true
   if (promo.setCode) {

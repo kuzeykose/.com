@@ -1,4 +1,4 @@
-/** One distinct printing (pokemontcg.io-style `{setId}-{number}`, unpadded). */
+/** One distinct printing (native TCGdex `{setId}-{paddedLocalId}`). */
 export type Match = {
   id: string
   name: string
@@ -13,8 +13,9 @@ export type Match = {
   types?: string[]
   printings?: string[]
   quotes?: Record<string, number>
+  quoteUnit?: 'USD' | 'EUR'
   updatedAt?: string | null
-  source?: 'pokemontcg' | 'tcgdex'
+  source?: 'tcgdex'
 }
 
 /**
@@ -31,7 +32,7 @@ export type ScanResult = {
   confidence: number
   ocr: { name?: string; number?: string; total?: string }
   query?: string
-  /** Which stage produced candidates: 'exact' | 'set-total' | 'fuzzy-name' | 'number-only' | 'raw-text' | 'tcgdex' | 'none' */
+  /** Which stage produced candidates: 'exact' | 'set-total' | 'fuzzy-name' | 'number-only' | 'raw-text' | 'none' */
   stage?: string
 }
 
