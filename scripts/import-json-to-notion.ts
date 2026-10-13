@@ -1,6 +1,7 @@
 /**
  * One-off import of data/pokemon-card.json into the Notion collection database.
- * Safe to run twice: each Card ID is upserted (create or replace), never duplicated
+ * Maps pokemontcg.io ids to native TCGdex ids (same as `pnpm map:tcgdex`)
+ * and upserts each Card ID (create or replace), never duplicated
  * and never incremented.
  *
  * Required:
@@ -18,6 +19,7 @@ import path from 'path'
 import { createNotionClient, type NotionClientLike } from '../app/pokemon-card/lib/notion.ts'
 import { createNotionStore, createPokemonDatabase } from '../app/pokemon-card/lib/store-notion.ts'
 import type { CollectionFile } from '../app/pokemon-card/lib/types.ts'
+import { migrateEntry } from './map-to-tcgdex.ts'
 
 function required(name: string) {
   const value = process.env[name]?.trim()
@@ -70,10 +72,12 @@ async function main() {
   let updated = 0
 
   for (const card of cards) {
-    const result = await store.put(card)
+    const { live: _live, ...entry } = await migrateEntry(card)
+    const result = await store.put(entry)
     if (result.created) created += 1
     else updated += 1
-    console.log(`${result.created ? 'created' : 'updated'} ${card.id} · ${card.catalog?.name ?? card.id}`)
+    const mapped = card.id === entry.id ? entry.id : `${card.id} → ${entry.id}`
+    console.log(`${result.created ? 'created' : 'updated'} ${mapped} · ${entry.catalog?.name ?? entry.id}`)
   }
 
   console.log(`Done. ${created} created, ${updated} updated, ${cards.length} total.`)

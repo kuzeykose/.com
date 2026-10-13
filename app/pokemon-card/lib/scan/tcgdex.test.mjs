@@ -19,6 +19,7 @@ test('canonical ids use native padded TCGdex ids', () => {
   assert.equal(canonicalCardId('me4', '87'), 'me04-087')
   assert.ok(cardIdVariants('mep-72').includes('mep-072'))
   assert.ok(cardIdVariants('mep-072').includes('mep-72'))
+  assert.ok(cardIdVariants('sv08-040').includes('sv8-40'))
 })
 
 test('legacy pokemontcg.io collection ids map to TCGdex', () => {

@@ -156,12 +156,16 @@ export function cardIdVariants(id: string) {
   out.add(raw)
   out.add(raw.toLowerCase())
   const match = raw.match(/^([a-z0-9.]+)-(.+)$/i)
-  if (!match) return Array.from(out)
-  const setId = (LEGACY_SET_ID[match[1].toLowerCase()] || match[1]).toLowerCase()
-  const number = match[2]
-  if (/^\d+$/.test(number)) out.add(`${setId}-${number.padStart(3, '0')}`)
-  out.add(`${setId}-${number}`)
-  if (/^\d+$/.test(number)) out.add(`${setId}-${String(Number(number))}`)
+  if (match) {
+    const setId = (LEGACY_SET_ID[match[1].toLowerCase()] || match[1]).toLowerCase()
+    const number = match[2]
+    if (/^\d+$/.test(number)) out.add(`${setId}-${number.padStart(3, '0')}`)
+    out.add(`${setId}-${number}`)
+    if (/^\d+$/.test(number)) out.add(`${setId}-${String(Number(number))}`)
+  }
+  for (const [legacy, native] of Object.entries(LEGACY_CARD_ID)) {
+    if (out.has(native) || native === mapped) out.add(legacy)
+  }
   return Array.from(out)
 }
 

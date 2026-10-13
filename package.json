@@ -7,7 +7,7 @@
         "lint": "eslint app/pokemon-card app/api/pokemon-card app/components/nav.tsx next.config.ts",
         "test": "pnpm test:scan && pnpm test:store",
         "test:scan": "node --experimental-strip-types --import ./app/pokemon-card/lib/scan/test-loader.mjs --test app/pokemon-card/lib/scan/*.test.mjs app/pokemon-card/lib/owner.test.mjs",
-        "test:store": "node --experimental-strip-types --test app/pokemon-card/lib/store-notion.test.mjs app/pokemon-card/lib/notion.test.mjs",
+        "test:store": "node --experimental-strip-types --import ./app/pokemon-card/lib/scan/test-loader.mjs --test app/pokemon-card/lib/store-notion.test.mjs app/pokemon-card/lib/notion.test.mjs",
         "map:tcgdex": "node --experimental-strip-types --import ./app/pokemon-card/lib/scan/test-loader.mjs scripts/map-to-tcgdex.ts",
         "import-notion": "node --experimental-strip-types --import ./app/pokemon-card/lib/scan/test-loader.mjs scripts/import-json-to-notion.ts"
     },

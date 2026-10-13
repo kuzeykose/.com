@@ -49,8 +49,10 @@ function mockClient(seed = []) {
         query: async (args) => {
           calls.query.push(args)
           const filterId = args.filter?.rich_text?.equals
-          if (filterId) {
-            const page = pages.get(filterId)
+          const orIds = (args.filter?.or ?? []).map((row) => row.rich_text?.equals).filter(Boolean)
+          const wanted = filterId ? [filterId] : orIds
+          if (wanted.length) {
+            const page = wanted.map((id) => pages.get(id)).find(Boolean)
             return { results: page ? [page] : [], has_more: false, next_cursor: null }
           }
           const all = [...pages.values()]
@@ -90,8 +92,9 @@ function mockClient(seed = []) {
           }
           for (const [id, page] of pages) {
             if (page.id !== page_id) continue
+            const nextId = properties['Card ID']?.rich_text?.[0]?.text.content ?? id
             const next = {
-              id,
+              id: nextId,
               quantity: properties.Quantity?.number ?? page.properties.Quantity.number,
               condition: properties.Condition?.select?.name ?? page.properties.Condition.select.name,
               notes: properties.Notes?.rich_text?.[0]?.text.content ?? page.properties.Notes.rich_text[0].plain_text,
@@ -99,7 +102,8 @@ function mockClient(seed = []) {
               catalog: { name: properties.Name?.title?.[0]?.text.content ?? page.properties.Name.title[0].plain_text, number: '' },
             }
             const updated = pageFor(next, page_id)
-            pages.set(id, updated)
+            if (nextId !== id) pages.delete(id)
+            pages.set(nextId, updated)
             return updated
           }
           return { id: page_id }
@@ -239,24 +243,38 @@ test('entry properties stay within the documented Notion schema', () => {
   ])
 })
 
-test('Notion store can add a TCGdex fallback promo id', async () => {
+test('Notion store can add a native TCGdex promo id', async () => {
   const { store, calls } = storeFor()
   const entry = await store.add({
-    id: 'mep-72',
+    id: 'mep-072',
     quantity: 1,
     condition: 'NM',
     notes: 'Promo from scan',
     added: '2026-10-13',
     catalog: {
       name: 'Mega Clefable ex',
-      number: '72',
+      number: '072',
       setName: 'MEP Black Star Promos',
       types: ['Psychic'],
     },
   })
-  assert.equal(entry.id, 'mep-72')
+  assert.equal(entry.id, 'mep-072')
   assert.equal(calls.create.length, 1)
-  assert.equal(calls.create[0]['Card ID'].rich_text[0].text.content, 'mep-72')
-  const found = await store.get('mep-72')
-  assert.equal(found?.id, 'mep-72')
+  assert.equal(calls.create[0]['Card ID'].rich_text[0].text.content, 'mep-072')
+  const found = await store.get('mep-072')
+  assert.equal(found?.id, 'mep-072')
+})
+
+test('Notion import updates a legacy pokemontcg.io Card ID to the TCGdex id', async () => {
+  const { store, calls } = storeFor([mantine])
+  const result = await store.put({
+    ...mantine,
+    id: 'sv08-040',
+    catalog: { ...mantine.catalog, number: '040', setId: 'sv08' },
+  })
+  assert.equal(result.created, false)
+  assert.equal(result.entry.id, 'sv08-040')
+  assert.equal(calls.create.length, 0)
+  assert.equal(calls.update.length, 1)
+  assert.equal(calls.update[0].properties['Card ID'].rich_text[0].text.content, 'sv08-040')
 })

@@ -31,7 +31,7 @@ test('pageToEntry reads the collection schema', () => {
     id: 'page-1',
     properties: {
       Name: { type: 'title', title: [{ plain_text: 'Mantine' }] },
-      'Card ID': { type: 'rich_text', rich_text: [{ plain_text: 'sv8-40' }] },
+      'Card ID': { type: 'rich_text', rich_text: [{ plain_text: 'sv08-040' }] },
       Set: { type: 'rich_text', rich_text: [{ plain_text: 'Surging Sparks' }] },
       Number: { type: 'rich_text', rich_text: [{ plain_text: '40' }] },
       Rarity: { type: 'rich_text', rich_text: [{ plain_text: 'Common' }] },
@@ -43,7 +43,7 @@ test('pageToEntry reads the collection schema', () => {
     },
   })
   assert.deepEqual(entry, {
-    id: 'sv8-40',
+    id: 'sv08-040',
     quantity: 3,
     condition: 'NM',
     notes: 'Binder copy',
@@ -60,7 +60,7 @@ test('pageToEntry reads the collection schema', () => {
 
 test('entryToProperties writes Name, Card ID, Quantity, Condition, Added', () => {
   const props = entryToProperties({
-    id: 'sv8-40',
+    id: 'sv08-040',
     quantity: 2,
     condition: 'LP',
     notes: 'Trade',
@@ -68,7 +68,7 @@ test('entryToProperties writes Name, Card ID, Quantity, Condition, Added', () =>
     catalog: { name: 'Mantine', number: '40', setName: 'Surging Sparks', types: ['Water'] },
   })
   assert.equal(props.Name.title[0].text.content, 'Mantine')
-  assert.equal(props['Card ID'].rich_text[0].text.content, 'sv8-40')
+  assert.equal(props['Card ID'].rich_text[0].text.content, 'sv08-040')
   assert.equal(props.Quantity.number, 2)
   assert.equal(props.Condition.select.name, 'LP')
   assert.equal(props.Added.date.start, '2026-10-01')
@@ -76,7 +76,7 @@ test('entryToProperties writes Name, Card ID, Quantity, Condition, Added', () =>
 
 test('fallback TCGdex promo ids save on the Card ID property', () => {
   const props = entryToProperties({
-    id: 'mep-72',
+    id: 'mep-072',
     quantity: 1,
     condition: 'NM',
     notes: '',
@@ -91,7 +91,7 @@ test('fallback TCGdex promo ids save on the Card ID property', () => {
       image: 'https://product-images.tcgplayer.com/fit-in/437x437/696607.jpg',
     },
   })
-  assert.equal(props['Card ID'].rich_text[0].text.content, 'mep-72')
+  assert.equal(props['Card ID'].rich_text[0].text.content, 'mep-072')
   assert.equal(props.Name.title[0].text.content, 'Mega Clefable ex')
   assert.equal(props.Number.rich_text[0].text.content, '72')
   assert.equal(props.Set.rich_text[0].text.content, 'MEP Black Star Promos')

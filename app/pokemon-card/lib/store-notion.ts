@@ -1,5 +1,6 @@
 import type { CollectionEntry } from './types.ts'
 import type { CardStore } from './store.ts'
+import { cardIdVariants } from './tcgdex.ts'
 import {
   NOTION_PROPS,
   POKEMON_DATABASE_PROPERTIES,
@@ -74,14 +75,21 @@ export function createNotionStore(options: NotionStoreOptions): CardStore {
 
   async function queryByCardId(id: string) {
     const source = await dataSourceId()
+    const ids = cardIdVariants(id)
+    const filter =
+      ids.length === 1
+        ? { property: NOTION_PROPS.cardId, rich_text: { equals: ids[0] } }
+        : {
+            or: ids.map((value) => ({
+              property: NOTION_PROPS.cardId,
+              rich_text: { equals: value },
+            })),
+          }
     const result = await call(() =>
       options.client.dataSources.query({
         data_source_id: source,
         page_size: 1,
-        filter: {
-          property: NOTION_PROPS.cardId,
-          rich_text: { equals: id },
-        },
+        filter,
       })
     )
     return result.results.find((page) => page.object !== 'data_source') ?? null
