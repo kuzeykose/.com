@@ -3,9 +3,12 @@
     "scripts": {
         "dev": "next dev",
         "build": "next build",
-        "start": "next start"
+        "start": "next start",
+        "lint": "eslint app/books app/components/nav.tsx",
+        "test": "node --experimental-strip-types --experimental-default-type=module --import ./app/books/lib/test-loader.mjs --test app/books/lib/map.test.ts app/books/lib/notion.test.ts"
     },
     "dependencies": {
+        "@notionhq/client": "^5.27.0",
         "@phosphor-icons/react": "^2.1.10",
         "@tailwindcss/postcss": "4.0.0-alpha.13",
         "@types/node": "20.11.17",
@@ -18,6 +21,7 @@
         "postcss": "^8.4.35",
         "react": "19.2.7",
         "react-dom": "19.2.7",
+        "server-only": "^0.0.1",
         "sugar-high": "^0.6.0",
         "tailwindcss": "4.0.0-alpha.13",
         "three": "^0.186.1",
@@ -26,6 +30,8 @@
     "devDependencies": {
         "@types/react": "19.2.17",
         "@types/react-dom": "19.2.3",
-        "@types/three": "^0.186.0"
+        "@types/three": "^0.186.0",
+        "eslint": "^10.12.0",
+        "eslint-config-next": "^16.4.1"
     }
 }
