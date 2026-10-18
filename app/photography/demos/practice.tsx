@@ -2,9 +2,10 @@
 
 import { useEffect, useMemo, useState } from 'react'
 import { Viewfinder } from '../lab/viewfinder'
-import { cafe, night, park } from '../lab/scenes'
+import { usePhoto, type PhotoSpec } from '../lab/photo'
+import { CAFE, CYCLIST, LAKE, NIGHT, PORTRAIT, SNOW, TRAFFIC } from '../lab/photos'
 import { autoExpose } from '../lab/optics'
-import type { Scene, Shot } from '../lab/darkroom'
+import type { Shot } from '../lab/darkroom'
 import { loadIntoLab, type LabSettings } from './exposure-lab'
 import { Button, Demo } from '../ui'
 
@@ -30,7 +31,7 @@ const RECIPES: Recipe[] = [
       'Slide the shutter button to the left for a burst, then keep the best. (Holding it records video.)',
       'Get down to their height.',
     ],
-    lab: { scene: 'park', manual: false, aperture: 1.48, shutter: 1 / 1000, tripod: false },
+    lab: { scene: 'cyclist', manual: false, aperture: 1.8, shutter: 1 / 1000, tripod: false },
   },
   {
     title: 'City lights and light trails',
@@ -41,7 +42,7 @@ const RECIPES: Recipe[] = [
       'Lights become long streaks; parked things stay sharp.',
       'Or take a Live Photo and choose Long Exposure afterwards.',
     ],
-    lab: { scene: 'night', manual: false, aperture: 4, shutter: 2, tripod: true },
+    lab: { scene: 'night', manual: false, aperture: 4, shutter: 4, tripod: true },
   },
   {
     title: 'Silky water',
@@ -134,64 +135,62 @@ export function Recipes() {
   )
 }
 
-type Question = { scene: () => Scene; shot: (s: Scene) => Shot; ask: string; options: string[]; answer: number; why: string }
-
-const auto = (s: Scene, aperture = 1.8) => autoExpose(s.ev, { aperture })
+type Question = { spec: PhotoSpec; shot: () => Shot; ask: string; options: string[]; answer: number; why: string }
 
 const QUESTIONS: Question[] = [
   {
-    scene: () => park(),
-    // Late in the day, six stops darker than noon.
-    shot: (s) => ({ ...autoExpose(s.ev - 6, { aperture: 1.8, shutter: 1 / 15 }), focus: 8, wb: s.kelvin, shake: 0, gain: -6 }),
+    spec: CYCLIST,
+    // Late in the day, six stops darker than when the photo was taken.
+    shot: () => ({ ...autoExpose(CYCLIST.ev - 6, { aperture: 1.8, shutter: 1 / 15 }), focus: 5.5, wb: CYCLIST.kelvin, shake: 0, gain: -6 }),
     ask: 'You wanted a sharp cyclist. What went wrong?',
     options: ['ISO too high', 'The shutter was open too long', 'Wrong white balance', 'The aperture was too wide'],
     answer: 1,
     why: 'At 1/15 s the cyclist moved while the shutter was open. Set Shutter Speed to 1/500 or faster.',
   },
   {
-    scene: () => cafe({ kelvin: 2600 }),
-    shot: (s) => ({ ...auto(s), focus: 0.3, wb: 5500 }),
+    spec: { ...CAFE, kelvin: 2600 },
+    shot: () => ({ ...autoExpose(CAFE.ev, { aperture: 1.8 }), focus: 0.36, wb: 5500 }),
     ask: 'Why is everything so orange?',
     options: ['Overexposed', 'White balance set for daylight under bulb light', 'The Gold style', 'Too much flash'],
     answer: 1,
     why: 'Bulbs are about 2700K; the camera assumed daylight (5500K), so the warmth wasn’t cancelled. Use Auto, or a lower Kelvin.',
   },
   {
-    scene: () => park({ winter: true }),
-    shot: (s) => ({ ...autoExpose(s.meterEv!, { aperture: 1.8 }), focus: 3.2, wb: s.kelvin }),
+    spec: SNOW,
+    shot: () => ({ ...autoExpose(SNOW.meterEv!, { aperture: 1.8 }), focus: 2.4, wb: SNOW.kelvin }),
     ask: 'The snow came out grey. The quickest fix?',
     options: ['Exposure +1', 'Exposure −1', 'Turn on Night mode', 'Use flash'],
     answer: 0,
     why: 'The meter tried to make all that white into middle grey. Push Exposure up about a stop.',
   },
   {
-    scene: () => park(),
-    shot: (s) => ({ ...autoExpose(s.ev - 2, { aperture: 1.8 }), focus: 3.2, wb: s.kelvin }),
+    spec: LAKE,
+    shot: () => ({ ...autoExpose(LAKE.ev - 2, { aperture: 1.8 }), focus: 100, wb: LAKE.kelvin }),
     ask: 'Which setting would have saved the sky?',
     options: ['A faster shutter or lower exposure', 'Higher ISO', 'Flash on', 'Live Photo off'],
     answer: 0,
-    why: 'It’s two stops too bright; the sky clipped to white. Less light (Exposure down, a faster shutter, or ƒ/4) keeps it blue.',
+    why: 'It’s two stops too bright; the sky and the snow clipped to white. Less light (Exposure down, a faster shutter, or ƒ/4) keeps them.',
   },
   {
-    scene: () => night({ ev: -1 }),
-    shot: (s) => ({ ...autoExpose(s.ev, { aperture: 1.48, slowest: 1 / 15 }), focus: 2.6, wb: 3400 }),
-    ask: 'Grainy and dark, handheld at night. Best fix?',
+    spec: NIGHT,
+    shot: () => ({ ...autoExpose(-1, { aperture: 1.48, slowest: 1 / 15 }), focus: 3, wb: NIGHT.kelvin, gain: -1 - NIGHT.ev }),
+    ask: 'Grainy, handheld, late at night. Best fix?',
     options: ['Raise ISO even more', 'Let Night mode run for a few seconds', 'Turn on Flash', 'Switch to 4×'],
     answer: 1,
     why: 'The grain is ISO 12800 working with too little light. Night mode collects light over seconds and merges it: cleaner and brighter.',
   },
   {
-    scene: () => night({ alone: true }),
-    shot: (s) => ({ ...autoExpose(s.ev, { aperture: 4, shutter: 1 / 250 }), focus: 14, wb: 3000, shake: 0 }),
+    spec: TRAFFIC,
+    shot: () => ({ ...autoExpose(TRAFFIC.ev, { aperture: 4, shutter: 1 / 250 }), focus: 5, wb: TRAFFIC.kelvin, shake: 0 }),
     ask: 'You wanted streaks of light from the traffic. What do you change?',
-    options: ['Shutter Speed to about 2 s, on a tripod', 'Shutter Speed to 1/4000', 'Aperture to ƒ/1.48', 'Flash on'],
+    options: ['Shutter Speed to about 1 s, on a tripod', 'Shutter Speed to 1/4000', 'Aperture to ƒ/1.48', 'Flash on'],
     answer: 0,
     why: 'Trails are motion blur on purpose: the lights move while the shutter stays open. Keep the phone still for it.',
   },
   {
-    scene: () => park({ friend: 1.5, friendX: 38, cyclist: false }),
-    shot: (s) => ({ ...auto(s, 1.48), focus: 1.5, wb: s.kelvin }),
-    ask: 'Your friend gets lost against busy trees. What helps most?',
+    spec: PORTRAIT,
+    shot: () => ({ ...autoExpose(PORTRAIT.ev, { aperture: 1.48 }), focus: 1.6, wb: PORTRAIT.kelvin }),
+    ask: 'She gets lost against the busy background. What helps most?',
     options: ['Portrait mode, or Depth on and blur it later', 'Exposure +1', 'Aspect 16:9', 'A Vibrant style'],
     answer: 0,
     why: 'A phone’s lens can’t blur a background this far away. Portrait mode paints the blur in, and you can adjust it afterwards.',
@@ -203,8 +202,8 @@ export function Quiz() {
   const [picked, setPicked] = useState<number | null>(null)
   const [score, setScore] = useState(0)
   const q = QUESTIONS[n]
-  const scene = useMemo(() => q.scene(), [n])
-  const shot = useMemo(() => q.shot(scene), [scene])
+  const scene = usePhoto(q.spec)
+  const shot = useMemo(() => q.shot(), [n])
   const done = n === QUESTIONS.length - 1 && picked !== null
 
   return (

@@ -2,33 +2,37 @@
 
 import { useMemo, useState } from 'react'
 import { Viewfinder } from '../lab/viewfinder'
-import { night, park, waterfall } from '../lab/scenes'
-import { SHUTTERS, autoExpose, formatAperture, formatIso, formatShutter, meterReading } from '../lab/optics'
+import { usePhoto, type PhotoSpec } from '../lab/photo'
+import { CYCLIST, TRAFFIC, WATERFALL } from '../lab/photos'
+import { IPHONE_APERTURES, SHUTTERS, autoExpose, formatAperture, formatIso, formatShutter, meterReading } from '../lab/optics'
 import { Choice, Demo, Meter, Readout, Stepper, Toggle } from '../ui'
 
 type Subject = 'cyclist' | 'waterfall' | 'traffic'
 
-const SUBJECTS: Record<Subject, { label: string; build: () => ReturnType<typeof park>; focus: number; aperture: number; presets: [number, string, boolean?][] }> = {
+// A preset is a shutter speed and a name; some need the dark filter, or a different aperture.
+type Preset = [number, string, { filter?: boolean; aperture?: number }?]
+
+const SUBJECTS: Record<Subject, { label: string; spec: PhotoSpec; focus: number; aperture: number; presets: Preset[] }> = {
   cyclist: {
     label: 'Cyclist',
-    build: () => park(),
-    focus: 8,
-    aperture: 1.8,
-    presets: [[1 / 2000, 'Freeze'], [1 / 30, 'A hint of speed', true], [1 / 4, 'Streak', true]],
+    spec: CYCLIST,
+    focus: 5.5,
+    aperture: 4,
+    presets: [[1 / 2000, 'Freeze'], [1 / 30, 'A hint of speed', { filter: true }], [1 / 4, 'Streak', { filter: true }]],
   },
   waterfall: {
     label: 'Waterfall',
-    build: () => waterfall(),
-    focus: 10.8,
+    spec: WATERFALL,
+    focus: 15,
     aperture: 4,
-    presets: [[1 / 4000, 'Every drop'], [1 / 60, 'Natural'], [1, 'Silk', true]],
+    presets: [[1 / 4000, 'Every drop'], [1 / 60, 'Natural'], [1, 'Silk', { filter: true }]],
   },
   traffic: {
     label: 'Traffic at night',
-    build: () => night({ alone: true }),
-    focus: 14,
+    spec: TRAFFIC,
+    focus: 5,
     aperture: 4,
-    presets: [[1 / 250, 'Frozen car'], [1 / 15, 'Blur'], [2, 'Light trails']],
+    presets: [[1 / 250, 'Frozen taxi', { aperture: 1.48 }], [1 / 15, 'Blur'], [1 / 2, 'Light trails']],
   },
 }
 
@@ -37,16 +41,17 @@ export function ShutterDemo() {
   const [shutter, setShutter] = useState(1 / 1000)
   const [tripod, setTripod] = useState(true)
   const [nd, setNd] = useState(false)
+  const [aperture, setAperture] = useState(SUBJECTS.cyclist.aperture)
   const cfg = SUBJECTS[subject]
-  const scene = useMemo(() => cfg.build(), [subject])
+  const scene = usePhoto(cfg.spec)
   // You pick the shutter; the iPhone picks ISO to match, as far as it can.
   // A dark (ND) filter cuts six stops of light, as if the scene were darker.
-  const ev = scene.ev - (nd ? 6 : 0)
-  const e = autoExpose(ev, { aperture: cfg.aperture, shutter })
+  const ev = cfg.spec.ev - (nd ? 6 : 0)
+  const e = autoExpose(ev, { aperture, shutter })
   const stops = meterReading(ev, e)
   const shot = useMemo(
-    () => ({ ...e, focus: cfg.focus, wb: scene.kelvin, shake: tripod ? 0 : 1, gain: nd ? -6 : 0 }),
-    [e.shutter, e.iso, e.aperture, scene, tripod, nd]
+    () => ({ ...e, focus: cfg.focus, wb: cfg.spec.kelvin, shake: tripod ? 0 : 1, gain: nd ? -6 : 0 }),
+    [e.shutter, e.iso, e.aperture, subject, tripod, nd]
   )
 
   return (
@@ -56,9 +61,11 @@ export function ShutterDemo() {
           options={(Object.keys(SUBJECTS) as Subject[]).map((k) => ({ value: k, label: SUBJECTS[k].label }))}
           value={subject}
           onChange={(k) => {
+            const [t, , opts] = SUBJECTS[k].presets[0]
             setSubject(k)
-            setShutter(SUBJECTS[k].presets[0][0])
-            setNd(false)
+            setShutter(t)
+            setNd(!!opts?.filter)
+            setAperture(opts?.aperture ?? SUBJECTS[k].aperture)
           }}
           small
         />
@@ -69,31 +76,35 @@ export function ShutterDemo() {
       <div className="mt-3 space-y-3">
         <Stepper label="Shutter speed" values={SHUTTERS} value={shutter} onChange={setShutter} format={formatShutter} />
         <div className="flex flex-wrap gap-1.5">
-          {cfg.presets.map(([t, name, filter]) => (
+          {cfg.presets.map(([t, name, opts]) => (
             <button
               key={name}
               type="button"
               onClick={() => {
                 setShutter(t)
-                setNd(!!filter)
+                setNd(!!opts?.filter)
+                setAperture(opts?.aperture ?? cfg.aperture)
               }}
               className="rounded-full border border-neutral-300 px-2.5 py-0.5 text-xs text-neutral-700 hover:border-orange-600 dark:border-neutral-700 dark:text-neutral-300"
             >
               {name} · {formatShutter(t)}
-              {filter ? ' + filter' : ''}
+              {opts?.aperture ? ` · ${formatAperture(opts.aperture)}` : ''}
+              {opts?.filter ? ' + filter' : ''}
             </button>
           ))}
         </div>
+        <Choice
+          label="Lens aperture"
+          options={IPHONE_APERTURES.map((a) => ({ value: a, label: formatAperture(a) }))}
+          value={aperture}
+          onChange={setAperture}
+          small
+        />
         <div className="flex flex-wrap gap-x-5 gap-y-2">
           <Toggle label="On a tripod" checked={tripod} onChange={setTripod} />
           <Toggle label="Dark (ND) filter on the lens" checked={nd} onChange={setNd} />
         </div>
-        <Readout
-          items={[
-            { label: 'aperture', value: formatAperture(e.aperture) },
-            { label: 'ISO (auto)', value: formatIso(e.iso), warn: e.iso >= 1600 },
-          ]}
-        />
+        <Readout items={[{ label: 'ISO (auto)', value: formatIso(e.iso), warn: e.iso >= 1600 }]} />
         {Math.abs(stops) > 0.4 && <Meter stops={stops} />}
         <p className="text-sm text-neutral-600 dark:text-neutral-400">
           {Math.abs(stops) > 0.4

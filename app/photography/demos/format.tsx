@@ -2,7 +2,8 @@
 
 import { useEffect, useMemo, useRef, useState } from 'react'
 import { Viewfinder } from '../lab/viewfinder'
-import { park } from '../lab/scenes'
+import { useImage, usePhoto } from '../lab/photo'
+import { LAKE } from '../lab/photos'
 import { autoExpose, formatEv } from '../lab/optics'
 import { eightBit, type Darkroom, type Shot } from '../lab/darkroom'
 import { Choice, Demo, Range } from '../ui'
@@ -13,51 +14,63 @@ const SIZES = [
   { mp: 48, width: 8064 },
 ]
 
-// The part of the frame we zoom into: the cyclist's front wheel, 8 m away.
-const CROP = { x: 56.4, y: 38.3, w: 2.6 }
+// The part of the frame we zoom into: a peak on the right, a tenth of the width.
+const CROP = { x: 0.555, y: 0.24, w: 0.1 }
 
 export function MegapixelDemo() {
   const [mp, setMp] = useState(24)
   const canvas = useRef<HTMLCanvasElement>(null)
-  const scene = useMemo(() => park(), [])
+  const photo = useImage('/photography/lake/photo.jpg')
 
   useEffect(() => {
     const out = canvas.current
-    if (!out) return
-    const width = SIZES.find((s) => s.mp === mp)!.width
-    // Draw only the pixels the sensor would have had across the crop…
-    const px = Math.round((width * CROP.w) / 100)
+    if (!out || !photo) return
+    // 48 MP gets every pixel this photo has in the crop; the others get
+    // fewer, in proportion to how many pixels they have across.
+    const full = CROP.w * photo.naturalWidth
+    const px = Math.round((full * SIZES.find((s) => s.mp === mp)!.width) / 8064)
     const small = document.createElement('canvas')
     small.width = px
     small.height = Math.round(px * 0.75)
     const ctx = small.getContext('2d')!
-    ctx.scale(px / CROP.w, px / CROP.w)
-    ctx.translate(-CROP.x, -CROP.y)
-    for (const l of scene.layers) l.paint(ctx)
+    ctx.imageSmoothingQuality = 'high'
+    ctx.drawImage(photo, CROP.x * photo.naturalWidth, CROP.y * photo.naturalHeight, full, full * 0.75, 0, 0, small.width, small.height)
     // …then blow them up so every pixel shows as a little square.
     out.width = 960
     out.height = 720
     const o = out.getContext('2d')!
     o.imageSmoothingEnabled = false
     o.drawImage(small, 0, 0, out.width, out.height)
-  }, [mp, scene])
+  }, [mp, photo])
 
   return (
     <Demo title="Megapixels">
-      <canvas
-        ref={canvas}
-        className="block h-auto w-full rounded-lg bg-neutral-900"
-        style={{ imageRendering: 'pixelated' }}
-        role="img"
-        aria-label={`Zoomed into the cyclist at ${mp} megapixels`}
-      />
+      <div className="grid gap-3 sm:grid-cols-[1fr_10rem]">
+        <canvas
+          ref={canvas}
+          className="block h-auto w-full rounded-lg bg-neutral-900"
+          style={{ imageRendering: 'pixelated' }}
+          role="img"
+          aria-label={`Zoomed into the mountains at ${mp} megapixels`}
+        />
+        {photo && (
+          <div className="relative self-start overflow-hidden rounded-lg">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src={photo.src} alt="" className="block h-auto w-full" />
+            <div
+              className="absolute border-2 border-amber-300"
+              style={{ left: `${CROP.x * 100}%`, top: `${CROP.y * 100}%`, width: `${CROP.w * 100}%`, height: `${CROP.w * 100}%` }}
+            />
+          </div>
+        )}
+      </div>
       <div className="mt-3 space-y-2">
         <Choice options={SIZES.map((s) => ({ value: s.mp, label: `${s.mp} MP` }))} value={mp} onChange={setMp} small />
         <p className="text-sm text-neutral-600 dark:text-neutral-400">
-          Zoomed right into the cyclist's front wheel, a sliver under 3% as wide as the whole photo; each little square
-          is one pixel. At {mp} MP that sliver is{' '}
-          {Math.round((SIZES.find((s) => s.mp === mp)!.width * CROP.w) / 100)} pixels across. More megapixels means you can crop in
-          later and keep detail. It costs storage, and in dim light the extra pixels mostly add noise.
+          Zoomed into the yellow box, a tenth of the photo's width; each little square is one pixel. A {mp} MP photo is{' '}
+          {SIZES.find((s) => s.mp === mp)!.width.toLocaleString('en')} pixels across, so 48 MP has twice as many squares across as
+          12 MP. More megapixels means you can crop in later and keep detail. It costs storage, and in dim light the extra pixels
+          mostly add noise.
         </p>
       </div>
     </Demo>
@@ -70,11 +83,11 @@ export function RawDemo() {
   const [fmt, setFmt] = useState<'heif' | 'raw'>('heif')
   const [which, setWhich] = useState<Case>('bright')
   const [edit, setEdit] = useState(0)
-  const scene = useMemo(() => park(), [])
-  // Shot badly on purpose: two stops too bright, or three too dark.
+  const scene = usePhoto(LAKE)
+  // Shot badly on purpose: nearly two stops too bright, or three too dark.
   const miss = which === 'bright' ? 1.7 : -3
-  const e = autoExpose(scene.ev - miss, { aperture: 1.8 })
-  const shot = useMemo(() => ({ ...e, focus: 3.2, wb: scene.kelvin }), [which, scene])
+  const e = autoExpose(LAKE.ev - miss, { aperture: 1.8 })
+  const shot = useMemo(() => ({ ...e, focus: 100, wb: LAKE.kelvin }), [which])
   const develop = useMemo(
     () => (room: Darkroom, s: Shot) => {
       const light = room.expose(s)
@@ -122,7 +135,7 @@ export function RawDemo() {
         <Range label="Exposure, in the Photos editor" min={-3} max={3.5} step={1 / 3} value={edit} onChange={setEdit} format={formatEv} />
         <p className="text-sm text-neutral-600 dark:text-neutral-400">
           {which === 'bright'
-            ? 'Drag the exposure down. The HEIF sky turns a flat grey: those pixels were saved as pure white, and there is nothing left to bring back. The ProRAW file kept the brighter values, so clouds return.'
+            ? 'Drag the exposure down. The HEIF sky and snow turn a flat grey: those pixels were saved as pure white, and there is nothing left to bring back. The ProRAW file kept the brighter values, so the clouds and the snow return.'
             : 'Drag the exposure up. Both get grainy, because the light was never caught. But the HEIF shadows were rounded to a few steps, so they come back blotchy, while the ProRAW file keeps smooth gradations.'}
         </p>
       </div>

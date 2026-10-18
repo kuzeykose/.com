@@ -30,6 +30,8 @@ export type Layer = {
   glowPower?: number
   // Frame widths per second, sideways and down.
   motion?: [number, number]
+  // Keep the motion blur inside the layer's own shape (flowing water).
+  clip?: boolean
   // The light that falls on this layer, if it isn't the scene's.
   kelvin?: number
   light?: number
@@ -48,6 +50,9 @@ export type Scene = {
   crop?: number
   lens?: Lens
   layers: Layer[]
+  // What's at a point in the frame (0–1 across and down), if the scene knows
+  // better than its layers do.
+  pick?: (fx: number, fy: number) => { depth: number; label?: string } | null
 }
 
 export type Shot = {
@@ -63,6 +68,8 @@ export type Shot = {
   wb: number
   tint?: number
   flash?: boolean
+  // Extra metres between the camera and everything, for the flash only.
+  flashDistance?: number
   // 1 handheld, 0 on a tripod; `shakeTime` is how long each frame is open.
   shake?: number
   shakeTime?: number
@@ -323,6 +330,7 @@ export class Darkroom {
   // The layer at a point in the frame (0–1 across, 0–1 down), nearest first.
   pick(fx: number, fy: number): { depth: number; label?: string } | null {
     if (!this.scene) return null
+    if (this.scene.pick) return this.scene.pick(fx, fy)
     const px = Math.floor(fx * this.w)
     const py = Math.floor(fy * this.h)
     const layers = this.scene.layers
@@ -343,7 +351,8 @@ export class Darkroom {
     let out: [number, number, number] = [r * k, g * k, b * k]
     if (shot.flash) {
       // A phone's LED is about as bright at a metre as an EV 9 room.
-      const f = Math.pow(2, 9 - scene.ev) / (layer.depth * layer.depth)
+      const d = Math.max(0.3, layer.depth + (shot.flashDistance ?? 0))
+      const f = Math.pow(2, 9 - scene.ev) / (d * d)
       const [fr, fg, fb] = lightColour(5500)
       out = [out[0] + fr * f, out[1] + fg * f, out[2] + fb * f]
     }
@@ -406,8 +415,24 @@ export class Darkroom {
       }
     }
     const tmp = new Float32Array(data.length)
+    let shape: Float32Array | null = null
+    if (layer.clip && (mx || my)) {
+      shape = new Float32Array(bw * bh)
+      for (let i = 0; i < shape.length; i++) shape[i] = data[i * 4 + 3]
+    }
     if (mx) smear(data, tmp, bw, bh, mx, false)
     if (my) smear(data, tmp, bw, bh, my, true)
+    if (shape) {
+      // Keep the smeared colour, but only where the layer was to begin with.
+      for (let i = 0; i < shape.length; i++) {
+        const a = data[i * 4 + 3]
+        const k = a > 1e-4 ? shape[i] / a : 0
+        data[i * 4] *= k
+        data[i * 4 + 1] *= k
+        data[i * 4 + 2] *= k
+        data[i * 4 + 3] = shape[i]
+      }
+    }
     gaussianFast(data, tmp, bw, bh, sigma)
 
     const buf = { x: x0, y: y0, w: bw, h: bh, data }

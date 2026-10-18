@@ -2,7 +2,8 @@
 
 import { useCallback, useMemo, useRef, useState } from 'react'
 import { Viewfinder } from '../lab/viewfinder'
-import { night } from '../lab/scenes'
+import { usePhoto } from '../lab/photo'
+import { NIGHT } from '../lab/photos'
 import { ISOS, SHUTTERS, formatIso, formatShutter, meterReading } from '../lab/optics'
 import type { Develop } from '../lab/darkroom'
 import { Choice, Demo, Meter, Readout, Stepper } from '../ui'
@@ -36,11 +37,11 @@ export function IsoDemo() {
   const [how, setHow] = useState<'iso' | 'time'>('iso')
   const [iso, setIso] = useState(50)
   const [shutter, setShutter] = useState(1 / 60)
-  const scene = useMemo(() => night({ ev: 3 }), [])
+  const scene = usePhoto(NIGHT)
   const e = how === 'iso' ? { aperture: 1.48, shutter: 1 / 60, iso } : { aperture: 1.48, shutter, iso: 50 }
-  const stops = meterReading(scene.ev, e)
-  const shot = useMemo(() => ({ ...e, focus: 2.6, wb: scene.kelvin, shake: 0 }), [e.shutter, e.iso, scene])
-  const [loupe, onDevelop] = useLoupe(0.7, 0.36)
+  const stops = meterReading(NIGHT.ev, e)
+  const shot = useMemo(() => ({ ...e, focus: 3, wb: NIGHT.kelvin, shake: 0 }), [e.shutter, e.iso])
+  const [loupe, onDevelop] = useLoupe(0.43, 0.34)
 
   return (
     <Demo title="ISO">
@@ -59,8 +60,8 @@ export function IsoDemo() {
       <div className="grid gap-3 sm:grid-cols-[1fr_12rem]">
         <Viewfinder scene={scene} shot={shot} onDevelop={onDevelop} label="A street at night" />
         <div>
-          <canvas ref={loupe} className="block h-auto w-full rounded-lg bg-neutral-900" style={{ imageRendering: 'pixelated' }} aria-label="Close-up of your friend's face" />
-          <p className="mt-1 text-xs text-neutral-500">Close-up of your friend, 3× bigger. Look at the speckles.</p>
+          <canvas ref={loupe} className="block h-auto w-full rounded-lg bg-neutral-900" style={{ imageRendering: 'pixelated' }} aria-label="Close-up of two faces" />
+          <p className="mt-1 text-xs text-neutral-500">Two faces, 3× bigger. Look at the speckles.</p>
         </div>
       </div>
       <div className="mt-3 space-y-3">

@@ -2,7 +2,8 @@
 
 import { useMemo, useState } from 'react'
 import { Viewfinder } from '../lab/viewfinder'
-import { cafe } from '../lab/scenes'
+import { usePhoto } from '../lab/photo'
+import { CAFE } from '../lab/photos'
 import { autoExpose, kelvinSwatch } from '../lab/optics'
 import type { Develop } from '../lab/darkroom'
 import { Choice, Demo, Range } from '../ui'
@@ -36,17 +37,18 @@ export function WhiteBalanceDemo() {
   const [kelvin, setKelvin] = useState(5500)
   const [tint, setTint] = useState(0)
   const [swatch, setSwatch] = useState<[number, number, number] | null>(null)
-  const scene = useMemo(() => cafe({ kelvin: light }), [light])
-  const e = autoExpose(scene.ev, { aperture: 1.8 })
+  const spec = useMemo(() => ({ ...CAFE, kelvin: light }), [light])
+  const scene = usePhoto(spec)
+  const e = autoExpose(CAFE.ev, { aperture: 1.8 })
   const wb = mode === 'auto' ? autoWhite(light) : mode === 'preset' ? preset : kelvin
-  const shot = useMemo(() => ({ ...e, focus: 0.3, wb, tint: mode === 'kelvin' ? tint : 0, noise: false }), [wb, tint, mode, scene])
+  const shot = useMemo(() => ({ ...e, focus: 0.36, wb, tint: mode === 'kelvin' ? tint : 0, noise: false }), [wb, tint, mode])
 
-  // Sample the saucer, which should come out neutral white or grey.
+  // Sample the cup, which should come out neutral white.
   const sample = (d: Develop) => {
     const { width: w, height: h, data } = d.image
     let r = 0, g = 0, b = 0, n = 0
-    for (let y = Math.round(h * 0.885); y < h * 0.9; y++)
-      for (let x = Math.round(w * 0.47); x < w * 0.53; x++) {
+    for (let y = Math.round(h * 0.64); y < h * 0.67; y++)
+      for (let x = Math.round(w * 0.46); x < w * 0.5; x++) {
         const i = (y * w + x) * 4
         r += data[i]; g += data[i + 1]; b += data[i + 2]; n++
       }
@@ -60,13 +62,13 @@ export function WhiteBalanceDemo() {
         <Choice label="The light in the café" options={LIGHTS.map((l) => ({ value: l.k, label: l.label }))} value={light} onChange={setLight} small />
       </div>
       <Viewfinder scene={scene} shot={shot} onDevelop={sample} label="A café table under the chosen light">
-        <div className="pointer-events-none absolute h-3 w-[6%] rounded-sm border border-white/80" style={{ left: '47%', top: '88%' }} />
+        <div className="pointer-events-none absolute rounded-sm border border-white/90" style={{ left: '46%', top: '64%', width: '4%', height: '3%' }} />
       </Viewfinder>
       <div className="mt-3 flex items-center gap-3">
         <div className="h-10 w-10 shrink-0 rounded-md border border-neutral-300 dark:border-neutral-700" style={{ background: swatch ? `rgb(${swatch.join(',')})` : undefined }} />
         <div className="text-sm">
           <div className="font-mono text-xs text-neutral-500">
-            Saucer: R {swatch?.[0]} · G {swatch?.[1]} · B {swatch?.[2]}
+            Cup: R {swatch?.[0]} · G {swatch?.[1]} · B {swatch?.[2]}
           </div>
           <div className="text-neutral-700 dark:text-neutral-300">{cast}</div>
         </div>
@@ -95,7 +97,7 @@ export function WhiteBalanceDemo() {
         )}
         <p className="text-sm text-neutral-600 dark:text-neutral-400">
           The number tells the camera what colour the light is, so it can cancel it out. Set it lower than the light
-          and the picture turns blue; higher and it turns orange. When it matches, the saucer goes neutral.
+          and the picture turns blue; higher and it turns orange. When it matches, the white cup goes neutral.
           {mode === 'auto' && light < 3500 ? ' Auto leaves warm light a little warm on purpose, so it still feels like candlelight.' : ''}
         </p>
       </div>

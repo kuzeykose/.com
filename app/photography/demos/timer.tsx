@@ -2,7 +2,8 @@
 
 import { useEffect, useMemo, useState } from 'react'
 import { Viewfinder } from '../lab/viewfinder'
-import { waterfall } from '../lab/scenes'
+import { usePhoto } from '../lab/photo'
+import { WATERFALL } from '../lab/photos'
 import { autoExpose } from '../lab/optics'
 import { Button, Choice, Demo } from '../ui'
 
@@ -13,12 +14,12 @@ export function TimerDemo() {
   const [phase, setPhase] = useState<Phase>('ready')
   const [count, setCount] = useState(0)
   const [shaken, setShaken] = useState(false)
-  const scene = useMemo(() => waterfall(), [])
+  const scene = usePhoto(WATERFALL)
   // Half a second on a tripod, with a dark filter so daylight doesn't blow it out.
-  const e = autoExpose(scene.ev - 6, { aperture: 4, shutter: 0.5 })
+  const e = autoExpose(WATERFALL.ev - 6, { aperture: 4, shutter: 0.5 })
   const shot = useMemo(
-    () => ({ ...e, focus: 10.8, wb: scene.kelvin, gain: -6, shake: phase === 'done' && shaken ? 1 : 0 }),
-    [phase, shaken, scene]
+    () => ({ ...e, focus: 15, wb: WATERFALL.kelvin, gain: -6, shake: phase === 'done' && shaken ? 1 : 0 }),
+    [phase, shaken]
   )
 
   useEffect(() => {

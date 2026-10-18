@@ -2,30 +2,31 @@
 
 import { useMemo, useState } from 'react'
 import { Viewfinder } from '../lab/viewfinder'
-import { night, park } from '../lab/scenes'
+import { usePhoto, type PhotoSpec } from '../lab/photo'
+import { NIGHT, PORTRAIT, SNOW } from '../lab/photos'
 import { autoExpose, formatEv, formatIso, formatShutter, meterReading } from '../lab/optics'
 import type { Develop } from '../lab/darkroom'
 import { Choice, Demo, Histogram, Meter, Range, Readout } from '../ui'
 
-type Pick = 'snow' | 'night' | 'park'
+type Pick = 'snow' | 'night' | 'portrait'
 
-const PICKS: Record<Pick, { label: string; build: () => ReturnType<typeof park>; focus: number; fix: string }> = {
+const PICKS: Record<Pick, { label: string; spec: PhotoSpec; focus: number; fix: string }> = {
   snow: {
     label: 'Snowy day',
-    build: () => park({ winter: true }),
-    focus: 3.2,
+    spec: SNOW,
+    focus: 2.4,
     fix: 'All that white fools the meter into making the snow grey. Push it up about +1⅓ to make snow white again.',
   },
   night: {
     label: 'Night street',
-    build: () => night(),
-    focus: 2.6,
+    spec: NIGHT,
+    focus: 3,
     fix: 'The meter wants the night to look like an overcast day. Pull it down about −1 to keep it dark and moody.',
   },
-  park: {
+  portrait: {
     label: 'Ordinary day',
-    build: () => park(),
-    focus: 3.2,
+    spec: PORTRAIT,
+    focus: 1.6,
     fix: "A scene with a bit of everything is what the meter's good at. Leave it at 0, or nudge to taste.",
   },
 }
@@ -35,10 +36,10 @@ export function ExposureCompDemo() {
   const [comp, setComp] = useState(0)
   const [dev, setDev] = useState<Develop | null>(null)
   const cfg = PICKS[pick]
-  const scene = useMemo(() => cfg.build(), [pick])
-  const e = autoExpose(scene.meterEv ?? scene.ev, { aperture: 1.8, compensation: comp })
-  const stops = meterReading(scene.ev, e)
-  const shot = useMemo(() => ({ ...e, focus: cfg.focus, wb: scene.kelvin }), [e.shutter, e.iso, scene])
+  const scene = usePhoto(cfg.spec)
+  const e = autoExpose(cfg.spec.meterEv ?? cfg.spec.ev, { aperture: 1.8, compensation: comp })
+  const stops = meterReading(cfg.spec.ev, e)
+  const shot = useMemo(() => ({ ...e, focus: cfg.focus, wb: cfg.spec.kelvin }), [e.shutter, e.iso, pick])
 
   return (
     <Demo title="Exposure compensation">

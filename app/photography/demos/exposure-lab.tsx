@@ -2,7 +2,8 @@
 
 import { useEffect, useMemo, useState } from 'react'
 import { Viewfinder } from '../lab/viewfinder'
-import { SCENES, type SceneName } from '../lab/scenes'
+import { usePhoto, type PhotoSpec } from '../lab/photo'
+import { CAFE, CYCLIST, NIGHT, PORTRAIT, SNOW, WATERFALL } from '../lab/photos'
 import {
   IPHONE_APERTURES,
   ISOS,
@@ -17,16 +18,16 @@ import {
 import type { Develop } from '../lab/darkroom'
 import { Choice, Demo, Histogram, Meter, Readout, Stepper, Toggle } from '../ui'
 
-export const SCENE_NAMES: { value: SceneName; label: string }[] = [
-  { value: 'park', label: 'Park' },
-  { value: 'snow', label: 'Snow' },
-  { value: 'night', label: 'Night street' },
-  { value: 'cafe', label: 'Café' },
-  { value: 'waterfall', label: 'Waterfall' },
-]
+export type SceneName = 'cafe' | 'portrait' | 'cyclist' | 'night' | 'waterfall' | 'snow'
 
-// Where each scene's subject stands, for focusing on it.
-export const SUBJECT: Record<SceneName, number> = { park: 3.2, snow: 3.2, night: 2.6, cafe: 0.3, waterfall: 10.8 }
+export const SCENES: Record<SceneName, { label: string; spec: PhotoSpec; focus: number }> = {
+  cafe: { label: 'Café', spec: CAFE, focus: 0.36 },
+  portrait: { label: 'Portrait', spec: PORTRAIT, focus: 1.6 },
+  cyclist: { label: 'Cyclist', spec: CYCLIST, focus: 5.5 },
+  night: { label: 'Night street', spec: NIGHT, focus: 3 },
+  waterfall: { label: 'Waterfall', spec: WATERFALL, focus: 15 },
+  snow: { label: 'Snow', spec: SNOW, focus: 2.4 },
+}
 
 export type LabSettings = {
   scene: SceneName
@@ -48,7 +49,7 @@ export function loadIntoLab(s: Partial<LabSettings>) {
 const SLOW = SHUTTERS.filter((t) => t <= 30)
 
 export function ExposureLab() {
-  const [s, setS] = useState<LabSettings>({ scene: 'park', manual: false, aperture: 1.8, shutter: null, iso: 100, tripod: false })
+  const [s, setS] = useState<LabSettings>({ scene: 'cafe', manual: false, aperture: 1.8, shutter: null, iso: 100, tripod: false })
   const [focus, setFocus] = useState<number | null>(null)
   const [focusLabel, setFocusLabel] = useState<string | null>(null)
   const [dev, setDev] = useState<Develop | null>(null)
@@ -65,32 +66,38 @@ export function ExposureLab() {
     return () => window.removeEventListener(LOAD_EVENT, load)
   }, [])
 
-  const scene = useMemo(() => SCENES[s.scene](), [s.scene])
+  const cfg = SCENES[s.scene]
+  const scene = usePhoto(cfg.spec)
+  const spec = cfg.spec
   const e: Exposure = s.manual
     ? { aperture: s.aperture, shutter: s.shutter ?? 1 / 125, iso: s.iso }
-    : autoExpose(scene.meterEv ?? scene.ev, { aperture: s.aperture, shutter: s.shutter ?? undefined })
-  const stops = meterReading(scene.ev, e)
+    : autoExpose(spec.meterEv ?? spec.ev, { aperture: s.aperture, shutter: s.shutter ?? undefined })
+  const stops = meterReading(spec.ev, e)
 
   const shot = useMemo(
-    () => ({ ...e, focus: focus ?? SUBJECT[s.scene], wb: scene.kelvin, shake: s.tripod ? 0 : 1 }),
-    [e.aperture, e.shutter, e.iso, focus, s.scene, s.tripod, scene]
+    () => ({ ...e, focus: focus ?? cfg.focus, wb: spec.kelvin, shake: s.tripod ? 0 : 1 }),
+    [e.aperture, e.shutter, e.iso, focus, s.scene, s.tripod]
   )
 
-  const movers = scene.layers.filter((l) => l.motion)
-  const fastest = movers.reduce((best, l) => (Math.hypot(...l.motion!) > Math.hypot(...(best?.motion ?? [0, 0])) ? l : best), movers[0])
-  const smear = fastest ? Math.hypot(...fastest.motion!) * 640 * e.shutter : 0
+  const mover = spec.objects?.find((o) => o.motion)
+  const smear = mover ? Math.hypot(...mover.motion!) * 640 * e.shutter : 0
 
   const warnings: string[] = []
   if (stops > 0.7) warnings.push(`Too bright by ${stops.toFixed(1)} stops: the brightest parts have turned to flat white.`)
   if (stops < -0.7) warnings.push(`Too dark by ${(-stops).toFixed(1)} stops: shadows are sinking into black.`)
-  if (fastest && smear > 3) warnings.push(`${cap(fastest.label ?? 'Something')} moved while the shutter was open, so it's smeared.`)
+  if (mover && smear > 3) warnings.push(`${cap(mover.label)} moved while the shutter was open, so it's smeared.`)
   if (!s.tripod && e.shutter > 1 / 20) warnings.push(`At ${formatShutter(e.shutter)} your hands shake the whole picture. Use a tripod, or a faster shutter.`)
   if (e.iso >= 1600) warnings.push(`ISO ${formatIso(e.iso)} amplifies the signal and the noise with it. The picture is grainy.`)
 
   return (
     <Demo title="The exposure lab">
       <div className="mb-3">
-        <Choice options={SCENE_NAMES} value={s.scene} onChange={(scene) => (set({ scene }), setFocus(null), setFocusLabel(null))} small />
+        <Choice
+          options={(Object.keys(SCENES) as SceneName[]).map((k) => ({ value: k, label: SCENES[k].label }))}
+          value={s.scene}
+          onChange={(scene) => (set({ scene }), setFocus(null), setFocusLabel(null))}
+          small
+        />
       </div>
       <Viewfinder
         scene={scene}

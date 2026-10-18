@@ -2,47 +2,48 @@
 
 import { useMemo, useState } from 'react'
 import { Viewfinder, type Overlay } from '../lab/viewfinder'
-import { night, park } from '../lab/scenes'
+import { usePhoto, type PhotoSpec } from '../lab/photo'
+import { LAKE, NIGHT, SNOW } from '../lab/photos'
 import { autoExpose } from '../lab/optics'
 import type { Develop } from '../lab/darkroom'
 import { Choice, Demo, Histogram, Toggle } from '../ui'
 
 type Example = 'good' | 'dark' | 'bright' | 'night' | 'snow'
 
-const EXAMPLES: Record<Example, { label: string; build: () => ReturnType<typeof park>; stops: number; focus: number; read: string }> = {
+const EXAMPLES: Record<Example, { label: string; spec: PhotoSpec; stops: number; focus: number; read: string }> = {
   good: {
     label: 'Well exposed',
-    build: () => park(),
+    spec: LAKE,
     stops: 0,
-    focus: 3.2,
+    focus: 100,
     read: 'A hill spread across the whole width, touching neither wall. Tones from shadow to highlight, nothing lost.',
   },
   dark: {
     label: 'Too dark',
-    build: () => park(),
+    spec: LAKE,
     stops: -2,
-    focus: 3.2,
+    focus: 100,
     read: 'Everything is piled up on the left and the right half is empty. Shadows are crushed to black and nothing reaches white.',
   },
   bright: {
     label: 'Too bright',
-    build: () => park(),
+    spec: LAKE,
     stops: 1.7,
-    focus: 3.2,
-    read: 'A cliff against the right wall: a big share of the picture is pure white. The sky and the striped shirt have lost their detail for good.',
+    focus: 100,
+    read: 'A cliff against the right wall: a big share of the picture is pure white. The sky and the snow on the mountains have lost their detail for good.',
   },
   night: {
     label: 'Dark on purpose',
-    build: () => night(),
+    spec: NIGHT,
     stops: 0,
-    focus: 2.6,
+    focus: 3,
     read: 'Mostly on the left, and that is correct: it is night. A few spikes on the right are the lamps. Only the lamps should clip.',
   },
   snow: {
     label: 'Bright on purpose',
-    build: () => park({ winter: true }),
+    spec: SNOW,
     stops: 0,
-    focus: 3.2,
+    focus: 2.4,
     read: 'Leaning right, because the scene is mostly white snow, but not stacked against the wall. Bright, with detail kept.',
   },
 }
@@ -53,9 +54,9 @@ export function HistogramDemo() {
   const [clipping, setClipping] = useState(false)
   const [dev, setDev] = useState<Develop | null>(null)
   const cfg = EXAMPLES[ex]
-  const scene = useMemo(() => cfg.build(), [ex])
-  const e = autoExpose(scene.ev + -cfg.stops, { aperture: 1.8 })
-  const shot = useMemo(() => ({ ...e, focus: cfg.focus, wb: scene.kelvin, noise: false }), [e.shutter, e.iso, scene])
+  const scene = usePhoto(cfg.spec)
+  const e = autoExpose(cfg.spec.ev - cfg.stops, { aperture: 1.8 })
+  const shot = useMemo(() => ({ ...e, focus: cfg.focus, wb: cfg.spec.kelvin, noise: false }), [e.shutter, e.iso, ex])
 
   const overlay = useMemo<Overlay | undefined>(() => {
     if (!range && !clipping) return undefined

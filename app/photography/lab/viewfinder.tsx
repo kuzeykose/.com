@@ -11,7 +11,8 @@ export type Overlay = {
 }
 
 type Props = {
-  scene: Scene
+  // Null while a photo is still loading.
+  scene: Scene | null
   shot: Shot
   overlay?: Overlay
   onDevelop?: (d: Develop) => void
@@ -44,8 +45,8 @@ export function Viewfinder({ scene, shot, overlay, onDevelop, onTap, develop, la
   }, [])
 
   useEffect(() => {
-    if (!visible) {
-      room.current?.sleep()
+    if (!visible || !scene) {
+      if (!visible) room.current?.sleep()
       return
     }
     cancelAnimationFrame(frame.current)
@@ -53,6 +54,7 @@ export function Viewfinder({ scene, shot, overlay, onDevelop, onTap, develop, la
       const el = canvas.current
       if (!el) return
       const { scene, shot, overlay, onDevelop, develop } = latest.current
+      if (!scene) return
       if (!room.current) room.current = new Darkroom(WIDTH)
       const r = room.current
       r.setScene(scene)
@@ -87,6 +89,9 @@ export function Viewfinder({ scene, shot, overlay, onDevelop, onTap, develop, la
         role="img"
         className={`block h-auto w-full ${onTap ? 'cursor-crosshair' : ''}`}
       />
+      {!scene && (
+        <div className="absolute inset-0 flex items-center justify-center text-xs text-neutral-400">Developing the photo…</div>
+      )}
       {overlay?.grid && <Grid />}
       {children}
     </div>

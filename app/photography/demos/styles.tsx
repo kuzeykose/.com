@@ -2,7 +2,8 @@
 
 import { useMemo, useRef, useState } from 'react'
 import { Viewfinder } from '../lab/viewfinder'
-import { park } from '../lab/scenes'
+import { usePhoto } from '../lab/photo'
+import { PORTRAIT } from '../lab/photos'
 import { autoExpose } from '../lab/optics'
 import { STYLES, styleGrade, type StyleName } from '../lab/grade'
 import { Demo, Range } from '../ui'
@@ -12,16 +13,16 @@ export function StylesDemo() {
   const [tone, setTone] = useState(0)
   const [color, setColor] = useState(0)
   const [palette, setPalette] = useState(1)
-  const scene = useMemo(() => park({ friend: 2, friendX: 40, cyclist: false }), [])
-  const e = autoExpose(scene.ev, { aperture: 1.8 })
+  const scene = usePhoto(PORTRAIT)
+  const e = autoExpose(PORTRAIT.ev, { aperture: 1.8 })
   const grade = useMemo(() => styleGrade(style, palette, tone, color), [style, palette, tone, color])
-  const shot = useMemo(() => ({ ...e, focus: 2, wb: scene.kelvin, grade, noise: false }), [grade, scene])
+  const shot = useMemo(() => ({ ...e, focus: 1.6, wb: PORTRAIT.kelvin, grade, noise: false }), [grade])
   const info = STYLES.find((s) => s.name === style)!
 
   return (
     <Demo title="Photographic Styles">
       <div className="grid gap-3 sm:grid-cols-[1fr_9.5rem]">
-        <Viewfinder scene={scene} shot={shot} label={`The park in the ${style} style`} />
+        <Viewfinder scene={scene} shot={shot} label={`A portrait in the ${style} style`} />
         <div className="flex flex-row items-start gap-3 sm:flex-col">
           <Pad tone={tone} color={color} onChange={(t, c) => (setTone(t), setColor(c))} />
           <div className="flex-1 text-xs text-neutral-500 sm:flex-none">

@@ -22,6 +22,7 @@ import { CompositionDemo } from './demos/composition'
 import { Missions, Quiz, Recipes } from './demos/practice'
 import { HowAPhotoIsMade, LightDirections, Triangle } from './figures'
 import { Note } from './ui'
+import { CREDITS } from './lab/photos'
 
 export const metadata: Metadata = {
   title: 'Photography',
@@ -124,9 +125,9 @@ export default function Page() {
         built on. After that, dip in wherever you like.
       </P>
       <Note>
-        The “photos” in the demos are drawings, but the camera they go through is simulated properly: light
-        adds up in stops, blur grows with distance from the focus, grain grows with ISO, and highlights clip. What you
-        see happen here happens on your phone too.
+        The demos use real photographs, each cut into layers by distance so a small camera simulator can re-shoot
+        them: light adds up in stops, blur grows with distance from the focus, moving things smear, grain grows with
+        ISO, and highlights clip. What you see happen here happens on your phone too.
       </Note>
 
       <nav aria-label="Contents" className="my-8 grid gap-x-6 gap-y-4 rounded-xl border border-neutral-200 p-4 text-sm sm:grid-cols-3 dark:border-neutral-800">
@@ -228,9 +229,10 @@ export default function Page() {
         <div id="lab" className="scroll-mt-6" />
         <ExposureLab />
         <P>
-          Things to try: in the <b>Park</b>, drag the shutter to 1/15 and watch the cyclist smear (and the picture
-          blow out). On the <b>Night street</b>, switch to full manual and see how dark the honest exposure is
-          without help. In the <b>Café</b>, tap the back wall to focus there.
+          Things to try: with the <b>Cyclist</b>, untick “Let the iPhone choose” and drag the shutter to 1/15: he
+          smears, and the picture blows out. On the <b>Night street</b>, switch to full manual and see how dark the
+          honest exposure is without help. At the <b>Café</b>, try ƒ/1.48 and tap the street behind the table to focus
+          there.
         </P>
       </Section>
 
@@ -793,6 +795,28 @@ export default function Page() {
         </dl>
         <P>Now go outside and take a hundred photos. That’s the real course.</P>
       </Section>
+
+      <section id="credits" className="scroll-mt-6 pt-14 text-sm text-neutral-600 dark:text-neutral-400">
+        <h2 className="mb-3 text-base font-semibold tracking-tight text-neutral-900 dark:text-neutral-100">Photo credits</h2>
+        <p className="mb-3">
+          The photographs come from Flickr by way of Google’s Open Images collection, under the{' '}
+          <a href="https://creativecommons.org/licenses/by/2.0/" className="underline" target="_blank" rel="noopener noreferrer">
+            CC BY 2.0
+          </a>{' '}
+          licence. They’ve been cropped, and cut into layers with a depth map so the simulator can refocus and re-expose them.
+        </p>
+        <ul className="space-y-1">
+          {CREDITS.map((c) => (
+            <li key={c.url}>
+              {c.what}:{' '}
+              <a href={c.url} className="underline" target="_blank" rel="noopener noreferrer">
+                {c.title}
+              </a>{' '}
+              by {c.author}
+            </li>
+          ))}
+        </ul>
+      </section>
     </article>
   )
 }

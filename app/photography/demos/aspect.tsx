@@ -2,7 +2,8 @@
 
 import { useMemo, useState } from 'react'
 import { Viewfinder } from '../lab/viewfinder'
-import { park } from '../lab/scenes'
+import { usePhoto } from '../lab/photo'
+import { LAKE } from '../lab/photos'
 import { autoExpose } from '../lab/optics'
 import { Choice, Demo } from '../ui'
 
@@ -17,16 +18,16 @@ const KEEP: Record<Ratio, { w: number; h: number; use: string }> = {
 
 export function AspectDemo() {
   const [ratio, setRatio] = useState<Ratio>('4:3')
-  const scene = useMemo(() => park(), [])
-  const e = autoExpose(scene.ev, { aperture: 1.8 })
-  const shot = useMemo(() => ({ ...e, focus: 3.2, wb: scene.kelvin, noise: false }), [scene])
+  const scene = usePhoto(LAKE)
+  const e = autoExpose(LAKE.ev, { aperture: 1.8 })
+  const shot = useMemo(() => ({ ...e, focus: 100, wb: LAKE.kelvin, noise: false }), [])
   const k = KEEP[ratio]
   const left = ((1 - k.w) / 2) * 100
   const top = ((1 - k.h) / 2) * 100
 
   return (
     <Demo title="Aspect ratio">
-      <Viewfinder scene={scene} shot={shot} label={`The park framed at ${ratio}`}>
+      <Viewfinder scene={scene} shot={shot} label={`A mountain lake framed at ${ratio}`}>
         <div
           className="pointer-events-none absolute border-2 border-amber-300 transition-all duration-300"
           style={{ left: `${left}%`, right: `${left}%`, top: `${top}%`, bottom: `${top}%`, boxShadow: '0 0 0 999px rgba(0,0,0,0.6)' }}

@@ -2,7 +2,8 @@
 
 import { useMemo, useState } from 'react'
 import { Viewfinder } from '../lab/viewfinder'
-import { cafe } from '../lab/scenes'
+import { usePhoto } from '../lab/photo'
+import { CAFE_CLOSE } from '../lab/photos'
 import { IPHONE_APERTURES, autoExpose, formatAperture, formatIso, formatShutter } from '../lab/optics'
 import { Choice, Demo, Readout, Toggle } from '../ui'
 import { useLoupe } from './iso'
@@ -49,20 +50,21 @@ export function Blades({ aperture, size = 120 }: { aperture: number; size?: numb
 export function ApertureDemo() {
   const [aperture, setAperture] = useState(1.48)
   const [compensate, setCompensate] = useState(true)
-  const scene = useMemo(() => cafe(), [])
+  const scene = usePhoto(CAFE_CLOSE)
+  const ev = CAFE_CLOSE.ev
   // With compensation on, the iPhone rebalances shutter and ISO; off, they
   // stay where they were at ƒ/1.48.
-  const base = autoExpose(scene.ev, { aperture: 1.48 })
-  const e = compensate ? autoExpose(scene.ev, { aperture }) : { ...base, aperture }
-  const shot = useMemo(() => ({ ...e, focus: 0.3, wb: scene.kelvin }), [e.aperture, e.shutter, e.iso, scene])
+  const base = autoExpose(ev, { aperture: 1.48 })
+  const e = compensate ? autoExpose(ev, { aperture }) : { ...base, aperture }
+  const shot = useMemo(() => ({ ...e, focus: 0.36, wb: CAFE_CLOSE.kelvin }), [e.aperture, e.shutter, e.iso])
   const light = (aperture / 1.48) ** 2
-  // A close look at the fairy lights, where the blur shows most.
-  const [loupe, onDevelop] = useLoupe(0.8, 0.16, 60, 3)
+  // A close look at the street behind, where the blur shows most.
+  const [loupe, onDevelop] = useLoupe(0.34, 0.15, 60, 3)
 
   return (
     <Demo title="Lens aperture">
-      <Viewfinder scene={scene} shot={shot} onDevelop={onDevelop} label="An espresso shot close up at 2×">
-        <div className="pointer-events-none absolute border border-white/70" style={{ left: '74%', top: '10%', width: '12%', height: '12%' }} />
+      <Viewfinder scene={scene} shot={shot} onDevelop={onDevelop} label="A cappuccino on a café table, close up">
+        <div className="pointer-events-none absolute border border-white/80" style={{ left: '27.75%', top: '8.75%', width: '12.5%', height: '12.5%' }} />
       </Viewfinder>
       <div className="mt-3 grid grid-cols-[auto_1fr] items-center gap-3">
         <div className="flex flex-col items-center gap-1">
@@ -72,8 +74,8 @@ export function ApertureDemo() {
           </p>
         </div>
         <div>
-          <canvas ref={loupe} className="block h-auto w-full rounded-lg bg-neutral-900" aria-label="Close-up of the fairy lights" />
-          <p className="mt-1 text-xs text-neutral-500">The fairy lights, 3× closer (the white box).</p>
+          <canvas ref={loupe} className="block h-auto w-full rounded-lg bg-neutral-900" aria-label="Close-up of the street behind" />
+          <p className="mt-1 text-xs text-neutral-500">The railings behind the table, 3× closer (the white box).</p>
         </div>
       </div>
       <div className="mt-4 space-y-3">
@@ -91,8 +93,8 @@ export function ApertureDemo() {
           ]}
         />
         <p className="text-sm text-neutral-600 dark:text-neutral-400">
-          Watch the fairy lights behind the cup. Wide open they melt into big soft discs; at ƒ/4 they
-          shrink and the shelves come into view.
+          Focus is on the cup, about a third of a metre away. Watch the street behind it in the close-up: wide
+          open the railings melt into a soft blur; at ƒ/4 they come back.
           {compensate ? ' The iPhone slows the shutter or raises ISO to make up for the smaller hole.' : ' With nothing making up for it, the picture just gets darker.'}
         </p>
       </div>

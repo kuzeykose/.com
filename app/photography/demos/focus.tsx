@@ -2,7 +2,8 @@
 
 import { useMemo, useState } from 'react'
 import { Viewfinder } from '../lab/viewfinder'
-import { cafe } from '../lab/scenes'
+import { usePhoto } from '../lab/photo'
+import { CAFE_CLOSE } from '../lab/photos'
 import { autoExpose } from '../lab/optics'
 import { Demo, Range, Toggle } from '../ui'
 
@@ -14,13 +15,13 @@ const toSlider = (d: number) => (Math.log(d) - MIN) / (MAX - MIN)
 const formatDistance = (d: number) => (d >= 7.9 ? 'far away' : d < 1 ? `${Math.round(d * 100)} cm` : `${d.toFixed(1)} m`)
 
 export function FocusDemo() {
-  const [focus, setFocus] = useState(0.3)
-  const [what, setWhat] = useState<string>('the espresso')
+  const [focus, setFocus] = useState(0.36)
+  const [what, setWhat] = useState<string>('the cappuccino')
   const [peaking, setPeaking] = useState(false)
-  const [mark, setMark] = useState<{ x: number; y: number } | null>({ x: 0.57, y: 0.72 })
-  const scene = useMemo(() => cafe(), [])
-  const e = autoExpose(scene.ev, { aperture: 1.48 })
-  const shot = useMemo(() => ({ ...e, focus, wb: scene.kelvin }), [focus, scene])
+  const [mark, setMark] = useState<{ x: number; y: number } | null>({ x: 0.55, y: 0.7 })
+  const scene = usePhoto(CAFE_CLOSE)
+  const e = autoExpose(CAFE_CLOSE.ev, { aperture: 1.48 })
+  const shot = useMemo(() => ({ ...e, focus, wb: CAFE_CLOSE.kelvin }), [focus])
   const overlay = useMemo(() => (peaking ? { peaking: true } : undefined), [peaking])
 
   return (
@@ -64,7 +65,7 @@ export function FocusDemo() {
         <p className="text-sm text-neutral-600 dark:text-neutral-400">
           {what ? `Focused on ${what}, ${formatDistance(focus)} away. ` : ''}
           Only one distance can be perfectly sharp. Up close at ƒ/1.48 the zone around it is thin, so the cup
-          and the croissant can't both be sharp. Tap them in turn and watch the other one soften.
+          and the bike behind it can't both be sharp. Tap them in turn and watch the other one soften.
         </p>
       </div>
     </Demo>
