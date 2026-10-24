@@ -1,0 +1,587 @@
+{
+  "game_data": {
+    "title": "Restoration Fund Discrepancy Investigation — Hennepin County",
+    "suspect": {
+      "name": "Kofi Adarkwah",
+      "role": "Parole Officer, Hennepin County Department of Community Corrections",
+      "profile": "Background: Kofi Adarkwah, 27, grew up in north Minneapolis in a tight-knit Ghanaian diaspora Pentecostal community anchored by Harvest Glory Ministries. His father died when he was fifteen; his mother Abena raised him and his younger brother Kwame, who has cerebral palsy, almost entirely within the church's social orbit. Kofi studied criminal justice at Metropolitan State and entered county corrections at 24. Career: He is two years into his parole caseload, assigned primarily to the Restoration Fund Liaison Program — a county-blessed arrangement where Harvest Glory Ministries administers a small community fund (~$48,000/year) to provide emergency housing and transportation assistance to parolees. Kofi acts as the county-side point of contact, reviewing disbursement requests and co-signing fund release forms with the church treasurer. He is not a signatory on the bank accounts. He is accused of approving fund disbursements for fictitious parolees, diverting approximately $6,200. Personality: Speaks in clipped sentences. Volunteers nothing. Reads questions for traps before answering, often pausing five or more seconds. Not hostile but entirely unreadable. Interprets EMPATHIC framing as manipulation. Responds marginally better to flat ANALYTICAL questioning — procedural facts only. Suspicious detail: During an internal audit triggered by a tip, investigators found that Kofi had logged into the fund's shared disbursement spreadsheet on four occasions outside business hours, making edits. His explanation — correcting envelope-cash donation totals he had personally collected and not seen entered — is plausible but unverified because he never told the church treasurer he was doing it. Humanizing detail: Kofi stopped attending Harvest Glory services eleven months ago, telling his mother and church elders he works weekend shifts. In reality he has quietly and definitively departed from Pentecostal faith, having moved toward secular agnosticism over two years. He has not told his mother, who is seriously ill and for whom the church is her primary support structure. The guilt and logistical deception around this conversion is the dominant stressor in his life and produces the strongest physiological responses during any line of questioning that edges toward religion, the church, or his personal beliefs. This is entirely unrelated to the charged misappropriation."
+    },
+    "system_config": {
+      "initial_fear_bar": 20,
+      "max_fear_bar": 100,
+      "fear_bar_description": "Tracks the suspect's accumulated psychological tension throughout the session, integrating physiological channels (pulse, respiration, skin conductance) and observed affect into a unified strain metric.",
+      "heart_rate_baseline": 63,
+      "gsr_baseline": 5.8
+    },
+    "context": "The Hennepin County Department of Community Corrections and Harvest Glory Ministries discovered a $6,200 shortfall in the Restoration Fund during a routine audit in late 2024. Kofi Adarkwah, as the county liaison officer, had co-signed six disbursement approvals for parolee emergency assistance that could not be fully accounted for—either the stated recipients were not confirmed in active caseload records, or the payments never reached their intended destinations. Investigators found that Kofi had accessed the fund's shared disbursement spreadsheet on four separate occasions outside business hours, making edits to donation entries and approval records without notifying the church treasurer or his county supervisor. When initially questioned, Kofi stated he was correcting data-entry errors made by the church treasurer but provided no contemporaneous documentation or prior communication about these corrections. The county audit team is investigating whether Kofi used his administrative access to authorize fraudulent disbursements or whether the off-hours edits reflect legitimate corrections to the fund's records that were handled improperly by oversight.",
+    "true_verdict": "NOT_GUILTY",
+    "verdict_truth_text": "The $6,200 discrepancy originated from the church treasurer's pattern of failing to log cash donations that Kofi collected at community events. Kofi discovered the shortfall and attempted to correct the entries during his off-hours spreadsheet sessions, motivated by a desire to protect the program and avoid embarrassing an elderly church elder—not to conceal embezzlement. While his failure to report the issue to his supervisor reflects poor judgment and misplaced loyalty, the evidence places the financial loss upstream of his signatures, not in his hands.",
+    "dossier": {
+      "age": 27,
+      "identity_summary": "Kofi Adarkwah is a Hennepin County parole officer in his third year of service, currently the county liaison to the Harvest Glory Ministries Restoration Fund reentry assistance program. He holds a B.S. in Criminal Justice from Metropolitan State University.",
+      "family": [
+        {
+          "relation": "Mother",
+          "name": "Abena Adarkwah",
+          "note": "Age 58. Diagnosed with Type 2 diabetes with peripheral neuropathy complications and a 2022 cardiac event requiring ongoing medication management. Resides with the suspect, who coordinates her medical appointments and daily care."
+        },
+        {
+          "relation": "Younger brother",
+          "name": "Kwame Adarkwah",
+          "note": "Age 22. Has cerebral palsy affecting motor function and requiring part-time personal care assistance. Lives in a supported-living arrangement; the suspect is the primary family contact listed with his care provider."
+        }
+      ],
+      "medical": [
+        {
+          "condition": "Supraventricular tachycardia (SVT), history of two episodes at ages 23 and 25; currently managed with low-dose metoprolol succinate 25mg daily",
+          "polygraph_effect": "Beta-1 selective blockade suppresses sympathetically driven heart rate elevation. Reactive HR increases during emotional or cognitive stress are blunted in amplitude and delayed in onset; peak excursion is typically 40-55% lower than an unmedicated baseline. Resting HR may trend bradycardic (50-62 BPM). HR channel is an unreliable stress indicator for this subject."
+        }
+      ],
+      "habits": [
+        {
+          "habit": "Metoprolol succinate 25mg daily, taken with breakfast; no reported missed doses per pharmacy fill record",
+          "polygraph_effect": "Chronic beta-blockade. See cardiac entry. No additive HR effects from other agents noted in disclosure form."
+        },
+        {
+          "habit": "Light caffeine use — one cup of coffee in the morning, none in the afternoon per self-report",
+          "polygraph_effect": "Minimal impact on GSR or HR baseline at this intake level. No meaningful amplification of sympathetic response expected."
+        }
+      ],
+      "priors": [
+        "2021: Named in a county HR grievance filed by a colleague alleging hostile communication following a caseload reassignment dispute. Grievance was closed with no finding after mediation.",
+        "2023: Informal note in program file regarding a disbursement approval submitted without the required second-reviewer signature. Supervisor marked it as a procedural oversight; no disciplinary action taken."
+      ],
+      "pressure_points": [
+        "Questions about his day-to-day relationship with church leadership and program staff — subject responds with shorter answers than on procedural topics and tends to reframe questions before replying; ANALYTICAL framing keeps exchanges on facts but does not meaningfully increase elaboration.",
+        "Requests to walk through specific dates or timelines in detail — subject pauses notably longer than average and appears to internally review before answering; does not visibly deflect but answer density drops.",
+        "Topics involving his personal schedule, attendance patterns, or activities outside work hours — subject becomes markedly more guarded and occasionally answers a slightly different question than the one asked; AGGRESSIVE framing causes near-total shutdown.",
+        "Questions about his motivations for taking the liaison role and his connection to the church community — subject gives clipped, minimal responses and resists follow-up; prior interviewer noted the same pattern regardless of question framing."
+      ],
+      "modifiers": {
+        "heart_rate_suppression": 0.48,
+        "heart_rate_baseline_shift": -7,
+        "gsr_sensitivity": 1.05,
+        "gsr_baseline_shift": 0.8,
+        "breathing_instability": 0.14
+      }
+    },
+    "start_node": "node_01_intro",
+    "nodes": {
+      "node_01_intro": {
+        "theme": "Opening Contact",
+        "description": "Kofi Adarkwah sits across the table in a county-issued polo, hands flat, shoulders squared. He does not fidget. He does not smile. He waits.",
+        "is_end_state": false,
+        "choices": [
+          {
+            "type": "ANALYTICAL",
+            "question": "Mr. Adarkwah, for the record — walk me through your role in the Restoration Fund Liaison Program.",
+            "answer": "County liaison. Two years. I review parolee emergency-assistance requests, verify the person is on my caseload or a colleague's, and co-sign disbursement forms with the church treasurer. I don't hold the bank signature.",
+            "mechanics": {
+              "heart_rate": "BASELINE",
+              "breathing": "CALM",
+              "gsr": "BASELINE",
+              "cctv_visual": "STONE_FACE",
+              "korku_bari_delta": 5,
+              "gameplay_note": "PROGRESS: procedural framing keeps subject in comfort zone. Baseline established."
+            },
+            "next_node": "node_02_role_basics"
+          },
+          {
+            "type": "EMPATHIC",
+            "question": "I know this program means a lot to your community. I'd like to understand how you got involved, personally.",
+            "answer": "It's a county program. I was assigned.",
+            "mechanics": {
+              "heart_rate": "STABLE",
+              "breathing": "SHALLOW",
+              "gsr": "INCREASE",
+              "cctv_visual": "LIP_PRESS",
+              "korku_bari_delta": -8,
+              "gameplay_note": "WRONG MOVE: empathic framing is read as manipulation. Subject contracts."
+            },
+            "next_node": "node_03_spreadsheet_access"
+          },
+          {
+            "type": "AGGRESSIVE",
+            "question": "Six thousand two hundred dollars is missing, Mr. Adarkwah. Your keystrokes are on the ledger. Are we doing this the hard way?",
+            "answer": "I'd like that framed as a question, not an accusation. Ask me something specific.",
+            "mechanics": {
+              "heart_rate": "RISE",
+              "breathing": "CALM",
+              "gsr": "INCREASE",
+              "cctv_visual": "JAW_TIGHTEN",
+              "korku_bari_delta": -12,
+              "gameplay_note": "WRONG MOVE: subject is curt and trap-aware. Early aggression sets him into defensive mode."
+            },
+            "next_node": "node_03_spreadsheet_access"
+          }
+        ]
+      },
+      "node_02_role_basics": {
+        "theme": "Procedural Foundation",
+        "description": "Kofi answers the procedural questions cleanly, without elaboration. His hands remain flat on the table. The posture is unchanged from the moment he sat down.",
+        "is_end_state": false,
+        "choices": [
+          {
+            "type": "NARROW_TARGET",
+            "question": "Walk me through the approval chain for a single disbursement. Who touches the form, in what order?",
+            "answer": "Parolee submits a need statement, usually at the church office. Treasurer logs it, forwards to me. I verify the person is on active supervision and the need is consistent with program rules. I sign, treasurer counter-signs, check or cash goes out. Receipts come back to the treasurer, not me.",
+            "mechanics": {
+              "heart_rate": "STABLE",
+              "breathing": "CALM",
+              "gsr": "BASELINE",
+              "cctv_visual": "STONE_FACE",
+              "korku_bari_delta": 8,
+              "gameplay_note": "PROGRESS: subject describes process fluently. Mark this baseline for comparison against later answers."
+            },
+            "next_node": "node_04_mechanism_test"
+          },
+          {
+            "type": "ANALYTICAL",
+            "question": "The six disbursements in question — pull them from memory. Who were the named recipients?",
+            "answer": "I don't have the names in my head. I approve forty, fifty requests a year. If you have the ledger, show me and I'll walk you through what I remember.",
+            "mechanics": {
+              "heart_rate": "STABLE",
+              "breathing": "CALM",
+              "gsr": "BASELINE",
+              "cctv_visual": "STONE_FACE",
+              "korku_bari_delta": 3,
+              "gameplay_note": "NEUTRAL: reasonable memory-limit answer. No deception tells."
+            },
+            "next_node": "node_04_mechanism_test"
+          },
+          {
+            "type": "STRATEGIC",
+            "question": "Let's talk about the church itself. How did Harvest Glory become the administering body for this fund?",
+            "answer": "Before my time. The program predates me by four years.",
+            "mechanics": {
+              "heart_rate": "INCREASE",
+              "breathing": "SHALLOW",
+              "gsr": "SPIKE",
+              "cctv_visual": "LIP_PRESS",
+              "korku_bari_delta": -5,
+              "gameplay_note": "ANOMALY: routine historical question produces disproportionate GSR. Note topic."
+            },
+            "next_node": "node_06_church_connection"
+          }
+        ]
+      },
+      "node_03_spreadsheet_access": {
+        "theme": "Off-Hours Activity",
+        "description": "Kofi's shoulders have squared another quarter-inch. His answers have compressed to clipped sentences. The earlier neutrality has an edge to it now.",
+        "is_end_state": false,
+        "choices": [
+          {
+            "type": "FORENSIC_CALL_OUT",
+            "question": "You logged into the disbursement spreadsheet four times outside business hours. Tuesday the 8th at 11:47 PM. Walk me through that session.",
+            "answer": "I was correcting donation entries. Cash we'd collected at a community event the treasurer hadn't logged yet. I entered the totals I'd personally counted.",
+            "mechanics": {
+              "heart_rate": "RISE",
+              "breathing": "SHALLOW",
+              "gsr": "INCREASE",
+              "cctv_visual": "JAW_TIGHTEN",
+              "korku_bari_delta": 6,
+              "gameplay_note": "PARTIAL TRUTH: specific, plausible, but delivery is guarded. Topic worth pressing."
+            },
+            "next_node": "node_04_mechanism_test"
+          },
+          {
+            "type": "PRESSURE",
+            "question": "You didn't tell the treasurer. You didn't tell your supervisor. You logged in at midnight and edited the ledger. That's the behavior of someone covering tracks.",
+            "answer": "Or someone cleaning up after a church elder who forgets to enter cash. Ask Pastor Owusu what my relationship with the treasurer has been for fifteen years.",
+            "mechanics": {
+              "heart_rate": "RISE",
+              "breathing": "SHALLOW",
+              "gsr": "SPIKE",
+              "cctv_visual": "JAW_TIGHTEN",
+              "korku_bari_delta": -3,
+              "gameplay_note": "DEFLECTION: pivots to communal relationships. Subject hardening."
+            },
+            "next_node": "node_06_church_connection"
+          },
+          {
+            "type": "EMPATHIC",
+            "question": "Look, if you were trying to protect someone — a friend, a family figure — I'd rather hear that from you.",
+            "answer": "I'm not protecting anyone. Next question.",
+            "mechanics": {
+              "heart_rate": "STABLE",
+              "breathing": "SHALLOW",
+              "gsr": "INCREASE",
+              "cctv_visual": "LIP_PRESS",
+              "korku_bari_delta": -10,
+              "gameplay_note": "WRONG MOVE: empathic framing closes subject further. Soft tactics read as traps."
+            },
+            "next_node": "node_06_church_connection"
+          }
+        ]
+      },
+      "node_04_mechanism_test": {
+        "theme": "Mechanism Knowledge",
+        "description": "You slide a printout of the fund's approval architecture across the table — the routing rules, the signature thresholds, the reconciliation schedule. Kofi glances at it once, then back at you.",
+        "is_end_state": false,
+        "choices": [
+          {
+            "type": "ANALYTICAL",
+            "question": "Hypothetically — if someone wanted to pull $6,200 out of this fund without the treasurer noticing, how would they do it? Walk me through it.",
+            "answer": "I don't... I'd have to think about it. The treasurer reconciles the bank statement monthly. If you forged a disbursement, the check clears under a name, there's a paper trail on the other end. You'd need — I don't know. A recipient who cashes and returns the money? That's the only way I can picture. But I've never tried to picture it.",
+            "mechanics": {
+              "heart_rate": "STABLE",
+              "breathing": "CALM",
+              "gsr": "BASELINE",
+              "cctv_visual": "EMPTY_STARE",
+              "korku_bari_delta": 12,
+              "gameplay_note": "CRITICAL SIGNAL: mechanism-test produces LOW arousal and tentative, surface-level description. Subject lacks firsthand architecture. Fear bar drops."
+            },
+            "next_node": "node_05_parolee_disbursements"
+          },
+          {
+            "type": "TRAP",
+            "question": "You're a parole officer with access to the ledger and the approval signature. You know exactly how it works. Describe the scheme.",
+            "answer": "No. I know my piece. I sign off on a form the treasurer hands me. I don't know how she reconciles, I don't know how she cuts checks, I don't know what happens after the counter-signature. That's her lane.",
+            "mechanics": {
+              "heart_rate": "STABLE",
+              "breathing": "CALM",
+              "gsr": "BASELINE",
+              "cctv_visual": "STONE_FACE",
+              "korku_bari_delta": 10,
+              "gameplay_note": "CRITICAL SIGNAL: refuses to theorize with NO deception tells. Consistent with genuine non-knowledge of mechanism."
+            },
+            "next_node": "node_05_parolee_disbursements"
+          },
+          {
+            "type": "SYSTEMIC_READ",
+            "question": "Let's reverse it. What's the weakest point in the current program? Where would you audit first if you were us?",
+            "answer": "Cash donations at events. They don't enter the banking system directly. Treasurer logs totals on trust. If somebody skims before logging, you'd never catch it from the disbursement side.",
+            "mechanics": {
+              "heart_rate": "STABLE",
+              "breathing": "CALM",
+              "gsr": "BASELINE",
+              "cctv_visual": "STONE_FACE",
+              "korku_bari_delta": 8,
+              "gameplay_note": "PROGRESS: volunteers the intake-side weakness — the exact thing his off-hours edits were correcting. Signals remain flat."
+            },
+            "next_node": "node_05_parolee_disbursements"
+          }
+        ]
+      },
+      "node_05_parolee_disbursements": {
+        "theme": "The Six Recipients",
+        "description": "You lay out six disbursement forms side by side. Kofi's signature is on all six. He scans them in silence, lingering on two.",
+        "is_end_state": false,
+        "choices": [
+          {
+            "type": "EVIDENCE",
+            "question": "Three of these names — Reeves, Chilumba, Whitfield — aren't on your caseload or on any of your colleagues' caseloads for the relevant date. Explain.",
+            "answer": "Reeves was a transfer in from Ramsey County, the paperwork lag is two weeks. Chilumba — that's a spelling issue, she's in the system as 'Chilumbo,' the treasurer enters names by ear. Whitfield I'd have to check. The request would've come with a verification letter from a colleague. If it didn't, I shouldn't have signed.",
+            "mechanics": {
+              "heart_rate": "RISE",
+              "breathing": "SHALLOW",
+              "gsr": "INCREASE",
+              "cctv_visual": "JAW_TIGHTEN",
+              "korku_bari_delta": 10,
+              "gameplay_note": "PARTIAL TRUTH: specific, falsifiable, and shows willingness to concede procedural error. No deception cluster."
+            },
+            "next_node": "node_07_reframe_attempt"
+          },
+          {
+            "type": "AGGRESSIVE",
+            "question": "You signed off on three ghost recipients. That's not a clerical issue — that's fraud on a federal-facing program.",
+            "answer": "Then charge me. If you can show the money left the fund and landed somewhere it shouldn't, that's your case. I signed forms the treasurer handed me. That's the extent of what I can tell you.",
+            "mechanics": {
+              "heart_rate": "INCREASE",
+              "breathing": "SHALLOW",
+              "gsr": "SPIKE",
+              "cctv_visual": "JAW_TIGHTEN",
+              "korku_bari_delta": -8,
+              "gameplay_note": "WRONG MOVE: subject calls the bluff. He knows no evidence places funds with him."
+            },
+            "next_node": "node_06_church_connection"
+          },
+          {
+            "type": "NARROW_TARGET",
+            "question": "Pick one. Whitfield. Where did the money go?",
+            "answer": "I don't know. If Whitfield wasn't real, I signed a form that shouldn't have been in front of me. That's a failure on my side. Where the check cleared is on the banking record, not on me.",
+            "mechanics": {
+              "heart_rate": "STABLE",
+              "breathing": "CALM",
+              "gsr": "INCREASE",
+              "cctv_visual": "STONE_FACE",
+              "korku_bari_delta": 6,
+              "gameplay_note": "PROGRESS: consistent with earlier mechanism answers. No knowledge of the money's destination."
+            },
+            "next_node": "node_07_reframe_attempt"
+          }
+        ]
+      },
+      "node_06_church_connection": {
+        "theme": "Community Ties",
+        "description": "You shift the frame to Harvest Glory itself — the building, the people, his relationship to the ministry. Kofi's posture does not change. His breathing does.",
+        "is_end_state": false,
+        "choices": [
+          {
+            "type": "EMPATHIC",
+            "question": "Harvest Glory isn't just a job site for you. That community raised you. How often are you there, these days?",
+            "answer": "I... as often as the schedule allows. Weekends are complicated with my mother's appointments.",
+            "mechanics": {
+              "heart_rate": "RISE",
+              "breathing": "HOLDING_BREATH",
+              "gsr": "SURGE",
+              "cctv_visual": "EYE_DART",
+              "korku_bari_delta": 15,
+              "gameplay_note": "LIE SIGNAL: large GSR surge with breath hold on a topic unrelated to finance. Note: arousal does not match charge mechanism."
+            },
+            "next_node": "node_09_family_pressure"
+          },
+          {
+            "type": "ANALYTICAL",
+            "question": "Describe your current working relationship with Pastor Owusu and the treasurer. Frequency, format, tone.",
+            "answer": "Professional. Emails mostly. I see the treasurer at the quarterly program review. Pastor Owusu I haven't spoken to in... some months.",
+            "mechanics": {
+              "heart_rate": "RISE",
+              "breathing": "SHALLOW",
+              "gsr": "SPIKE",
+              "cctv_visual": "LIP_PRESS",
+              "korku_bari_delta": 4,
+              "gameplay_note": "ANOMALY: unusual arousal for a procedural question about colleagues. Topic charged beyond the financial frame."
+            },
+            "next_node": "node_07_reframe_attempt"
+          },
+          {
+            "type": "MORAL_PRESSURE",
+            "question": "People in that congregation trusted you with money they'd sacrificed to raise. What would your mother say, sitting where I'm sitting?",
+            "answer": "Don't bring her into this.",
+            "mechanics": {
+              "heart_rate": "SPIKE",
+              "breathing": "HOLDING_BREATH",
+              "gsr": "MAX",
+              "cctv_visual": "JAW_TIGHTEN",
+              "korku_bari_delta": -15,
+              "gameplay_note": "RED HERRING: massive dual-channel spike on family-and-church framing. Subject slams shut. Note whether spike pattern recurs on financial questions — it should not."
+            },
+            "next_node": "node_09_family_pressure"
+          }
+        ]
+      },
+      "node_07_reframe_attempt": {
+        "theme": "The Pivot",
+        "description": "Kofi sets both forearms on the table and exhales through his nose. For the first time, he speaks before being asked.",
+        "is_end_state": false,
+        "choices": [
+          {
+            "type": "LISTEN",
+            "question": "Go ahead.",
+            "answer": "You're looking at my signatures and my logins. Fine. But you should be looking at the intake side. The cash we collect at revivals and outreach — I've been counting envelopes for three years and watching totals show up in the ledger that don't match what I handed over. I never said anything because the treasurer is a woman who baptized me. That's the whole reason I was in the spreadsheet at night.",
+            "mechanics": {
+              "heart_rate": "RISE",
+              "breathing": "UNEVEN",
+              "gsr": "INCREASE",
+              "cctv_visual": "LIP_PRESS",
+              "korku_bari_delta": 14,
+              "gameplay_note": "PROGRESS: volunteered reframe, points the investigation upstream of his own signatures. Consistent with mechanism-test answers."
+            },
+            "next_node": "node_08_followup_exploitation"
+          },
+          {
+            "type": "GULLIBLE",
+            "question": "So you're saying the treasurer is the one to look at. Walk me through that theory in detail.",
+            "answer": "I'm not accusing her. I'm telling you what I saw. I corrected entries I'd personally counted. That's all I can say without evidence.",
+            "mechanics": {
+              "heart_rate": "STABLE",
+              "breathing": "CALM",
+              "gsr": "DECREASE",
+              "cctv_visual": "RELEASED_SHOULDERS",
+              "korku_bari_delta": -12,
+              "gameplay_note": "WRONG MOVE: accepting the pivot wholesale lets subject regain composure. Biometric floor resets."
+            },
+            "next_node": "node_08_followup_exploitation"
+          },
+          {
+            "type": "CHALLENGE",
+            "question": "Convenient theory — except you never reported it. Not to the treasurer, not to your supervisor, not to anyone. That's not whistleblowing. That's positioning.",
+            "answer": "I didn't report it because I wasn't sure. Because she's seventy-one and she's my mother's closest friend. Because the program helps my parolees and a complaint from me would end it. I made a choice. You can call it positioning. I called it waiting until I had something solid.",
+            "mechanics": {
+              "heart_rate": "SPIKE",
+              "breathing": "UNEVEN",
+              "gsr": "SURGE",
+              "cctv_visual": "JAW_TIGHTEN",
+              "korku_bari_delta": 12,
+              "gameplay_note": "HIGH-RISK PROGRESS: direct challenge pulls a fuller account. High arousal tied to community loyalty, not concealment of theft."
+            },
+            "next_node": "node_08_followup_exploitation"
+          }
+        ]
+      },
+      "node_08_followup_exploitation": {
+        "theme": "The Gap in the Story",
+        "description": "You set a single printed line of ledger output in front of him — the timestamp of his third midnight login, cross-referenced against a revival event he is not listed as having attended.",
+        "is_end_state": false,
+        "choices": [
+          {
+            "type": "FORENSIC_CALL_OUT",
+            "question": "October 19th, 11:52 PM login. You said you corrected cash you'd personally counted. Harvest Glory's sign-in sheet for the October 18th revival doesn't have your name on it. Explain.",
+            "answer": "I wasn't at the service. I was in the fellowship hall counting the offering with Sister Amo while the sermon ran. We don't sign in to that. Call her. She'll tell you.",
+            "mechanics": {
+              "heart_rate": "RISE",
+              "breathing": "UNEVEN",
+              "gsr": "SPIKE",
+              "cctv_visual": "LIP_PRESS",
+              "korku_bari_delta": 16,
+              "gameplay_note": "PROGRESS: falsifiable account with a named corroborating witness. Consistent with reframe. Second-highest biometric cluster but pattern matches stress, not deception."
+            },
+            "next_node": "node_10_final_press"
+          },
+          {
+            "type": "EMPATHIC",
+            "question": "You weren't in the service. Were you somewhere you shouldn't have been? You can tell me.",
+            "answer": "I was in the fellowship hall. Counting money. That's it.",
+            "mechanics": {
+              "heart_rate": "SPIKE",
+              "breathing": "HOLDING_BREATH",
+              "gsr": "MAX",
+              "cctv_visual": "EYE_DART",
+              "korku_bari_delta": -10,
+              "gameplay_note": "CRITICAL OBSERVATION: maximum GSR and breath hold on the question of his whereabouts, not on the financial question. Spike pattern distinct from charge-mechanism questions. Operator surrendered the forensic lead."
+            },
+            "next_node": "node_09_family_pressure"
+          },
+          {
+            "type": "AGGRESSIVE",
+            "question": "You weren't at the revival. You weren't signed in. You have no alibi for what you were doing at midnight on the ledger. This is the story collapsing.",
+            "answer": "I gave you a witness. You can call her in twenty minutes. If you'd rather perform than investigate, that's your choice.",
+            "mechanics": {
+              "heart_rate": "INCREASE",
+              "breathing": "SHALLOW",
+              "gsr": "SPIKE",
+              "cctv_visual": "JAW_TIGHTEN",
+              "korku_bari_delta": -6,
+              "gameplay_note": "WRONG MOVE: premature escalation. Subject weaponizes the verifiable detail against operator's framing."
+            },
+            "next_node": "node_10_final_press"
+          }
+        ]
+      },
+      "node_09_family_pressure": {
+        "theme": "Family In The Room",
+        "description": "Kofi's right hand has moved off the table and into his lap. His breathing is audible now. The stone face is holding but the neck beneath it is not.",
+        "is_end_state": false,
+        "choices": [
+          {
+            "type": "TACTICAL_RESET",
+            "question": "Take a minute. Water?",
+            "answer": "...Yeah. Thanks.",
+            "mechanics": {
+              "heart_rate": "DROP",
+              "breathing": "DEEP",
+              "gsr": "DECREASE",
+              "cctv_visual": "RELEASED_SHOULDERS",
+              "korku_bari_delta": -6,
+              "gameplay_note": "TACTICAL RESET: short-term loss of pressure but subject re-engages. Preserves the session."
+            },
+            "next_node": "node_10_final_press"
+          },
+          {
+            "type": "MORAL_PRESSURE",
+            "question": "Your mother is sick. Your brother depends on your paycheck. A conviction ends your career. Whatever this is — make it smaller now, before it gets bigger.",
+            "answer": "You think I don't know what's on the table. I'm telling you what I did and didn't do. If that's not enough for you, charge me and we'll see each other in court.",
+            "mechanics": {
+              "heart_rate": "SPIKE",
+              "breathing": "HOLDING_BREATH",
+              "gsr": "MAX",
+              "cctv_visual": "TEAR_POOLING",
+              "korku_bari_delta": -4,
+              "gameplay_note": "AMBIGUOUS: huge family-channel spike but no admission. Spike geography matches prior family-and-church topics, NOT charge mechanism."
+            },
+            "next_node": "node_fail_deflection"
+          },
+          {
+            "type": "STRATEGIC",
+            "question": "I'm going to step back from your family and back onto the ledger. Tell me about Sister Amo — who she is, how long she's been counting with you.",
+            "answer": "She's the intake coordinator. Sixty-eight. She's sat with me at every outreach offering I've counted for two years. Her handwriting is on the envelopes I photographed before I did the midnight entries.",
+            "mechanics": {
+              "heart_rate": "STABLE",
+              "breathing": "DEEP",
+              "gsr": "DECREASE",
+              "cctv_visual": "RELEASED_SHOULDERS",
+              "korku_bari_delta": 12,
+              "gameplay_note": "PROGRESS: strategic redirect away from family pressure to a corroborating procedural witness. Subject offers photographic evidence."
+            },
+            "next_node": "node_10_final_press"
+          }
+        ]
+      },
+      "node_10_final_press": {
+        "theme": "Last Approach",
+        "description": "The case file is open between you. Kofi has given you a witness, a timeline, and a theory that points upstream of his own signatures. He is watching you choose what to do with it.",
+        "is_end_state": false,
+        "choices": [
+          {
+            "type": "FORENSIC_CALL_OUT",
+            "question": "I want the photographs of the envelopes. Timestamps, originals, cloud backup. Now, from your phone, in front of me.",
+            "answer": "They're in a folder dated by event. I'll open it. This one is October 18th — seventeen envelopes, total counted $2,340. The ledger entry she posted the next morning was $1,890. That's one of the nights.",
+            "mechanics": {
+              "heart_rate": "STABLE",
+              "breathing": "CALM",
+              "gsr": "BASELINE",
+              "cctv_visual": "RELEASED_SHOULDERS",
+              "korku_bari_delta": 22,
+              "gameplay_note": "CRITICAL PROGRESS: contemporaneous evidence produced on demand. Biometric signature on primary charge matter is FLAT. Compare to earlier family/church spikes."
+            },
+            "next_node": "node_success_partial"
+          },
+          {
+            "type": "PRESSURE",
+            "question": "Photos can be staged. Metadata can be manipulated. I want you to say, on record, that you did not take a cent from that fund.",
+            "answer": "I did not take a cent from that fund. I did not direct anyone else to take from it. I corrected entries I believed were wrong. I kept my mouth shut about it longer than I should have. That's the truth and that's what I'll say in court.",
+            "mechanics": {
+              "heart_rate": "RISE",
+              "breathing": "DEEP",
+              "gsr": "INCREASE",
+              "cctv_visual": "STONE_FACE",
+              "korku_bari_delta": 14,
+              "gameplay_note": "PROGRESS: clean denial on charge-specific claim. Mild arousal, no deception cluster. Contrast strongly with earlier family-topic MAX GSR."
+            },
+            "next_node": "node_success_partial"
+          },
+          {
+            "type": "LEGAL_THREAT",
+            "question": "We'll be forwarding this to the county attorney's office today. Anything you say from here is going into that file. Understood?",
+            "answer": "Then I'd like to stop talking until I have counsel. I've told you what I know.",
+            "mechanics": {
+              "heart_rate": "STABLE",
+              "breathing": "CALM",
+              "gsr": "BASELINE",
+              "cctv_visual": "STONE_FACE",
+              "korku_bari_delta": -20,
+              "gameplay_note": "WRONG MOVE: premature legal escalation ends the session with the evidentiary record incomplete."
+            },
+            "next_node": "node_fail_lockdown"
+          }
+        ]
+      },
+      "node_success_partial": {
+        "theme": "Controlled Admission",
+        "description": "Kofi has produced the envelope photographs, named two corroborating witnesses, and provided a falsifiable account of his off-hours edits. He has admitted to procedural lapses — unreported suspicion of the treasurer, failure to escalate — but has made a clear, unprompted denial of taking funds. The session ends with him composed but visibly drained.",
+        "is_end_state": true,
+        "result_text": "Session concludes with Kofi's cooperation intact and documentary evidence produced voluntarily. Review the biometric log by topic: on direct questions about the charge mechanism — how fraud could work, where the money went, whether he took any — signals remained at or near baseline, with tentative and surface-level answers suggesting unfamiliarity rather than concealment. The high-amplitude clusters (GSR MAX, HOLDING_BREATH, TEAR_POOLING) occurred exclusively on questions touching his mother, his church attendance, and his standing in the Harvest Glory community — a signal geography disconnected from the financial architecture of the alleged crime. Subject has named corroborating witnesses (Sister Amo, intake coordinator) and produced timestamped envelope photographs indicating an intake-side discrepancy upstream of his signatures. The fund shortfall remains real; the question for the verdict screen is whether the biometric evidence places it in this man's hands."
+      },
+      "node_success_breakdown": {
+        "theme": "Emotional Collapse",
+        "description": "Kofi's composure has broken in a way that does not match the charge. His hands are over his face and his shoulders are shaking, but the words coming out are not about money.",
+        "is_end_state": true,
+        "result_text": "Subject fully destabilized, but the collapse is topically asymmetric. The emotional release occurred on family-and-faith framing, not on financial questioning. Review the log: charge-mechanism questions produced STABLE pulse, CALM breathing, BASELINE GSR throughout. Questions about his mother, his attendance at Harvest Glory, and his standing in the congregation produced the session's MAX-tier clusters. He has produced envelope photographs, named Sister Amo as a corroborating witness to his cash-counting claims, and made unprompted denials on the charge itself with no deception signature. The fund shortfall is documented. The question for the verdict screen is which direction the biometric evidence actually points."
+      },
+      "node_fail_lockdown": {
+        "theme": "Counsel Invoked",
+        "description": "Kofi sits back, folds his hands, and says nothing further. The session is over. A lawyer will be in the building within the hour.",
+        "is_end_state": true,
+        "result_text": "Subject invoked counsel and terminated the interview. The biometric record is partial: strong topical asymmetry was recorded — high-amplitude clusters concentrated on family, church-community, and personal-attendance questions, with near-baseline signatures on direct charge-mechanism and disbursement-destination questions — but the session ended before the forensic thread (envelope photographs, Sister Amo's corroboration) could be fully documented on record. The verdict screen will weigh an incomplete but topically suggestive log against a documented $6,200 shortfall and unexplained off-hours access."
+      },
+      "node_fail_deflection": {
+        "theme": "Hardened Stonewall",
+        "description": "Kofi has stopped answering in full sentences. He gives you one or two words at a time, his gaze fixed somewhere past your shoulder. The session has effectively ended without him formally invoking counsel.",
+        "is_end_state": true,
+        "result_text": "Subject did not invoke counsel but has ceased meaningful engagement. The log shows the session's heaviest biometric cluster on moral-pressure framing involving his mother and community standing — MAX GSR, HOLDING_BREATH, TEAR_POOLING — with no corresponding arousal on direct financial-mechanism questions. No documentary evidence (envelope photographs, witness names) was successfully extracted onto the record. The player enters the verdict screen with a suggestive but unverified signal pattern: strong displaced-arousal tells, a real $6,200 discrepancy, and an unresolved question about what the high-amplitude clusters were actually responding to."
+      }
+    },
+    "character_image": "./assets/characters/en-case-1.png"
+  }
+}

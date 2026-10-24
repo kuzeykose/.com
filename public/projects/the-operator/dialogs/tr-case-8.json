@@ -1,0 +1,574 @@
+{
+  "game_data": {
+    "title": "Bektaşoğlu Kültürevi Osmanlı Eserleri Kaçakçılığı Soruşturması",
+    "suspect": {
+      "name": "Halit Cevahir Sarıkaya",
+      "role": "Mahalle Kültürevi Sorumlusu",
+      "profile": "Halit Cevahir Sarıkaya, 1957 yılında Kastamonu'nun Taşköprü ilçesinde doğdu; babasının ölümünden sonra ilkokul mezuniyetiyle çalışma hayatına atıldı, yıllarca inşaat ve depo işçiliği yaptı. Ellili yaşlarında, kadim bir kervansaraya dönüştürülmüş Bektaşoğlu Kültürevi'nin sorumluluğunu devralmak için belediyeye başvururken üniversite diplomasını kendisi 'düzenledi': 1990'larda kapanan bir halk eğitim fakültesinin mühürlü evraklarını taklit ederek kültür yönetimi alanında hiç almadığı bir diplomayı sahte biçimde oluşturdu ve bunu özgeçmişine ekledi. Bu sayede pozisyonu kazandı; on dört yıldır söz konusu görevi sürdürmektedir. Kişilik olarak sert, bürokratik dili kısa keser, eleştiriyi kişisel saldırı sayar ve otoritesinin sorgulanmasına tahammül edemez. Supheli detay: Kültürevi deposunda kayıt altına alınmış Osmanlı dönemi çini panolar, sedef kakmalı rahle kapaklarından oluşan koleksiyonun bir kısmı, Sarıkaya'nın görev döneminde parça parça 'restorasyon hasarı' ya da 'depo ıslak nem zararı' gerekçesiyle devre dışı bırakılmış; ardından özel koleksiyoncuların elinde ortaya çıkmıştır. İnsani detay: Annesine her sabah öğle yemeği götürür; Hafize Hanım 89 yaşında, alzheimer hastasıdır ve pahalı özel bakımevinde kalmaktadır. Sarıkaya bu masrafı karşılamak için yıllardır kasasını zorlayan bir yük taşımaktadır — sahte diplomasını ifşa edeceğini düşündüğü herkese karşı derin bir öfke ve kırılganlık geliştirmiştir."
+    },
+    "system_config": {
+      "initial_fear_bar": 20,
+      "max_fear_bar": 100,
+      "fear_bar_description": "Oturum boyunca suphelinin biyometrik ve davranışsal geriliminin gerçek zamanlı göstergesi; nabız, nefes düzensizliği, ter tepkisi ve görünür duygu arasında karşılaştırmalı okumanın temeli.",
+      "heart_rate_baseline": 72,
+      "gsr_baseline": 5
+    },
+    "context": "Kastamonu Kültür Varlıklarını Koruma Kurulu'nun 2023 yılı rutin denetiminde Bektaşoğlu Kültürevi deposunda on iki adet Osmanlı dönemi eserinin (çini panolar, sedef kakmalı cilt kapakları, bakır kandil grubu) müze envanterinden eksik olduğu tespit edildi. Söz konusu eserler, üç yıl içinde kademeli olarak 'nem hasarı' veya 'restorasyon kaybı' gerekçesiyle kapatılmıştı. Kısa süre sonra, aynı eserlerin neredeyse aynı özellikleri taşıyan parçaları İstanbul antika pazarında ve özel koleksiyoncuların elinde ortaya çıktı. Soruşturma, eşyaların kimler tarafından ve hangi kanallarla depodan çıkarıldığını belirlemeye yönelik başlatılmıştır. Kültürevi sorumlusu Halit Cevahir Sarıkaya, depo yönetiminden tek yetkili olması ve söz konusu dönemdeki tüm envanter belgelerini imzalaması nedeniyle merkezi bir şüpheli konumundadır.",
+    "true_verdict": "GUILTY",
+    "verdict_truth_text": "Halit Cevahir Sarıkaya, on iki Osmanlı dönemi eserini sistematik olarak Bektaşoğlu Kültürevi envanterinden çıkarmış ve antika pazarında satmıştır. İtirafa gitmeden önce ilk adımları ihmale, sonrasında ise bilinçli bir kaçakçılık ağına işaret edilen bu eylem, annesinin yüksek bakımevi masraflarını karşılamak için kendi başına planlanmış ve yürütülmüştür. Kanıt ve biyometrik sinyaller, tarihî mirası koruması gerekenin yerine onu satanın suçluluğu noktasında açıktır.",
+    "dossier": {
+      "age": 67,
+      "identity_summary": "Bektaşoğlu Kültürevi sorumlusu; on dört yıldır görevde. Belediyeye bağlı, tarihi kervansaray yapısının yönetiminden ve depo envanterinin korunmasından tek yetkili olarak sorumlu.",
+      "family": [
+        {
+          "relation": "Anne",
+          "name": "Hafize Sarıkaya",
+          "note": "89 yaşında. 2019'dan bu yana şehir merkezindeki Altınçağ Özel Bakımevi'nde ikamet etmektedir. Bakımevi kayıtlarına göre ileri evre demans tanısı mevcuttur."
+        }
+      ],
+      "medical": [],
+      "habits": [
+        {
+          "habit": "Günde 8-10 adet filtre sigara (yaklaşık 30 yıllık alışkanlık)",
+          "polygraph_effect": "Kronik hafif nikotin yükü; dinlenme halinde kalp atışı tavanını marjinal ölçüde yükseltebilir, ancak akut sempatik tepki üzerinde ölçülebilir baskılayıcı etkisi yoktur."
+        }
+      ],
+      "priors": [
+        "2017: Kültürevi çatı restorasyonunda usulsüz harcama iddiasıyla belediye iç denetimi başlatıldı; denetim dosyası idari yetersizlik gerekçesiyle kapatıldı, adli soruşturma açılmadı.",
+        "2021: Depo ıslak nem tespit tutanakları imzalanmış; söz konusu tarihlerde envanter defterinde beş adet eser 'imha edildi' olarak işaretlenmiş.",
+        "2023: Kastamonu Kültür Varlıklarını Koruma Bölge Kurulu rutin denetiminde envanter noksanı tespit etmiş; Sarıkaya'nın yazılı savunması dosyada mevcut."
+      ],
+      "pressure_points": [
+        "Depo kayıt prosedürleri ve envanter noksanlarının nasıl belgelendiği — konuya girişildiğinde savunma tutumu hızla sertleşiyor, sorguyu prosedürel alana çekmeye çalışıyor; ANALYTICAL yaklaşım bu örüntüyü belirginleştiriyor.",
+        "Kültürevi göreviyle ilgili kişisel nitelikleri ve bu pozisyona nasıl geldiği — kısa, kesik yanıtlar; soruyu geniş mesleki deneyimine doğru yeniden çerçeveleme eğilimi; AGGRESSIVE yaklaşım öfkeyi tırmandırıyor ve konudan uzaklaşmayı hızlandırıyor.",
+        "Annesinin bakım masrafları ve mali yük — supheli konuyu gündeme taşımaktan kaçınmıyor fakat ayrıntı sormak yetersiz bir konuşma açısı bırakıyor; EMPATHIC çerçeveleme kapıyı aralıyor ancak yanıtlar duygusal olmaktan çok savunmacı.",
+        "2017 iç denetim süreci ve o dönemde depoyla ilgili alınan idari kararlar — supheli bu döneme atıfları küçümseyerek geçiştiriyor, kapatılmış bir dosya olarak çerçeveliyor; üslupta belirgin bir sinirlilik gözlemleniyor."
+      ],
+      "modifiers": {
+        "heart_rate_suppression": 0,
+        "heart_rate_baseline_shift": 2,
+        "gsr_sensitivity": 1,
+        "gsr_baseline_shift": 0,
+        "breathing_instability": 0.05
+      }
+    },
+    "start_node": "node_01_intro",
+    "nodes": {
+      "node_01_intro": {
+        "theme": "İlk Temas",
+        "description": "Halit Cevahir Sarıkaya sorgu odasında dimdik oturuyor; kolları göğsünde kenetli, çenesi hafifçe sıkılı. Masada Kültürevi envanter defterinin fotokopisi ve Bölge Kurulu'nun eksik eser listesi açık duruyor. İlk kelimeler söylenmeden önce hışırtılı bir nefes çekiyor.",
+        "is_end_state": false,
+        "choices": [
+          {
+            "type": "ANALYTICAL",
+            "question": "Sayın Sarıkaya, bugün buraya çağrılma sebebiniz Bölge Kurulu'nun 2023 denetim raporu. On iki eser eksik görünüyor. Başlamadan önce, depo envanterinin nasıl tutulduğunu kendi ağzınızdan duymak isterim.",
+            "answer": "Envanter defteri her ayın sonunda kapanır, benim imzamla. Yılda iki kez Kurul'dan müfettiş gelir, o da imzalar. Yirmi yıldır böyle. Siz bu işi benim evimde yapmıyorum, devletin masasında yapıyorum.",
+            "mechanics": {
+              "heart_rate": "RISE",
+              "breathing": "SHALLOW",
+              "gsr": "INCREASE",
+              "cctv_visual": "JAW_TIGHTEN",
+              "korku_bari_delta": 6,
+              "gameplay_note": "İLERLEME: Prosedüre sığınma refleksi erken ortaya çıktı; savunma duvarı belirgin."
+            },
+            "next_node": "node_02_envanter_prosedur"
+          },
+          {
+            "type": "EMPATHIC",
+            "question": "Yıllardır bu kervansarayı yalnız başınıza ayakta tuttuğunuzu biliyorum. Belediye size gereken desteği veriyor mu gerçekten?",
+            "answer": "Destek mi? Çatıdan damlayan suya kova tutarak mı destek? On dört yıldır bir depo elemanı bile vermediler. Ne istiyorsunuz yani, tek başıma Süleymaniye'yi mi koruyayım?",
+            "mechanics": {
+              "heart_rate": "STABLE",
+              "breathing": "BASELINE",
+              "gsr": "STABLE",
+              "cctv_visual": "LIP_PRESS",
+              "korku_bari_delta": -4,
+              "gameplay_note": "YANLIŞ HAMLE: Şikayet alanına kapı açıldı; süpheli rahatladı ve kurbanlık anlatısını kurdu."
+            },
+            "next_node": "node_04_anne_mali_yuk"
+          },
+          {
+            "type": "STRATEGIC",
+            "question": "Özgeçmişinizden başlayalım. Bu pozisyona on dört yıl önce nasıl geldiniz?",
+            "answer": "Belediye ilanına başvurdum, diplomamı verdim, mülakata girdim. Başka ne soracaksınız? Yirmi beş yaşındaki oğlanlar gibi CV mi okutacaksınız bana?",
+            "mechanics": {
+              "heart_rate": "SPIKE",
+              "breathing": "HOLDING_BREATH",
+              "gsr": "SURGE",
+              "cctv_visual": "EYE_DART",
+              "korku_bari_delta": 11,
+              "gameplay_note": "YALAN SİNYALİ: Kariyer başlangıcı sorusunda beklenenin çok üstünde sempatik tepki; saklanan bir katman var."
+            },
+            "next_node": "node_03_arka_plan"
+          }
+        ]
+      },
+      "node_02_envanter_prosedur": {
+        "theme": "Prosedürel Savunma",
+        "description": "Halit envanter defterinin kopyasını kendine doğru çeviriyor, sanki bir kez daha okuyacakmış gibi parmağını sayfaya bastırıyor. Sesi kuru, bir memur tonuyla yanıtlıyor.",
+        "is_end_state": false,
+        "choices": [
+          {
+            "type": "FORENSIC_CALL_OUT",
+            "question": "2021 yılı Mart, Temmuz ve Kasım aylarında, yani üç farklı ayda, 'nem hasarı' nedeniyle beş eser imha edildi olarak işaretlenmiş. Aynı depoda, aynı yıl. Nem raporu hangi uzmandan alındı?",
+            "answer": "Rapor... depo sorumlusu olarak benim gözlemim esasında kayda girdi. Müzecilik kuralı bunu tanır. Yerinde bozulan eseri kayıt dışı tutmak yönetmeliğe uygundur.",
+            "mechanics": {
+              "heart_rate": "SPIKE",
+              "breathing": "SHALLOW",
+              "gsr": "SURGE",
+              "cctv_visual": "HAND_PINCH_UNDER_TABLE",
+              "korku_bari_delta": 14,
+              "gameplay_note": "İLERLEME: Uzman raporu olmadığını kendi ağzıyla söyledi; teknik boşluk açığa çıktı."
+            },
+            "next_node": "node_05_mekanizma_testi"
+          },
+          {
+            "type": "ANALYTICAL",
+            "question": "2017 iç denetim raporunda çatı restorasyonunda usulsüz harcama iddiası vardı. O dönemde depoya giren çıkanı da denetlediler mi?",
+            "answer": "O dosya kapandı. İdari yetersizlik yazdılar, üç satırlık bir tutanak. Altı yıl önceki bir kağıdı şimdi önüme atmanın anlamı ne? Davanızla ilgili bir şey varsa söyleyin.",
+            "mechanics": {
+              "heart_rate": "INCREASE",
+              "breathing": "UNEVEN",
+              "gsr": "INCREASE",
+              "cctv_visual": "LIP_PRESS",
+              "korku_bari_delta": 5,
+              "gameplay_note": "KISMEN DOĞRU: 2017 dönemine keskin bir reddediş; savunma hattı belirginleşti ama yol açık değil."
+            },
+            "next_node": "node_08_2017_denetim"
+          },
+          {
+            "type": "SYSTEMIC_READ",
+            "question": "Bölge Kurulu müfettişi yılda iki kez geldiğine göre, 2021'deki imha kayıtları onun imzasıyla mı onaylandı?",
+            "answer": "Müfettiş gelir, defteri tarar, imzalar. Tek tek eserin ardına düşmez. Sistem böyle çalışıyor; benim icat ettiğim bir şey değil.",
+            "mechanics": {
+              "heart_rate": "STABLE",
+              "breathing": "BASELINE",
+              "gsr": "STABLE",
+              "cctv_visual": "STONE_FACE",
+              "korku_bari_delta": -6,
+              "gameplay_note": "YANLIŞ HAMLE: Denetim zaafını sistemik bir soruya çevirdiniz; süpheli sorumluluğu dağıttı ve rahatladı."
+            },
+            "next_node": "node_09_yanlis_kanit_yolu"
+          }
+        ]
+      },
+      "node_03_arka_plan": {
+        "theme": "Özgeçmiş Sorgusu",
+        "description": "Halit sandalyede kıpırdanıyor; parmak uçlarını masaya tıkırdatıyor, kısa bir an gözü odanın köşesindeki dosya dolabına kayıyor. Diplomadan söz açıldığında sesi bir tık yükseliyor.",
+        "is_end_state": false,
+        "choices": [
+          {
+            "type": "NARROW_TARGET",
+            "question": "Hangi üniversiteden mezunsunuz? Bölümünüz neydi?",
+            "answer": "Anadolu Halk Eğitim Fakültesi, Kültür Yönetimi. 1989 kaydı, 1993 mezuniyeti. Fakülte kapandı sonradan, arşivi Milli Eğitim'e devredildi. Belediyedeki dosyamda her şey yazıyor.",
+            "mechanics": {
+              "heart_rate": "MAX_SPIKE",
+              "breathing": "HOLDING_BREATH",
+              "gsr": "MAX",
+              "cctv_visual": "EYE_DART",
+              "korku_bari_delta": 18,
+              "gameplay_note": "YALAN SİNYALİ: Kimlik/özgeçmiş sorusunda oturumun en yüksek biyometrik kümesi; burada bir şey saklanıyor ama bu davayla doğrudan örtüşmeyebilir."
+            },
+            "next_node": "node_09_yanlis_kanit_yolu"
+          },
+          {
+            "type": "EMPATHIC",
+            "question": "Taşköprü'den bu göreve uzun bir yol. Babanızı kaybettikten sonra ailenizin yükü size kalmış. Bu pozisyon sizin için ne ifade ediyor?",
+            "answer": "Saygı ifade ediyor. İlkokul mezunuyken depo taşıdım, şimdi devletin kapısında oturuyorum. Kimse bana bunu sadaka gibi vermedi.",
+            "mechanics": {
+              "heart_rate": "RISE",
+              "breathing": "UNEVEN",
+              "gsr": "INCREASE",
+              "cctv_visual": "JAW_TIGHTEN",
+              "korku_bari_delta": 3,
+              "gameplay_note": "İLERLEME: 'Kimse bana vermedi' vurgusu savunmacı; pozisyonun altında bir hassasiyet var."
+            },
+            "next_node": "node_04_anne_mali_yuk"
+          },
+          {
+            "type": "AGGRESSIVE",
+            "question": "On dört yıldır Kültürevi'ni yönetiyorsunuz ama temel müzecilik eğitiminiz yok gibi. Siz kendinizi bu pozisyona layık görüyor musunuz?",
+            "answer": "Bu ne biçim soru? Beni kim olduğumu sorgulamak için mi çağırdınız, eserleri araştırmak için mi? Siz avukatım burada olmadan konuşmayacağım daha.",
+            "mechanics": {
+              "heart_rate": "MAX_SPIKE",
+              "breathing": "HYPERVENTILATION",
+              "gsr": "MAX",
+              "cctv_visual": "DEFENSIVE_CROSS_ARMS",
+              "korku_bari_delta": -10,
+              "gameplay_note": "YANLIŞ HAMLE: Otorite doğrudan hedef alındı; süpheli hukuki kalkan arıyor."
+            },
+            "next_node": "node_09_yanlis_kanit_yolu"
+          }
+        ]
+      },
+      "node_04_anne_mali_yuk": {
+        "theme": "Bakımevi ve Mali Yük",
+        "description": "Halit bir süre cevap vermeden önce masadaki bardağa bakıyor. Annesinden söz edilince yüz hatları bir nebze yumuşuyor ama sözcükleri hâlâ ölçüyor.",
+        "is_end_state": false,
+        "choices": [
+          {
+            "type": "EMPATHIC",
+            "question": "Anneniz Hafize Hanım Altınçağ Bakımevi'nde. Aylık ücreti, belediye maaşınızın neredeyse tamamı ediyor. Bu yükü nasıl taşıyorsunuz?",
+            "answer": "Taşıyorum işte. Babam rahmetli olunca ona söz verdim. Birikimim vardı, onu yedik. Eşim, çocuğum olmadı; bu kadın benim tek ailem. Sabah öğle yemeğini ben götürüyorum hâlâ, tanımasa da.",
+            "mechanics": {
+              "heart_rate": "RISE",
+              "breathing": "DEEP",
+              "gsr": "INCREASE",
+              "cctv_visual": "TEAR_POOLING",
+              "korku_bari_delta": 8,
+              "gameplay_note": "İLERLEME: Gerçek duygusal açıklık; mali baskının varlığı doğrulandı ama motif hâlâ ima düzeyinde."
+            },
+            "next_node": "node_05_mekanizma_testi"
+          },
+          {
+            "type": "ANALYTICAL",
+            "question": "Altınçağ Bakımevi'nin aylık ücretini belediye maaşınız karşılayamıyor. Ek bir geliriniz var mı?",
+            "answer": "Ne geliri? Taşköprü'deki baba evini kiraya verdim, ayda beş bin geliyor. Onun dışında hiçbir şey yok. Hesaplarıma bakın, bankada yatan paraya bakın.",
+            "mechanics": {
+              "heart_rate": "SPIKE",
+              "breathing": "SHALLOW",
+              "gsr": "SURGE",
+              "cctv_visual": "HAND_PINCH_UNDER_TABLE",
+              "korku_bari_delta": 12,
+              "gameplay_note": "YALAN SİNYALİ: Gelir sorusunda sert sempatik tepki; banka hesabı kısmı aşırı hevesli bir davet."
+            },
+            "next_node": "node_08_2017_denetim"
+          },
+          {
+            "type": "MORAL_PRESSURE",
+            "question": "Annenize bakmak için her şeyi yaparsınız diyorsunuz. Devlet kayıtlarından eser düşürmek de bunun parçası mıydı?",
+            "answer": "Yeter! Anneme dokunmayın. Ne diyorsunuz siz? Bu kadın demansın dibinde, ben onun için şeyhin eserini çalacak adam mıyım? Utanın biraz.",
+            "mechanics": {
+              "heart_rate": "MAX_SPIKE",
+              "breathing": "HYPERVENTILATION",
+              "gsr": "MAX",
+              "cctv_visual": "JAW_TIGHTEN",
+              "korku_bari_delta": -8,
+              "gameplay_note": "YANLIŞ HAMLE: Çok erken frontal suçlama; süpheli ahlaki öfke kalkanı kurdu, empatik kanal kapandı."
+            },
+            "next_node": "node_fail_deflection"
+          }
+        ]
+      },
+      "node_05_mekanizma_testi": {
+        "theme": "Mekanizma Testi",
+        "description": "Halit'e önüne eksik eserlerin fotoğraflarını diziyorsunuz: üç çini pano, beş sedef kakmalı cilt kapağı, dört bakır kandil. Parmağıyla fotoğraflardan birine dokunacak gibi oluyor, sonra elini çekiyor.",
+        "is_end_state": false,
+        "choices": [
+          {
+            "type": "FORENSIC_CALL_OUT",
+            "question": "Bir eser nem hasarından imha edilecek kadar bozulduğunda, prosedür olarak ne yapılır? Fiziksel olarak parça nereye gider, kağıt üzerinde hangi aşamalar atılır?",
+            "answer": "Eee... eser tutanakla tespit edilir. İki nüsha. Sonra... bölge müdürlüğüne bildirim yazısı gider. Eser depoda ayrı bir rafta tutulur, 'imha kararı bekliyor' etiketiyle. Yılsonu kurul toplanır, imha komisyonu... yakma ya da gömme tutanağı tutulur. Bu detayları her memur bilmez, ben biliyorum çünkü yaşadım.",
+            "mechanics": {
+              "heart_rate": "MAX_SPIKE",
+              "breathing": "HOLDING_BREATH",
+              "gsr": "MAX",
+              "cctv_visual": "EYE_DART",
+              "korku_bari_delta": 20,
+              "gameplay_note": "YALAN SİNYALİ: Prosedürün her adımını ezbere anlattı ama biyometri patladı; 'yaşadım' vurgusu kendini ele verdi."
+            },
+            "next_node": "node_06_takip_somurusu"
+          },
+          {
+            "type": "NARROW_TARGET",
+            "question": "2021'de 'imha edildi' olarak kapatılan beş eserin fiziksel imha tutanakları dosyada yok. Bu tutanaklar nerede?",
+            "answer": "Dosya arşivinde olması gerekir. Ben her şeyi iki nüsha tutarım, bir tanesi belediyeye gider. Belki kaybetmişlerdir; benim sorumluluğumda değil o aşaması.",
+            "mechanics": {
+              "heart_rate": "SPIKE",
+              "breathing": "SHALLOW",
+              "gsr": "SURGE",
+              "cctv_visual": "LIP_PRESS",
+              "korku_bari_delta": 13,
+              "gameplay_note": "İLERLEME: Tutanakları başkasına yıktı; sorumluluğu parçalama girişimi adli olarak çürütülebilir."
+            },
+            "next_node": "node_06_takip_somurusu"
+          },
+          {
+            "type": "GULLIBLE",
+            "question": "Nem hasarının böyle farklı türde eserleri aynı anda bozması teknik olarak mümkün mü sizce?",
+            "answer": "Mümkün tabii. Kervansarayın taş duvarı nem çeker, kuzey cephesinde küf olur. Çini de, ahşap da, bakır da etkilenir. Siz bunu restoratöre sorun, benim ağzımdan değil.",
+            "mechanics": {
+              "heart_rate": "DROP",
+              "breathing": "CALM",
+              "gsr": "DECREASE",
+              "cctv_visual": "RELEASED_SHOULDERS",
+              "korku_bari_delta": -12,
+              "gameplay_note": "YANLIŞ HAMLE: Teknik bir kapı açtınız, süpheli nefes aldı ve uzmanlık perdesinin arkasına çekildi."
+            },
+            "next_node": "node_09_yanlis_kanit_yolu"
+          }
+        ]
+      },
+      "node_06_takip_somurusu": {
+        "theme": "Tutanak Çelişkisi",
+        "description": "Önünüzdeki dosyadan belediye arşivinden gelen resmi yazıyı çekiyorsunuz: 2021 yılına ait imha tutanaklarının belediye ikinci nüshalarının var olmadığı, arşive hiç girilmediği yazıyor. Halit bu yazıyı görünce kaşlarını çatıyor, nefesini tutuyor.",
+        "is_end_state": false,
+        "choices": [
+          {
+            "type": "FORENSIC_CALL_OUT",
+            "question": "Az önce 'her şeyi iki nüsha tutarım, biri belediyeye gider' dediniz. Belediye arşivi o tutanakların kendilerine hiç ulaşmadığını bildiriyor. Bu çelişkiyi nasıl açıklıyorsunuz?",
+            "answer": "Ben... yolladım onları. Ulaşmadıysa postada kaybolmuştur. Ya da arşiv memuru tasnif etmemiştir. Benim göndermediğim şey değil bu. Elimde giden evrak defterim var, bakın, 14 Kasım 2021... kontrol ettirin.",
+            "mechanics": {
+              "heart_rate": "MAX_SPIKE",
+              "breathing": "HYPERVENTILATION",
+              "gsr": "MAX",
+              "cctv_visual": "HAND_PINCH_UNDER_TABLE",
+              "korku_bari_delta": 17,
+              "gameplay_note": "YALAN SİNYALİ: Oturumun ikinci en yüksek kümesi; 'elimde defterim var' hamlesi panik temelli doğaçlama."
+            },
+            "next_node": "node_07_yeniden_cerceveleme"
+          },
+          {
+            "type": "EMPATHIC",
+            "question": "Bir anlık bir hata, bir ihmal, bir evrak eksikliği... Hepimiz hata yaparız. Bu tutanakların eksikliği sizin hatanız mıydı?",
+            "answer": "İhmal... olabilir belki. On dört yılda bir iki evrak kaçmış olabilir, ben insanım. Ama bu 'hata' kelimesi sizin sandığınız yere çıkmaz. Eser yerinde yok diye insan hırsız olmaz.",
+            "mechanics": {
+              "heart_rate": "SPIKE",
+              "breathing": "SHALLOW",
+              "gsr": "SURGE",
+              "cctv_visual": "LIP_PRESS",
+              "korku_bari_delta": 11,
+              "gameplay_note": "İLERLEME: İhmal itirafı — kısmi kabul kapısı açıldı; süpheli gri bir alana çekildi."
+            },
+            "next_node": "node_07_yeniden_cerceveleme"
+          },
+          {
+            "type": "AGGRESSIVE",
+            "question": "Yalan söylüyorsunuz. O tutanaklar hiç yazılmadı çünkü eserler hiç imha edilmedi. Siz onları sattınız.",
+            "answer": "Kanıtınız yok. Koca bir ithamı böyle yüzüme fırlatıyorsunuz. Avukat istiyorum. Bu saatten sonra tek kelime etmem.",
+            "mechanics": {
+              "heart_rate": "MAX_SPIKE",
+              "breathing": "HOLDING_BREATH",
+              "gsr": "MAX",
+              "cctv_visual": "STONE_FACE",
+              "korku_bari_delta": -15,
+              "gameplay_note": "YANLIŞ HAMLE: Kanıt konuşmadan suçlama; süpheli hukuki kapıyı kapattı."
+            },
+            "next_node": "node_fail_lockdown"
+          }
+        ]
+      },
+      "node_07_yeniden_cerceveleme": {
+        "theme": "Süphelinin Manevrası",
+        "description": "Halit birkaç saniye masaya bakıyor, sonra başını kaldırıp sesini alçaltıyor. Tonu değişmiş — öfkeden hesaplı bir sakinliğe kaymış. Yeni bir hikaye kurmaya çalışıyor.",
+        "is_end_state": false,
+        "choices": [
+          {
+            "type": "TRAP",
+            "question": "Sizi dinliyorum. Ne söylemek istiyorsunuz?",
+            "answer": "Bakın, açık konuşayım. O eserlerin bazıları depoda değildi, doğru. Ama ben götürmedim. 2019'da belediyeden gelen teknik ekipler bazı parçaları 'restorasyon için' aldılar, bana sadece imzalattılar, nereye götürdüklerini söylemediler. Ben bu adamların adını bilmiyorum bile. Üstüme yıkılıyor şimdi her şey.",
+            "mechanics": {
+              "heart_rate": "INCREASE",
+              "breathing": "UNEVEN",
+              "gsr": "INCREASE",
+              "cctv_visual": "EYE_DART",
+              "korku_bari_delta": -5,
+              "gameplay_note": "YANLIŞ HAMLE: Yeniden çerçevelemeyi onayladınız; süpheli 'adı bilinmeyen teknik ekip' masalına zemin kazandı."
+            },
+            "next_node": "node_09_yanlis_kanit_yolu"
+          },
+          {
+            "type": "EMPATHIC",
+            "question": "Bu yük sizi yoruyor, görüyorum. Ama şimdi bana tam olarak ne olduğunu anlatırsanız, mahkemede bu farkı yaratır. Tutanaklar neden yazılmadı?",
+            "answer": "Yazılmadı çünkü... vaktim olmuyordu. Annem kötüleşti o sıralar, ben depoyla ilgilenemedim düzgün. Bazı şeyleri sonraya bıraktım, sonra unuttum. Ama satmak, başka. O iş değil.",
+            "mechanics": {
+              "heart_rate": "SPIKE",
+              "breathing": "DEEP",
+              "gsr": "SURGE",
+              "cctv_visual": "TEAR_POOLING",
+              "korku_bari_delta": 15,
+              "gameplay_note": "İLERLEME: İhmal-satış ayrımını kendisi kurdu; ihmali itiraf etti, asıl fiilde direniyor."
+            },
+            "next_node": "node_10_son_baski"
+          },
+          {
+            "type": "FORENSIC_CALL_OUT",
+            "question": "Siz teknik ekip diyorsunuz. 2019'da Kültürevi'ne belediyeden hiçbir restorasyon görevlendirmesi yapılmadı, kayıt yok. Bu hikayeyi az önce mi uydurdunuz?",
+            "answer": "Ben... ben tarihleri karıştırmış olabilirim. 2018 miydi, 2020 mi? Yaşlandım ben, her tarih aklımda kalmıyor. Kayıt varsa bulun, yoksa belediye saklıyordur.",
+            "mechanics": {
+              "heart_rate": "MAX_SPIKE",
+              "breathing": "HYPERVENTILATION",
+              "gsr": "MAX",
+              "cctv_visual": "HAND_PINCH_UNDER_TABLE",
+              "korku_bari_delta": 19,
+              "gameplay_note": "YALAN SİNYALİ: Doğaçlama hikayesi çöktü; tarih değişimi açık bir geri adım."
+            },
+            "next_node": "node_10_son_baski"
+          }
+        ]
+      },
+      "node_08_2017_denetim": {
+        "theme": "2017 Denetim Dosyası",
+        "description": "Halit'in önüne 2017 iç denetim dosyasının kapağını koyuyorsunuz. Çatı restorasyonu harcamalarına bakılmış ama depo envanteri denetim dışında bırakılmış. O dönemin bir imzası dikkat çekiyor.",
+        "is_end_state": false,
+        "choices": [
+          {
+            "type": "ANALYTICAL",
+            "question": "2017 denetimi çatıyla sınırlı tutuldu ama aynı dönemde depo girişlerinin anahtar teslim defteri tutulmamış. Neden?",
+            "answer": "Çatı restorasyonu sürerken depo kısmen boşaltılmıştı, parçalar geçici kasalara alındı. O defteri tutmak pratik değildi. Bölge müdürlüğü bilgilendirildi.",
+            "mechanics": {
+              "heart_rate": "SPIKE",
+              "breathing": "SHALLOW",
+              "gsr": "SURGE",
+              "cctv_visual": "JAW_TIGHTEN",
+              "korku_bari_delta": 10,
+              "gameplay_note": "İLERLEME: 'Kayıt tutulamayan dönem' açığı bizzat doğrulandı; kaçırma penceresi belirdi."
+            },
+            "next_node": "node_06_takip_somurusu"
+          },
+          {
+            "type": "STRATEGIC",
+            "question": "2017 denetimini yürüten müfettiş Kemal Yiğitbaşı, dosyayı 'idari yetersizlik' olarak kapattı. O sırada sizinle özel bir görüşmesi oldu mu?",
+            "answer": "Resmi tutanak dışında görüşmem olmaz kimseyle. Yiğitbaşı Bey işini yaptı, gitti. Ben de işime döndüm. Dedikodu istiyorsanız kahvehaneye gidin.",
+            "mechanics": {
+              "heart_rate": "RISE",
+              "breathing": "UNEVEN",
+              "gsr": "INCREASE",
+              "cctv_visual": "LIP_PRESS",
+              "korku_bari_delta": 4,
+              "gameplay_note": "KISMEN DOĞRU: Müfettişe keskin bir mesafe; bir şey olduğu hissi ama somut açı yok."
+            },
+            "next_node": "node_09_yanlis_kanit_yolu"
+          },
+          {
+            "type": "PRESSURE",
+            "question": "Çatı restorasyonunda kaybolan para ile deponun 'boşaltıldığı' dönem üst üste düşüyor. Siz o parayla eserleri de beraber çekip aldınız mı?",
+            "answer": "Hayır! Kaç kere söyleyeceğim size? Çatı restorasyonu işi kapandı, hiçbir ceza almadım. Şimdi altı yıl öncesini karıştırarak beni köşeye sıkıştırmaya çalışıyorsunuz, bu yasal değil.",
+            "mechanics": {
+              "heart_rate": "SPIKE",
+              "breathing": "HOLDING_BREATH",
+              "gsr": "SURGE",
+              "cctv_visual": "DEFENSIVE_CROSS_ARMS",
+              "korku_bari_delta": 3,
+              "gameplay_note": "KISMEN DOĞRU: Sert inkar; tepki yüksek ama taktik direkt suçlama erken geldi."
+            },
+            "next_node": "node_06_takip_somurusu"
+          }
+        ]
+      },
+      "node_09_yanlis_kanit_yolu": {
+        "theme": "Diploma Kağıdı",
+        "description": "Dosyadan ayrı bir zarf çıkıyor: Anadolu Halk Eğitim Fakültesi'nden alınmış bir mezuniyet belgesinin kopyası. Mühür silik, tarih belirsiz. Halit bu kağıdı görünce masadan hafifçe geri çekiliyor.",
+        "is_end_state": false,
+        "choices": [
+          {
+            "type": "EVIDENCE",
+            "question": "Milli Eğitim arşivinde sizin adınıza bir kayıt bulamadık. 1993 mezuniyet kaydınız yok. Bu diploma nereden geliyor?",
+            "answer": "Arşiv karıştırılmıştır. Fakülte kapanırken çok evrak kayboldu, bunu herkes bilir. Benim diplomamın aslı evimde, duvarda asılı. Sahte bir şey yok orada.",
+            "mechanics": {
+              "heart_rate": "MAX_SPIKE",
+              "breathing": "HYPERVENTILATION",
+              "gsr": "MAX",
+              "cctv_visual": "HAND_PINCH_UNDER_TABLE",
+              "korku_bari_delta": 22,
+              "gameplay_note": "YALAN SİNYALİ: Oturumun en sert biyometrik patlaması. DİKKAT: Bu tepki çok güçlü ama doğrudan eser hırsızlığı davasıyla ilgili olmayabilir; farklı bir katmanın sinyali."
+            },
+            "next_node": "node_fail_deflection"
+          },
+          {
+            "type": "STRATEGIC",
+            "question": "Diploma bir tarafa, esas meseleye dönelim. Eserlerin depodan çıkışı konusunu ilerletmek istiyorum.",
+            "answer": "İyi yaparsınız. Kağıtlarla değil, sorduğunuz dosyayla ilgilenin. Sizin işiniz bu.",
+            "mechanics": {
+              "heart_rate": "DROP",
+              "breathing": "CALM",
+              "gsr": "DECREASE",
+              "cctv_visual": "RELEASED_SHOULDERS",
+              "korku_bari_delta": -8,
+              "gameplay_note": "TAKTİKSEL RESET: Geçici bir geri adım; süpheli rahatladı ama siz odakta kaldınız."
+            },
+            "next_node": "node_10_son_baski"
+          },
+          {
+            "type": "AGGRESSIVE",
+            "question": "Eğer diplomanız sahte çıkarsa, bu pozisyonda on dört yıl yalan söyleyen bir adam tarihî eseri de yalnız başına satar. Şimdi anlatın.",
+            "answer": "İki ayrı şeyi birbirine karıştırıyorsunuz. Ben size ne olduğunu söyledim. Avukat gelmeden başka söz etmeyeceğim. Bu bir oyun.",
+            "mechanics": {
+              "heart_rate": "MAX_SPIKE",
+              "breathing": "HOLDING_BREATH",
+              "gsr": "MAX",
+              "cctv_visual": "STONE_FACE",
+              "korku_bari_delta": -18,
+              "gameplay_note": "YANLIŞ HAMLE: İki ayrı konuyu birleştirmek süpheliyi kilitledi; hukuki kapı devreye girdi."
+            },
+            "next_node": "node_fail_lockdown"
+          }
+        ]
+      },
+      "node_10_son_baski": {
+        "theme": "Son Kapı",
+        "description": "Masada artık üç ayrı belge açık: ulaşmamış imha tutanakları, Kurul'un eksik eser listesi ve İstanbul antika pazarından gelen fotoğraf — bir çini pano detayı, eksik parçalarla birebir uyumlu. Halit omuzları çöker gibi hafifçe öne eğiliyor.",
+        "is_end_state": false,
+        "choices": [
+          {
+            "type": "EVIDENCE",
+            "question": "Bu fotoğraf İstanbul Çukurcuma'da bir özel koleksiyondan geldi. Kırmızı lalelerin desen dizilişi, sizin depo envanterinizdeki 1974 kayıtlı çini panoyla birebir aynı. Nasıl oraya gitti?",
+            "answer": "Ben... ben bilmiyorum nasıl gittiğini. Gittiği yer beni ilgilendirmez. Ben sadece... şu kadarını söyleyim, o eserlerin bazılarını ben kayıt dışına çıkardım, evet. Annemin bakım parası... ama bir antikacıyla çalıştım sadece, başka kimse yok. Başka kimse karışmadı bu işe. Sizin aradığınız örgüt değil, tek başımayım ben.",
+            "mechanics": {
+              "heart_rate": "MAX_SPIKE",
+              "breathing": "CRYING",
+              "gsr": "MAX",
+              "cctv_visual": "BREAKDOWN",
+              "korku_bari_delta": 30,
+              "gameplay_note": "DOĞRU HAMLE: Somut fiziksel kanıtla yüzleşme; duygusal kırılma ve tam kapsamlı itiraf."
+            },
+            "next_node": "node_success_breakdown"
+          },
+          {
+            "type": "EMPATHIC",
+            "question": "Sayın Sarıkaya, artık kendinize yardım etme vakti. Anneniz için yaptıklarınızı kimse size yargılayamaz ama sessiz kalırsanız her şey sırtınıza yıkılacak. Bana o eserlerin nereye gittiğini söyleyin.",
+            "answer": "Bazıları... bazıları satıldı. Ben kayıt dışına çıkardım, evet. Kim aldı, nasıl gitti, bu kısımları söyleyemem. Hukukçuma sorduktan sonra konuşurum. Ama annemin parası içindi, başka bir şey için değil. Bunu mahkemede söylerim.",
+            "mechanics": {
+              "heart_rate": "SPIKE",
+              "breathing": "UNEVEN",
+              "gsr": "SURGE",
+              "cctv_visual": "TEAR_POOLING",
+              "korku_bari_delta": 22,
+              "gameplay_note": "DOĞRU HAMLE: Kontrollü kısmi kabul; süpheli sakin kalıyor ama fiilin çekirdeğini doğruluyor."
+            },
+            "next_node": "node_success_partial"
+          },
+          {
+            "type": "LEGAL_THREAT",
+            "question": "Şimdi konuşmazsanız, savcıya gittiğimde tüm dosyayı tek sorumlu olarak önüne koyarım. Son şansınız.",
+            "answer": "Tehdit mi ediyorsunuz? Bu kayda geçiyor. Avukatım gelene kadar tek kelime etmeyeceğim. Bu görüşme burada biter.",
+            "mechanics": {
+              "heart_rate": "MAX_SPIKE",
+              "breathing": "HOLDING_BREATH",
+              "gsr": "MAX",
+              "cctv_visual": "STONE_FACE",
+              "korku_bari_delta": -20,
+              "gameplay_note": "YANLIŞ HAMLE: Tehdit diliyle süpheliyi hukuki kalkanın arkasına ittiniz."
+            },
+            "next_node": "node_fail_lockdown"
+          }
+        ]
+      },
+      "node_success_breakdown": {
+        "theme": "Tam Çöküş",
+        "description": "Halit ellerini yüzüne kapatıyor, omuzları sarsılıyor. Soluğu kesik kesik, konuşması bölük pörçük geliyor. Masanın üzerindeki fotoğrafa bakmaktan kaçınıyor.",
+        "is_end_state": true,
+        "result_text": "Sorgu, süphelinin birincil fiili kapsamlı olarak doğrulamasıyla sona erdi. Süpheli, eserleri kayıt dışına çıkardığını, tek bir antikacıyla çalıştığını ve hiçbir suç ortağı bulunmadığını ifade etti. Mekanizma-testi dügümünde (imha prosedürü), takip dügümünde (tutanak çelişkisi) ve son kanıt yüzleşmesinde biyometrik sinyaller zirve yaptı (HR MAX_SPIKE, GSR MAX, HOLDING_BREATH/CRYING kümeleri). Özgeçmiş ve diploma konularında da ayrıca yüksek tepkiler gözlendi — bu tepkiler dava dosyasına kayıt altına alındı. Duygusal çöküş gerçek, kabul tam. Hüküm ekranı için poligraf kaydı eksiksiz."
+      },
+      "node_success_partial": {
+        "theme": "Kontrollü Kabul",
+        "description": "Halit ellerini dizlerine koyuyor, başını hafifçe öne eğiyor. Gözyaşı birikmiş ama akmıyor. Sesi sakin, ölçülü — bir adam son sözünü söylüyor.",
+        "is_end_state": true,
+        "result_text": "Süpheli, eserlerin bir kısmını envanter dışına çıkardığını ve satıldığını kabul etti; ancak isim, miktar ve tam zinciri avukatı olmadan açıklamayacağını belirterek sorguyu kapattı. Biyometrik sinyaller çekirdek itirafın etrafında kümelendi: mekanizma-testi ve tutanak çelişkisinde HR SPIKE, GSR SURGE, UNEVEN nefes. Ek olarak diploma/özgeçmiş bölümünde oturumun en yüksek biyometrik dalgalanmaları kaydedildi — bu dalga birincil kabulden biçimce farklıdır ve dava dosyasında ayrıca yer alacaktır. Annenin bakım maliyeti ile ilgili sorularda tepki duygusal ama tutarlıydı. Hüküm ekranı için poligraf kaydı yeterli kanıt dağılımını içeriyor."
+      },
+      "node_fail_lockdown": {
+        "theme": "Hukuki Kilitlenme",
+        "description": "Halit sandalyede geriye yaslanıyor, kollarını kenetliyor. Ağzı sıkıca kapalı; bakışları duvardaki bir noktaya saplanmış. Odanın havası değişmiş — artık konuşma bitmiş.",
+        "is_end_state": true,
+        "result_text": "Süpheli avukat talep ederek sorguyu resmi olarak sonlandırdı. Kabul yok, ayrıntı yok. Biyometrik kayıtlar oturumun son anlarında agresif taktiklere karşı güçlü savunma tepkileri gösteriyor (HR MAX_SPIKE, GSR MAX, HOLDING_BREATH, STONE_FACE). Ancak bu tepkiler hem suçlama hem de kimlik/özgeçmiş sorularında üst üste geldiğinden, kanıt dağılımı hüküm ekranı için belirsizleşmiş durumda. Operatör sert taktiklere çok erken geçti; birincil ve ikincil baskı kaynakları ayrıştırılamadı. Dosya mahkemeye eksik poligraf okumasıyla gidiyor."
+      },
+      "node_fail_deflection": {
+        "theme": "Yumuşak Savuşturma",
+        "description": "Halit derin bir nefes alıyor, sonra yavaşça omuzlarını indiriyor. Tonu ılımlaşıyor ama gözleri kapalı; cevap vermeyi sürdürse de artık hiçbir yere varmıyor. Masadaki belgelere baktığı zaman yüzünde ne korku ne pişmanlık okunuyor — yalnızca yorgunluk.",
+        "is_end_state": true,
+        "result_text": "Sorgu avukat talep edilmeden kapandı ancak süpheli birincil fiile dair hiçbir beyanda bulunmadı. Poligraf kayıtları yoğun ve kafa karıştırıcı: özgeçmiş, diploma ve kimlik sorularında en yüksek kümeler (HR MAX_SPIKE, GSR MAX, hipervantilasyon) gözlendi; eser-mekanizma ve tutanak sorularında ise karışık sinyaller var. Operatör, diploma dalgası ile eser hırsızlığı dalgasını birleştirme hatasına düşüp süpheliye kolay bir duygusal savunma hattı sundu. Hüküm ekranı için kanıt var ama dağılımı yanıltıcı; kayıt olduğu gibi aktarılıyor."
+      }
+    },
+    "character_image": "./assets/characters/tr-case-8.png"
+  }
+}

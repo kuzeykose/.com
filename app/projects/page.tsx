@@ -72,6 +72,24 @@ const projects: Project[] = [
       'A visualization tool for Turborepo monorepos — map dependencies, analyze commit impact, and get AI-powered insights from a CLI or browser dashboard.',
     icon: <TurboGraphLogo />,
   },
+  {
+    name: 'The Operator',
+    url: '/projects/the-operator',
+    domain: 'kuzeykose.com',
+    description:
+      'A pixel-art polygraph interrogation game — pick every question, read three raw biosignals, and call the verdict. Plays in the browser.',
+    icon: (
+      // eslint-disable-next-line @next/next/no-img-element
+      <img
+        src="/projects/the-operator/assets/operator.png"
+        alt=""
+        width={20}
+        height={20}
+        className="w-5 h-5 rounded"
+        style={{ imageRendering: 'pixelated' }}
+      />
+    ),
+  },
 ]
 
 export default function Page() {

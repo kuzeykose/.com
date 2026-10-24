@@ -1,0 +1,539 @@
+{
+  "game_data": {
+    "title": "St. Władysław Parish Emergency Benevolence Fund — Misappropriation Inquiry",
+    "suspect": {
+      "name": "Ruthann Stober",
+      "role": "ER Nurse (RN, BSN), St. Agatha Regional Hospital, Lorain County, Ohio",
+      "profile": "Ruthann Stober, 64, is a night-shift ER nurse at a small regional hospital serving a working-class rust-belt community west of Cleveland. She has worked bedside nursing for thirty-seven years, the last nineteen in emergency. She holds a BSN completed via an adult-learner bridge program in 1992 after her children were school-age — a credential she pursued while already working as an LPN and supporting a young family. Her late husband, Dariusz Stober, a machinist, died of a cardiac event four years ago, leaving her as the financial anchor for the household. She has since taken in her two grandchildren, ages nine and eleven, after her adult son Tomasz entered a long-term residential treatment program for opioid dependency. She is known on the unit as blunt, clinically precise, and intolerant of bureaucratic inefficiency. Colleagues describe her as 'the nurse you want when things go wrong' but 'not easy when she thinks you're wasting her time.' She has served as treasurer of the St. Władysław Parish Emergency Benevolence Fund — a small neighborhood cash fund that provides short-term grants to parishioners in acute financial crisis — for six years. She is accused of diverting approximately $4,200 from the fund over an eighteen-month period. She is in fact NOT GUILTY of intentional misappropriation: the shortfall arose from a combination of a cash-handling error by a co-volunteer and her own unauthorized but temporary borrowing of $900 to cover a gap in her husband's funeral costs, an amount she repaid within eleven weeks from her own savings. She never disclosed the loan to the fund's oversight committee, and the co-volunteer's cash error was never separately documented. Suspicious detail: her own handwritten ledger omits two deposit entries during the contested period, which she explains as an oversight during her acute grief but which look, on paper, selective. Humanizing detail: her real source of displaced physiological distress is an old academic wound — in 1992, exhausted and stretched thin, she copied three substantive sections of her BSN completion thesis almost verbatim from a Polish nursing journal translated into English, a text obscure enough that her program advisor never caught it. She has carried this quietly for thirty-two years and fears that any institutional scrutiny of her credentials, even tangentially, will surface it. The secondary secret has nothing to do with the fund charge and she knows it — but the shame is visceral and intrusive whenever her academic qualifications are referenced."
+    },
+    "system_config": {
+      "initial_fear_bar": 20,
+      "max_fear_bar": 100,
+      "fear_bar_description": "A composite gauge of the suspect's accumulated psychological strain — combining heart rate, breath irregularity, sweat response, and visible affect into a single tension reading.",
+      "heart_rate_baseline": 77,
+      "gsr_baseline": 7.5
+    },
+    "context": "The St. Władysław Parish Emergency Benevolence Fund, a small neighborhood cash fund administered by parish volunteers to provide emergency financial assistance to parishioners in acute hardship, conducted an internal audit in late 2023 and discovered a discrepancy of approximately $4,200 over an eighteen-month period (January 2022 through June 2023). Ruthann Stober, who served as the fund's volunteer treasurer during this entire period, is the subject of the inquiry. The fund's oversight committee found that her handwritten ledger omits two significant deposit entries dated in early 2022, shortly after her husband's death, and that the cash balance in the lockbox does not reconcile with her recorded transactions. Stober has been unable to account for the shortfall and has initially attributed it to record-keeping errors during a period of personal difficulty, but the committee has moved to file a civil complaint for misappropriation and has referred the matter to local law enforcement. The case hinges on whether the discrepancy represents intentional diversion or a combination of negligent bookkeeping and a co-volunteer's undocumented cash-handling lapses — a distinction that has proven difficult to establish from the available documentation.",
+    "true_verdict": "NOT_GUILTY",
+    "verdict_truth_text": "Ruthann Stober borrowed $900 from the parish fund in February 2022 to cover a shortfall in her husband's funeral expenses and repaid the full amount within eleven weeks using her own paycheck — a violation of trust but not the alleged systematic theft of $4,200. The remaining discrepancy is attributable to a combination of careless cash handling and miscounting by the deputy treasurer, Agnieszka Walczak, over an eighteen-month period; Walczak's counts were never audited or reconciled separately. Ruthann's failure to disclose the temporary loan left her unable to account for the full shortfall without self-incrimination, but she is not guilty of intentional misappropriation of charitable funds.",
+    "dossier": {
+      "age": 64,
+      "identity_summary": "Ruthann Stober is a registered nurse (RN, BSN) with thirty-seven years of bedside experience, currently employed as a night-shift ER nurse at St. Agatha Regional Hospital in Lorain County, Ohio. She has served as volunteer treasurer of the St. Władysław Parish Emergency Benevolence Fund for six years.",
+      "family": [
+        {
+          "relation": "Son",
+          "name": "Tomasz Stober",
+          "note": "Age 38. Currently enrolled in a long-term residential substance-use treatment program. Not residing in the family home."
+        },
+        {
+          "relation": "Grandchild (Tomasz's son)",
+          "name": "Dariusz Stober Jr.",
+          "note": "Age 11. Residing full-time with Ruthann under informal kinship custody arrangement since 2022."
+        },
+        {
+          "relation": "Grandchild (Tomasz's daughter)",
+          "name": "Halina Stober",
+          "note": "Age 9. Co-residing with Ruthann. Both grandchildren are listed as financial dependents on hospital HR forms."
+        },
+        {
+          "relation": "Deceased spouse",
+          "name": "Dariusz Stober Sr.",
+          "note": "Died of acute myocardial infarction approximately four years ago. Ruthann was sole income earner in the period immediately following his death."
+        }
+      ],
+      "medical": [
+        {
+          "condition": "Rheumatoid arthritis, currently in active flare; prescribed oral prednisone (corticosteroid) at therapeutic dose",
+          "polygraph_effect": "Corticosteroid use at therapeutic doses elevates sympathetic nervous system tone, producing a meaningfully raised resting heart rate and heightened electrodermal activity. Baseline GSR and HR readings will appear consistent with sustained physiological arousal unrelated to stimulus content. Amplitude differentiation between neutral and charged stimuli is compressed because the baseline is already elevated — small genuine responses may blend into background noise, while the baseline itself may be misread as reactive."
+        },
+        {
+          "condition": "Corticosteroid-induced mood lability and irritability (documented in occupational health file as a side-effect disclosure during current prescription period)",
+          "polygraph_effect": "Mood lability associated with steroid therapy increases breath-waveform irregularity independent of cognitive or emotional stimulus. Examiner should expect non-stimulus-locked breathing perturbations throughout the session. Attributing specific breathing anomalies to deceptive intent is unreliable under this profile."
+        }
+      ],
+      "habits": [
+        {
+          "habit": "Habitual moderate coffee consumption (3-4 cups per shift, consistent pattern across years)",
+          "polygraph_effect": "Chronic caffeine at this level produces a mild persistent elevation of GSR baseline. Combined with active corticosteroid use, additive sympathomimetic effects are probable — GSR baseline should be interpreted as organically elevated rather than as evidence of acute reactivity."
+        },
+        {
+          "habit": "Irregular sleep schedule consistent with long-term night-shift rotation (approximately 5-6 hours per day, non-consecutive)",
+          "polygraph_effect": "Chronic partial sleep deprivation increases autonomic variability and can produce erratic inter-beat intervals unrelated to psychological state. HR pattern may show irregular clustering that does not correspond to question content."
+        }
+      ],
+      "priors": [
+        "Named in a 2017 internal hospital complaint regarding a patient-family communication dispute in the ER; reviewed by nursing administration and closed without disciplinary finding.",
+        "Cited in a 2019 parish council minutes note disputing a line-item allocation in the Benevolence Fund budget; dispute resolved by vote with no formal action.",
+        "Received a written caution in 2021 from the hospital's occupational health office related to a brief altercation with a supply vendor on hospital grounds; no legal proceedings initiated."
+      ],
+      "pressure_points": [
+        "Questions about the specific ledger entries from the contested period — subject shifts to procedural explanation and becomes visibly impatient when asked to slow down or repeat herself; ANALYTICAL framing tends to increase her pace of speech rather than slow it.",
+        "References to her academic or professional credentials — subject becomes unusually clipped and redirects toward clinical experience rather than formal qualifications; she does not elaborate voluntarily on her educational background.",
+        "Topics involving her grandchildren's living situation or her household finances — subject's tone becomes sharper and more guarded, and she tends to reframe personal financial questions as attacks on her character rather than answering the factual premise.",
+        "Direct challenges to her characterization of co-volunteers or the fund's oversight process — subject pushes back on the premise of the question itself rather than engaging with its content; AGGRESSIVE framing tends to cause her to shut down entirely, while EMPATHIC framing occasionally produces longer, less filtered responses."
+      ],
+      "modifiers": {
+        "heart_rate_suppression": 0,
+        "heart_rate_baseline_shift": 7,
+        "gsr_sensitivity": 1.45,
+        "gsr_baseline_shift": 2.5,
+        "breathing_instability": 0.28
+      }
+    },
+    "start_node": "node_01_intro",
+    "nodes": {
+      "node_01_intro": {
+        "theme": "Opening Posture",
+        "description": "Ruthann sits across the table in her hospital scrubs, arms crossed tight over the chest, a scuffed manila folder of her own parish paperwork in front of her. She fixes the operator with a flat, impatient look — the kind a charge nurse gives to someone who just wasted a bed.",
+        "is_end_state": false,
+        "choices": [
+          {
+            "type": "EMPATHIC",
+            "question": "Mrs. Stober, I know you've been through an extraordinarily hard few years. Before we get into the ledger, I'd just like to understand what the last eighteen months have actually looked like for you and your grandchildren.",
+            "answer": "The last eighteen months have looked like hell, since you asked. I bury my husband, I pick up custody of two children who've already been through the wringer, and I pull sixty-hour weeks on a night rotation. And now the parish wants to treat me like a common thief over a cashbox I volunteered to keep. So yes — thank you for asking.",
+            "mechanics": {
+              "heart_rate": "RISE",
+              "breathing": "UNEVEN",
+              "gsr": "INCREASE",
+              "cctv_visual": "JAW_TIGHTEN",
+              "korku_bari_delta": 6,
+              "gameplay_note": "PROGRESS: Empathic opening lowers her guard slightly; elevated baseline remains due to corticosteroids."
+            },
+            "next_node": "node_02_ledger_entries"
+          },
+          {
+            "type": "ANALYTICAL",
+            "question": "I'd like to walk through the audit timeline in order. The committee flagged two missing deposit entries in early 2022 — can we start there, with what you remember doing with the lockbox that quarter?",
+            "answer": "You want a timeline, I'll give you a timeline. January 2022 my husband collapsed in the kitchen. February I buried him. March I had two funerals' worth of paperwork on my table and two grandchildren in my spare bedroom. Somewhere in there I was also counting nickels in a cigar box for the parish. You want me to produce a tidy quarterly reconciliation? I was trying to stay upright.",
+            "mechanics": {
+              "heart_rate": "INCREASE",
+              "breathing": "SHALLOW",
+              "gsr": "INCREASE",
+              "cctv_visual": "LIP_PRESS",
+              "korku_bari_delta": 4,
+              "gameplay_note": "PROGRESS: Analytical framing holds — she stays on topic but is guarded."
+            },
+            "next_node": "node_03_funeral_timeline"
+          },
+          {
+            "type": "CREDENTIAL_CHALLENGE",
+            "question": "Before we discuss the fund, I want to confirm some background. You completed your BSN through an adult-learner bridge program in 1992 — is that correct?",
+            "answer": "What on earth does my nursing degree have to do with a cashbox at St. Władysław's? Yes, I finished my BSN in 1992. I've been an RN for thirty-seven years. If you'd like to inspect my license, it's on file with the State Board of Ohio. Can we get back to what you actually dragged me down here to talk about?",
+            "mechanics": {
+              "heart_rate": "SPIKE",
+              "breathing": "HOLDING_BREATH",
+              "gsr": "SURGE",
+              "cctv_visual": "EYE_DART",
+              "korku_bari_delta": -4,
+              "gameplay_note": "WRONG MOVE: Massive signal cluster — but on a topic unrelated to the charge. Operator may misread this as guilt."
+            },
+            "next_node": "node_04_credentials_probe"
+          }
+        ]
+      },
+      "node_02_ledger_entries": {
+        "theme": "The Missing Deposits",
+        "description": "The operator slides a photocopy of Ruthann's handwritten ledger across the table. Two rows are circled in red pencil. Her eyes flick to the page, linger a beat too long, then return to the operator's face.",
+        "is_end_state": false,
+        "choices": [
+          {
+            "type": "FORENSIC_CALL_OUT",
+            "question": "These two entries — February 14th and March 3rd, 2022 — the cash deposits are absent from your ledger, but the parish has receipt carbons for both. Help me understand the gap.",
+            "answer": "I see the carbons. I'm not disputing the carbons. What I'm telling you is that in February of 2022 I was not functioning as a bookkeeper. I was functioning as a woman who had just watched her husband die on the kitchen tile. The entries were not made. The money was not missing. It was deposited. The ledger is wrong. That is not the same thing as the cashbox being short.",
+            "mechanics": {
+              "heart_rate": "SPIKE",
+              "breathing": "SHALLOW",
+              "gsr": "INCREASE",
+              "cctv_visual": "HAND_PINCH_UNDER_TABLE",
+              "korku_bari_delta": 8,
+              "gameplay_note": "PROGRESS: Moderate signal — she's defending something specific about that window, but the fear is not catastrophic."
+            },
+            "next_node": "node_05_mechanism_test"
+          },
+          {
+            "type": "EMPATHIC",
+            "question": "It sounds like those weeks are almost a blur for you. Can you walk me through what your household was actually dealing with financially that February?",
+            "answer": "Financially? I had a funeral home demanding a balance. I had a mortgage company that did not care that my husband was dead. I had a son in rehab whose car I was still making payments on. And I had two grandchildren who needed new shoes and a bed frame each. So yes — it was a blur. A very expensive blur.",
+            "mechanics": {
+              "heart_rate": "RISE",
+              "breathing": "UNEVEN",
+              "gsr": "INCREASE",
+              "cctv_visual": "LOOK_DOWN",
+              "korku_bari_delta": 5,
+              "gameplay_note": "PROGRESS: She's opening a door — financial pressure narrative. Note she mentions funeral balance specifically."
+            },
+            "next_node": "node_03_funeral_timeline"
+          },
+          {
+            "type": "AGGRESSIVE",
+            "question": "Mrs. Stober, the simplest explanation for two missing deposit entries is that the cash never made it into the box at all. That's theft. Do you want to revise your statement now?",
+            "answer": "Revise my — no. No, I do not want to revise my statement. You know what I want? I want my evening back. I want to not be sitting in this room being called a thief by a stranger over four thousand dollars I never touched. The entries were not made. The money was deposited. If that's not good enough for you, then we're done here.",
+            "mechanics": {
+              "heart_rate": "SPIKE",
+              "breathing": "UNEVEN",
+              "gsr": "SPIKE",
+              "cctv_visual": "DEFENSIVE_CROSS_ARMS",
+              "korku_bari_delta": -6,
+              "gameplay_note": "WRONG MOVE: Premature accusation. She's pushing back on the premise — AGGRESSIVE framing collapses her cooperation."
+            },
+            "next_node": "node_07_suspect_reframe"
+          }
+        ]
+      },
+      "node_03_funeral_timeline": {
+        "theme": "Around the Funeral",
+        "description": "Ruthann uncrosses her arms for the first time and sets her hands flat on the folder. Her fingers are stiff from the arthritis; she flexes them once, winces, and leaves them there.",
+        "is_end_state": false,
+        "choices": [
+          {
+            "type": "EMPATHIC",
+            "question": "What did the funeral actually cost — and were you able to cover it?",
+            "answer": "Eleven thousand, two hundred and something. The insurance covered most of it. Most. Not all. There was a gap I had to find somewhere, and I found it. I got it paid. That's all that matters.",
+            "mechanics": {
+              "heart_rate": "SPIKE",
+              "breathing": "SHALLOW",
+              "gsr": "SPIKE",
+              "cctv_visual": "LOOK_DOWN",
+              "korku_bari_delta": 10,
+              "gameplay_note": "LIE SIGNAL: Elevated cluster on funding-gap question. She's evading something specific about HOW she covered it."
+            },
+            "next_node": "node_05_mechanism_test"
+          },
+          {
+            "type": "NARROW_TARGET",
+            "question": "Who else had access to the cashbox during February and March 2022?",
+            "answer": "Myself and Agnieszka Walczak. She's the deputy treasurer. Was. She counts cash with the attention of a woman watching television. She doesn't log small donations properly. I've raised it at committee twice. Nobody wanted to hear it, because she's been at that parish since Father Stanisław was alive.",
+            "mechanics": {
+              "heart_rate": "RISE",
+              "breathing": "CALM",
+              "gsr": "STABLE",
+              "cctv_visual": "JAW_TIGHTEN",
+              "korku_bari_delta": 7,
+              "gameplay_note": "PROGRESS: She's genuinely settled — shifts blame confidently to Walczak. Low cluster suggests authentic belief."
+            },
+            "next_node": "node_06_covolunteer"
+          },
+          {
+            "type": "BLUNT_FINANCIAL",
+            "question": "Mrs. Stober, by March 2022 your bank records show your checking account was overdrawn twice. Were you using parish funds to cover personal bills?",
+            "answer": "That is a filthy question. My checking account is my business, not the parish's and not yours. I have two grandchildren in my house and one income supporting four people. Of course I overdrafted. Half this county overdrafts. That does not make me a thief.",
+            "mechanics": {
+              "heart_rate": "SPIKE",
+              "breathing": "UNEVEN",
+              "gsr": "SPIKE",
+              "cctv_visual": "DEFENSIVE_CROSS_ARMS",
+              "korku_bari_delta": -3,
+              "gameplay_note": "WRONG MOVE: Character attack. She locks into defensive mode; productive framing lost."
+            },
+            "next_node": "node_06_covolunteer"
+          }
+        ]
+      },
+      "node_04_credentials_probe": {
+        "theme": "Credentials and Qualifications",
+        "description": "The operator opens a slim folder stamped with the state licensing board seal. Ruthann's eyes stay fixed on it. She has gone very still — not calm, but the kind of still a person goes when they have decided not to move at all.",
+        "is_end_state": false,
+        "choices": [
+          {
+            "type": "EVIDENCE",
+            "question": "Your BSN completion thesis — 'Emergency Triage Under Resource Constraint' — was submitted May 1992. Do you remember the sources you drew on for it?",
+            "answer": "I... it was thirty-two years ago. I wrote it over a summer. I was working three nights a week at Lorain Community and raising two kids under ten. I don't remember my sources from thirty-two years ago. Why on earth are you asking me this?",
+            "mechanics": {
+              "heart_rate": "MAX_SPIKE",
+              "breathing": "HOLDING_BREATH",
+              "gsr": "MAX",
+              "cctv_visual": "EYE_DART",
+              "korku_bari_delta": 15,
+              "gameplay_note": "MAX SIGNAL CLUSTER: Extreme physiological response — but note this question has NOTHING to do with the charged fund. Red herring territory: this is NOT primary-charge guilt."
+            },
+            "next_node": "node_06_covolunteer"
+          },
+          {
+            "type": "BACK_OFF",
+            "question": "Forgive me — I'm circling. Let's return to the fund itself. Who reviewed the cashbox reconciliations at the end of each quarter?",
+            "answer": "Thank you. No one 'reviewed' anything formally. The treasurer — me — submits a figure to the parish council. The council approves the minutes. There's no audit. There has never been an audit in the six years I've held the role. That's the whole problem, isn't it? Nobody wanted to do the work until they wanted someone to blame for it.",
+            "mechanics": {
+              "heart_rate": "DROP",
+              "breathing": "DEEP",
+              "gsr": "DECREASE",
+              "cctv_visual": "RELIEVED_EXHALE",
+              "korku_bari_delta": 3,
+              "gameplay_note": "PROGRESS: Signals drop sharply when the topic returns to parish procedure. Contrast with the credentials cluster is informative."
+            },
+            "next_node": "node_05_mechanism_test"
+          },
+          {
+            "type": "PRESSURE",
+            "question": "You're visibly rattled by a simple question about your degree. Is there something about your credentials you don't want the board to review?",
+            "answer": "I am rattled because you dragged me into a room about a parish cashbox and are now asking me about a thesis I wrote before you were born. I am rattled because this interview has no coherence. I am rattled because I am sixty-four years old and have been on my feet for fourteen hours and I take prednisone and my hands are shaking and you are interpreting that as guilt. If you have a charge, bring it. Otherwise stop fishing.",
+            "mechanics": {
+              "heart_rate": "MAX_SPIKE",
+              "breathing": "HYPERVENTILATION",
+              "gsr": "MAX",
+              "cctv_visual": "HAND_PINCH_UNDER_TABLE",
+              "korku_bari_delta": -8,
+              "gameplay_note": "WRONG MOVE: Sustained MAX cluster, but on a topic orthogonal to the charge. Operator has chased a red herring and burned rapport."
+            },
+            "next_node": "node_fail_deflection"
+          }
+        ]
+      },
+      "node_05_mechanism_test": {
+        "theme": "How Could It Have Happened",
+        "description": "The operator changes tack. A fresh sheet of paper, a single question written at the top. Ruthann leans forward to read it upside down.",
+        "is_end_state": false,
+        "choices": [
+          {
+            "type": "ANALYTICAL",
+            "question": "Walk me through it from a procedural standpoint. If someone wanted to divert $4,200 from the benevolence fund over eighteen months, how would they actually do it?",
+            "answer": "How would they — I don't know. I genuinely don't. The fund takes cash donations after Mass, mostly. Small amounts. Twenties, fifties. I don't know how you'd skim four thousand dollars from that without someone noticing the weekly counts dropping. You'd have to be falsifying the counting sheets, but Agnieszka co-signs those, and she's not in on anything. I... no. I don't know how you'd do it. If I knew how, I'd have caught it.",
+            "mechanics": {
+              "heart_rate": "STABLE",
+              "breathing": "CALM",
+              "gsr": "DECREASE",
+              "cctv_visual": "EMPTY_STARE",
+              "korku_bari_delta": 14,
+              "gameplay_note": "CRITICAL SIGNAL: Fear bar DROPS on the mechanism question. Genuine uncertainty — she lacks firsthand knowledge of how the full $4,200 could have been taken. Strong NOT_GUILTY indicator on primary charge."
+            },
+            "next_node": "node_08_followup_exploitation"
+          },
+          {
+            "type": "TRAP",
+            "question": "You were the treasurer for six years. Surely someone with your experience has thought about the fund's vulnerabilities — show me you understand how it could be done.",
+            "answer": "You're trying to get me to describe a theft I didn't commit so you can play the tape back at me. I'm not going to speculate. I'm a nurse. I'm not a forensic accountant. The fund is loose. The oversight is loose. That's not a confession, that's a fact about small parish funds everywhere.",
+            "mechanics": {
+              "heart_rate": "RISE",
+              "breathing": "SHALLOW",
+              "gsr": "INCREASE",
+              "cctv_visual": "LIP_PRESS",
+              "korku_bari_delta": -2,
+              "gameplay_note": "WRONG MOVE: She sees the trap and refuses to engage. Mechanism-test signal is lost; the player no longer gets the diagnostic reading."
+            },
+            "next_node": "node_07_suspect_reframe"
+          },
+          {
+            "type": "NARROW_TARGET",
+            "question": "Let's narrow it. If the shortfall is real, where do YOU think the money actually went?",
+            "answer": "Honestly? I think half of it never existed. Agnieszka's counts have been sloppy for years. When she's on tally duty the numbers don't reconcile — not by thousands, but by forty here, sixty there. Over eighteen months that adds up. And I think the rest is in that lockbox somewhere, miscounted or in the wrong envelope. That's what I think. I don't think a thief walked off with four thousand dollars and left the parish unable to notice for a year and a half.",
+            "mechanics": {
+              "heart_rate": "STABLE",
+              "breathing": "CALM",
+              "gsr": "STABLE",
+              "cctv_visual": "RELEASED_SHOULDERS",
+              "korku_bari_delta": 10,
+              "gameplay_note": "CORRECT MOVE: She produces a coherent, low-signal theory. No deception cluster — consistent with genuine belief."
+            },
+            "next_node": "node_08_followup_exploitation"
+          }
+        ]
+      },
+      "node_06_covolunteer": {
+        "theme": "Agnieszka Walczak",
+        "description": "Ruthann's posture softens into something more combative than cornered — she has clearly wanted to talk about the deputy treasurer for some time. She taps a finger against the folder edge.",
+        "is_end_state": false,
+        "choices": [
+          {
+            "type": "SYSTEMIC_READ",
+            "question": "Tell me about Mrs. Walczak's cash-handling practices specifically. What have you actually seen?",
+            "answer": "I've seen her count a Sunday take twice and get two different numbers. I've seen her put envelopes in her purse to 'deal with later.' I've seen her write tallies in pencil and then amend them. In 2022 I raised it with Father Kowalczyk directly. He said she was eighty-one and a widow and that we should be gentle. Gentle. This is exactly what happens when you're gentle with a cashbox.",
+            "mechanics": {
+              "heart_rate": "RISE",
+              "breathing": "CALM",
+              "gsr": "STABLE",
+              "cctv_visual": "JAW_TIGHTEN",
+              "korku_bari_delta": 8,
+              "gameplay_note": "PROGRESS: Low signal cluster on detailed accusation — consistent with a long-held, authentic grievance, not fabrication."
+            },
+            "next_node": "node_08_followup_exploitation"
+          },
+          {
+            "type": "STRATEGIC",
+            "question": "If Mrs. Walczak is the actual source of the discrepancy, why haven't you formally filed a counter-report with the committee?",
+            "answer": "Because I am the treasurer under inquiry and if I point at the eighty-one-year-old widow the entire parish will decide I'm the bitter woman blaming grandma. I know exactly how it looks. I've known that community since 1974. I don't have a good move here. That's part of why I'm sitting in this chair.",
+            "mechanics": {
+              "heart_rate": "RISE",
+              "breathing": "UNEVEN",
+              "gsr": "INCREASE",
+              "cctv_visual": "LOOK_DOWN",
+              "korku_bari_delta": 7,
+              "gameplay_note": "PROGRESS: She admits a strategic silence. Moderate signal — uncomfortable but not evasive."
+            },
+            "next_node": "node_07_suspect_reframe"
+          }
+        ]
+      },
+      "node_07_suspect_reframe": {
+        "theme": "The Concession",
+        "description": "Ruthann exhales slowly, flexes her stiff hand again, and makes eye contact in a way she hasn't all session. When she speaks she is choosing her words with deliberate care.",
+        "is_end_state": false,
+        "choices": [
+          {
+            "type": "GULLIBLE",
+            "question": "Go ahead, Mrs. Stober. What is it you want to say?",
+            "answer": "I want to say that if the parish wants this resolved, I will make them whole. I will put the four thousand two hundred on the table out of my own retirement and we can call it closed. Not because I took it — I'm telling you I did not take four thousand dollars — but because I am done. I am tired. I have grandchildren at home and I cannot be in this chair another day. Let me write the check and let me go.",
+            "mechanics": {
+              "heart_rate": "STABLE",
+              "breathing": "DEEP",
+              "gsr": "DECREASE",
+              "cctv_visual": "RELIEVED_EXHALE",
+              "korku_bari_delta": -10,
+              "gameplay_note": "WRONG MOVE: Accepting the reframe. She buys her way out. The session ends with no clarification and an ambiguous biometric record."
+            },
+            "next_node": "node_fail_deflection"
+          },
+          {
+            "type": "GENTLE_REDIRECT",
+            "question": "I hear you. I'm not here to drag this out. But I do need you to be specific — if there's something about that window you haven't told us, this is the moment to put it on the record.",
+            "answer": "There's... all right. All right. In February of 2022 I borrowed nine hundred dollars from the cashbox. To close the funeral gap. I paid it back — every cent, eleven weeks later — out of my own paycheck. I did not log it. I did not tell the committee. That is the thing I've been sitting on. That is not four thousand dollars. That is not theft. It was a loan I made to myself and repaid, and I did not disclose it because I was ashamed and because I knew exactly how it would look. Which is how it now looks.",
+            "mechanics": {
+              "heart_rate": "SPIKE",
+              "breathing": "UNEVEN",
+              "gsr": "SURGE",
+              "cctv_visual": "TEAR_POOLING",
+              "korku_bari_delta": 18,
+              "gameplay_note": "CORRECT MOVE: PRIMARY-CHARGE partial admission. Signal cluster is strong but specific — the $900, not the $4,200."
+            },
+            "next_node": "node_09_final_press"
+          },
+          {
+            "type": "FORENSIC_CALL_OUT",
+            "question": "Mrs. Stober, earlier you said the money was deposited and the ledger was simply wrong. A minute ago you called it a 'funding gap you had to find somewhere.' Those two statements don't sit together. Which is it?",
+            "answer": "They sit together fine. The February deposits were real. The funeral gap was a separate problem. I — look. You're pinning me on language. I am a night-shift nurse who has been awake since three a.m. yesterday. If my sentences aren't matching up it is not because I am a criminal, it is because I am exhausted and on steroids and being interrogated in a basement.",
+            "mechanics": {
+              "heart_rate": "SPIKE",
+              "breathing": "UNEVEN",
+              "gsr": "SURGE",
+              "cctv_visual": "HAND_PINCH_UNDER_TABLE",
+              "korku_bari_delta": 12,
+              "gameplay_note": "PROGRESS: Contradiction landed. Strong but not catastrophic cluster — she's compressed, considering how much to concede."
+            },
+            "next_node": "node_08_followup_exploitation"
+          }
+        ]
+      },
+      "node_08_followup_exploitation": {
+        "theme": "The Gap in the Story",
+        "description": "The operator picks up a pen and slowly underlines a single figure on a sheet between them: $900. Ruthann reads it upside down and her jaw locks for a long count.",
+        "is_end_state": false,
+        "choices": [
+          {
+            "type": "FORENSIC_CALL_OUT",
+            "question": "You told me the funeral had a 'gap you had to find somewhere.' The parish deposit carbons in February and March each happen to show round numbers ending in hundreds that don't match the Sunday tallies. Nine hundred dollars, specifically, appears nowhere and everywhere in your ledger. Did you take nine hundred dollars from the cashbox in February 2022?",
+            "answer": "I... yes. I took nine hundred dollars. I paid it back. Eleven weeks. Out of my own account. I have the deposit slip at home — I kept it, I kept every piece of paper because I knew, I knew, one day someone would come for me over it. It was a loan. It was not four thousand dollars. I did not take four thousand dollars. I took nine hundred and I put it back and I did not tell anyone because I was ashamed.",
+            "mechanics": {
+              "heart_rate": "MAX_SPIKE",
+              "breathing": "CRYING",
+              "gsr": "SURGE",
+              "cctv_visual": "TEAR_POOLING",
+              "korku_bari_delta": 22,
+              "gameplay_note": "CRITICAL: Specific-figure admission. Signal cluster is high on the $900 but note the ceiling is below the credentials-topic maximum. Distribution matters."
+            },
+            "next_node": "node_09_final_press"
+          },
+          {
+            "type": "EMPATHIC",
+            "question": "Ruthann — if something happened with that cashbox that you never intended to keep, the worst thing you can do now is keep carrying it alone. Tell me what actually happened in February.",
+            "answer": "What happened in February is that I ran out of ways to pay the funeral home. And the cashbox was sitting in my dining room because I'd brought it home to count, and I took nine hundred dollars out of it and I told myself I would put it back before anyone noticed, and I did. Eleven weeks. From my own paycheck. I never touched it again. I never took another cent. I swear to you on my grandchildren I never took another cent.",
+            "mechanics": {
+              "heart_rate": "SPIKE",
+              "breathing": "CRYING",
+              "gsr": "SURGE",
+              "cctv_visual": "BREAKDOWN",
+              "korku_bari_delta": 20,
+              "gameplay_note": "CORRECT MOVE: Full narrative admission on the $900. The subsequent denial of 'another cent' shows low deception signal — consistent with truth."
+            },
+            "next_node": "node_09_final_press"
+          },
+          {
+            "type": "AGGRESSIVE",
+            "question": "Stop crying. You've been lying to the committee for eighteen months and you're lying to me right now. Tell me where the rest of the money went.",
+            "answer": "I want a lawyer. I'm done. I have been polite and I have been cooperative and I have told you more than I have told my own son, and you are calling me a liar in a basement. This interview is finished. I'm not saying another word until I have counsel.",
+            "mechanics": {
+              "heart_rate": "MAX_SPIKE",
+              "breathing": "HYPERVENTILATION",
+              "gsr": "MAX",
+              "cctv_visual": "STONE_FACE",
+              "korku_bari_delta": -20,
+              "gameplay_note": "WRONG MOVE: Counsel invoked. Session over before distinction between $900 and $4,200 can be established."
+            },
+            "next_node": "node_fail_lockdown"
+          }
+        ]
+      },
+      "node_09_final_press": {
+        "theme": "The Remaining Balance",
+        "description": "The room has changed. Ruthann is smaller in the chair now, both hands flat on the table, tears running without theater. The operator has a single remaining question to land, and the way they land it decides how the session closes.",
+        "is_end_state": false,
+        "choices": [
+          {
+            "type": "NARROW_TARGET",
+            "question": "I believe you about the nine hundred. I need you to account — separately — for the other three thousand three hundred. One figure at a time. Where do you believe it is?",
+            "answer": "I believe a thousand of it is Agnieszka's miscounts over eighteen months. I believe another thousand is in that lockbox, in a side envelope, that nobody's unfolded. The rest — I don't know. I genuinely don't. It might be real, it might not. I only know I didn't take it. You can pull every bank statement I own. You can pull my grandchildren's custodial accounts. You won't find four thousand dollars. You'll find nine hundred, gone for eleven weeks, and then returned. That is the true story. That is everything.",
+            "mechanics": {
+              "heart_rate": "STABLE",
+              "breathing": "DEEP",
+              "gsr": "DECREASE",
+              "cctv_visual": "EMPTY_STARE",
+              "korku_bari_delta": 18,
+              "gameplay_note": "CRITICAL: Signals settle — HR and GSR drop on the direct question about the remaining $3,300. Consistent with genuine lack of knowledge."
+            },
+            "next_node": "node_success_breakdown"
+          },
+          {
+            "type": "TACTICAL_RESET",
+            "question": "Take a minute. Drink some water. We're almost done — I just need you to sign the written statement of what you've told me, in your own words.",
+            "answer": "All right. All right. Give me the paper. I'll write it. Nine hundred dollars borrowed, nine hundred dollars returned, eleven weeks, from my paycheck. Ledger omissions during bereavement. No knowledge of the balance of the discrepancy. I'll sign it. I should have said this eighteen months ago and I didn't, and that's my failing, and I'll sign it.",
+            "mechanics": {
+              "heart_rate": "DROP",
+              "breathing": "DEEP",
+              "gsr": "DECREASE",
+              "cctv_visual": "RELEASED_SHOULDERS",
+              "korku_bari_delta": 12,
+              "gameplay_note": "PROGRESS: Composed partial admission. Biometrics normalize — she's surrendered the $900 but holds clear of claiming the rest."
+            },
+            "next_node": "node_success_partial"
+          },
+          {
+            "type": "LEGAL_THREAT",
+            "question": "Understand that what you've just admitted is a criminal act under Ohio law, and if you don't give me the rest right now I will be recommending charges on the full amount.",
+            "answer": "Then recommend them. I'm telling you the truth and you are telling me the truth doesn't matter. Fine. Charge me. I will see you in court and I will bring every bank statement I have owned since 1998 and we will see whether a jury of people from this county believes a widow with two grandchildren stole four thousand dollars from her own parish or borrowed nine hundred to bury her husband. Charge me.",
+            "mechanics": {
+              "heart_rate": "MAX_SPIKE",
+              "breathing": "UNEVEN",
+              "gsr": "SURGE",
+              "cctv_visual": "JAW_TIGHTEN",
+              "korku_bari_delta": -12,
+              "gameplay_note": "WRONG MOVE: Threats at the endgame harden her. She stops cooperating — partial admission stands but clarification is lost."
+            },
+            "next_node": "node_fail_lockdown"
+          }
+        ]
+      },
+      "node_success_breakdown": {
+        "theme": "Full Account",
+        "description": "Ruthann has given an itemized account of every dollar — what she borrowed, what she believes is miscounted, and what she does not know. She sits quietly, emptied, waiting.",
+        "is_end_state": true,
+        "result_text": "The session closes with a detailed, specific admission: a $900 self-loan in February 2022, repaid in eleven weeks, undisclosed to the committee. She denies knowledge of the remaining balance and provides a concrete theory involving the deputy treasurer's handling and miscounted envelopes. Polygraph distribution across the session is diagnostic rather than uniform: the MAX cluster (HR max-spike, GSR saturation, held breath) occurred on the question about her 1992 BSN thesis — a topic unrelated to the charged conduct. The mechanism-test question ('how could someone divert $4,200 from the fund') produced a notable DROP in fear bar and stable baseline, consistent with a subject who lacks firsthand knowledge of the mechanism. Her admission of the $900 produced a strong but bounded cluster — peaking below the credentials topic. Her subsequent specific denial of taking the remaining $3,300 produced stable, low-signal readings. The corticosteroid-elevated baseline makes raw values unreliable; the SHAPE of the signal distribution across topics is the usable evidence. Verdict is the operator's call."
+      },
+      "node_success_partial": {
+        "theme": "Signed Statement",
+        "description": "Ruthann signs a brief written statement in a firm, tired hand. She hands it back across the table without rereading it.",
+        "is_end_state": true,
+        "result_text": "The session closes with a composed, controlled partial admission: a signed statement covering the $900 loan and its repayment, the ledger omissions during her bereavement window, and a declared absence of knowledge regarding the remainder of the discrepancy. She did not break; she surrendered a bounded fact. Polygraph distribution across the session: the highest signal cluster (HR max-spike, GSR max, held breath, eye dart) appeared on questions probing her 1992 nursing thesis — a topic peripheral to the charged fund. The mechanism-test question produced stable, calm readings and a DROP in fear bar. The $900 admission produced a strong but specifically localized cluster. Her denial of responsibility for the remaining $3,300 registered as low-signal and consistent. Steroid-elevated baseline means raw amplitude is compressed; the player must read the DISTRIBUTION of spikes across topics, not the peak alone. Verdict is the operator's call."
+      },
+      "node_fail_lockdown": {
+        "theme": "Counsel Invoked",
+        "description": "Ruthann folds her arms, sets her jaw, and repeats the word 'lawyer' once more for the recording. The interview is over.",
+        "is_end_state": true,
+        "result_text": "The session terminates with counsel invoked. The suspect produced a partial admission regarding a $900 self-loan before shutting down; no clarification was obtained on the remaining $3,300 or on the co-volunteer's cash handling. Polygraph record is lopsided: extreme clusters appeared on credentials-adjacent questioning and on the final accusatory push, while the one mechanism-test reading taken showed stable, low-signal response. The player enters verdict with an incomplete signal map and a hostile suspect. Verdict is the operator's call."
+      },
+      "node_fail_deflection": {
+        "theme": "Stonewall",
+        "description": "Ruthann does not invoke counsel. She simply stops cooperating — answers in single syllables, stares at a point past the operator's shoulder, and waits out the clock until the interview's formal end.",
+        "is_end_state": true,
+        "result_text": "The session ends without a clean admission and without counsel being invoked. The suspect offered a blanket offer to reimburse the full disputed amount but gave no itemized account, no admission of wrongdoing, and no clarification of the ledger omissions. Polygraph record is ambiguous: the session's most extreme cluster occurred on questions about her 1992 nursing credentials — a topic never reconciled with the charged conduct — while probes directly targeting the fund mechanism produced flat, low readings. The record is full of high signal on the wrong topic and low signal on the right one. The player enters verdict with compelling biometric data whose interpretation is unresolved. Verdict is the operator's call."
+      }
+    },
+    "character_image": "./assets/characters/en-case-3.png"
+  }
+}

@@ -1,0 +1,584 @@
+{
+  "game_data": {
+    "title": "HarborRoot Naturals v. Tibbett's Corner Pharmacy — Trade Dress and Formulation Infringement",
+    "suspect": {
+      "name": "Gretchen Tibbett",
+      "role": "Owner-pharmacist, Tibbett's Corner Pharmacy (independent neighborhood pharmacy, Dayton, Ohio)",
+      "profile": "Gretchen Tibbett, 44, is a licensed pharmacist who inherited a failing corner drugstore from her uncle twelve years ago and rebuilt it into a modestly profitable neighborhood institution. She holds a PharmD from Ohio Northern University and has spent her entire adult career in retail pharmacy. Her personality is precise, conflict-averse in personal life but tactically assertive in business, and she has a well-practiced ability to project warmth while revealing very little. She speaks in careful, subordinate-clause-heavy sentences — a pattern her attorney has reinforced during coaching sessions before this interrogation. Suspicious detail: over the past twenty-two months, Gretchen quietly launched a private-label wellness supplement line under the Tibbett's name. She approached a contract manufacturer in rural Indiana who had previously supplied the regional supplement brand HarborRoot Naturals. She provided the manufacturer with HarborRoot's proprietary formulations — obtained through a disgruntled former HarborRoot employee she met at a trade show — and instructed them to reproduce the blends precisely, altering only the label and slightly reformulating the capsule coating color. HarborRoot's owner noticed unusually familiar chemistry in independently purchased Tibbett's capsules and filed a trademark/trade-dress/counterfeit-goods action. Gretchen is genuinely guilty: she knowingly appropriated a competitor's proprietary formulation and trade dress to gain shelf advantage against chain pharmacies encroaching on her neighborhood. Humanizing detail: she was diagnosed eight weeks ago with an aggressive but early-stage ovarian cancer. She has not disclosed this to her husband Randall or to his daughters, partly because she is terrified of destabilizing a remarriage that is still fragile, and partly because her prior autoimmune diagnosis (ankylosing spondylitis, currently flaring and managed with prednisone) already makes her seem medically burdensome to herself. The cancer diagnosis is completely unrelated to the charge but is producing profound, uncontrolled physiological stress during the interrogation."
+    },
+    "system_config": {
+      "initial_fear_bar": 20,
+      "max_fear_bar": 100,
+      "fear_bar_description": "A composite gauge of the suspect's accumulated psychological strain — combining heart rate variability, breathing irregularity, sweat response, and visible affect into a single tension reading.",
+      "heart_rate_baseline": 77,
+      "gsr_baseline": 7.5
+    },
+    "context": "HarborRoot Naturals, a regional supplement manufacturer based in Cincinnati, filed a civil lawsuit in Franklin County Common Pleas Court against Tibbett's Corner Pharmacy in January 2024, alleging trademark dilution, trade dress infringement, and counterfeit goods. HarborRoot claims that Tibbett's private-label supplement line — launched in February 2022 — uses formulations chemically identical to four of HarborRoot's proprietary blends, along with a nearly identical capsule color and packaging design. Independent laboratory analysis commissioned by HarborRoot's counsel found that Tibbett's formulations matched HarborRoot's in active ingredient ratios, inactive binding agents, and trace mineral profiles to a precision inconsistent with coincidental sourcing. Gretchen Tibbett maintains that Tibbett's formulations were independently developed with her contract manufacturer based on standard industry ingredient sourcing and that capsule colors and supplement formulations are not protected under trademark law. The case turns on whether the chemical and design similarities constitute deliberate copying of a protected trade dress or are the natural result of both companies drawing from the same regional supplement ingredient supply base. HarborRoot is seeking injunctive relief, disgorgement of profits, and damages; discovery is ongoing, and a depositions schedule is set for March 2024.",
+    "true_verdict": "GUILTY",
+    "verdict_truth_text": "Gretchen Tibbett knowingly obtained HarborRoot Naturals' proprietary supplement formulations through Martin Keltz, a former HarborRoot chemist, and deliberately instructed her contract manufacturer Ridgeline Nutraceuticals to reproduce them exactly. She made this decision under acute financial pressure — the pharmacy's margins were collapsing and the two chain competitors had begun to capture her customer base. The biometric peaks on personal health topics reflect a secondary secret unrelated to the charge: an undisclosed ovarian cancer diagnosis from eight weeks prior that she has not disclosed to her family.",
+    "dossier": {
+      "age": 44,
+      "identity_summary": "Licensed pharmacist (PharmD, Ohio Northern University, 2004) and sole owner of Tibbett's Corner Pharmacy in Dayton, Ohio, established in 2012 following acquisition from her uncle's estate. Operates a compounding dispensary and, since 2022, a private-label supplement line sold under the Tibbett's brand.",
+      "family": [
+        {
+          "relation": "Husband (second marriage)",
+          "name": "Randall Oubre",
+          "note": "Married June 2021. Works as a regional HVAC contractor. No financial stake in the pharmacy."
+        },
+        {
+          "relation": "Stepdaughter",
+          "name": "Brianna Oubre",
+          "note": "Age 17. Randall's daughter from his prior marriage. Lives with Gretchen and Randall during school term per custody agreement."
+        },
+        {
+          "relation": "Stepdaughter",
+          "name": "Cora Oubre",
+          "note": "Age 14. Randall's younger daughter. Splits residence between her mother's home in Centerville and the Tibbett-Oubre household on a rotating schedule."
+        },
+        {
+          "relation": "Son (from first marriage)",
+          "name": "Theo Tibbett",
+          "note": "Age 16. Lives primarily with Gretchen; father (ex-husband Drew Tibbett) has supervised visitation. Gretchen retains sole legal custody per 2018 court order."
+        }
+      ],
+      "medical": [
+        {
+          "condition": "Ankylosing spondylitis — currently in moderate flare, managed with prednisone 20 mg/day",
+          "polygraph_effect": "Corticosteroid therapy at this dose elevates sympathetic nervous system activity systemically: expect a meaningfully raised heart rate baseline, elevated resting skin conductance, and increased perspiration independent of emotional state. GSR amplitude on emotionally neutral questions will read higher than population norms. The flare itself causes background musculoskeletal discomfort that may generate sporadic non-emotional GSR transients."
+        }
+      ],
+      "habits": [
+        {
+          "habit": "Prednisone (20 mg daily oral corticosteroid, ongoing)",
+          "polygraph_effect": "Corticosteroids at therapeutic doses suppress endogenous cortisol feedback and increase catecholamine sensitivity, producing a jittery resting baseline on both GSR and respiratory channels. This effect is pharmacologically consistent and present throughout the session regardless of questioning content. Standard chart norms for resting GSR and respiration rate should be adjusted upward to account for steroid-induced sympathomimetic state."
+        },
+        {
+          "habit": "Moderate coffee consumption (2-3 cups before morning sessions)",
+          "polygraph_effect": "Caffeine at habitual doses modestly raises heart rate baseline and mildly amplifies GSR sensitivity. Effect is additive with corticosteroid-induced sympathetic elevation, compounding the raised baseline already introduced by prednisone."
+        }
+      ],
+      "priors": [
+        "2019 — Ohio State Board of Pharmacy administrative inquiry into compounding documentation practices at Tibbett's Corner Pharmacy; resolved with a corrective action plan and no license sanction.",
+        "2017 — Civil dispute with former pharmacy technician over alleged wrongful termination; settled out of court, terms undisclosed.",
+        "2014 — Parking and signage variance dispute with the City of Dayton over the pharmacy's exterior renovation; resolved administratively."
+      ],
+      "pressure_points": [
+        "Questions about the origins of the Tibbett's supplement formulations — subject responds with dense, carefully sequenced explanations that suggest prior rehearsal; ANALYTICAL framing tends to prompt longer technical deflections rather than shorter answers.",
+        "Questions touching on the pharmacy's financial condition over the past three years — subject's diction becomes noticeably more formal and clipped; she has a pattern of reframing financial questions as questions about 'strategy' before answering.",
+        "Questions about personal health or physical wellbeing — subject pivots quickly and appears to treat the topic as irrelevant to the proceeding; EMPATHIC framing on this topic causes visible composure-management rather than openness.",
+        "Questions referencing her prior marriage or the custody arrangement surrounding her son — subject's responses become shorter and she briefly loses her characteristic controlled cadence; this area produces visible irritability independent of other topics."
+      ],
+      "modifiers": {
+        "heart_rate_suppression": 0,
+        "heart_rate_baseline_shift": 7,
+        "gsr_sensitivity": 1.45,
+        "gsr_baseline_shift": 2.5,
+        "breathing_instability": 0.22
+      }
+    },
+    "start_node": "node_01_intro",
+    "nodes": {
+      "node_01_intro": {
+        "theme": "Opening the Record",
+        "description": "Gretchen Tibbett sits across the table in a charcoal blazer, hands folded over a thin legal pad. Her attorney's notes are visible; she glances at them once, then meets your eye with a rehearsed, pleasant smile.",
+        "is_end_state": false,
+        "choices": [
+          {
+            "type": "EMPATHIC",
+            "question": "Ms. Tibbett, before we get into specifics — I know this process is intrusive. How are you holding up this morning?",
+            "answer": "I appreciate you asking. I'm a little under the weather, honestly — I'm on a course of prednisone for a flare, so my baseline may look a bit off on your machine. I'd rather you know that now than wonder later.",
+            "mechanics": {
+              "heart_rate": "RISE",
+              "breathing": "UNEVEN",
+              "gsr": "INCREASE",
+              "cctv_visual": "LIP_PRESS",
+              "korku_bari_delta": 4,
+              "gameplay_note": "PROGRESS: Suspect volunteers medical context. Note elevated baseline from steroids — corroborated."
+            },
+            "next_node": "node_02_business_context"
+          },
+          {
+            "type": "ANALYTICAL",
+            "question": "Let's keep this straightforward. You're the sole owner-operator of Tibbett's Corner Pharmacy, correct? And you launched the private-label supplement line in February 2022?",
+            "answer": "That's correct. I'm the sole owner of the pharmacy, and the Tibbett's-brand supplement line went to shelf in February of 2022, after roughly seven months of formulation and regulatory work with our contract manufacturer.",
+            "mechanics": {
+              "heart_rate": "STABLE",
+              "breathing": "CALM",
+              "gsr": "STABLE",
+              "cctv_visual": "STONE_FACE",
+              "korku_bari_delta": 2,
+              "gameplay_note": "BASELINE: Factual anchor question. Note 'seven months of formulation' — worth revisiting."
+            },
+            "next_node": "node_02_business_context"
+          },
+          {
+            "type": "AGGRESSIVE",
+            "question": "Let's not waste time. You copied HarborRoot's product, slapped your name on it, and undercut their price. Yes or no?",
+            "answer": "No. And I'd ask you, with respect, to rephrase that as a question rather than a closing argument. My counsel has advised me to answer questions of fact; I'm not going to validate a characterization.",
+            "mechanics": {
+              "heart_rate": "SPIKE",
+              "breathing": "SHALLOW",
+              "gsr": "SPIKE",
+              "cctv_visual": "DEFENSIVE_CROSS_ARMS",
+              "korku_bari_delta": -8,
+              "gameplay_note": "WRONG MOVE: Premature accusation. Suspect hardens, leans on lawyer-coached framing. Lost early leverage."
+            },
+            "next_node": "node_02_business_context"
+          }
+        ]
+      },
+      "node_02_business_context": {
+        "theme": "Corner Under Siege",
+        "description": "The conversation turns to the neighborhood. Two chain-pharmacy receipts from within a six-block radius sit in a folder at your elbow. Gretchen's posture stays upright but her fingers have begun to rearrange the edge of her notepad.",
+        "is_end_state": false,
+        "choices": [
+          {
+            "type": "EMPATHIC",
+            "question": "Two chain stores opened within six blocks of you between 2020 and 2022. That had to feel like a slow-motion avalanche.",
+            "answer": "It was difficult. My uncle built that pharmacy over thirty years, and I spent a decade rebuilding it after he passed. When CVS opened on Wayne Avenue, I lost nineteen percent of my prescription volume in a single quarter. You look for new revenue anywhere you can find it.",
+            "mechanics": {
+              "heart_rate": "RISE",
+              "breathing": "DEEP",
+              "gsr": "INCREASE",
+              "cctv_visual": "LOOK_DOWN",
+              "korku_bari_delta": 8,
+              "gameplay_note": "PROGRESS: Suspect concedes motive frame — 'new revenue anywhere you can find it.' Useful for later callback."
+            },
+            "next_node": "node_03_supplement_launch"
+          },
+          {
+            "type": "ANALYTICAL",
+            "question": "Your quarterly filings show a 34% revenue decline between 2019 and late 2021. The supplement line arrives in early 2022. Walk me through that timing.",
+            "answer": "The timing reflects a strategic response to market pressure. I'd been looking at adjacent revenue categories for eighteen months. Supplements are a natural extension for a pharmacy — our patients ask about them daily — and 2021 was when I finally had the capital and the manufacturing partner lined up.",
+            "mechanics": {
+              "heart_rate": "INCREASE",
+              "breathing": "SHALLOW",
+              "gsr": "SPIKE",
+              "cctv_visual": "JAW_TIGHTEN",
+              "korku_bari_delta": 6,
+              "gameplay_note": "LIE SIGNAL: 'Eighteen months of research' — watch for contradiction against earlier 'seven months of formulation.'"
+            },
+            "next_node": "node_03_supplement_launch"
+          },
+          {
+            "type": "STRATEGIC",
+            "question": "Setting the chains aside — talk to me about strategy. What made supplements specifically attractive versus, say, expanding your compounding services?",
+            "answer": "Compounding requires specialized equipment investment and additional technician hours I didn't have runway for. Supplements carry a forty to sixty percent retail margin at scale, they don't require a pharmacist consultation for each sale, and they move through the front of the store rather than tying up the dispensary. It was a capital-efficient choice.",
+            "mechanics": {
+              "heart_rate": "STABLE",
+              "breathing": "CALM",
+              "gsr": "INCREASE",
+              "cctv_visual": "STONE_FACE",
+              "korku_bari_delta": 1,
+              "gameplay_note": "BASELINE: Clean business answer. Suspect back on rehearsed ground — small GSR elevation from steroid baseline only."
+            },
+            "next_node": "node_04_mechanism_test"
+          }
+        ]
+      },
+      "node_03_supplement_launch": {
+        "theme": "Choosing the Category",
+        "description": "You pull four Tibbett's-brand capsule bottles from the evidence envelope and line them up on the table. Gretchen's eyes settle on them briefly, then return to yours. The fluorescent light catches a faint sheen on her temple.",
+        "is_end_state": false,
+        "choices": [
+          {
+            "type": "NARROW_TARGET",
+            "question": "These four products — the joint blend, the adrenal support, the sleep formula, the immune stack — those are your four SKUs. Why those four?",
+            "answer": "Those four categories are the top-selling OTC wellness segments in independent pharmacy, according to NCPA data. We picked the categories where we saw the most patient demand at the counter. It's not unusual — every independent pharmacy chain I know of carries variants of those same four.",
+            "mechanics": {
+              "heart_rate": "SPIKE",
+              "breathing": "HOLDING_BREATH",
+              "gsr": "SURGE",
+              "cctv_visual": "EYE_DART",
+              "korku_bari_delta": 12,
+              "gameplay_note": "LIE SIGNAL: HR spike + breath hold on 'why those four.' These four happen to match HarborRoot's top four."
+            },
+            "next_node": "node_04_mechanism_test"
+          },
+          {
+            "type": "FORENSIC_CALL_OUT",
+            "question": "HarborRoot's four bestselling SKUs are a joint blend, an adrenal support, a sleep formula, and an immune stack. Identical categories, in the same order of release. Coincidence?",
+            "answer": "Those are the top four categories in the entire wellness segment. Every retailer in that space — GNC, Vitamin Shoppe, the chains — carries those same four. HarborRoot doesn't own the idea of a joint blend. That framing, frankly, is a stretch.",
+            "mechanics": {
+              "heart_rate": "MAX_SPIKE",
+              "breathing": "HOLDING_BREATH",
+              "gsr": "SURGE",
+              "cctv_visual": "JAW_TIGHTEN",
+              "korku_bari_delta": 14,
+              "gameplay_note": "LIE SIGNAL: Strongest cluster yet. Verbal deflection is confident; body is not."
+            },
+            "next_node": "node_04_mechanism_test"
+          }
+        ]
+      },
+      "node_04_mechanism_test": {
+        "theme": "How The Formula Was Built",
+        "description": "You shift forward and pick up one of the bottles, turning it slowly. This is the technical question — the one that separates someone who developed a product from someone who copied one. Gretchen watches the bottle move.",
+        "is_end_state": false,
+        "choices": [
+          {
+            "type": "ANALYTICAL",
+            "question": "Walk me through the formulation process for the joint blend. How did you arrive at the specific ingredient ratios — glucosamine, chondroitin, the MSM concentration, the boswellia extract percentage?",
+            "answer": "The… the contract manufacturer has a formulation team. We gave them a target price point and a target category, and they iterate against that. I reviewed the final spec sheet before production, of course, but the specific ratios — the MSM at that concentration, the boswellia at twelve percent — those came out of their formulation runs, based on standard industry references.",
+            "mechanics": {
+              "heart_rate": "MAX_SPIKE",
+              "breathing": "HOLDING_BREATH",
+              "gsr": "MAX",
+              "cctv_visual": "HAND_PINCH_UNDER_TABLE",
+              "korku_bari_delta": 18,
+              "gameplay_note": "LIE SIGNAL: MECHANISM TEST — full biometric cluster. Suspect knows the exact ratios (cited boswellia 12%) while claiming the manufacturer did it. Contradicts her own detail."
+            },
+            "next_node": "node_05_manufacturer_detail"
+          },
+          {
+            "type": "EMPATHIC",
+            "question": "Formulating a supplement from scratch is genuinely hard work. Who on your team actually did the R&D — was it you, the manufacturer, a consultant?",
+            "answer": "It was primarily the manufacturer's in-house team, with my input on positioning and price. I'm a pharmacist, not a formulator — I can read a spec sheet and flag something dangerous, but I don't design blends. That's why you hire a contract facility.",
+            "mechanics": {
+              "heart_rate": "SPIKE",
+              "breathing": "SHALLOW",
+              "gsr": "SURGE",
+              "cctv_visual": "LOOK_DOWN",
+              "korku_bari_delta": 10,
+              "gameplay_note": "LIE SIGNAL: Softer tactic yields a softer version of the same lie. Note: she distances herself from design decisions."
+            },
+            "next_node": "node_05_manufacturer_detail"
+          },
+          {
+            "type": "GULLIBLE",
+            "question": "You're a PharmD — you probably did most of the technical work yourself, right? That would be natural.",
+            "answer": "I provided some direction, yes. I wouldn't say I formulated the products independently, but I was involved in the review process, and yes, my pharmaceutical background obviously informed some of the decisions about ingredient selection.",
+            "mechanics": {
+              "heart_rate": "RISE",
+              "breathing": "CALM",
+              "gsr": "INCREASE",
+              "cctv_visual": "RELEASED_SHOULDERS",
+              "korku_bari_delta": -6,
+              "gameplay_note": "WRONG MOVE: Leading question let suspect retreat to a middle, unfalsifiable position. Mechanism-test leverage softened."
+            },
+            "next_node": "node_05_manufacturer_detail"
+          }
+        ]
+      },
+      "node_05_manufacturer_detail": {
+        "theme": "The Indiana Facility",
+        "description": "You slide a printout across the table: a list of contract manufacturers in the region. One line is highlighted — Ridgeline Nutraceuticals, Elkhart, Indiana. Gretchen does not look down at it.",
+        "is_end_state": false,
+        "choices": [
+          {
+            "type": "FORENSIC_CALL_OUT",
+            "question": "Ridgeline Nutraceuticals. They manufactured HarborRoot's product line from 2016 through 2021. You contracted with them in July 2021 — four months after HarborRoot pulled their account. Explain that timing.",
+            "answer": "Ridgeline is one of four mid-size contract facilities in the Midwest that will take an order under a hundred thousand units. I sourced them through an industry directory, not through any prior knowledge of their client roster. If they previously manufactured for HarborRoot, that's news to me, and frankly it argues in our favor — it means they have the capacity and the quality systems we needed.",
+            "mechanics": {
+              "heart_rate": "MAX_SPIKE",
+              "breathing": "HOLDING_BREATH",
+              "gsr": "MAX",
+              "cctv_visual": "EYE_DART",
+              "korku_bari_delta": 20,
+              "gameplay_note": "LIE SIGNAL: FOLLOW-UP EXPLOITATION. Maximum biometric cluster. Timing is damning; verbal answer is smooth but body betrays it."
+            },
+            "next_node": "node_07_suspect_reframe"
+          },
+          {
+            "type": "NARROW_TARGET",
+            "question": "When you approached Ridgeline, did you provide them any existing formulation documents, target specifications, or reference samples?",
+            "answer": "We provided category briefs — target price, target demographic, shelf positioning. No existing formulations. The point of hiring a formulation house is that they bring the formulation. I didn't have one to give them.",
+            "mechanics": {
+              "heart_rate": "MAX_SPIKE",
+              "breathing": "HOLDING_BREATH",
+              "gsr": "MAX",
+              "cctv_visual": "HAND_PINCH_UNDER_TABLE",
+              "korku_bari_delta": 16,
+              "gameplay_note": "LIE SIGNAL: Direct denial on mechanism-specific question. Peak deception cluster — 'we provided no formulations' is her central falsehood."
+            },
+            "next_node": "node_07_suspect_reframe"
+          },
+          {
+            "type": "SYSTEMIC_READ",
+            "question": "Walk me through the business relationship with Ridgeline. Who's your account manager there, how often do you communicate, how do orders get placed?",
+            "answer": "My account manager is Derek Holtz. We communicate primarily by email, with occasional calls for production scheduling. Orders are placed through their portal — I draft a purchase order, Derek confirms specs, and production scheduling follows. It's a routine B2B supplier relationship.",
+            "mechanics": {
+              "heart_rate": "RISE",
+              "breathing": "CALM",
+              "gsr": "INCREASE",
+              "cctv_visual": "STONE_FACE",
+              "korku_bari_delta": 2,
+              "gameplay_note": "BASELINE: Procedural question yields procedural answer. Useful only as setup for evidence confrontation later."
+            },
+            "next_node": "node_06_trade_show"
+          }
+        ]
+      },
+      "node_06_trade_show": {
+        "theme": "The Trade Show Contact",
+        "description": "You open a second folder and remove a conference lanyard photograph — the 2021 Midwest Independent Pharmacy Expo. Gretchen is in the background of the frame, in conversation with a man whose HarborRoot badge is visible.",
+        "is_end_state": false,
+        "choices": [
+          {
+            "type": "EVIDENCE",
+            "question": "This photograph was taken at the Midwest Pharmacy Expo in June 2021. You are speaking with Martin Keltz — a HarborRoot formulation chemist who was terminated by HarborRoot three weeks later. Do you remember that conversation?",
+            "answer": "I remember attending the expo. I don't recall a specific conversation with that individual. I spoke with dozens of people over two days — vendors, reps, other owners. If he had a HarborRoot badge, I might have asked him about their product line, but I can't reconstruct a conversation from eighteen months ago from a candid photograph.",
+            "mechanics": {
+              "heart_rate": "MAX_SPIKE",
+              "breathing": "HOLDING_BREATH",
+              "gsr": "MAX",
+              "cctv_visual": "EYE_DART",
+              "korku_bari_delta": 18,
+              "gameplay_note": "LIE SIGNAL: Peak cluster on the name 'Martin Keltz.' Memory denial is the tell — the meeting was consequential."
+            },
+            "next_node": "node_07_suspect_reframe"
+          },
+          {
+            "type": "TRAP",
+            "question": "We have phone records showing eleven calls between your cell and a number registered to Mr. Keltz between July and October 2021. Still no memory of the conversation?",
+            "answer": "I… I'd need to see those records to respond meaningfully. I'm not going to confirm or deny a call log I haven't reviewed. I'll note that vendors and consultants reach out constantly, and not every number in my call history represents a substantive business relationship.",
+            "mechanics": {
+              "heart_rate": "MAX_SPIKE",
+              "breathing": "UNEVEN",
+              "gsr": "MAX",
+              "cctv_visual": "JAW_TIGHTEN",
+              "korku_bari_delta": 22,
+              "gameplay_note": "LIE SIGNAL: Hesitation break in her rehearsed cadence. She knows the records exist. Crack visible."
+            },
+            "next_node": "node_07_suspect_reframe"
+          }
+        ]
+      },
+      "node_07_suspect_reframe": {
+        "theme": "She Pivots",
+        "description": "Gretchen takes a measured breath. Her hand moves from the notepad to her water glass, then back. When she speaks again her tone has shifted — slightly warmer, slightly more candid, as if offering something.",
+        "is_end_state": false,
+        "choices": [
+          {
+            "type": "GULLIBLE",
+            "question": "Go ahead. If there's context I'm missing, now's the moment.",
+            "answer": "I think what's being lost in this is the reality of what a small independent pharmacy faces. HarborRoot is a nine-million-dollar regional player with a legal budget. I am one woman, with one store, trying to keep the lights on. If my formulations resemble theirs, it's because there is a finite universe of supplement chemistry, and both of us are drawing from the same well of public nutritional science. That's the story here. Not theft. Market convergence.",
+            "mechanics": {
+              "heart_rate": "DROP",
+              "breathing": "DEEP",
+              "gsr": "DECREASE",
+              "cctv_visual": "RELEASED_SHOULDERS",
+              "korku_bari_delta": -14,
+              "gameplay_note": "WRONG MOVE: Suspect executes a prepared reframe and lands it. Biometrics quiet because she's back on scripted ground. Leverage lost."
+            },
+            "next_node": "node_08_health_digression"
+          },
+          {
+            "type": "STRATEGIC",
+            "question": "I hear the framing. Let's stay with the specifics — the Keltz phone records, the Ridgeline timing. That's what the court will look at.",
+            "answer": "I understand. I'd just ask that the specifics be considered in the context of an industry where lateral movement between suppliers and formulators is routine. But yes — proceed.",
+            "mechanics": {
+              "heart_rate": "SPIKE",
+              "breathing": "SHALLOW",
+              "gsr": "SURGE",
+              "cctv_visual": "LIP_PRESS",
+              "korku_bari_delta": 10,
+              "gameplay_note": "PROGRESS: Gently redirected. Suspect's reframe denied without escalation. Biometrics stay elevated."
+            },
+            "next_node": "node_09_evidence_texts"
+          },
+          {
+            "type": "FORENSIC_CALL_OUT",
+            "question": "'Market convergence' doesn't explain trace mineral profiles matching to four decimal places. That's not chemistry drawn from 'the same well.' That's a copied master batch record.",
+            "answer": "Trace mineral profiles reflect the source of the raw inputs. If two manufacturers purchase glucosamine from the same three global suppliers — and there are only three at commercial scale — their trace profiles will converge. That's not evidence of a copied batch record. That's evidence of a consolidated supply chain.",
+            "mechanics": {
+              "heart_rate": "MAX_SPIKE",
+              "breathing": "HOLDING_BREATH",
+              "gsr": "MAX",
+              "cctv_visual": "HAND_PINCH_UNDER_TABLE",
+              "korku_bari_delta": 20,
+              "gameplay_note": "LIE SIGNAL: High-risk challenge pays off. Biometric peak even as verbal answer stays poised. Technical objection is a rehearsed shield."
+            },
+            "next_node": "node_09_evidence_texts"
+          }
+        ]
+      },
+      "node_08_health_digression": {
+        "theme": "A Detour Into Wellbeing",
+        "description": "Gretchen shifts in her chair with visible discomfort, touches her lower back, and exhales. There is something here — a spike in her overall readings that has been present since she sat down. You could follow it.",
+        "is_end_state": false,
+        "choices": [
+          {
+            "type": "EMPATHIC",
+            "question": "You mentioned prednisone earlier. Be honest with me — how's your health right now? You don't seem well.",
+            "answer": "I… I appreciate the concern, but I'd rather keep this focused on the case. The flare is manageable. I've been managing it for years. It's not relevant to what you're asking me about.",
+            "mechanics": {
+              "heart_rate": "MAX_SPIKE",
+              "breathing": "HOLDING_BREATH",
+              "gsr": "MAX",
+              "cctv_visual": "TEAR_POOLING",
+              "korku_bari_delta": -10,
+              "gameplay_note": "WRONG MOVE / RED HERRING: Maximum biometric cluster on a topic unrelated to the IP charge. Signals look identical to guilt — but the trigger is private. Player risks misattributing this spike."
+            },
+            "next_node": "node_fail_deflection"
+          },
+          {
+            "type": "PRESSURE",
+            "question": "Your hands haven't stopped moving. Something is wrong here. Tell me what it is.",
+            "answer": "What's wrong is that I'm being accused of counterfeiting by a company with ten times my legal budget, and I'm sitting in a room attached to a machine that reads my heartbeat. Of course my hands are moving. I'd like to take a break.",
+            "mechanics": {
+              "heart_rate": "MAX_SPIKE",
+              "breathing": "HYPERVENTILATION",
+              "gsr": "MAX",
+              "cctv_visual": "TEAR_POOLING",
+              "korku_bari_delta": -16,
+              "gameplay_note": "WRONG MOVE: Suspect uses genuine distress (private, unrelated) as cover to demand a break. Session momentum collapses."
+            },
+            "next_node": "node_fail_deflection"
+          },
+          {
+            "type": "STRATEGIC",
+            "question": "Understood. Let's set that aside and return to the manufacturing relationship.",
+            "answer": "Thank you. Yes. Please.",
+            "mechanics": {
+              "heart_rate": "DROP",
+              "breathing": "DEEP",
+              "gsr": "DECREASE",
+              "cctv_visual": "RELIEVED_EXHALE",
+              "korku_bari_delta": 4,
+              "gameplay_note": "PROGRESS: Correctly read the spike as unrelated to the charge and moved on. Steadies the session."
+            },
+            "next_node": "node_09_evidence_texts"
+          }
+        ]
+      },
+      "node_09_evidence_texts": {
+        "theme": "The Message Thread",
+        "description": "You produce a third folder — thicker than the others. Inside are printouts of SMS messages, obtained under subpoena, between Gretchen's personal cell and a number tied to Martin Keltz. One message is circled in red: 'got the adrenal master file, sending tonight.' Dated August 19, 2021.",
+        "is_end_state": false,
+        "choices": [
+          {
+            "type": "EVIDENCE",
+            "question": "August 19th, 2021. Mr. Keltz texts you: 'got the adrenal master file, sending tonight.' Your reply, twelve minutes later: 'perfect, use the protonmail.' Explain that exchange.",
+            "answer": "I… that could be any number of things. Master files in pharmacy can refer to drug master files, ingredient sourcing documents, regulatory paperwork. I don't — I'd need to see the full thread in context. A single message, out of context, doesn't prove what you're suggesting it proves.",
+            "mechanics": {
+              "heart_rate": "MAX_SPIKE",
+              "breathing": "HOLDING_BREATH",
+              "gsr": "MAX",
+              "cctv_visual": "HAND_PINCH_UNDER_TABLE",
+              "korku_bari_delta": 28,
+              "gameplay_note": "LIE SIGNAL: Peak of the session. Verbal hedging ('I... could be any number of things') breaks her prior fluent cadence. The message is exactly what it looks like."
+            },
+            "next_node": "node_10_final_push"
+          },
+          {
+            "type": "MORAL_PRESSURE",
+            "question": "Gretchen. 'Use the protonmail.' That's not a regulatory document. That's a channel choice made by someone who knew what she was receiving was not hers to receive.",
+            "answer": "I use encrypted email for a range of sensitive business communications — supplier pricing, employee medical disclosures, legal correspondence. That's standard hygiene for a small business owner. You're reading intent into a workflow choice.",
+            "mechanics": {
+              "heart_rate": "MAX_SPIKE",
+              "breathing": "UNEVEN",
+              "gsr": "SURGE",
+              "cctv_visual": "JAW_TIGHTEN",
+              "korku_bari_delta": 22,
+              "gameplay_note": "LIE SIGNAL: Moral framing holds. Technical rebuttal is prepared but biometrics contradict it. Cornered."
+            },
+            "next_node": "node_10_final_push"
+          },
+          {
+            "type": "LEGAL_THREAT",
+            "question": "This message alone is sufficient for trade-secret misappropriation and conspiracy charges. We can add criminal referral to the civil case. Last chance to get ahead of that.",
+            "answer": "I'd like a moment with my counsel before answering anything further in that direction.",
+            "mechanics": {
+              "heart_rate": "MAX_SPIKE",
+              "breathing": "SHALLOW",
+              "gsr": "MAX",
+              "cctv_visual": "STONE_FACE",
+              "korku_bari_delta": -20,
+              "gameplay_note": "WRONG MOVE: Premature criminal threat triggers lawyer invocation. Session headed toward legal shutdown."
+            },
+            "next_node": "node_fail_lockdown"
+          }
+        ]
+      },
+      "node_10_final_push": {
+        "theme": "The Room Narrows",
+        "description": "The folder of texts is open between you. Gretchen's polished cadence has frayed at the edges; she has not looked at her legal pad in several minutes. Her attorney's pen hovers but does not move. You can feel the moment.",
+        "is_end_state": false,
+        "choices": [
+          {
+            "type": "EMPATHIC",
+            "question": "You built that pharmacy back from nothing. I believe that. And I think you made one decision, under pressure, that you've been carrying for two years. You can put that down right now.",
+            "answer": "I… the chains were going to kill us. I had payroll due in nine days and seventy-thousand dollars in inventory that wasn't moving. Martin approached me, not the other way around — he said he could hand me a package that would take eighteen months of formulation off my timeline. I told him I'd take it. I instructed Ridgeline to match the specs. I did that. I made that call. I knew what it was.",
+            "mechanics": {
+              "heart_rate": "MAX_SPIKE",
+              "breathing": "CRYING",
+              "gsr": "MAX",
+              "cctv_visual": "BREAKDOWN",
+              "korku_bari_delta": 40,
+              "gameplay_note": "CORRECT MOVE: Empathic framing after evidence reveal produces full admission. All channels confirm primary-charge truth."
+            },
+            "next_node": "node_success_breakdown"
+          },
+          {
+            "type": "FORENSIC_CALL_OUT",
+            "question": "Let's walk the timeline precisely. Keltz approaches you June 2021 at the expo. Eleven calls July through October. The 'master file' text August 19th. Ridgeline contracted July 14th. The chemistry matches to four decimals. Is there a version of these facts where you did not knowingly direct this?",
+            "answer": "No. There is not. I'm not going to sit here and insult your intelligence. My counsel will want to discuss how we characterize it for the court, but between you and me, in this room — the timeline is the timeline. I directed the replication. I believed I could absorb the risk. I was wrong about that.",
+            "mechanics": {
+              "heart_rate": "SPIKE",
+              "breathing": "DEEP",
+              "gsr": "SURGE",
+              "cctv_visual": "LOOK_DOWN",
+              "korku_bari_delta": 32,
+              "gameplay_note": "CORRECT MOVE: Forensic walkthrough produces a controlled, composed admission. Cleaner record than breakdown path."
+            },
+            "next_node": "node_success_partial"
+          },
+          {
+            "type": "TACTICAL_RESET",
+            "question": "Let's pause for five minutes. Water, bathroom, whatever you need. We'll come back to this.",
+            "answer": "Thank you. Yes. I'd appreciate that.",
+            "mechanics": {
+              "heart_rate": "DROP",
+              "breathing": "DEEP",
+              "gsr": "DECREASE",
+              "cctv_visual": "RELIEVED_EXHALE",
+              "korku_bari_delta": -18,
+              "gameplay_note": "TACTICAL RESET: Momentum surrendered. Suspect will re-compose and return to lawyer-coached posture. Evidence in the record, but no admission."
+            },
+            "next_node": "node_fail_deflection"
+          },
+          {
+            "type": "AGGRESSIVE",
+            "question": "Stop stalling. You did it. Say it.",
+            "answer": "I will not be bullied into a statement I have not had the opportunity to review with counsel. We are done for today.",
+            "mechanics": {
+              "heart_rate": "MAX_SPIKE",
+              "breathing": "SHALLOW",
+              "gsr": "SPIKE",
+              "cctv_visual": "DEFENSIVE_CROSS_ARMS",
+              "korku_bari_delta": -30,
+              "gameplay_note": "WRONG MOVE: Bullying at the threshold of admission. Suspect invokes counsel. Session terminates."
+            },
+            "next_node": "node_fail_lockdown"
+          }
+        ]
+      },
+      "node_success_breakdown": {
+        "theme": "Full Admission",
+        "description": "Gretchen's composure has collapsed. Her attorney is speaking quietly into her ear; she is not responding. The admission is on the record.",
+        "is_end_state": true,
+        "result_text": "Gretchen Tibbett delivered a complete verbal admission under empathic framing: she identified Martin Keltz as the source, confirmed she directed Ridgeline to replicate HarborRoot's specifications, and acknowledged she understood the legal exposure at the time of the decision. The biometric record shows a sustained high-deception cluster across all mechanism-specific questions — the Ridgeline timing, the Keltz contacts, the 'master file' text — followed by full-channel collapse (HR MAX_SPIKE, GSR MAX, CRYING) at the moment of confession. A separate, equally intense biometric spike occurred earlier on a health-related digression unconnected to the supplement line; a careful reviewer will note the two spike patterns were triggered by different topics entirely."
+      },
+      "node_success_partial": {
+        "theme": "Controlled Concession",
+        "description": "Gretchen sits very still. Her attorney has stopped writing. The admission is surgical and composed — delivered as if it were a closing business negotiation rather than a confession.",
+        "is_end_state": true,
+        "result_text": "Under forensic timeline pressure, Gretchen Tibbett produced a composed, lawyered-toned admission that she directed the replication of HarborRoot's formulations through Martin Keltz and Ridgeline Nutraceuticals. She did not break; she calculated. The biometric log shows peak deception clusters (HR MAX_SPIKE, GSR MAX, HOLDING_BREATH) concentrated specifically on the mechanism test, the manufacturer timing, and the evidence confrontation — every charge-relevant question. A secondary, distinct spike pattern appears on a personal health question that she declined to discuss; that cluster is as large as the charge-related ones but is topic-isolated, suggesting an independent private stressor rather than case-related deception."
+      },
+      "node_fail_lockdown": {
+        "theme": "Counsel Invoked",
+        "description": "Gretchen's attorney has taken over speaking. She sits with her hands folded, eyes forward, no longer engaging. The interview is concluded.",
+        "is_end_state": true,
+        "result_text": "The session terminated when Gretchen Tibbett invoked counsel in response to escalation. No verbal admission was obtained. The biometric record nonetheless captured substantial deception signals across the mechanism-test, Ridgeline-timing, and evidence-confrontation nodes — sustained HR spikes, GSR surges, and breath-holding on charge-specific content. A separate peak cluster appeared on a personal-health question that produced comparable signal amplitude but was topic-isolated. The polygraph log is rich, but the absence of a verbal admission means the player must reach the verdict on biometric pattern alone."
+      },
+      "node_fail_deflection": {
+        "theme": "Soft Stonewall",
+        "description": "Gretchen has regained her earlier composure. The folders are still on the table but her answers have returned to prepared, rehearsed cadence. Further questioning is producing nothing new.",
+        "is_end_state": true,
+        "result_text": "The interrogation wound down without an admission and without a formal legal shutdown — Gretchen Tibbett simply reverted to her lawyer-coached baseline and ran out the clock in polished, unfalsifiable statements. The biometric log shows two distinct high-signal clusters: one distributed across charge-specific questions (mechanism test, Ridgeline timing, Keltz contacts, the 'master file' text) and a separate, equally intense cluster on a personal health digression unrelated to the supplement line. The player must decide whether the charge-specific cluster reflects genuine deception about the counterfeit claim, or whether both spikes represent the same generalized distress."
+      }
+    },
+    "character_image": "./assets/characters/en-case-2.png"
+  }
+}

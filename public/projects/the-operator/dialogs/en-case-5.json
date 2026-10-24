@@ -1,0 +1,497 @@
+{
+  "game_data": {
+    "title": "Hoenderveld v. Aldenmoor Auction Services & Offermans — Bordeaux Provenance Dispute",
+    "suspect": {
+      "name": "Céleste Offermans",
+      "role": "Head Sommelier, Aldenmoor Inn & Wine Cellar (Finger Lakes region, New York)",
+      "profile": "Céleste Offermans, 44, grew up in a Flemish-Belgian household in Rochester; her father was a restaurant owner and her mother a piano teacher before the illness. She trained in Burgundy in her late twenties under a now-deceased winemaker named Édouard Feraut, earning a diploma that gave her genuine technical depth but also, quietly, a shameful shortcut she has never disclosed: substantial portions of her advanced certification written thesis were lifted from Feraut's unpublished tasting manuscript, which she had access to as a stagiaire. Feraut died of a stroke before the work was ever circulated, and the board never compared sources. That credential — honestly her calling card — rests on borrowed language she has internalized so thoroughly she half-believes it was always hers. Professionally, she is meticulous, slightly formal, and inclined toward over-explanation when asked about her expertise. She curated the wine program at Aldenmoor for eleven years and built a regional reputation for provenance research on estate collections. The suspicious detail: she accepted a four-hundred-dollar cash consulting stipend from the consignor — Marta Szabo, a recently widowed antique dealer — for authenticating the disputed Bordeaux collection before it went to a small regional auction house, and she omitted that payment from her written authentication letter's disclosure section. She was not aware the underlying provenance documents had been fabricated; she relied on them in good faith and her methodology was sound. The humanizing detail: she has converted the ground-floor den of her Ithaca house into an accessible bedroom for her mother, Lieselotte, who was diagnosed with relapsing-remitting MS seven years ago and can no longer live independently. Céleste manages every aspect of her mother's scheduling — PT appointments, insurance correspondence, medication logistics — while working full shifts at the inn. She uses a low-dose cannabis tincture nightly to manage L4-L5 disc pain that followed a kitchen slip in 2017, which also means she arrives at interviews mildly parasympathetically shifted: calm surface, slightly lower resting pulse, not the anxious tightness one might expect."
+    },
+    "system_config": {
+      "initial_fear_bar": 20,
+      "max_fear_bar": 100,
+      "fear_bar_description": "A composite gauge of the suspect's accumulated psychological strain — combining heart rate, breath irregularity, sweat response, and visible affect into a single tension reading.",
+      "heart_rate_baseline": 66,
+      "gsr_baseline": 4
+    },
+    "context": "In October 2023, Pieter Hoenderveld, a retired educator, purchased a seventeen-lot Bordeaux collection through a regional upstate auction house, relying on a provenance letter signed by Céleste Offermans authenticating the wines' origins and condition. In January 2024, during insurance appraisal, an independent expert discovered that the foundational provenance documents — including a purported 1989 estate acquisition record and three unsigned transfer certificates — were fabrications. The actual provenance chain was incomplete and the wines' authenticity could not be verified. Hoenderveld filed a civil complaint naming both the auction house and Offermans, alleging negligent authentication and seeking restitution of approximately $42,000 in disputed lot value plus damages. Offermans' authentication methodology was sound and she had no knowledge that the consignor, Marta Szabo, had presented forged documents, but discovery has revealed that Offermans accepted a $400 cash consulting fee from Szabo prior to writing the authentication letter — a payment she did not disclose to the auction house or to the buyer. The central legal question is whether that undisclosed fee constitutes a material conflict of interest that invalidated her expert opinion, or whether her technical evaluation was independently reliable despite the procedural omission.",
+    "true_verdict": "NOT_GUILTY",
+    "verdict_truth_text": "Céleste Offermans accepted an undisclosed $400 consulting fee from the consignor Marta Szabo and failed to disclose it in her authentication letter — an ethical violation that created a legitimate conflict-of-interest question. However, she did not forge the provenance documents and had no knowledge they were fabricated when she completed her authentication. Her technical methodology was sound; she relied in good faith on documents Szabo presented as authentic. The forged documents likely originated within Szabo's late husband's cellar management or archival records before Offermans ever evaluated them. The fee omission is a disciplinary matter; the forgery itself appears to have been executed elsewhere in the chain.",
+    "dossier": {
+      "age": 44,
+      "identity_summary": "Head sommelier and cellar director at Aldenmoor Inn, Finger Lakes region. Holds an advanced sommelier diploma from a Burgundy-based program; eleven years in her current post with a secondary practice authenticating private wine collections for regional estate sales.",
+      "family": [
+        {
+          "relation": "Mother",
+          "name": "Lieselotte Offermans",
+          "note": "Age 71. Diagnosed with relapsing-remitting multiple sclerosis in 2017. Relocated into Céleste's Ithaca residence in 2019 and requires daily assistance with mobility and medical coordination. Retired piano teacher, no independent income."
+        },
+        {
+          "relation": "Younger brother",
+          "name": "Wim Offermans",
+          "note": "Age 39. Lives in Rochester. Works part-time in warehouse logistics; assists with weekend care coverage for their mother on a rotating informal basis."
+        }
+      ],
+      "medical": [
+        {
+          "condition": "Chronic lumbar disc pain (L4-L5 herniation, 2017 workplace injury)",
+          "polygraph_effect": "Managed with nightly low-dose cannabis tincture. Cannabis induces mild parasympathetic tone: instrument will record a suppressed resting heart rate and a slightly attenuated galvanic skin response amplitude compared to an unmedicated baseline. HR swings on deceptive items are narrowed; GSR peaks are blunted. Polygraph scoring using standard norms will systematically underestimate autonomic reactivity."
+        }
+      ],
+      "habits": [
+        {
+          "habit": "Low-to-moderate cannabis tincture (evening, consistent schedule, not day-of dosing)",
+          "polygraph_effect": "Residual cannabinoid effect present at morning examination times. Produces mild parasympathetic shift: lower resting pulse (estimated -3 to -5 BPM below population baseline), slightly reduced GSR conductance ceiling, marginally more regular breathing pattern. Effect is physiological, not sedative at this dose level."
+        },
+        {
+          "habit": "Moderate tea consumption (two to three cups daily, no coffee)",
+          "polygraph_effect": "Caffeine intake is low relative to population norms. No meaningful upward GSR baseline elevation expected from stimulant load."
+        }
+      ],
+      "priors": [
+        "Named as a respondent in a 2019 licensing board inquiry regarding a mislabeled cellar inventory at a prior employer (inquiry closed without finding; no sanction issued).",
+        "Received a formal written caution from the Aldenmoor Inn's ownership group in 2021 regarding an unauthorized modification to the wine acquisition budget; matter resolved internally.",
+        "No criminal record on file."
+      ],
+      "pressure_points": [
+        "Questions about the specific methodology she used to authenticate the Szabo collection — subject provides rehearsed, clause-precise answers and deflects follow-up with procedural language; ANALYTICAL framing tends to produce longer but increasingly formulaic replies rather than elaboration.",
+        "Any reference to her professional credentials or training history — subject becomes subtly over-explanatory, volunteering qualifications that were not asked about; EMPATHIC framing does not ease this pattern and can cause her to repeat credentials in different orderings.",
+        "Discussion of her financial arrangements with private clients generally — subject's diction tightens noticeably and she tends to answer a slightly different question than the one posed; AGGRESSIVE framing causes her to cite attorney advice and disengage.",
+        "Questions about her relationship with her mother's care situation and how she manages her schedule — subject softens and speaks in less guarded language; this topical area tends to briefly interrupt her coached register."
+      ],
+      "modifiers": {
+        "heart_rate_suppression": 0.15,
+        "heart_rate_baseline_shift": -4,
+        "gsr_sensitivity": 0.87,
+        "gsr_baseline_shift": -1,
+        "breathing_instability": 0.05
+      }
+    },
+    "start_node": "node_01_intro",
+    "nodes": {
+      "node_01_intro": {
+        "theme": "Opening The Room",
+        "description": "Céleste sits with her hands folded on the edge of the table, a thin folder of her own notes tabbed in three colors in front of her. Her posture is upright and composed; she waits for the first question without fidgeting.",
+        "is_end_state": false,
+        "choices": [
+          {
+            "type": "EMPATHIC",
+            "question": "Thank you for coming in voluntarily. I know this has been disruptive. Can you walk me through how you first came to be involved with the Szabo collection?",
+            "answer": "Of course. Marta Szabo contacted Aldenmoor's front office in late August of last year. Her husband had passed in the spring and she needed to liquidate a private cellar he'd built over thirty years. The front office referred her to me because provenance research on older private holdings is something I've done for other estates in the region. We set up an initial visit to her house in Geneva, I think the second week of September.",
+            "mechanics": {
+              "heart_rate": "BASELINE",
+              "breathing": "CALM",
+              "gsr": "BASELINE",
+              "cctv_visual": "STONE_FACE",
+              "korku_bari_delta": 4,
+              "gameplay_note": "PROGRESS: Suspect cooperative on procedural timeline. Establishes clean baseline for later comparison."
+            },
+            "next_node": "node_02_timeline"
+          },
+          {
+            "type": "ANALYTICAL",
+            "question": "Before we get to the Szabo matter — tell me about your professional scope. How often do you issue formal authentication letters outside the inn's own cellar work?",
+            "answer": "Maybe six, seven times a year. Aldenmoor's contract allows outside consulting as long as it doesn't conflict with the inn's purchasing. Most of the letters I write are for small estate liquidations — a family settling a cellar after a death, insurance revaluations, occasionally a divorce settlement. Nothing larger than thirty or forty lots at a time. I've done it for about nine years.",
+            "mechanics": {
+              "heart_rate": "BASELINE",
+              "breathing": "BASELINE",
+              "gsr": "STABLE",
+              "cctv_visual": "STONE_FACE",
+              "korku_bari_delta": 3,
+              "gameplay_note": "PROGRESS: Low-stakes professional framing. Suspect in comfortable territory."
+            },
+            "next_node": "node_03_methodology"
+          }
+        ]
+      },
+      "node_02_timeline": {
+        "theme": "The Geneva Visit",
+        "description": "She opens her folder and glances at a handwritten timeline, then closes it again without referring further. Her voice stays even, and she speaks at a slightly measured pace, as if checking each phrase before releasing it.",
+        "is_end_state": false,
+        "choices": [
+          {
+            "type": "NARROW_TARGET",
+            "question": "Describe that first visit. What documents did Mrs. Szabo show you that day?",
+            "answer": "She had an accordion folder. Inside were what appeared to be original acquisition records from 1989, some transfer certificates from the storage facility in Verbier her husband had used until 2008, and temperature logs from their home cellar covering the last fifteen years. I photographed everything for my own reference. I also walked the cellar, pulled six bottles for visual inspection — capsule condition, fill levels, label ageing consistent with their purported dates.",
+            "mechanics": {
+              "heart_rate": "STABLE",
+              "breathing": "BASELINE",
+              "gsr": "STABLE",
+              "cctv_visual": "STONE_FACE",
+              "korku_bari_delta": 5,
+              "gameplay_note": "PROGRESS: Detailed procedural recall. No deception markers on the document description itself."
+            },
+            "next_node": "node_04_mechanism"
+          },
+          {
+            "type": "ANALYTICAL",
+            "question": "Your authentication letter is dated October 3rd. How many separate visits occurred between the referral and that date, and what was the total billable time?",
+            "answer": "Two visits. First was September 12th, about three hours including cellar inspection. The second was September 26th, shorter — maybe ninety minutes — to verify a small discrepancy in one of the transfer certificates. Between visits I did roughly ten hours of reference work cross-checking auction records from the period. The inn doesn't bill hourly for consulting work I do under the Aldenmoor letterhead; it's a flat fee the inn collects and I receive a share.",
+            "mechanics": {
+              "heart_rate": "RISE",
+              "breathing": "SHALLOW",
+              "gsr": "INCREASE",
+              "cctv_visual": "LIP_PRESS",
+              "korku_bari_delta": 6,
+              "gameplay_note": "PARTIAL TRUTH: Slight tightening on 'flat fee' phrasing. Her description elides the private cash payment from Szabo."
+            },
+            "next_node": "node_03_methodology"
+          }
+        ]
+      },
+      "node_03_methodology": {
+        "theme": "The Authentication Process",
+        "description": "She slides into a more familiar rhythm, speaking with the clipped fluency of someone who has explained this many times. Her hands rest flat on the table; the rehearsed quality of the answers is impossible to miss.",
+        "is_end_state": false,
+        "choices": [
+          {
+            "type": "ANALYTICAL",
+            "question": "Walk me through your methodology, step by step. What does a proper provenance authentication consist of?",
+            "answer": "Three layers. Document review first — acquisition records, storage receipts, any chain-of-custody paperwork. Physical inspection second — capsule integrity, fill levels, label and paper ageing, cork where accessible without compromising a bottle. Third, cross-reference against independent records: auction house databases, published cellar memoirs, storage facility archives where they're willing to confirm. My letter lays out which layers I was able to complete to full confidence and which required reliance on the seller's documentation.",
+            "mechanics": {
+              "heart_rate": "RISE",
+              "breathing": "SHALLOW",
+              "gsr": "INCREASE",
+              "cctv_visual": "LIP_PRESS",
+              "korku_bari_delta": 7,
+              "gameplay_note": "PROGRESS: Coached but technically accurate. Note the phrase 'required reliance on the seller's documentation' — she is pre-positioning her defense."
+            },
+            "next_node": "node_04_mechanism"
+          },
+          {
+            "type": "EMPATHIC",
+            "question": "This is your craft. You've spent twenty years building this expertise. Help me understand how you feel about being named in this complaint.",
+            "answer": "It's... it is the thing that keeps me up. Not the money. I've reviewed my process from that September a hundred times. Every step I took was the step a competent authenticator would take. I relied on documents that Mrs. Szabo represented as authentic, and I said so, in writing, in the letter. If those documents were falsified — and I accept now that they were — I am the person who was deceived, not the person who deceived. That distinction matters to me a great deal.",
+            "mechanics": {
+              "heart_rate": "INCREASE",
+              "breathing": "DEEP",
+              "gsr": "INCREASE",
+              "cctv_visual": "JAW_TIGHTEN",
+              "korku_bari_delta": 4,
+              "gameplay_note": "PARTIAL TRUTH: Emotional register shifts. Genuine conviction about not forging, but tightness on 'twenty years' and 'expertise' — secondary territory stirring."
+            },
+            "next_node": "node_05_training"
+          },
+          {
+            "type": "GULLIBLE",
+            "question": "Your process sounds thorough. Is it fair to say this was essentially a straightforward case for you?",
+            "answer": "I wouldn't say straightforward, but it was within the scope of work I do routinely. Nothing in what Mrs. Szabo presented raised a flag for me at the time. Her husband's records were well-organised, the storage history was coherent, the physical condition of the bottles was consistent with the stated ageing. I've reviewed collections where something felt wrong from the first hour. This was not one of those.",
+            "mechanics": {
+              "heart_rate": "DROP",
+              "breathing": "CALM",
+              "gsr": "DECREASE",
+              "cctv_visual": "RELEASED_SHOULDERS",
+              "korku_bari_delta": -6,
+              "gameplay_note": "WRONG MOVE: Soft framing let her consolidate the 'deceived professional' narrative. Biometrics normalized — leverage lost."
+            },
+            "next_node": "node_05_training"
+          }
+        ]
+      },
+      "node_04_mechanism": {
+        "theme": "How Forgery Actually Works",
+        "description": "You set a blank legal pad in front of you and ask her to teach. Her expression shifts — less rehearsed now, more thoughtful, the posture of a practitioner being asked about someone else's craft rather than her own actions.",
+        "is_end_state": false,
+        "choices": [
+          {
+            "type": "MECHANISM_TEST",
+            "question": "Set aside the Szabo letter for a moment. If someone wanted to fabricate a 1989 estate acquisition record and make it pass a sommelier's inspection — how would they actually do it? What does good document forgery look like in your world?",
+            "answer": "Honestly? I'm not... I'm not the right person to answer that at a technical level. I know what an authentic record looks like. I can tell you the paper weights that were common for Swiss storage receipts in the late 80s, the watermark on Bordelais négociant letterheads from that era. But how someone would actually manufacture those — the printing, the paper ageing, the ink chemistry — that's a questioned-documents examiner's field, not mine. I could tell you a record looked wrong. I couldn't tell you how it was made wrong.",
+            "mechanics": {
+              "heart_rate": "DROP",
+              "breathing": "CALM",
+              "gsr": "DECREASE",
+              "cctv_visual": "RELEASED_SHOULDERS",
+              "korku_bari_delta": 12,
+              "gameplay_note": "KEY READING: Fear bar DROPS on the mechanism question. Signals go LOW/STABLE. She genuinely lacks firsthand knowledge of how forgery is executed. This is the strongest evidence she did not fabricate the documents."
+            },
+            "next_node": "node_06_fee_confront"
+          },
+          {
+            "type": "TRAP",
+            "question": "Come on. You've been in this world for twenty years. If I gave you a forged 1989 récolte document right now and a real one, and asked you to produce a third one — you'd know exactly what features to copy and what to avoid.",
+            "answer": "I would know what features to look for. That's not the same as knowing how to make one. I can describe the difference between an authentic watermark and a modern replication — I've written about it, actually, in an internal Aldenmoor training document. But 'describe' is the verb. The physical side of document manufacture is not something I've ever done or studied. I'd like to be careful with that line, if you don't mind.",
+            "mechanics": {
+              "heart_rate": "RISE",
+              "breathing": "SHALLOW",
+              "gsr": "INCREASE",
+              "cctv_visual": "LIP_PRESS",
+              "korku_bari_delta": 5,
+              "gameplay_note": "PARTIAL TRUTH: Defensive on the 'twenty years' framing (secondary-adjacent) but specifics of mechanism still read genuine. Note the small spike is on credentials, not the mechanism itself."
+            },
+            "next_node": "node_05_training"
+          }
+        ]
+      },
+      "node_05_training": {
+        "theme": "Burgundy, Years Ago",
+        "description": "The topic shifts to her training. Something in her face closes by a fraction — the folder stays shut, her hands leave the table and return to her lap. She holds eye contact perhaps a beat too long.",
+        "is_end_state": false,
+        "choices": [
+          {
+            "type": "ANALYTICAL",
+            "question": "Tell me about your training. You studied under Édouard Feraut in Burgundy — what did that program actually consist of?",
+            "answer": "It was three years. The first two were a combination of cellar work at his domaine in Vosne-Romanée and formal coursework through the certifying body in Beaune. The third year was an independent thesis — original research on a topic approved by the faculty. Édouard was... he was a demanding mentor. He died my final year, actually. A stroke. I defended the thesis two months after his funeral. It was a difficult time.",
+            "mechanics": {
+              "heart_rate": "SPIKE",
+              "breathing": "HOLDING_BREATH",
+              "gsr": "SURGE",
+              "cctv_visual": "EYE_DART",
+              "korku_bari_delta": 14,
+              "gameplay_note": "HIGH SIGNAL CLUSTER: Major spike on Feraut and the thesis. Note this question has nothing to do with the Szabo forgery — the reaction is to the training history itself. Flag for context."
+            },
+            "next_node": "node_07_reframe"
+          },
+          {
+            "type": "FORENSIC_CALL_OUT",
+            "question": "Your advanced certification thesis — what was it on, specifically? Who has a copy?",
+            "answer": "The... the title was on tasting vocabulary and regional subjectivity in Burgundian pinot noir. It's on file with the certifying body in Beaune, and I have my own copy. It was published internally, not commercially. I don't — look, I'm not sure how this is connected to Mrs. Szabo. Could we return to the matter at hand?",
+            "mechanics": {
+              "heart_rate": "MAX_SPIKE",
+              "breathing": "HOLDING_BREATH",
+              "gsr": "MAX",
+              "cctv_visual": "HAND_PINCH_UNDER_TABLE",
+              "korku_bari_delta": 18,
+              "gameplay_note": "MAXIMUM SIGNAL CLUSTER — BUT THIS IS A RED HERRING. Thesis content is unrelated to the forgery charge. A high reading here does NOT indicate primary guilt. Cross-reference against node_04 mechanism test reading."
+            },
+            "next_node": "node_07_reframe"
+          },
+          {
+            "type": "EMPATHIC",
+            "question": "Losing a mentor in the middle of your final year must have been hard. How did you get through that last stretch?",
+            "answer": "I worked. It was the only thing I knew how to do. Édouard had given me access to his working notes before he became ill — he trusted a very small number of students with that kind of material, and I... I took that trust seriously. After he died, finishing the thesis was, in some way, the way I mourned him. I'm sorry, this is — these aren't things I talk about often.",
+            "mechanics": {
+              "heart_rate": "SPIKE",
+              "breathing": "UNEVEN",
+              "gsr": "SURGE",
+              "cctv_visual": "TEAR_POOLING",
+              "korku_bari_delta": 10,
+              "gameplay_note": "HIGH SIGNAL: Genuine emotion, but note the phrase 'access to his working notes' — unprompted detail. The signal spike is on training history, NOT the Szabo authentication."
+            },
+            "next_node": "node_06_fee_confront"
+          }
+        ]
+      },
+      "node_06_fee_confront": {
+        "theme": "The Cash Envelope",
+        "description": "You place a photocopy of a bank deposit slip on the table — four hundred dollars in cash, deposited to her personal account on September 27th. She looks at it for several seconds before raising her eyes.",
+        "is_end_state": false,
+        "choices": [
+          {
+            "type": "FORENSIC_CALL_OUT",
+            "question": "September 27th. The day after your second visit to Mrs. Szabo. Four hundred dollars cash into your personal account. Explain this deposit.",
+            "answer": "That was a — it was a consulting stipend from Mrs. Szabo. She wanted to compensate me directly for the additional time the second visit had required. It was outside the inn's billing structure. I accepted it. I should not have accepted it without declaring it in the letter, and that is the thing I've lost sleep over. But I want to be clear: I wrote the letter I would have written without that payment. The methodology was the same. The conclusions were the same.",
+            "mechanics": {
+              "heart_rate": "SPIKE",
+              "breathing": "SHALLOW",
+              "gsr": "SURGE",
+              "cctv_visual": "JAW_TIGHTEN",
+              "korku_bari_delta": 20,
+              "gameplay_note": "PRIMARY ADMISSION: This is the real primary secret — the undisclosed fee. High signal cluster, but note it is an admission of ethical failure, NOT of forgery. Keep reading: does her mechanism-test profile match?"
+            },
+            "next_node": "node_08_followup"
+          },
+          {
+            "type": "AGGRESSIVE",
+            "question": "You took a bribe from the seller and then wrote a letter vouching for her fraudulent documents. That is the entire case against you in one sentence.",
+            "answer": "That is not what happened. I took a stipend — not a bribe — that I should have disclosed. I will not allow that language. The letter reflects my professional judgement on the evidence I was given. If Mrs. Szabo deceived me with fabricated documents, she deceived me whether or not she had paid me a supplementary fee. My counsel has advised me to be careful answering hypotheticals phrased as conclusions.",
+            "mechanics": {
+              "heart_rate": "SPIKE",
+              "breathing": "UNEVEN",
+              "gsr": "SURGE",
+              "cctv_visual": "DEFENSIVE_CROSS_ARMS",
+              "korku_bari_delta": 3,
+              "gameplay_note": "MIXED SIGNAL: Defensive spike, but the answer is a clean legal pushback. Aggressive framing activated her counsel-coached register."
+            },
+            "next_node": "node_07_reframe"
+          }
+        ]
+      },
+      "node_07_reframe": {
+        "theme": "A Redirected Narrative",
+        "description": "She leans forward almost imperceptibly and begins to speak before the next question is fully formed. She is trying to take the floor — to reshape the frame before you can press on the one she's just revealed.",
+        "is_end_state": false,
+        "choices": [
+          {
+            "type": "ACCEPT_REFRAME",
+            "question": "Go on.",
+            "answer": "Thank you. What I want you to understand is that Mrs. Szabo was a grieving widow in her seventies liquidating thirty years of her late husband's work. She was — she is — not a sophisticated actor. I believed her. I had no reason not to. If anyone manufactured those documents, it was not her directly. I suspect her late husband's cellar manager, a man named Valcourt, who handled their records for years and who had access to everything. He's the person your investigators should be asking about.",
+            "mechanics": {
+              "heart_rate": "DROP",
+              "breathing": "CALM",
+              "gsr": "DECREASE",
+              "cctv_visual": "RELEASED_SHOULDERS",
+              "korku_bari_delta": -14,
+              "gameplay_note": "WRONG MOVE: Accepting the reframe let her shift the narrative to a third party. Biometrics normalized. You surrendered the line of questioning without pressing."
+            },
+            "next_node": "node_09_final_press"
+          },
+          {
+            "type": "NARROW_TARGET",
+            "question": "I'll come back to third parties. Right now I want you on the fee. Did Mrs. Szabo offer the payment, or did you request it?",
+            "answer": "She offered. At the end of the second visit. She said her husband had always paid their consultants something additional for taking extra care, that it was how he did business, and she wanted to honour that. I considered refusing. I did not refuse. That is... that is the fact.",
+            "mechanics": {
+              "heart_rate": "SPIKE",
+              "breathing": "SHALLOW",
+              "gsr": "SURGE",
+              "cctv_visual": "LIP_PRESS",
+              "korku_bari_delta": 15,
+              "gameplay_note": "PROGRESS: Held the line on the primary secret. Detailed admission with no rehearsed language — note the self-interruption. Signal cluster is real but focused on the fee, not on authorship of the forgery."
+            },
+            "next_node": "node_08_followup"
+          },
+          {
+            "type": "FORENSIC_CALL_OUT",
+            "question": "You're throwing out a new name — Valcourt. If you suspected a third party all along, why is that name nowhere in your letter or in any correspondence with the auction house?",
+            "answer": "Because at the time I wrote the letter I had no suspicion. I am speculating now, in hindsight, knowing what I know. I understand how that looks. But I will not pretend to have had suspicions in October that I did not actually hold. I would rather take the hit for not disclosing the stipend than invent a suspicion I didn't have.",
+            "mechanics": {
+              "heart_rate": "RISE",
+              "breathing": "SHALLOW",
+              "gsr": "INCREASE",
+              "cctv_visual": "JAW_TIGHTEN",
+              "korku_bari_delta": 10,
+              "gameplay_note": "CORRECT MOVE: Directly challenged the reframe. Signal moderate, but her answer is notably honest about her own limits — another indicator she isn't architecting a cover story."
+            },
+            "next_node": "node_08_followup"
+          }
+        ]
+      },
+      "node_08_followup": {
+        "theme": "The Inconsistency",
+        "description": "You set two things side by side on the table: her authentication letter's disclosure section, and the bank deposit slip. She looks at both without touching either. The silence stretches.",
+        "is_end_state": false,
+        "choices": [
+          {
+            "type": "FORENSIC_CALL_OUT",
+            "question": "Your letter's disclosure section lists only the Aldenmoor flat fee. You signed this document on October 3rd, six days after accepting four hundred dollars in cash from the consignor. Walk me through the decision to leave the stipend off the page.",
+            "answer": "I told myself it was a personal gesture from a widow, not a professional fee. I told myself the flat fee disclosure covered the professional relationship and that the cash was outside of it. I was wrong. Looking at it now, in this room — I was wrong, and I think I knew I was wrong when I signed the letter. That is not the same as knowing the documents she gave me were forged. It is the same as failing to disclose something I should have disclosed. I want that distinction on the record.",
+            "mechanics": {
+              "heart_rate": "SPIKE",
+              "breathing": "UNEVEN",
+              "gsr": "SURGE",
+              "cctv_visual": "LOOK_DOWN",
+              "korku_bari_delta": 22,
+              "gameplay_note": "SECOND-HIGHEST CLUSTER ON CORRECT PATH: Full admission of the ethical violation. Note the precision of the distinction she draws — she owns the disclosure failure completely and continues to deny knowledge of forgery. Pattern is consistent with primary-fee-only guilt."
+            },
+            "next_node": "node_09_final_press"
+          },
+          {
+            "type": "EMPATHIC",
+            "question": "Between the deposit and signing the letter, there were six days. That's a long time to sit with a decision. What was going through your head?",
+            "answer": "My mother had a flare that week. A bad one. I was doing intake paperwork at Strong Memorial on the 28th and 29th, sleeping in her room. I told myself I would call Aldenmoor's office on the Monday and ask about amending the disclosure. Monday came and I had a full tasting event to run. Tuesday, another event. By Wednesday I had signed the letter. I don't offer that as an excuse. I offer it as the truth of why I let it slide.",
+            "mechanics": {
+              "heart_rate": "RISE",
+              "breathing": "UNEVEN",
+              "gsr": "INCREASE",
+              "cctv_visual": "TEAR_POOLING",
+              "korku_bari_delta": 16,
+              "gameplay_note": "PROGRESS: Genuine context on the primary secret. Mother care detail checks out against dossier. Signals moderate and distributed — consistent with remorse over omission, not fabrication of documents."
+            },
+            "next_node": "node_09_final_press"
+          },
+          {
+            "type": "AGGRESSIVE",
+            "question": "So you took her money, you sat on it for six days, and you signed a letter that helped her defraud a retired schoolteacher out of forty thousand dollars. That is the pattern.",
+            "answer": "I am going to pause this question. I have been cooperative. I have admitted a disclosure failure. I have not committed fraud, and I will not let that word be put on me by a question phrased as a verdict. If we are going to continue in this register I will ask to have my attorney present before any further questions.",
+            "mechanics": {
+              "heart_rate": "MAX_SPIKE",
+              "breathing": "SHALLOW",
+              "gsr": "SURGE",
+              "cctv_visual": "DEFENSIVE_CROSS_ARMS",
+              "korku_bari_delta": -18,
+              "gameplay_note": "WRONG MOVE: Escalation activated the lawyer-coached shutdown. Sessions down this path degrade quickly."
+            },
+            "next_node": "node_fail_lockdown"
+          }
+        ]
+      },
+      "node_09_final_press": {
+        "theme": "Last Ground",
+        "description": "The room has cooled. Her shoulders have dropped a fraction; there is something close to exhaustion around her eyes. You have one clear move left, and you can feel it.",
+        "is_end_state": false,
+        "choices": [
+          {
+            "type": "STRATEGIC",
+            "question": "One last question. Thinking back on everything we've covered — the fee, the letter, the documents — is there anything you want to place on the record now that you didn't place on the record before?",
+            "answer": "Yes. I want to say — formally — that I accepted four hundred dollars in cash from Marta Szabo on September 26th and failed to disclose it on the authentication letter I signed on October 3rd. That failure is mine. I did not know the provenance documents were fabricated. I would not have signed the letter if I had. My methodology was the methodology I apply to every collection I evaluate. I accept that the non-disclosure creates a legitimate question about my judgement, and I will accept whatever professional consequence follows from that fact. But I did not forge a document, and I did not knowingly authenticate a forgery.",
+            "mechanics": {
+              "heart_rate": "RISE",
+              "breathing": "DEEP",
+              "gsr": "INCREASE",
+              "cctv_visual": "LOOK_DOWN",
+              "korku_bari_delta": 25,
+              "gameplay_note": "CONTROLLED ADMISSION: Full articulation of the primary secret. Note the signal profile — moderate, distributed, consistent with a long-held omission being finally spoken aloud. No MAX cluster on the forgery denial itself."
+            },
+            "next_node": "node_success_partial"
+          },
+          {
+            "type": "MORAL_PRESSURE",
+            "question": "You've talked a lot about methodology. Let's talk about the man who's out forty thousand dollars because of a letter with your signature on it. Look me in the eye and tell me you can live with that.",
+            "answer": "I can live with the disclosure failure because I will make it right — I will accept board sanction, I will return the stipend, I will cooperate with the restitution to Mr. Hoenderveld to whatever extent my counsel permits. What I cannot live with, and what I will not accept, is being called a forger. I have spent my entire working life inside this craft. The craft is the thing I have. If I lose the certification over the disclosure, I lose the certification. If I am called a forger, I lose the craft. I did not forge those documents.",
+            "mechanics": {
+              "heart_rate": "SPIKE",
+              "breathing": "UNEVEN",
+              "gsr": "SURGE",
+              "cctv_visual": "TEAR_POOLING",
+              "korku_bari_delta": 28,
+              "gameplay_note": "BREAKDOWN-ADJACENT CLUSTER: Note where the MAX signal lives — on 'the craft is the thing I have' (secondary territory, credential identity) rather than on the forgery denial itself. Signal pattern distinguishes displaced pride/shame from guilt over the charge."
+            },
+            "next_node": "node_success_breakdown"
+          },
+          {
+            "type": "TACTICAL_RESET",
+            "question": "Let's take a five-minute break. Drink of water, step in the hall. No pressure. We'll come back to it.",
+            "answer": "Thank you. I — yes. Thank you.",
+            "mechanics": {
+              "heart_rate": "DROP",
+              "breathing": "CALM",
+              "gsr": "DECREASE",
+              "cctv_visual": "RELEASED_SHOULDERS",
+              "korku_bari_delta": -8,
+              "gameplay_note": "TACTICAL RESET: Short-term negative — you released pressure at the peak. But she comes back more willing to speak fully rather than shutting down. Opens the partial-admission path."
+            },
+            "next_node": "node_success_partial"
+          },
+          {
+            "type": "LEGAL_THREAT",
+            "question": "If you don't give me everything right now, I will be forwarding this entire session to the state certification board tonight.",
+            "answer": "Then you will do what you will do. I have answered every question I have been asked. My counsel will respond to any referral through the proper channels. I have nothing further to add under threat. I would like to end this conversation.",
+            "mechanics": {
+              "heart_rate": "STABLE",
+              "breathing": "CALM",
+              "gsr": "STABLE",
+              "cctv_visual": "STONE_FACE",
+              "korku_bari_delta": -22,
+              "gameplay_note": "WRONG MOVE: Coerced threat triggered a clean professional shutdown. Signals flatten — she has exited emotionally. Session over."
+            },
+            "next_node": "node_fail_deflection"
+          }
+        ]
+      },
+      "node_success_breakdown": {
+        "theme": "The Craft She Has",
+        "description": "She is crying quietly — hands in her lap, shoulders shaking once, then still. She does not cover her face. She holds your gaze while the tears run.",
+        "is_end_state": true,
+        "result_text": "Céleste has broken composure and made a full, articulated admission of the undisclosed $400 consulting fee, accepted professional and financial consequence for the non-disclosure, and categorically denied forging or knowingly authenticating forged documents. Review the signal distribution across the session before calling a verdict: her strongest biometric clusters appeared on questions about her Burgundy training, her mentor Feraut, and her thesis credentials — topics tangential to the forgery charge itself. Her signals on the mechanism-test node (how document forgery is actually executed) dropped to baseline and stayed there. Her signals on the fee confrontation were elevated but distributed, consistent with a long-held ethical omission rather than a manufactured cover story. Her denial of forgery produced no MAX-cluster. The question for the verdict screen is whether the disclosure failure constitutes the forgery charged, or whether it is a separate ethical violation inside an otherwise good-faith authentication."
+      },
+      "node_success_partial": {
+        "theme": "On The Record",
+        "description": "She signs the bottom of the interview transcript, hands it back across the table, and sits with her hands folded. Her posture has not collapsed; if anything, she looks steadier than when she arrived.",
+        "is_end_state": true,
+        "result_text": "Céleste has made a controlled, lawyered partial admission: on the record she accepts the undisclosed fee, acknowledges the non-disclosure was an ethical failure, and maintains her denial of forgery and knowing authentication of forged documents. She did not break. Review the polygraph record carefully: the session's MAX-cluster signals occurred on questions about her training history and thesis credentials, not on questions about the forgery mechanism or her authentication of the Szabo documents. Her mechanism-test response was biometrically clean — low heart rate, stable GSR, no breath-hold. Her fee admission carried real but moderate signal consistent with long-withheld shame, not with active fabrication. The verdict turns on how the player reads the distribution of her stress across the session — not on its total volume."
+      },
+      "node_fail_lockdown": {
+        "theme": "Counsel Invoked",
+        "description": "She pulls a business card from her jacket pocket, slides it across the table, and does not speak again. Her attorney's name is printed in a simple serif. The interview is over.",
+        "is_end_state": true,
+        "result_text": "Céleste has formally invoked counsel and terminated the interview. The partial biometric record you have accumulated is admissible as context but was cut short before the key confrontations could be fully developed. Signal coverage is uneven: you have clear readings on her training history and her procedural account, but the fee confrontation and mechanism test may be incomplete. The verdict screen will force you to judge on an ambiguous evidentiary base. Read what you have carefully — particularly comparing her signal on the forgery-mechanism question against her signal on the fee and training questions."
+      },
+      "node_fail_deflection": {
+        "theme": "The Door Closes Quietly",
+        "description": "She gathers her folder, smooths the front of her jacket, and thanks you politely for your time. There is no drama and no invocation of counsel. She simply walks out.",
+        "is_end_state": true,
+        "result_text": "Céleste has exited the interview without formal invocation of counsel but also without providing a clean admission on any single issue. The signal record is ambiguous: you have elevated readings scattered across multiple topics — her training, her fee, her mentor — with no decisive cluster anchoring any single interpretation. The player going into the verdict screen will need to compare the mechanism-test signal against all other signal clusters to determine whether the readings reflect forgery guilt, an undisclosed ethical lapse, or something else entirely outside the charge. Ambiguous evidence is still evidence; read the distribution carefully."
+      }
+    },
+    "character_image": "./assets/characters/en-case-5.png"
+  }
+}

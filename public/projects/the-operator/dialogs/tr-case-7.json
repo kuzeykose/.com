@@ -1,0 +1,597 @@
+{
+  "game_data": {
+    "title": "Umut Rehabilitasyon Merkezi — Hasta Düşüşü ve İş Güvenliği İncelemesi",
+    "suspect": {
+      "name": "Sevgi Öztürk Şahin",
+      "role": "Fizyoterapist — küçük özel rehabilitasyon kliniği çalışanı",
+      "profile": "Sevgi, Eskişehir'in Tepebaşı semtinde büyümüş, orta gelirli bir memur ailesinin tek kızıdır. Anadolu Üniversitesi Fizyoterapi bölümünden 2004'te mezun olmuş; uzun yıllar devlet hastanesinde çalıştıktan sonra on bir yıl önce mahalle ölçeğindeki Umut Rehabilitasyon Merkezi'ne geçmiştir. Kocası Hakan 2021'de geçirdiği trafik kazasında hayatını kaybetmiş; Sevgi o tarihten bu yana hem 22 yaşındaki oğlu Tarık'ı hem de Tarık'ın kronik böbrek hastası sevgilisini finansal olarak desteklemektedir. 43 yaşındayken beklenmedik biçimde hamile kalmış; babası klinikteki geçici bir bakım teknisyenidir ve ilişki bitmeden önce gebelik kesinleşmiştir. Yedi aylık kızı Duru ile şu an annesinin evinde yaşamaktadır. Klinik içinde 'fazla konuşur, gereksiz yere özür diler' şeklinde tanımlanan biri olarak bilinir; aşırı detaylı açıklamalar yapması, belirsiz durumlarda suçluluğu üstlenmesi kariyer boyunca tekrarlayan bir örüntüdür. Şüpheli detay: Olay günü yaşlı hastanın seans planını — terapatik olarak doğru ama klinikteki küçük protokole göre sorumlu hekimin imzası alınmadan — tek başına değiştirmiştir; bunu ifşa etmemektedir. İnsani detay: Yıllar önce, Hakan'la evliyken ailesinden gizlediği bir kürtaj yaşamıştır; annesinin bu konuya yaklaşımını iyi bildiğinden konu hiçbir zaman açılmamıştır. Bu sır Duru'nun varlığını dolaylı biçimde çerçeveler ama Sevgi'nin güncel davadaki masumiyetiyle hiçbir ilgisi yoktur."
+    },
+    "system_config": {
+      "initial_fear_bar": 20,
+      "max_fear_bar": 100,
+      "fear_bar_description": "Oturum boyunca suphelinin akümüle psikolojik geriliminin dinamik gostergesi — fizyolojik tepkiler ile görünür duygusal kontrol arasındaki uyumsuzluklar, sorguya verilen tepkinin yoğunluğunu takip eder.",
+      "heart_rate_baseline": 79,
+      "gsr_baseline": 6.5
+    },
+    "context": "Hüseyin Doğan (72 yaşında), Umut Rehabilitasyon Merkezi'nde fizyoterapist Sevgi Öztürk Şahin tarafından yönetilen bir seans sırasında düşerek sağ bileğini kırmıştır. Doğan, Eskişehir Devlet Hastanesi'nde kapalı redüksiyon ve tespit işlemi görmüş; hastanede üç gün yatmıştır. Klinik müdürü, iş güvenliği ve hasta bakım protokolünü incelemek üzere olay günü kameralar ve sesan kayıtlarını incelemiş; aynı zamanda Doğan'ın seans öncesi fizik muayenesi, mobilizasyon planı ve zemin durumunun değerlendirilmesini talep etmiştir. Doğan'ın yakını klinikteki bakım standartlarının eksik olduğundan şüphelenmiş; Sevgi ise zemin nedeniyle kaymaktan bahsetse de seans planı konusunda detay vermekten çekinmektedir. Durum, klinik protokolü ve çalışan sorumluluğu açısından net olmayan bir durumu yansıtmaktadır.",
+    "true_verdict": "NOT_GUILTY",
+    "verdict_truth_text": "Sevgi protokol kapsamında hekimin yazılı onayı alınmadan seans planını değiştirmiş olup, bu ihlal idari sorumluluk doğurur. Bununla birlikte, Hüseyin Doğan'ın düşüşü ve sakatlığı ıslak zemin, eksik uyarı işareti ve temizlik prosedürü eksikliğinden kaynaklanmıştır. Sevgi bu olay nedeniyle hukuki suçluluktan muaftır.",
+    "dossier": {
+      "age": 44,
+      "identity_summary": "Umut Rehabilitasyon Merkezi'nde fizyoterapist olarak görev yapmaktadır. On bir yıldır aynı klinikte çalışmakta olup hasta kayıtlarında disiplin cezası bulunmamaktadır.",
+      "family": [
+        {
+          "relation": "Oğul",
+          "name": "Tarık Şahin",
+          "note": "22 yaşında, bağımsız yaşamıyor. Kronik böbrek rahatsızlığı bulunan partneriyle birlikte Eskişehir'de ikamet ediyor; kısmen Sevgi'nin desteğiyle geçiniyor."
+        },
+        {
+          "relation": "Kız",
+          "name": "Duru Şahin",
+          "note": "7 aylık. Sevgi ve annesiyle aynı hanede kayıtlı."
+        },
+        {
+          "relation": "Anne",
+          "name": "Hatice Öztürk",
+          "note": "68 yaşında, emekli. Sevgi ve Duru ile aynı konutta ikamet ediyor; torunun birincil bakımını paylaşıyor."
+        }
+      ],
+      "medical": [
+        {
+          "condition": "Postpartum dönem (doğum sonrası 7. ay) — hormonal geçiş süreci devam ediyor",
+          "polygraph_effect": "Postpartum dönemde dinlenme kalp hızı klinik olarak yüksek seyredebilir; sempatik sinir sistemi reaktivitesi artmış olabilir. GSR baseline hormonal dalgalanmaya bağlı olarak yükselebilir. Poligraf yorumlamada bu fizyolojik zemin, uyaranlara verilen tepkilerle çakışabilir."
+        },
+        {
+          "condition": "Demir eksikliği anemisi — tedavi sürmekte, oral demir takviyesi kullanıyor",
+          "polygraph_effect": "Demir takviyesinin poligraf parametrelerine doğrudan mekanik etkisi düşüktür; yüksek doz oral demir sempatik sistemi baskılamaz. Hafif kronik yorgunluk solunum düzensizliğine düşük düzeyde katkıda bulunabilir."
+        }
+      ],
+      "habits": [
+        {
+          "habit": "Emzirme sürecinde kafein tüketimini sınırladı; günde en fazla bir bardak filtre kahve",
+          "polygraph_effect": "Düşük kafein alımı GSR baseline'ı klinik normun üzerine taşımaz. Kafeine bağlı sempatik amplifikasyon beklenmemektedir."
+        },
+        {
+          "habit": "Düzensiz uyku — yedi aylık bebek nedeniyle gece bölünmeleri sürmekte",
+          "polygraph_effect": "Kronik uyku bölünmesi bazal kalp hızını hafifçe yükseltebilir ve solunum ritmini dengesizleştirebilir; poligraf kaydında arka plan gürültüsü olarak tezahür eder."
+        }
+      ],
+      "priors": [
+        "2019: Klinik içi idari itiraz kaydı — hasta seans süreleri konusunda yönetimle yazışma, sonuçsuz kapandı.",
+        "2022: İş sağlığı denetiminde ekipman eksikliğini denetçiye bildiren çalışan olarak kayıtlara geçti; denetim kliniği lehine sonuçlandı.",
+        "2023: Bir hasta yakınının şikâyetine konu oldu; şikâyet iletişim tarzına ilişkindi, tedavi kalitesine değil; dahili kayıtta 'sona erdi' ibaresi var."
+      ],
+      "pressure_points": [
+        "Olay günü klinikteki iş akışı ve görev dağılımı — sorular yöneltildiğinde fazla ayrıntıya girme ve konuyu genişletme eğilimi belirgin biçimde artıyor; ANALYTICAL yaklaşım bu örüntüyü pekiştirebilir.",
+        "Aile üyeleri ve ev düzeniyle ilgili konular — kısa ve kesin cevaplar yerine bağlam eklemeye çalışıyor, ardından kendi cevabını düzeltiyor; EMPATHIC çerçeveleme bu alanda genel olarak daha fazla konuşmasını sağlıyor.",
+        "Mali durum ve iş güvencesi — somut rakamlar veya sorumluluk sorulduğunda savunmacı bir ton beliriyor, cevapların uzunluğu artıyor.",
+        "Mesleki yetki sınırları ve inisiyatif kullanımı — geçmiş vakalarda kendiliğinden karar alma örneklerinden söz edildiğinde duraklıyor ve ifadesini dikkatle seçiyor; AGGRESSIVE yaklaşım bu konuda tamamen kapanmaya yol açabiliyor."
+      ],
+      "modifiers": {
+        "heart_rate_suppression": 0.05,
+        "heart_rate_baseline_shift": 9,
+        "gsr_sensitivity": 1.25,
+        "gsr_baseline_shift": 1.5,
+        "breathing_instability": 0.15
+      }
+    },
+    "start_node": "node_01_intro",
+    "nodes": {
+      "node_01_intro": {
+        "theme": "İlk Temas",
+        "description": "Sevgi masanın karşı tarafında oturuyor. Bej hırkasının kollarını sürekli düzeltiyor; önüne bir bardak su koyulmuş ama henüz dokunmamış. İçeri girdiğinizde hafifçe ayağa kalkıp sonra tekrar oturmak istiyormuş gibi tereddüt etti.",
+        "is_end_state": false,
+        "choices": [
+          {
+            "type": "EMPATHIC",
+            "question": "Merhaba Sevgi Hanım, bugün buraya geldiğiniz için teşekkürler. Önce kısaca kendinizden bahseder misiniz — kliniğe ne kadardır bağlısınız?",
+            "answer": "Şey, on bir yıl oluyor... aslında on bir buçuk desek daha doğru. Devlet hastanesindeyken bir meslektaşım tavsiye etmişti, o zamanlar Umut daha yeni açılmıştı, sadece iki oda vardı. Ben de yaklaştım, görüştüm, Saliha Hanım o zaman müdürdü, kabul etti. Yani... uzun zaman, evet.",
+            "mechanics": {
+              "heart_rate": "STABLE",
+              "breathing": "CALM",
+              "gsr": "BASELINE",
+              "cctv_visual": "LOOK_DOWN",
+              "korku_bari_delta": 4,
+              "gameplay_note": "DOGRU HAMLE: Yumusak giris supheliyi acikliyor. Uzun cevap ama sakin baseline."
+            },
+            "next_node": "node_02_timeline"
+          },
+          {
+            "type": "ANALYTICAL",
+            "question": "Olay 11 Kasım Pazartesi günü saat kaçta başladı? Lütfen sıralı anlatın.",
+            "answer": "Saat... on birdi sanırım, on bir biraz geçiyordu, çünkü Hüseyin Bey'in randevusu on birdeydi ama o biraz geç gelmişti, yani on biri beş on geçe başladık. Aslında ilk on dakika sadece oturup kan basıncına baktım, ayaklarına baktım. Seans yani tam olarak on bir yirmi beş civarı başladı desek...",
+            "mechanics": {
+              "heart_rate": "RISE",
+              "breathing": "UNEVEN",
+              "gsr": "INCREASE",
+              "cctv_visual": "EYE_DART",
+              "korku_bari_delta": 2,
+              "gameplay_note": "ILERLEME: Zaman sorusunda fazla ayrinti — tipik dagilma oruntusu."
+            },
+            "next_node": "node_03_mechanism"
+          },
+          {
+            "type": "AGGRESSIVE",
+            "question": "Yaşlı bir adamın size emanet edildiğini ve bileğinin kırıldığını biliyorsunuz, değil mi?",
+            "answer": "Ben... tabii ki biliyorum, ben oradaydım. Ama emanet kelimesini... yani elbette sorumluluk benimdi ama seans sırasında, yani ben egzersizi yaptırırken değil, geçerken... pardon, sırayla anlatayım.",
+            "mechanics": {
+              "heart_rate": "SPIKE",
+              "breathing": "SHALLOW",
+              "gsr": "SPIKE",
+              "cctv_visual": "DEFENSIVE_CROSS_ARMS",
+              "korku_bari_delta": -6,
+              "gameplay_note": "YANLIS HAMLE: Erken agresif yaklasim, supheli savunmaya cekildi. Zayif dala giriyoruz."
+            },
+            "next_node": "node_02_timeline"
+          }
+        ]
+      },
+      "node_02_timeline": {
+        "theme": "Günün Akışı",
+        "description": "Sevgi su bardağına uzanıp bir yudum alıyor, sonra bardağı masanın tam ortasına geri koyuyor — sanki konumu önemliymiş gibi. Omuzlarını aşağı çekmeye çalışıyor ama hırkasının sağ kolu tekrar yukarı tırmanıyor.",
+        "is_end_state": false,
+        "choices": [
+          {
+            "type": "ANALYTICAL",
+            "question": "Hüseyin Bey'in o günkü egzersiz planını kim hazırladı? Dr. Erkan mı, siz mi?",
+            "answer": "Plan... planı ben uygulayan kişiyim, yani uygulama bende, ama tabii Dr. Erkan Bey'in yazdığı çerçeve var. O gün yaptığımız... o günkü seanstaki hareketler Hüseyin Bey'in genel programıyla uyumlu. Yani temel olarak aynı program diyebiliriz.",
+            "mechanics": {
+              "heart_rate": "INCREASE",
+              "breathing": "SHALLOW",
+              "gsr": "SPIKE",
+              "cctv_visual": "LIP_PRESS",
+              "korku_bari_delta": 8,
+              "gameplay_note": "ILERLEME: 'Temel olarak aynı' — kacamak kelime secimi. Plan degisikligine baski yapiliyor."
+            },
+            "next_node": "node_04_plan"
+          },
+          {
+            "type": "EMPATHIC",
+            "question": "Uzun bir gündü herhalde — o sabah evden nasıl çıkmıştınız? Her şey yolunda mıydı?",
+            "answer": "Evden... normal çıktım, yani Duru'yu anneme bıraktım, her zamanki gibi. Bebek dün gece biraz hırçındı, ben de... yani sabah biraz yorgundum ama normal, hiçbir şey yoktu. Annem her şeyi hallediyor, o yüzden... tamam, yolunda çıktım.",
+            "mechanics": {
+              "heart_rate": "SPIKE",
+              "breathing": "HOLDING_BREATH",
+              "gsr": "SURGE",
+              "cctv_visual": "EYE_DART",
+              "korku_bari_delta": -4,
+              "gameplay_note": "YALAN SINYALI (YANILTICI): Ev hayati sorusunda ani zirve. Yer degistirmis kaynaga dogru cekiliyorsunuz."
+            },
+            "next_node": "node_07_family"
+          },
+          {
+            "type": "FORENSIC_CALL_OUT",
+            "question": "Kliniğin o sabahki temizlik programına bakalım — seans odasının zeminini kim, ne zaman sildi?",
+            "answer": "Zemini... sabah Ayten abla siler genelde ama o gün Berk vardı, geçici arkadaş. On bir civarı sildiğini biliyorum çünkü ben koridordan geçerken kovayı aldığını gördüm. Yani tam Hüseyin Bey içeri girmeden kısa süre önce silinmişti, evet.",
+            "mechanics": {
+              "heart_rate": "RISE",
+              "breathing": "DEEP",
+              "gsr": "INCREASE",
+              "cctv_visual": "LOOK_DOWN",
+              "korku_bari_delta": 6,
+              "gameplay_note": "ILERLEME: Somut, dogrulanabilir zemin bilgisi. Sakin anlati — bu kisim gercege benziyor."
+            },
+            "next_node": "node_05_floor_witness"
+          }
+        ]
+      },
+      "node_03_mechanism": {
+        "theme": "Düşüşün Mekaniği",
+        "description": "Masaya bir beyaz kağıt ve kalem koydunuz; Sevgi kağıda baktı ama kaleme uzanmadı. Elleri hırkasının kenarında kenetlenmiş, parmak eklemleri açık. Sesi buradan itibaren biraz daha net, mesleğine geri döner gibi.",
+        "is_end_state": false,
+        "choices": [
+          {
+            "type": "ANALYTICAL",
+            "question": "Hüseyin Bey tam olarak nasıl düştü? Adım adım anlatın — hangi hareketi yaparken, hangi yöne, ağırlık hangi ayağındaydı?",
+            "answer": "Şöyle: parallel bar arasında yürüyordu, sağ ayakla öne adım atacaktı, normal bir mobilizasyon, bar yüksek tutuluyordu zaten. Sağ ayağını öne koyduğunda — burada — ayağın içi kaydı, dışa doğru açıldı, dengesini sola doğru kaybetti ama sol eli bara yetişmedi çünkü bar sağ tarafındaydı o anda. Arka tarafa düştü, sağ bileği yere temas eden ilk nokta oldu. Tipik, ıslak zeminde tipik bir mekanizma.",
+            "mechanics": {
+              "heart_rate": "STABLE",
+              "breathing": "DEEP",
+              "gsr": "BASELINE",
+              "cctv_visual": "RELEASED_SHOULDERS",
+              "korku_bari_delta": -8,
+              "gameplay_note": "KRITIK GOZLEM: Mekanizma testinde sinyaller DUSTU. Teknik dili akici, belirsizlik yok. Birinci el bilgisi olan biri anlatiyor — ama yalanci biri degil."
+            },
+            "next_node": "node_05_floor_witness"
+          },
+          {
+            "type": "NARROW_TARGET",
+            "question": "O sırada tam olarak hangi egzersizi yaptırıyordunuz? Bu egzersiz Dr. Erkan'ın protokolünde bugüne ait miydi?",
+            "answer": "Supervised gait, yani eşlikli yürüme. Programda vardı, Hüseyin Bey'in ikinci haftası, bu egzersiz... evet, programda var. Belki sıralama... ben genelde ısınmadan sonra koyuyorum, o gün de öyle yaptım. Protokolle uyumlu, evet.",
+            "mechanics": {
+              "heart_rate": "INCREASE",
+              "breathing": "UNEVEN",
+              "gsr": "SPIKE",
+              "cctv_visual": "LIP_PRESS",
+              "korku_bari_delta": 10,
+              "gameplay_note": "ILERLEME: 'Belki siralama' — kendi cumlesini bolerek duzeltiyor. Plan uyumunda bir baski noktasi var."
+            },
+            "next_node": "node_04_plan"
+          },
+          {
+            "type": "GULLIBLE",
+            "question": "Anlaşılan bariz bir kaza, ıslak zemin her şeyi açıklıyor. Evde her şey yolunda mı peki, siz nasıl dayanıyorsunuz?",
+            "answer": "Dayanıyorum işte... yani idare ediyorum. Annem var, o çok yardımcı oluyor. Duru küçük tabii, gece kalkmalar falan... ama iyiyim, sağ olun sorduğunuz için. Bu olay da tabii üzdü, hastam sonuçta, ama bir şey değilim ben.",
+            "mechanics": {
+              "heart_rate": "MAX_SPIKE",
+              "breathing": "HOLDING_BREATH",
+              "gsr": "SURGE",
+              "cctv_visual": "TEAR_POOLING",
+              "korku_bari_delta": -10,
+              "gameplay_note": "YANLIS HAMLE: Mekanizmayi bu kadar kolay birakip ev hayatina kaydiniz. Supheli zirveledi ama bu zirve dava icin DEGIL."
+            },
+            "next_node": "node_07_family"
+          }
+        ]
+      },
+      "node_04_plan": {
+        "theme": "Seans Planı",
+        "description": "Sevgi birden biraz daha dik oturmaya çalışıyor. Hırkasının düğmesine uzanıyor, iliklenmiş olmasına rağmen tekrar ilikliyormuş gibi. Masanın altında sağ ayağı usulca sallanmaya başladı — farkında değil.",
+        "is_end_state": false,
+        "choices": [
+          {
+            "type": "FORENSIC_CALL_OUT",
+            "question": "Elimde klinik kaydı var: Dr. Erkan o sabah evrakları imzalamamış. Siz seansa başlamadan önce onun onayını aldınız mı, almadınız mı?",
+            "answer": "Aldım tabii... yani sözlü olarak, koridordayken konuştuk. Dr. Erkan o gün üç dört dakika durdu, sonra kendi randevusuna geçti. Yazılı olarak... yazılı olarak sonrasında imzalatılacaktı, bizde böyle çalışır, ben hastayı içeri aldıktan sonra o geçer imzalar. Olay olunca tabii o gün imzalanmadı.",
+            "mechanics": {
+              "heart_rate": "SPIKE",
+              "breathing": "SHALLOW",
+              "gsr": "SPIKE",
+              "cctv_visual": "EYE_DART",
+              "korku_bari_delta": 14,
+              "gameplay_note": "ILERLEME: 'Bizde boyle calisir' — protokol ihlalini normallestirme. Birincil sirra yaklasiyorsunuz ama mekanizma degil, yetki meselesi."
+            },
+            "next_node": "node_06_followup"
+          },
+          {
+            "type": "EMPATHIC",
+            "question": "Küçük kliniklerde işler bazen yazılı değil, sözlü yürür — bu sizin için bir baskı mı oluyor?",
+            "answer": "Baskı... yani baskı demeyeyim de, tabii yük var. Benim bebeğim küçük, Tarık'ın kız arkadaşının böbrek durumu var, ayrıca... hepsi üstüme yığılıyor bazen. Ama klinik bana çok iyi davrandı, Saliha Hanım hep anlayışlı oldu. Yani sistem aksıyor ama ben şikayetçi biri değilim.",
+            "mechanics": {
+              "heart_rate": "SPIKE",
+              "breathing": "UNEVEN",
+              "gsr": "SURGE",
+              "cctv_visual": "TEAR_POOLING",
+              "korku_bari_delta": -5,
+              "gameplay_note": "YANLIS HAMLE (YANILTICI): Duygusal alana kaydi, supheli ev basincina cekiyor. Dava mekanizmasindan uzaklasiyorsunuz."
+            },
+            "next_node": "node_07_family"
+          },
+          {
+            "type": "PRESSURE",
+            "question": "Dr. Erkan'a sorduğumuzda o sabah herhangi bir seans planını onayladığını hatırlamıyor. Bir daha sorayım: o plan ne zaman, nasıl onaylandı?",
+            "answer": "Hatırlamıyor... yani Dr. Erkan yoğun bir insan, belki unutmuştur, ama biz konuştuk. Ben... bakın, yazılı onay o sabah yoktu, tamam, ama Hüseyin Bey'in programı haftalardır aynı çerçevede ilerliyor, ben büyük bir değişiklik yapmadım ki. Gait egzersizi programda var, yalnızca sıralamayı ben ayarladım.",
+            "mechanics": {
+              "heart_rate": "MAX_SPIKE",
+              "breathing": "HOLDING_BREATH",
+              "gsr": "SURGE",
+              "cctv_visual": "HAND_PINCH_UNDER_TABLE",
+              "korku_bari_delta": 18,
+              "gameplay_note": "KRITIK GOZLEM: Yazili onay olmadigini KABUL ETTI. 'Yalnizca siralamayi ben ayarladim' — birincil sir burada sizdi. Ama bu dusume neden oldugu anlamina gelmiyor."
+            },
+            "next_node": "node_06_followup"
+          }
+        ]
+      },
+      "node_05_floor_witness": {
+        "theme": "Islak Zemin",
+        "description": "Sevgi kendine geliyor gibi — konu zemin olduğunda omuzları biraz düştü, sesi daha düz. Elleriyle masanın üstünde küçük bir uzay çiziyor, sanki odayı havada kurmaya çalışıyor.",
+        "is_end_state": false,
+        "choices": [
+          {
+            "type": "FORENSIC_CALL_OUT",
+            "question": "Berk, temizliği bitirdikten sonra 'kaygan zemin' tabelasını koydu mu?",
+            "answer": "Koymadı. O koni yok, biz... koni geçen sene bir çocuk tekmeleyip kırmıştı, yenisi alınmadı, iş sağlığı denetimine ben o yüzden ekipman eksikliği olarak yazmıştım aslında, 2022'de. Saliha Hanım alacağını söylemişti ama alınmadı. Berk sildi, kovayı aldı, çıktı. Ben Hüseyin Bey'i içeri aldığımda zemin hâlâ parlak görünüyordu ama çok dikkat etmedim, yani bu konuda ben de... ben de kusurluyum belki.",
+            "mechanics": {
+              "heart_rate": "STABLE",
+              "breathing": "DEEP",
+              "gsr": "BASELINE",
+              "cctv_visual": "LOOK_DOWN",
+              "korku_bari_delta": -12,
+              "gameplay_note": "KRITIK GOZLEM: Sinyaller DUSTU. Kendini de kusurlu gosterirken bile baseline. Bu kisim gercek — zemin meselesi onun elinden cikmis sistemik bir sorun."
+            },
+            "next_node": "node_06_followup"
+          },
+          {
+            "type": "EMPATHIC",
+            "question": "O koninin olmaması hakkında klinikte kaç kez konuştuğunuzu hatırlıyor musunuz?",
+            "answer": "İki, belki üç kez. Saliha Hanım'a bir kere toplantıda söyledim, bir kere de Berk başladığında ekipman turunda gösterdim eksik olduğunu. Denetçiye de 2022'de yazdım. Yani... kayıtlı bir şey, uydurmuyorum, dosyada var.",
+            "mechanics": {
+              "heart_rate": "STABLE",
+              "breathing": "CALM",
+              "gsr": "BASELINE",
+              "cctv_visual": "RELEASED_SHOULDERS",
+              "korku_bari_delta": -6,
+              "gameplay_note": "KRITIK GOZLEM: Tamamen sakin. Dogrulanabilir, belgeli bir anlati."
+            },
+            "next_node": "node_06_followup"
+          }
+        ]
+      },
+      "node_06_followup": {
+        "theme": "Boşluk",
+        "description": "Elinizde bir dosya var. Az önce söylediği bir cümleyi açıp işaretlediniz. Sevgi gözleriyle dosyayı takip ediyor ama yazıları göremiyor. Parmaklarıyla hırkasının ucunu küçük bir sarmal şeklinde büküyor.",
+        "is_end_state": false,
+        "choices": [
+          {
+            "type": "FORENSIC_CALL_OUT",
+            "question": "Bir dakika önce 'yalnızca sıralamayı ben ayarladım' dediniz. Dr. Erkan'ın çerçevesi sıralama değişikliklerine yazılı onay gerektiriyor — bunu biliyor muydunuz?",
+            "answer": "Gerektiriyor... teknik olarak gerektiriyor, evet. Ama kliniğin günlük işleyişinde bu her zaman... yani kimse her küçük değişiklik için imza almaz, Dr. Erkan da beklemez bunu. Ben yıllardır bu şekilde çalışıyorum, ilk değil. Sadece bu sefer bir kaza oldu ve şimdi her şey yazılıymış gibi bakılıyor.",
+            "mechanics": {
+              "heart_rate": "MAX_SPIKE",
+              "breathing": "HOLDING_BREATH",
+              "gsr": "SURGE",
+              "cctv_visual": "JAW_TIGHTEN",
+              "korku_bari_delta": 16,
+              "gameplay_note": "KRITIK GOZLEM: Ikinci en yuksek kume — ve dava icin ANLAMLI. Protokol ihlali kabulune yakin ama hâlâ kazayla nedensel baglanti YOK."
+            },
+            "next_node": "node_09_authority"
+          },
+          {
+            "type": "EMPATHIC",
+            "question": "Size baskı yaptığımı hissediyorum. Bir durun, nefes alın — kendi kelimelerinizle, o gün seans odasına girdiğinizde tam olarak ne hissediyordunuz?",
+            "answer": "Yorgundum. Çok yorgundum. Dün gece Duru dört kez uyandı, ben saat beşte kalktım. Ama Hüseyin Bey'i severim, onunla iyi anlaşıyoruz, hep espri yaparız. Ben sadece... günü bitirmek istiyordum, işimi iyi yapmak istiyordum. Kötü bir niyetim yoktu. Kimseye zarar vermek istemedim.",
+            "mechanics": {
+              "heart_rate": "INCREASE",
+              "breathing": "SHALLOW",
+              "gsr": "INCREASE",
+              "cctv_visual": "TEAR_POOLING",
+              "korku_bari_delta": 10,
+              "gameplay_note": "ILERLEME: Samimi alanda da sakin nedensel ifade ('kimseye zarar vermedim'). Onemli gozlem."
+            },
+            "next_node": "node_08_reframe"
+          },
+          {
+            "type": "AGGRESSIVE",
+            "question": "Kaçamak cevaplardan bıktım. Dümdüz söyleyin: o planı onaysız değiştirdiniz ve hasta düştü. Öyle değil mi?",
+            "answer": "Değiştirmedim... yani sıralamayı, sıralamayı ayarladım, bu protokol ihlali değil, bu uygulama! Hasta düştü çünkü zemin ıslaktı! Ben onu ittirmedim, ben onu fazla zorlamadım, egzersiz onun programında var! İki şeyi karıştırıyorsunuz! Pardon, sesim yükseldi.",
+            "mechanics": {
+              "heart_rate": "SPIKE",
+              "breathing": "HYPERVENTILATION",
+              "gsr": "SPIKE",
+              "cctv_visual": "DEFENSIVE_CROSS_ARMS",
+              "korku_bari_delta": -8,
+              "gameplay_note": "YANLIS HAMLE: Iki meseleyi birlestirerek sana itiraz alani verdi. Supheli kapanmaya basladi — ve haksiz da degil."
+            },
+            "next_node": "node_08_reframe"
+          }
+        ]
+      },
+      "node_07_family": {
+        "theme": "Ev",
+        "description": "Sevgi'nin çenesi sertleşti ama gözleri parlak. Çantasına hafifçe baktı — içinde telefonunun olduğu yer. Masadaki su bardağına uzandı ama bu sefer gerçekten içmedi, sadece parmaklarıyla kenarını döndürdü.",
+        "is_end_state": false,
+        "choices": [
+          {
+            "type": "EMPATHIC",
+            "question": "Duru daha çok küçük. Bu yaştaki bir anne için iş yerinde böyle bir olay yaşamak çok ağır olmalı — onu sabah bırakırken ne hissettiniz?",
+            "answer": "Onu bırakırken... bıraktım işte, annem aldı, ben işe geçtim. Niye soruyorsunuz bunu ki? Bu olayla alakası yok. Yani Duru... Duru iyi, annem iyi bakıyor. Ben sabah işe giderken, hiç farklı bir şey, hiç... bildiğimiz bir sabahtı.",
+            "mechanics": {
+              "heart_rate": "MAX_SPIKE",
+              "breathing": "HOLDING_BREATH",
+              "gsr": "MAX",
+              "cctv_visual": "TEAR_POOLING",
+              "korku_bari_delta": -14,
+              "gameplay_note": "YANILTICI KANIT: MAX kume — ama dava DISI bir yer degistirmis kaynak. Kizin adi gectikce sinyaller patliyor, bu birincil sucluluk DEGIL."
+            },
+            "next_node": "node_08_reframe"
+          },
+          {
+            "type": "ANALYTICAL",
+            "question": "Özür dilerim, özel alana girdim. Klinik konusuna dönelim — Berk'i en son ne zaman gördünüz?",
+            "answer": "Berk... olay günüydü herhalde son kez, evet. O olaydan sonra iki gün gelmedi, sonra da işten ayrıldı zaten, geçici kontratı bitti. Şu an Söğüt tarafında bir bakımevinde çalışıyor diye duydum.",
+            "mechanics": {
+              "heart_rate": "DROP",
+              "breathing": "DEEP",
+              "gsr": "DECREASE",
+              "cctv_visual": "RELEASED_SHOULDERS",
+              "korku_bari_delta": 4,
+              "gameplay_note": "ILERLEME: Konu davaya donunce biyometrik duzeldi. KRITIK KONTRAST — aile sorusu zirve, is sorusu sakin."
+            },
+            "next_node": "node_06_followup"
+          },
+          {
+            "type": "PRESSURE",
+            "question": "Tepkileriniz ev konusunda çok yoğun. Evde gizlediğiniz bir şey olayla bağlantılı mı?",
+            "answer": "Ne demek bağlantılı? Hiçbir şey yok! Ben... benim kişisel hayatım benimle kalır, bu olayın bununla alakası yok. Siz Hüseyin Bey'in bileğini soruyorsunuz, ben... bilmiyorum, bu soru... bu soru yersiz.",
+            "mechanics": {
+              "heart_rate": "MAX_SPIKE",
+              "breathing": "HYPERVENTILATION",
+              "gsr": "MAX",
+              "cctv_visual": "HAND_PINCH_UNDER_TABLE",
+              "korku_bari_delta": -18,
+              "gameplay_note": "YANLIS HAMLE (YANILTICI): Operator sinyali dava olarak okuyabilir — ama supheli hakli, bu alanla davanin baglantisi yok. Zayif dala giriyoruz."
+            },
+            "next_node": "node_08_reframe"
+          }
+        ]
+      },
+      "node_08_reframe": {
+        "theme": "Yeniden Çerçeveleme",
+        "description": "Sevgi derin bir nefes alıyor ve ellerini masaya koyuyor — avuç içleri aşağı, düz. Bu ilk kontrollü hareketi. Size doğrudan baktı ve sanki hazırlamış bir cümle söyleyecekmiş gibi başını hafifçe eğdi.",
+        "is_end_state": false,
+        "choices": [
+          {
+            "type": "STRATEGIC",
+            "question": "Sizi dinliyorum. Size göre asıl mesele nedir?",
+            "answer": "Asıl mesele şu: Hüseyin Bey düştü çünkü zemin ıslaktı ve uyarı levhası yoktu. Ben iyi bir fizyoterapistim, bunu yıllarca kanıtladım. Olay günü olağandışı bir şey yapmadım, programı uyguladım. Eğer klinik yönetim bu olayı bana yıkmak istiyorsa, bunu da bilmek istiyorum çünkü ben yıllarca o kliniği ayakta tutan insanlardan biriyim. Hata sistemik, ben değilim.",
+            "mechanics": {
+              "heart_rate": "STABLE",
+              "breathing": "DEEP",
+              "gsr": "DECREASE",
+              "cctv_visual": "STONE_FACE",
+              "korku_bari_delta": -10,
+              "gameplay_note": "YANLIS HAMLE: Supheliye anlatiyi geri kazandirdiniz. Hazirlanmis cumle — dogru olsa bile zemin kaybedildi."
+            },
+            "next_node": "node_09_authority"
+          },
+          {
+            "type": "NARROW_TARGET",
+            "question": "Anlıyorum, sistemik sorunları not alıyoruz. Ama bana özellikle şunu söyleyin: o gün, o saat, seans sıralamasını niye değiştirdiniz?",
+            "answer": "Çünkü... Hüseyin Bey'in sabah kan basıncı biraz yüksekti, 148'e 90 civarıydı. Önce ısınma uzattım, gait'i biraz geciktirdim, sonra kan basıncı düştü, gait'i de yaptım. Tıbbi karar bana ait bir karardı ve bence doğru karardı. Ama evet, Dr. Erkan'a yeni düzenlemeyi o sabah yazılı imzalatmadım. Bu doğru.",
+            "mechanics": {
+              "heart_rate": "SPIKE",
+              "breathing": "SHALLOW",
+              "gsr": "SPIKE",
+              "cctv_visual": "LOOK_DOWN",
+              "korku_bari_delta": 20,
+              "gameplay_note": "DOGRU HAMLE: Birincil sir tam olarak burada acilidi. Tibbi gerekcesi var, ama yazili onay yok. Bu protokol meselesi — kaza nedeni degil."
+            },
+            "next_node": "node_09_authority"
+          },
+          {
+            "type": "FORENSIC_CALL_OUT",
+            "question": "'Hata sistemik' dediniz. Ama az önce aile sorularında verdiğiniz tepkiler bu çerçeveyle uyumlu değil. Gizlediğiniz şey gerçekten olayla alakasız mı?",
+            "answer": "Alakasız. Kesinlikle. Ben... evet benim kişisel yaşamımda, benim tarihimde şeyler var, her insanda var. Ama Hüseyin Bey'in bileği ile hiçbir alakası yok. Siz beni bağlamak istiyorsunuz bir şeye, ben... benim ailem bu odada değil, lütfen.",
+            "mechanics": {
+              "heart_rate": "MAX_SPIKE",
+              "breathing": "CRYING",
+              "gsr": "MAX",
+              "cctv_visual": "TEAR_POOLING",
+              "korku_bari_delta": -4,
+              "gameplay_note": "KRITIK GOZLEM: Supheli iki kaynagi ayirmaya calisiyor — ve 'alakasiz' derken sinyaller hâlâ ayri desen. Dava sinyali degil."
+            },
+            "next_node": "node_09_authority"
+          }
+        ]
+      },
+      "node_09_authority": {
+        "theme": "Yetki Sınırları",
+        "description": "Soru çerçevesi daraltıldı. Masadaki dosyadan klinik prosedür el kitabının bir fotokopisini çıkardınız ve belirli bir paragrafa işaret ediyorsunuz. Sevgi bakıyor, okuyor, sonra gözlerini kaldırıyor.",
+        "is_end_state": false,
+        "choices": [
+          {
+            "type": "ANALYTICAL",
+            "question": "Bu paragraf 'tedavi planındaki herhangi bir sapma yazılı onay gerektirir' diyor. Sıralama değişikliği sapma tanımına girer. Bu ihlali kabul ediyor musunuz?",
+            "answer": "Paragrafı... okuyorum. Sapma tanımı bu, evet. Ben o sabah yazılı onay almadım. Yani teknik olarak, paragraf çerçevesinde, evet, ihlal var. Bunu kabul ediyorum. Ama bu ihlalin Hüseyin Bey'in düşmesiyle nedensel bir bağı yok, onu da söylemek istiyorum.",
+            "mechanics": {
+              "heart_rate": "SPIKE",
+              "breathing": "DEEP",
+              "gsr": "SPIKE",
+              "cctv_visual": "LIP_PRESS",
+              "korku_bari_delta": 22,
+              "gameplay_note": "KRITIK GOZLEM: Protokol ihlali ACIKCA kabul edildi — ama ayni cumlede nedensellik reddi. Tam bir NOT_GUILTY supheli oruntusu."
+            },
+            "next_node": "node_10_final"
+          },
+          {
+            "type": "TACTICAL_PAUSE",
+            "question": "Bir dakika duralım. Su ister misiniz? Kısa bir ara verelim.",
+            "answer": "Evet... evet lütfen. Teşekkür ederim. Ben... biraz kendime geleyim, özür dilerim yoğun oldu. Biraz nefes alayım.",
+            "mechanics": {
+              "heart_rate": "DROP",
+              "breathing": "DEEP",
+              "gsr": "DECREASE",
+              "cctv_visual": "RELEASED_SHOULDERS",
+              "korku_bari_delta": -6,
+              "gameplay_note": "KISA VADEDE YANLIS: Baski cozuldu, supheli toparlaniyor. Uzun vadede farkli bir yol acilabilir ama ivme kayboldu."
+            },
+            "next_node": "node_10_final"
+          },
+          {
+            "type": "LEGAL_THREAT",
+            "question": "Bu ihlali kabul etmezseniz, meslek odasına bildirim gidecek. Lisansınız risk altında.",
+            "answer": "Lisansım... lisansım mı? Ben on dokuz yıldır bu mesleği yapıyorum, hiç şikayetim olmadı, hiç. Siz beni tehdit mi ediyorsunuz şu an? Ben avukatımla konuşmalıyım belki. Bir dakika, ben... ben bunu böyle konuşmaya hazır değilim.",
+            "mechanics": {
+              "heart_rate": "MAX_SPIKE",
+              "breathing": "HYPERVENTILATION",
+              "gsr": "MAX",
+              "cctv_visual": "JAW_TIGHTEN",
+              "korku_bari_delta": -20,
+              "gameplay_note": "YANLIS HAMLE: Tehdit avukat talebini tetikledi. Sorgu kilitlenmeye dogru."
+            },
+            "next_node": "node_fail_lockdown"
+          }
+        ]
+      },
+      "node_10_final": {
+        "theme": "Son Baskı",
+        "description": "Oda sessiz. Masadaki kağıtlar artık dağıldı, ifade dosyası, prosedür el kitabı, klinik plan fotokopisi yan yana. Sevgi'nin kahrka kolu artık düz, kendisi de dik. Size bakıyor ve bekliyor.",
+        "is_end_state": false,
+        "choices": [
+          {
+            "type": "EVIDENCE",
+            "question": "Özetliyorum: protokol sapmasını kabul ettiniz, tıbbi gerekçeniz tutarlı, zemin konusunda Berk ve denetim kayıtları sizi destekliyor. Tam bir ifade vermek ister misiniz?",
+            "answer": "Evet. Tam ifadeyi vermek istiyorum. Evet, o sabah seans sıralamasını Dr. Erkan'ın yazılı onayı olmadan değiştirdim çünkü Hüseyin Bey'in kan basıncı yüksekti ve ben tıbbi olarak gerekli gördüm. Evet bu protokol ihlalidir ve sorumluluğunu kabul ediyorum. Ama Hüseyin Bey zemin ıslak olduğu için düştü, egzersizle ilgisi yok. Ve özel hayatımla ilgili sorular... onlar başka bir şey, o başka bir ağrı, benim ağrım, onu kliniğe taşımayın lütfen.",
+            "mechanics": {
+              "heart_rate": "RISE",
+              "breathing": "CRYING",
+              "gsr": "INCREASE",
+              "cctv_visual": "BREAKDOWN",
+              "korku_bari_delta": 30,
+              "gameplay_note": "KRITIK GOZLEM: Duygusal cokus ama cok ayrintili ve iki mesele net ayrilmis. Kaza ile ihlal arasindaki nedensellik kopuk kaliyor."
+            },
+            "next_node": "node_success_breakdown"
+          },
+          {
+            "type": "MORAL_PRESSURE",
+            "question": "Hüseyin Bey 72 yaşında, üç gün hastanede kaldı. Mesleki olarak ne değişmeliydi?",
+            "answer": "Ben yazılı onayı o sabah almalıydım. Uyarı levhası orada olmalıydı. Berk eğitilmeliydi. Saliha Hanım'a söylediğimde ekipman alınmalıydı. Bunların hepsi. Ben kendi payımı, yazılı onay kısmını, kabul ediyorum. Ama hepsinin sorumlusu ben değilim. Bunu söylemem benim için kolay değil çünkü ben hep kendimi suçlayan biriyim, ama gerçek bu.",
+            "mechanics": {
+              "heart_rate": "INCREASE",
+              "breathing": "DEEP",
+              "gsr": "INCREASE",
+              "cctv_visual": "LOOK_DOWN",
+              "korku_bari_delta": 18,
+              "gameplay_note": "DOGRU HAMLE: Kontrollu kismi itiraf. Kendini davranis kalibiyla tanimliyor — bu itibarli bir oz-farkindalik."
+            },
+            "next_node": "node_success_partial"
+          },
+          {
+            "type": "AGGRESSIVE",
+            "question": "Siz bu yaşlı adamın sakatlanmasına doğrudan sebep oldunuz. Kabul edin.",
+            "answer": "Hayır. Sebep olmadım. Zemin ıslaktı. Sebep olmadım ve bunu imzalamam. Ben her şeyi söyledim, protokol ihlalini söyledim, eksiklikleri söyledim. Sebep olmadım ve siz beni buna zorlayamazsınız. Ben artık avukatımla konuşacağım.",
+            "mechanics": {
+              "heart_rate": "MAX_SPIKE",
+              "breathing": "UNEVEN",
+              "gsr": "SURGE",
+              "cctv_visual": "STONE_FACE",
+              "korku_bari_delta": -24,
+              "gameplay_note": "YANLIS HAMLE: Kapi kapandi. Asiri baski masum supheliyi bile sertlestirir."
+            },
+            "next_node": "node_fail_lockdown"
+          },
+          {
+            "type": "GULLIBLE",
+            "question": "Anlaşılan sistemik bir sorun var ve siz iyi niyetle çalıştınız. Bu kadar yeterli sanırım.",
+            "answer": "Teşekkür ederim. Sağ olun. Ben... anlaşıldığım için rahatladım. Sistemik bir sorun, evet, hepimiz elimizden geleni yapıyoruz, zor koşullarda. Ben size yardımcı olabileceğim başka bir şey varsa... yoksa ben dönmek istiyorum eve, kızım var.",
+            "mechanics": {
+              "heart_rate": "DROP",
+              "breathing": "DEEP",
+              "gsr": "DECREASE",
+              "cctv_visual": "RELIEVED_EXHALE",
+              "korku_bari_delta": -30,
+              "gameplay_note": "YANLIS HAMLE: Supheli rahatladi, yazili ihlal kabulu tamamlanmadan sorgu kapandi. Belirsiz kayit."
+            },
+            "next_node": "node_fail_deflection"
+          }
+        ]
+      },
+      "node_success_breakdown": {
+        "theme": "Tam İfade",
+        "description": "Sevgi ellerini yüzüne götürdü ve omuzları titriyor. Size bakmıyor ama konuşmaya devam ediyor, cümleleri koparak ama net. Masada imzasını bekleyen bir ifade tutanağı var.",
+        "is_end_state": true,
+        "result_text": "Sevgi, protokol ihlalini (yazılı onay alınmadan seans sıralamasının değiştirilmesi) açık biçimde kabul etti ve tıbbi gerekçesini tutarlı şekilde belgeledi. Berk'in zemin silme saati ve eksik uyarı levhası 2022 denetim kaydıyla doğrulandı. Biyometrik kayıt dikkat çekici bir desene sahiptir: mekanizma sorularında (düşüşün nasıl olduğu, zemin durumu) sinyaller STABIL baseline civarında seyretti, hatta bazı anlarda düştü. Buna karşılık aile ve ev düzeni sorularında MAX_SPIKE ve MAX GSR kümeleri gözlemlendi — supheli kendisi bu alanın davayla alakasız olduğunu ısrarla belirtti. Plan değişikliği ve yetki sorularında orta düzey yükselmeler vardı ama nedensellik reddi baseline tonunda verildi. Operatör, zirvelerin hangi soru gruplarına ait olduğunu ayırt ederek hüküm ekranına gitmelidir."
+      },
+      "node_success_partial": {
+        "theme": "Kontrollü Kabul",
+        "description": "Sevgi ağlamadı, dik oturmaya devam ediyor. Söyleyeceklerini seçerek söylüyor ve son cümlesinde kendi davranış kalıbını fark eden bir ton var. İfade tutanağı üzerinde duruyor ama dokunmadı.",
+        "is_end_state": true,
+        "result_text": "Sevgi, sistemik eksiklikleri detaylandırarak protokol ihlalindeki kendi payını kontrollü biçimde kabul etti ama duygusal çözülme yaşamadı. Kendini aşırı sorumluluk üstlenmekle tanımladı — bu meta-farkındalık, ifadesinin güvenilirliğini artırıyor. Biyometrik desen: mekanizma ve zemin sorularında baseline ya da altında; yetki ve protokol sorularında orta düzey sıçramalar (supheli gerçek bir idari korku taşıyor ama bunu nedensellik iddiasından ayırıyor); aile sorularında hâlâ orantısız yüksek zirveler. Bu ayrışma — dava-mekanizması soğuk, protokol ılık, aile ateşli — yorumu oyuncunun elindedir."
+      },
+      "node_fail_lockdown": {
+        "theme": "Hukuki Kapanma",
+        "description": "Sevgi sandalyesinde geriye yaslandı ve kollarını göğsünde kavuşturdu. 'Avukatım gelinceye kadar başka soruya cevap vermeyeceğim' dedi. Çantasından telefonunu çıkardı ve bir numara arıyor.",
+        "is_end_state": true,
+        "result_text": "Sorgu, agresif baskı ya da hukuki tehdit sonrası suspeli avukat talebiyle kapandı. Protokol ihlalinin teknik kabulü alındı ama nedensellik konusundaki net ifade eksik kaldı. Biyometrik kayıt parçalı: son dakikalarda MAX_SPIKE ve HYPERVENTILATION var ama bu zirveler sıkıştırma anında oluştu, doğal bir aldatma örüntüsü değil savunma tepkisi izlenimi veriyor. Zemin ve mekanizma sorularındaki erken baseline hâlâ kayıtta. Oyuncu, zirvelerin kaynağını (gerçek suçluluk mu, sıkıştırma mı, ikincil baskılama noktası mı) ayırt etmelidir."
+      },
+      "node_fail_deflection": {
+        "theme": "Yumuşak Savuşturma",
+        "description": "Sevgi son sorudan sonra minnettar bir şekilde ayağa kalktı, çantasını topladı ve 'zamanınız için teşekkürler' dedi. İfade tutanağı boş ve imzasız masada kaldı. Kapıda bir an durdu, geri döner gibi oldu ama durmadı.",
+        "is_end_state": true,
+        "result_text": "Sorgu, operatörün supheli anlatısını erken kabul etmesiyle yumuşak bir şekilde sona erdi. Protokol ihlali sözlü olarak değinildi ama tutanağa net biçimde yazılı hâle getirilmedi. Biyometrik kayıtta belirgin zirveler var — özellikle aile ve ev sorularında — ama bunlar dava mekanizmasıyla doğrudan bağlantılandırılmadı. Mekanizma ve zemin sorularındaki baseline stabilitesi dosyada, ancak yetki ve onay çerçevesine operatör yeterince baskı uygulamadı. Oyuncu, elindeki parçalı kanıtlarla hüküm ekranına gidiyor."
+      }
+    },
+    "character_image": "./assets/characters/tr-case-7.png"
+  }
+}

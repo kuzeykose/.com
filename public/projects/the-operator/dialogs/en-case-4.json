@@ -1,0 +1,563 @@
+{
+  "game_data": {
+    "title": "Commonwealth of Kentucky v. Fletcher Odom — Harlan Youth Achievement Fund Misappropriation",
+    "suspect": {
+      "name": "Fletcher Odom",
+      "role": "Owner and Director, Odom Academic Enrichment Center (independent tutoring center, Harlan County, Kentucky)",
+      "profile": "Fletcher Odom, 44, grew up the son of a Church of God deacon in a small eastern Kentucky coal-country town and built his identity around community service and visible respectability. He earned an education degree from Morehead State, taught high-school math for eight years, then founded his tutoring center in 2011, positioning it as a community resource rather than a for-profit enterprise. He cultivated a formal partnership with Cornerstone Baptist Church, which agreed to co-administer a scholarship fund — the Harlan Youth Achievement Fund — granting tuition assistance to low-income students who completed his enrichment courses. Fletcher is the kind of person who brings two dozen muffins to every parent meeting, volunteers for every church auction, and answers emails at 11 p.m. His cooperative demeanor reads as almost performative — he pre-empts questions, offers unsolicited documents, and narrates his own transparency. Suspicious detail: over eighteen months beginning in early 2022, Fletcher systematically transferred $51,400 from the HYAF operating account into a secondary LLC he registered under the name 'Odom Educational Consulting,' drawing the money out as 'curriculum licensing fees' — a category that did not exist in the original fund charter. He used a portion of these funds to cover personal debts accumulated while quietly preparing to eventually leave the county, and to support a second life he has been building in Pikeville. Humanizing detail: Fletcher is a closeted gay man in a community where that fact would cost him his custody arrangement, his business, his church standing, and his relationship with his aging mother. He has been in a careful, private relationship for two years with a man named Cody who lives forty miles away. The terror of exposure — not just of the funds, but of himself — is layered so completely into his daily anxiety that he has difficulty separating the two sources of dread."
+    },
+    "system_config": {
+      "initial_fear_bar": 20,
+      "max_fear_bar": 100,
+      "fear_bar_description": "A composite gauge of the suspect's accumulated psychological strain throughout the session—combining heart rate elevation, breath irregularity, perspiration response, and visible affect into a single tension metric.",
+      "heart_rate_baseline": 75,
+      "gsr_baseline": 7
+    },
+    "context": "In March 2023, a major donor to the Harlan Youth Achievement Fund (a joint scholarship program administered by Cornerstone Baptist Church and Odom Academic Enrichment Center) flagged an unusual quarterly statement line item labeled 'curriculum licensing fees' totaling $51,400 over eighteen months. The church's deacon board, upon requesting a full accounting from Fletcher Odom, discovered that this vendor category did not appear in the original fund charter, that no supporting licensing agreements existed, and that the funds had been transferred to an LLC registered as 'Odom Educational Consulting,' which Odom had created but never disclosed to the board. Odom's written response characterized the transfers as a 'temporary working capital adjustment' to cover shortfalls in the center's operational budget, which he stated he intended to repay once the center's cash flow improved. However, internal review found no documentation of a loan agreement, board approval, or repayment timeline. The Kentucky Attorney General's office, acting on a complaint from the deacon board and the fund's independent auditor, opened an investigation into whether Odom misappropriated charitable donations. Odom maintains that the fund's co-administrator status granted him operational discretion and that the transfers were routine business reallocations, not theft. The deacon board and Cornerstone contend that Odom acted unilaterally, concealed the transactions from them, and has provided no credible evidence of intent or ability to repay.",
+    "true_verdict": "GUILTY",
+    "verdict_truth_text": "Fletcher Odom systematically diverted $51,400 from the Harlan Youth Achievement Fund by creating a fraudulent vendor category ('curriculum licensing fees') and routing payments through his personal LLC, Odom Educational Consulting, from which he drew funds for personal debts and to finance a planned relocation out of Harlan County. He concealed the transfers from the church's deacon board, which jointly administered the fund, and misrepresented the arrangement when questioned. His stated intent to repay was false—the transfers were deliberately structured to remain below single-signer thresholds and effectively unrecoverable.",
+    "dossier": {
+      "age": 44,
+      "identity_summary": "Fletcher Odom is the founder and sole director of Odom Academic Enrichment Center, a tutoring business he has operated in Harlan County, Kentucky since 2011. He holds a B.S. in Secondary Education from Morehead State University and served eight years as a public-school math teacher before opening the center.",
+      "family": [
+        {
+          "relation": "Ex-wife",
+          "name": "Brenda Odom (née Stamper)",
+          "note": "Divorced 2019 after eleven years of marriage. Brenda is an active member of Cornerstone Baptist Church and currently works as an administrative assistant at the Harlan County school board. She and Fletcher share formal joint custody of their three children."
+        },
+        {
+          "relation": "Son (eldest)",
+          "name": "Caleb Odom",
+          "note": "Age 16. Lives primarily with Brenda per the 2019 custody order. Enrolled at Harlan County High School."
+        },
+        {
+          "relation": "Daughter",
+          "name": "Paige Odom",
+          "note": "Age 12. Alternates weeks between Fletcher's home and Brenda's. Currently enrolled in middle school; has attended Fletcher's tutoring center for supplemental math support."
+        },
+        {
+          "relation": "Son (youngest)",
+          "name": "Dustin Odom",
+          "note": "Age 8. Also on alternating-week schedule. Fletcher listed as primary emergency contact in school records."
+        }
+      ],
+      "medical": [
+        {
+          "condition": "Hyperthyroidism (Graves' disease), partially controlled with methimazole and low-dose propranolol",
+          "polygraph_effect": "Residual sympathetic overdrive from insufficiently suppressed thyroid hormone elevates resting heart rate and skin conductance above population norms, producing a noisier-than-average physiological baseline. Propranolol partially attenuates cardiac response amplitude; GSR and respiratory channels remain more reactive than typical."
+        }
+      ],
+      "habits": [
+        {
+          "habit": "Low-dose propranolol (20 mg daily, adjunct to hyperthyroid management)",
+          "polygraph_effect": "Beta-adrenergic blockade reduces peak heart-rate excursion in response to psychological stressors. Cardiac channel amplitude is moderately suppressed relative to an unmedicated individual; baseline HR remains above average due to underlying thyroid activity."
+        },
+        {
+          "habit": "Moderate caffeine consumption (2–3 cups of coffee daily, consistent schedule)",
+          "polygraph_effect": "Contributes mild additive elevation to GSR baseline skin conductance. Not sufficient to substantially shift heart-rate channel given concurrent propranolol."
+        }
+      ],
+      "priors": [
+        "2017: Named as a respondent in a Kentucky Education Professional Standards Board complaint filed by a former parent alleging grade misrepresentation in a private tutoring contract. Complaint was closed without formal finding after mediation.",
+        "2020: Odom Academic Enrichment Center received a notice of deficiency from the Kentucky Secretary of State's office for a lapsed annual report filing on a registered LLC. Resolved administratively within 60 days.",
+        "2023: Harlan County deacon board requested an informal accounting review of the Harlan Youth Achievement Fund after a donor flagged an unrecognized line item on a quarterly statement. Review was described by Fletcher as 'ongoing and cooperative' in a letter to the board."
+      ],
+      "pressure_points": [
+        "Discussion of the fund's accounting categories and internal procedures — subject responds with extensive, unprompted elaboration and tends to introduce new documentation mid-answer; ANALYTICAL framing accelerates this pattern while AGGRESSIVE framing causes the elaboration to become circular.",
+        "Questions touching on the subject's personal financial situation or plans for the future — subject becomes noticeably more careful with word choice and often reframes the question aloud before answering; this pattern appears consistently regardless of how the question is introduced.",
+        "References to Cornerstone Baptist Church or to specific deacon board members — subject's cooperative manner becomes visibly more effortful; answers grow shorter and more formal, in contrast to his usual expansiveness.",
+        "Questions about his long-term intentions for the tutoring center and whether he plans to remain in the county — subject shifts posture and offers brief, non-committal answers before quickly redirecting; EMPATHIC framing on this topic tends to produce longer pauses rather than increased openness."
+      ],
+      "modifiers": {
+        "heart_rate_suppression": 0.35,
+        "heart_rate_baseline_shift": 5,
+        "gsr_sensitivity": 1.35,
+        "gsr_baseline_shift": 2,
+        "breathing_instability": 0.15
+      }
+    },
+    "start_node": "node_01_intro",
+    "nodes": {
+      "node_01_intro": {
+        "theme": "Opening Exchange",
+        "description": "Fletcher Odom sits across the metal table in a charcoal sweater, a leather folio of printouts already fanned in front of him. He leans forward before the operator has finished sitting down, offering a small, eager smile.",
+        "is_end_state": false,
+        "choices": [
+          {
+            "type": "EMPATHIC",
+            "question": "Mr. Odom, I know this is uncomfortable. Before we get into the accounting, tell me in your own words what you think we're here to discuss.",
+            "answer": "Thank you. Truly. I appreciate you saying that. I think — I think we're here because someone on the deacon board saw a line item they didn't recognize, and instead of picking up the phone and asking me about it, it escalated. Which is fine, it's fine, I understand the process. I've been nothing but forthcoming. I brought everything — bank statements, LLC filings, my own personal tax returns from the last three years. Whatever you need.",
+            "mechanics": {
+              "heart_rate": "RISE",
+              "breathing": "SHALLOW",
+              "gsr": "INCREASE",
+              "cctv_visual": "LIP_PRESS",
+              "korku_bari_delta": 5,
+              "gameplay_note": "PROGRESS: Baseline captured. Subject leads with performative transparency — preempts the question with a flood of volunteered material."
+            },
+            "next_node": "node_02_donor_complaint"
+          },
+          {
+            "type": "ANALYTICAL",
+            "question": "I want to start with the Harlan Youth Achievement Fund's governance structure. Walk me through who had signing authority on that account between 2022 and 2023.",
+            "answer": "Of course, of course. The charter lists three authorized signers — myself, Pastor Whitfield as the Cornerstone representative, and Marlene Sizemore, the board treasurer. In practice, though, day-to-day operational expenses under five thousand dollars didn't require co-signature. That was built into the original MOU in 2014 because Pastor Whitfield made it clear the church didn't want to be in the weeds on small reimbursements. I can show you the MOU section if that helps.",
+            "mechanics": {
+              "heart_rate": "STABLE",
+              "breathing": "BASELINE",
+              "gsr": "INCREASE",
+              "cctv_visual": "STONE_FACE",
+              "korku_bari_delta": 8,
+              "gameplay_note": "PROGRESS: Subject comfortable with factual recitation but immediately emphasizes the sub-threshold carve-out — likely the rhetorical foundation he plans to stand on."
+            },
+            "next_node": "node_03_fund_history"
+          }
+        ]
+      },
+      "node_02_donor_complaint": {
+        "theme": "The Flagged Line Item",
+        "description": "The operator slides a printed quarterly statement across the table. A line reading 'Curriculum Licensing Fees — $8,400' is circled in red. Fletcher glances at it, nods as if he's been expecting this exact page.",
+        "is_end_state": false,
+        "choices": [
+          {
+            "type": "NARROW_TARGET",
+            "question": "This category — 'curriculum licensing fees' — isn't in the 2014 fund charter. Who authorized adding it?",
+            "answer": "So — good question. The charter was written when the center was basically me and two part-time tutors. Over the years we had to adapt the books. When I started using proprietary materials I'd developed, I needed a line to cover those internal licensing costs. It was a bookkeeping necessity. Pastor Whitfield knew the center had its own curriculum — he's visited the classrooms. Whether we sat down and formally amended the charter language... no, I'll be honest, we didn't. That was an oversight on my part, procedurally.",
+            "mechanics": {
+              "heart_rate": "SPIKE",
+              "breathing": "SHALLOW",
+              "gsr": "SURGE",
+              "cctv_visual": "EYE_DART",
+              "korku_bari_delta": 14,
+              "gameplay_note": "LIE SIGNAL: Hard GSR surge on 'internal licensing costs.' He just invented a procedural oversight story in real time."
+            },
+            "next_node": "node_04_mechanism"
+          },
+          {
+            "type": "FORENSIC_CALL_OUT",
+            "question": "The receiving entity on every one of those transfers is Odom Educational Consulting — an LLC you personally own. You're saying the Harlan Youth Achievement Fund licensed curriculum from you, and paid you for it.",
+            "answer": "That — yes. In effect, yes. The curriculum is mine, I developed it on my own time, nights and weekends, for years before the fund even existed. If the fund wanted to use materials I own, there had to be some accounting mechanism for that. I'm not going to apologize for building something of value. I ran it past my accountant before I set the LLC up. Everything was structured legitimately.",
+            "mechanics": {
+              "heart_rate": "MAX_SPIKE",
+              "breathing": "HOLDING_BREATH",
+              "gsr": "SURGE",
+              "cctv_visual": "JAW_TIGHTEN",
+              "korku_bari_delta": 16,
+              "gameplay_note": "LIE SIGNAL: Pulse jumps hard, breath catches. The 'my accountant approved it' line is the first verifiable claim — worth pressing later."
+            },
+            "next_node": "node_05_llc_disclosure"
+          },
+          {
+            "type": "GULLIBLE",
+            "question": "These kinds of in-kind fee structures are common in small nonprofits. You just didn't document it cleanly?",
+            "answer": "Exactly. Exactly. That's — yes, that's what happened. The structure is entirely normal, the documentation lagged behind the practice. It happens in organizations our size all the time. I appreciate you understanding that. If it would help, I can have my bookkeeper draft a memo reconstructing the intent behind each category. I think once you see it laid out chronologically it all makes sense.",
+            "mechanics": {
+              "heart_rate": "DROP",
+              "breathing": "DEEP",
+              "gsr": "DECREASE",
+              "cctv_visual": "RELIEVED_EXHALE",
+              "korku_bari_delta": -18,
+              "gameplay_note": "WRONG MOVE: Offered him the frame. His shoulders drop. Reconstructed documentation after the fact is exactly how cases like this get buried."
+            },
+            "next_node": "node_03_fund_history"
+          }
+        ]
+      },
+      "node_03_fund_history": {
+        "theme": "Fund History and Access",
+        "description": "Fletcher pushes a bound folder forward — historical meeting minutes tabbed with colored flags. He appears relieved to be back on the ground of procedural detail.",
+        "is_end_state": false,
+        "choices": [
+          {
+            "type": "ANALYTICAL",
+            "question": "Between January 2022 and June 2023, how many transfers did you initiate from the HYAF operating account without a co-signature?",
+            "answer": "I haven't tallied it specifically — I'd want to pull the full ledger before I give you a number I'd regret. But any transfer under the sub-threshold wouldn't have required one. I'd guess somewhere in the range of... twenty to thirty individual transactions. Each one individually small. I want to be careful not to misstate.",
+            "mechanics": {
+              "heart_rate": "SPIKE",
+              "breathing": "UNEVEN",
+              "gsr": "SURGE",
+              "cctv_visual": "EYE_DART",
+              "korku_bari_delta": 12,
+              "gameplay_note": "LIE SIGNAL: Structuring pattern. He's describing splitting $51,400 into sub-$5,000 chunks to avoid co-signature — and he knows exactly what that sounds like."
+            },
+            "next_node": "node_04_mechanism"
+          },
+          {
+            "type": "STRATEGIC",
+            "question": "Who else at Cornerstone had visibility into the fund's actual cash movements — not just the summaries?",
+            "answer": "Just Marlene Sizemore, the treasurer, received the raw statements. Pastor Whitfield saw quarterly summaries that I prepared. Marlene is... she's 78, she's been the church treasurer for twenty-six years, and she is wonderful, but reconciliation is not her strength. She relied on me to flag anomalies for her. That was the working arrangement.",
+            "mechanics": {
+              "heart_rate": "RISE",
+              "breathing": "SHALLOW",
+              "gsr": "INCREASE",
+              "cctv_visual": "LOOK_DOWN",
+              "korku_bari_delta": 10,
+              "gameplay_note": "PARTIAL TRUTH: He is admitting, almost politely, that the only person with visibility into raw numbers couldn't meaningfully review them."
+            },
+            "next_node": "node_05_llc_disclosure"
+          }
+        ]
+      },
+      "node_04_mechanism": {
+        "theme": "Mechanism of Transfer",
+        "description": "The operator sets a laptop on the table showing the HYAF's online banking transaction log. Fletcher's eyes skim across it quickly, automatically, the way someone scans a document they've already read many times.",
+        "is_end_state": false,
+        "choices": [
+          {
+            "type": "FORENSIC_CALL_OUT",
+            "question": "Walk me through the actual keystrokes. You're logged into the HYAF account. What do you do, step by step, to move money to Odom Educational Consulting?",
+            "answer": "I — okay. I log into the Peoples Bank business portal. I select the HYAF operating account. I choose 'External Transfer.' I enter the routing and account number for Odom Educational Consulting — it's saved as a vendor, labeled 'OEC Licensing.' I type the amount, I enter 'curriculum licensing fees' in the memo field, I confirm. That's the process. It's the same portal the center uses for every vendor payment.",
+            "mechanics": {
+              "heart_rate": "MAX_SPIKE",
+              "breathing": "HOLDING_BREATH",
+              "gsr": "MAX",
+              "cctv_visual": "HAND_PINCH_UNDER_TABLE",
+              "korku_bari_delta": 22,
+              "gameplay_note": "MAX LIE SIGNAL: Mechanism-test fires all channels. He knows the procedure from muscle memory. The vendor label 'OEC Licensing' was preloaded — this wasn't improvised bookkeeping."
+            },
+            "next_node": "node_06_followup"
+          },
+          {
+            "type": "NARROW_TARGET",
+            "question": "Who sets the amount? On what basis is $4,200 the 'licensing fee' on one transfer and $4,850 on another?",
+            "answer": "The amounts were — they were calibrated to the center's monthly operational shortfall. I would look at what OEC needed to cover for that month's expenses and draw that amount. It wasn't tied to a per-unit licensing schedule, no. I know that's not how you'd normally structure it. In hindsight a flat monthly fee would have been cleaner.",
+            "mechanics": {
+              "heart_rate": "SPIKE",
+              "breathing": "SHALLOW",
+              "gsr": "SURGE",
+              "cctv_visual": "JAW_TIGHTEN",
+              "korku_bari_delta": 18,
+              "gameplay_note": "LIE SIGNAL: He just admitted the 'license fee' was actually whatever he needed to withdraw that month. That's not licensing — that's a slush mechanism."
+            },
+            "next_node": "node_06_followup"
+          },
+          {
+            "type": "AGGRESSIVE",
+            "question": "You structured these to stay under five thousand dollars each so no one else had to sign. Yes or no.",
+            "answer": "No. No, that characterization is — that's not fair. The amounts reflected operational need, and operational need happened to fall below the threshold most months. I resent the implication that I was gaming the MOU. I built that MOU. I wrote the threshold language with Pastor Whitfield in my kitchen in 2014. I'm not going to sit here and be accused of exploiting something I drafted in good faith.",
+            "mechanics": {
+              "heart_rate": "ERRATIC",
+              "breathing": "HYPERVENTILATION",
+              "gsr": "SPIKE",
+              "cctv_visual": "DEFENSIVE_CROSS_ARMS",
+              "korku_bari_delta": -8,
+              "gameplay_note": "WRONG MOVE: Too early for a yes/no frame. He pivots to moral indignation and the window for mechanism detail closes. Arms cross, answers shrink from here."
+            },
+            "next_node": "node_05_llc_disclosure"
+          }
+        ]
+      },
+      "node_05_llc_disclosure": {
+        "theme": "The Shell LLC",
+        "description": "A Kentucky Secretary of State filing printout is placed face-up. Odom Educational Consulting, LLC. Registered agent: Fletcher Odom. Principal address: a UPS box in Pikeville. Fletcher's gaze lingers on the Pikeville address a half-second longer than the rest.",
+        "is_end_state": false,
+        "choices": [
+          {
+            "type": "ANALYTICAL",
+            "question": "You registered Odom Educational Consulting in January 2022 — the same month the 'curriculum licensing' transfers started. Why wasn't this LLC disclosed to the deacon board as a related-party vendor?",
+            "answer": "The disclosure requirement — I understood it to apply to vendors where the fund had no awareness of the ownership relationship. I am the director of the fund on one side, and I own OEC on the other. There's no hidden relationship. Anyone who looked at the registration would see my name. I wasn't hiding it; I just didn't file a separate related-party disclosure. Again — procedurally, yes, I should have. I won't argue that.",
+            "mechanics": {
+              "heart_rate": "SPIKE",
+              "breathing": "SHALLOW",
+              "gsr": "SURGE",
+              "cctv_visual": "LIP_PRESS",
+              "korku_bari_delta": 15,
+              "gameplay_note": "LIE SIGNAL: 'No hidden relationship' is doing heavy work. The non-disclosure was the point of the structure."
+            },
+            "next_node": "node_06_followup"
+          },
+          {
+            "type": "SYSTEMIC_READ",
+            "question": "Your registered agent address is a mailbox in Pikeville, forty miles outside Harlan. Why Pikeville?",
+            "answer": "That's — I rent a small office space over there occasionally for client meetings. Pikeville has better broadband and it's halfway to Lexington for contractors. The mailbox is just convenience. I didn't want OEC correspondence mixed in with the center's general mail in Harlan. It's a separate entity, I wanted separate mail.",
+            "mechanics": {
+              "heart_rate": "MAX_SPIKE",
+              "breathing": "HOLDING_BREATH",
+              "gsr": "MAX",
+              "cctv_visual": "EYE_DART",
+              "korku_bari_delta": 9,
+              "gameplay_note": "AMBIGUOUS SIGNAL: Channels explode on Pikeville but the topic is nominally administrative. Could be charge-related, could be something else entirely. Flag for follow-up."
+            },
+            "next_node": "node_06_followup"
+          }
+        ]
+      },
+      "node_06_followup": {
+        "theme": "Pressing the Contradiction",
+        "description": "Fletcher takes a slow sip from his water bottle. His cooperative affect is still present, but the pauses between sentences have grown half a beat longer. The folio in front of him is slightly askew.",
+        "is_end_state": false,
+        "choices": [
+          {
+            "type": "FORENSIC_CALL_OUT",
+            "question": "Earlier you said your accountant approved the OEC structure before you set it up. I want that accountant's name and the date of that consultation.",
+            "answer": "His name is Dale Caudill, C.P.A., out of Hazard. The consultation would have been... late 2021, I want to say October or November. I don't have the exact date. He drafted the articles of organization. I can sign a release authorizing you to contact him directly. I have nothing to hide on that front — you'll find the paper trail is exactly what I described.",
+            "mechanics": {
+              "heart_rate": "SPIKE",
+              "breathing": "SHALLOW",
+              "gsr": "SURGE",
+              "cctv_visual": "STONE_FACE",
+              "korku_bari_delta": 18,
+              "gameplay_note": "PROGRESS: Now there's a verifiable name. His offer of a release feels generous but notice: he did NOT say Dale approved the fund-to-OEC transfer structure. He said Dale drafted the LLC articles. Two different things."
+            },
+            "next_node": "node_07_reframe"
+          },
+          {
+            "type": "EMPATHIC",
+            "question": "Fletcher — I think you started these transfers thinking you'd pay it back. Walk me through what that first one felt like.",
+            "answer": "I... I appreciate the question being asked that way. The center was — the center is my life's work, and in early 2022 the enrollment numbers post-pandemic had not come back the way I'd projected. I had personal obligations I couldn't meet. And I looked at the fund and I thought, this is money meant to support education in this county, and the center is education in this county. The line between those things got blurry for me. I'm not asking you to accept that as a defense. I'm telling you it's what I was telling myself.",
+            "mechanics": {
+              "heart_rate": "RISE",
+              "breathing": "UNEVEN",
+              "gsr": "SURGE",
+              "cctv_visual": "TEAR_POOLING",
+              "korku_bari_delta": 24,
+              "gameplay_note": "MAX PROGRESS: Empathic framing cracked the recitation. He just described motive — personal obligations plus rationalization — in first person. This is the cleanest admission so far."
+            },
+            "next_node": "node_07_reframe"
+          },
+          {
+            "type": "AGGRESSIVE",
+            "question": "Let's stop pretending. You ran a scholarship fund for poor kids and you stole from it. Say it.",
+            "answer": "No. I did not steal from anyone. I moved funds between entities that I had operational authority over, for purposes I can and will defend. I came in here voluntarily. I brought records voluntarily. And I'm not going to let you put words in my mouth because you'd rather have a headline than an accurate understanding of a small nonprofit's bookkeeping. I'll keep answering questions, but not framed that way.",
+            "mechanics": {
+              "heart_rate": "ERRATIC",
+              "breathing": "HYPERVENTILATION",
+              "gsr": "SPIKE",
+              "cctv_visual": "DEFENSIVE_CROSS_ARMS",
+              "korku_bari_delta": -12,
+              "gameplay_note": "WRONG MOVE: Premature escalation. He regroups behind the moral-indignation frame. Opening for a different angle — but the confession window you had closed."
+            },
+            "next_node": "node_08_pikeville"
+          }
+        ]
+      },
+      "node_07_reframe": {
+        "theme": "Suspect's Reframe",
+        "description": "Fletcher straightens in his chair, takes a breath, and seems to make a decision. When he speaks, his tone has shifted — less preemptive, more deliberate, like someone moving a piece he's been holding back.",
+        "is_end_state": false,
+        "choices": [
+          {
+            "type": "TRAP",
+            "question": "Go ahead. Tell me what you want me to understand.",
+            "answer": "Here's what I think is being missed. The center was on the verge of closing in 2022. If it closed, the scholarship fund loses its operational partner and the whole program dies — no more tutoring, no more scholarships, nothing. What I did was keep the delivery mechanism alive so the charitable purpose could continue. Was the accounting imperfect? Yes. Was the intent theft? No. Every dollar went to keep the lights on at a place that served the kids the fund was designed to help. I'd argue I preserved the mission. I wouldn't expect you to agree. But that's the honest version.",
+            "mechanics": {
+              "heart_rate": "STABLE",
+              "breathing": "DEEP",
+              "gsr": "DECREASE",
+              "cctv_visual": "RELEASED_SHOULDERS",
+              "korku_bari_delta": -15,
+              "gameplay_note": "WRONG MOVE: You let him deliver a rehearsed reframe uninterrupted. His body composes itself — that was the speech he came prepared to give."
+            },
+            "next_node": "node_10_pause"
+          },
+          {
+            "type": "NARROW_TARGET",
+            "question": "Stop. Before you give me the 'I saved the center' speech — I want you to account for the $11,200 that went from OEC to a personal account in your name in August 2022.",
+            "answer": "That was — I took a draw. Owners of an LLC are permitted to take owner draws. I had personal financial obligations. I paid taxes on that draw. I'm not going to pretend the money sat in a vault. But the fund-to-OEC transfer and the OEC-to-me transfer are legally distinct transactions. One does not implicate the other.",
+            "mechanics": {
+              "heart_rate": "MAX_SPIKE",
+              "breathing": "HOLDING_BREATH",
+              "gsr": "MAX",
+              "cctv_visual": "HAND_PINCH_UNDER_TABLE",
+              "korku_bari_delta": 26,
+              "gameplay_note": "MAX LIE SIGNAL: The two-hop laundering architecture is now in the record — in his own words. He just drew the diagram for you."
+            },
+            "next_node": "node_09_confrontation"
+          },
+          {
+            "type": "ANALYTICAL",
+            "question": "I hear the argument. I want to test it against the numbers. What was the center's actual monthly shortfall in 2022, and how much of each OEC transfer went to that shortfall versus elsewhere?",
+            "answer": "The average monthly shortfall was between... two thousand and three thousand dollars. The transfers ran higher than that, I won't pretend otherwise, because some months I was also catching up on previous shortfalls. As for 'elsewhere' — I have explanations for every dollar, but I want to be precise and I'd rather pull the ledgers than guess at percentages under pressure.",
+            "mechanics": {
+              "heart_rate": "SPIKE",
+              "breathing": "UNEVEN",
+              "gsr": "SURGE",
+              "cctv_visual": "LIP_PRESS",
+              "korku_bari_delta": 14,
+              "gameplay_note": "PROGRESS: He just conceded the transfers exceeded the shortfall his reframe depends on. Reframe partially punctured."
+            },
+            "next_node": "node_09_confrontation"
+          }
+        ]
+      },
+      "node_08_pikeville": {
+        "theme": "The Pikeville Expenses",
+        "description": "Another printout: OEC card charges totaling roughly $3,700 across an eighteen-month window — a Pikeville apartment complex deposit, a florist, restaurants, a men's clothing store. Fletcher reads the list and his face goes very still.",
+        "is_end_state": false,
+        "choices": [
+          {
+            "type": "PRESSURE",
+            "question": "These aren't operational expenses for a tutoring center. This is personal spending in Pikeville — an apartment deposit, restaurants, a florist. You were using fund money to bankroll a second life, weren't you?",
+            "answer": "Those — those charges have explanations. The apartment deposit was for a short-term rental I used for curriculum development retreats. The restaurants were client meetings. The florist was... a gift for a colleague's mother who passed. I understand how it looks. I understand exactly how it looks on a spreadsheet. But none of this is what it looks like. Please. Please don't build a case on those specific line items.",
+            "mechanics": {
+              "heart_rate": "MAX_SPIKE",
+              "breathing": "HYPERVENTILATION",
+              "gsr": "MAX",
+              "cctv_visual": "TEAR_POOLING",
+              "korku_bari_delta": 12,
+              "gameplay_note": "AMBIGUOUS MAX SIGNAL: Channels saturate, but carefully — the 'please don't build a case on those specific line items' is not the reaction of a man caught stealing. It's the reaction of a man hiding something else. Do not confuse the source of this spike with the charge."
+            },
+            "next_node": "node_11_misread"
+          },
+          {
+            "type": "STRATEGIC",
+            "question": "I'm not asking about these charges yet. I'm asking why an LLC that exists to license curriculum to a Harlan County fund has an operating footprint in Pikeville at all.",
+            "answer": "Because — honestly? Because I wanted one thing in my life that wasn't inside the fishbowl of Harlan. That's the real answer. OEC was supposed to be a consulting side-entity that could take work from school districts across the region. I picked Pikeville because it was away. That's not a crime. The expenses you're looking at are... they're embarrassing and they're personal, and I'll account for them, but they are not what the fund investigation is about.",
+            "mechanics": {
+              "heart_rate": "SPIKE",
+              "breathing": "UNEVEN",
+              "gsr": "SURGE",
+              "cctv_visual": "LOOK_DOWN",
+              "korku_bari_delta": 16,
+              "gameplay_note": "CRITICAL READ: Signals elevated but pattern is different from the mechanism-test cluster — this is grief/fear, not deception about the charge. The Pikeville footprint is real but the meaning is not what it appears."
+            },
+            "next_node": "node_09_confrontation"
+          }
+        ]
+      },
+      "node_09_confrontation": {
+        "theme": "Final Pressure",
+        "description": "Fletcher has stopped offering documents. His folio is closed. He looks smaller in the chair than he did an hour ago, but his hands are folded with deliberate calm on the tabletop.",
+        "is_end_state": false,
+        "choices": [
+          {
+            "type": "EVIDENCE",
+            "question": "Here are your own bank statements, cross-referenced with the HYAF ledger. Fifty-one thousand four hundred dollars moved from a scholarship fund through an undisclosed LLC you control and into your personal accounts. There is no licensing agreement. There is no board approval. There is no repayment schedule. Tell me what I'm looking at if it isn't misappropriation of charitable funds.",
+            "answer": "You're... you're looking at a man who convinced himself that as long as he meant to put it back, it wasn't really taking. That's what you're looking at. I told myself every month — next quarter, when enrollment stabilizes, I'll reverse it. And every quarter it didn't stabilize and the number got bigger and at some point I stopped counting. I wanted — God. I'm sorry. I am so sorry. I took money that wasn't mine. From kids. From a church. I can't — I don't have a defense for that. I don't.",
+            "mechanics": {
+              "heart_rate": "MAX_SPIKE",
+              "breathing": "CRYING",
+              "gsr": "MAX",
+              "cctv_visual": "BREAKDOWN",
+              "korku_bari_delta": 40,
+              "gameplay_note": "CONFESSION: Full emotional collapse with verbal admission. All channels maxed simultaneously on primary-charge content. Route to breakdown success."
+            },
+            "next_node": "node_success_breakdown"
+          },
+          {
+            "type": "MORAL_PRESSURE",
+            "question": "Pastor Whitfield is going to be asked in open court whether the deacon board knew about this arrangement. What do you want him to be able to say?",
+            "answer": "Don't. Don't bring him into this like that. He — he trusted me. He introduced me at services. He stood up for me in my divorce. If you're asking me to sit here and weigh what I want him to say in court, then I think — I think I need to be honest about the fact that the board did not know. They did not know. I didn't tell them. I should have told them and I didn't, and everything after that is on me, not on him and not on Marlene.",
+            "mechanics": {
+              "heart_rate": "SPIKE",
+              "breathing": "UNEVEN",
+              "gsr": "SURGE",
+              "cctv_visual": "LOOK_DOWN",
+              "korku_bari_delta": 28,
+              "gameplay_note": "PARTIAL ADMISSION: Controlled but explicit — concealment from the board is on the record. No full breakdown; he's protecting what dignity he can. Route to partial success."
+            },
+            "next_node": "node_success_partial"
+          },
+          {
+            "type": "LEGAL_THREAT",
+            "question": "I'm giving you one chance. Sign a full written admission right now, or I refer this to the Attorney General with a recommendation for criminal charges before you leave the building.",
+            "answer": "I... I'm sorry. I need to stop and call my attorney before I answer anything else. I should have had him here from the beginning. I apologize. I'm not being uncooperative. I just — I need counsel. I think that's my right.",
+            "mechanics": {
+              "heart_rate": "DROP",
+              "breathing": "DEEP",
+              "gsr": "DECREASE",
+              "cctv_visual": "RELEASED_SHOULDERS",
+              "korku_bari_delta": -30,
+              "gameplay_note": "WRONG MOVE: Hard ultimatum triggered Sixth Amendment reflex. Session ends cleanly for him. No further questioning permitted."
+            },
+            "next_node": "node_fail_lockdown"
+          }
+        ]
+      },
+      "node_10_pause": {
+        "theme": "Tactical Pause",
+        "description": "Fletcher has regained composure after delivering his prepared reframe. The room feels like it's his again. The operator has a choice about whether to push back now or give him rope.",
+        "is_end_state": false,
+        "choices": [
+          {
+            "type": "STRATEGIC",
+            "question": "Let's take a five-minute break. Get some water. I want you to think about whether what you just told me is the version you want on the record.",
+            "answer": "Yeah. Yeah, okay. I appreciate that. I'll — I'll take a minute. Thank you.",
+            "mechanics": {
+              "heart_rate": "STABLE",
+              "breathing": "DEEP",
+              "gsr": "DECREASE",
+              "cctv_visual": "RELEASED_SHOULDERS",
+              "korku_bari_delta": -5,
+              "gameplay_note": "TACTICAL RESET: Short-term negative — he's breathing again. But the break gives you a chance to approach cleanly instead of inside his rehearsed frame."
+            },
+            "next_node": "node_09_confrontation"
+          },
+          {
+            "type": "GULLIBLE",
+            "question": "That's actually a compelling argument. If the intent was mission preservation, the legal picture is very different. Let's document your version carefully.",
+            "answer": "Thank you. Thank you, that — that means a lot. I can put together a full written statement walking through the rationale for each transfer, tied to the center's operational needs that month. I think once it's laid out that way, the picture is very different from what a raw ledger suggests. When do you need it by?",
+            "mechanics": {
+              "heart_rate": "DROP",
+              "breathing": "CALM",
+              "gsr": "DECREASE",
+              "cctv_visual": "RELIEVED_EXHALE",
+              "korku_bari_delta": -25,
+              "gameplay_note": "WRONG MOVE: You validated the reframe. He will now produce a documented narrative post hoc and the live interrogation yields nothing more. Evidence pattern ambiguous."
+            },
+            "next_node": "node_fail_deflection"
+          }
+        ]
+      },
+      "node_11_misread": {
+        "theme": "The Wrong Conclusion",
+        "description": "Fletcher is visibly unraveling, but specifically about the Pikeville charges — not the fund. He is pleading about the wrong thing, and the operator has to decide what to do with that.",
+        "is_end_state": false,
+        "choices": [
+          {
+            "type": "PRESSURE",
+            "question": "You just told me those charges are embarrassing and personal. That confirms it — you used charitable money for personal indulgence. I have what I need.",
+            "answer": "No — no, please, you don't understand what you have. Yes, the charges were personal. Yes, I'll repay them, I'll repay everything, I don't — please don't close the file on that reading. It's not — it's not what you think it is. Please.",
+            "mechanics": {
+              "heart_rate": "MAX_SPIKE",
+              "breathing": "CRYING",
+              "gsr": "MAX",
+              "cctv_visual": "TEAR_POOLING",
+              "korku_bari_delta": 8,
+              "gameplay_note": "MISREAD TRAP: You're closing on signal from the wrong source. The channels are saturated, but over the personal nature of the charges — not the fund theft itself. Evidence carried forward is ambiguous."
+            },
+            "next_node": "node_fail_deflection"
+          },
+          {
+            "type": "STRATEGIC",
+            "question": "Step back. I'm not interested in the florist or the restaurants. I'm interested in the fund. Let's return to the fund.",
+            "answer": "Thank you. Thank you. Yes. The fund. Ask me what you need to ask me. I'll answer. I'll answer anything about the fund.",
+            "mechanics": {
+              "heart_rate": "DROP",
+              "breathing": "DEEP",
+              "gsr": "DECREASE",
+              "cctv_visual": "RELEASED_SHOULDERS",
+              "korku_bari_delta": 10,
+              "gameplay_note": "RECOVERY: You correctly separated the signal source. Subject is now hyper-cooperative on charge topics specifically because you gave ground on the other topic."
+            },
+            "next_node": "node_09_confrontation"
+          }
+        ]
+      },
+      "node_success_breakdown": {
+        "theme": "Full Collapse",
+        "description": "Fletcher has his face in his hands. The folio is on the floor. The cooperative posture is gone entirely and has been replaced by something rawer and more honest.",
+        "is_end_state": true,
+        "result_text": "Subject experienced full emotional collapse and delivered an unambiguous verbal admission to diverting Harlan Youth Achievement Fund monies through Odom Educational Consulting. All four physiological channels saturated simultaneously during the admission — HR max, GSR max, breathing collapsed into crying, fear bar maxed. The biometric record across the session shows a coherent pattern: mechanism-specific questions (transfer keystrokes, amount calibration, LLC disclosure, two-hop owner draw) each produced maximum clusters on charge-relevant content. Session ends with the suspect asking for water and for a moment alone. The interrogation is over, but the case continues — the verdict screen is yours."
+      },
+      "node_success_partial": {
+        "theme": "Controlled Admission",
+        "description": "Fletcher has not broken down, but he has stopped performing. He sits very still, accepting each question with small nods before answering shorter and shorter.",
+        "is_end_state": true,
+        "result_text": "Subject delivered a controlled partial admission: the deacon board was never informed, no licensing agreement existed, and OEC functioned as a conduit into personal accounts. No full verbal confession to intent, but concealment is on the record. Biometric log shows sustained elevation across mechanism-test and LLC-disclosure nodes, with the cleanest deception cluster on the 'accountant approval' claim and the two-hop owner draw explanation. A separate, differently-shaped spike cluster appeared around the Pikeville line items — distinguishable by its grief/fear shape rather than deception shape. The suspect kept his composure; the evidence did not. Verdict screen is yours."
+      },
+      "node_fail_lockdown": {
+        "theme": "Counsel Invoked",
+        "description": "Fletcher folds his hands, lowers his eyes, and asks quietly for his attorney. He does not speak again. A uniformed officer escorts him into the corridor to make the call.",
+        "is_end_state": true,
+        "result_text": "Subject invoked right to counsel following a premature ultimatum. All further questioning halted by statute. The biometric record up to that point shows strong deception clusters on mechanism and LLC-disclosure nodes, but the session ended before the narrative could be locked in verbally. No admission. The evidence you carry into the verdict screen is biometric, not testimonial — you will have to decide whether the cluster pattern alone is enough."
+      },
+      "node_fail_deflection": {
+        "theme": "Ambiguous Close",
+        "description": "Fletcher gathers his folio, straightens his sweater, and thanks the operator for their time with genuine-seeming warmth. He offers to send additional documentation by the end of the week.",
+        "is_end_state": true,
+        "result_text": "Session ended without admission and without invocation of counsel. Subject never lost his cooperative frame and successfully redirected the final portion of the interrogation toward either a mission-preservation narrative or the personal-expense line items. Biometric record is mixed: there were real maximum-cluster events during the session, but the attribution is contested — some spikes aligned with mechanism-test content, others aligned with the Pikeville personal-expense topic, and the session closed without isolating which cluster reflects the charge. The evidence carried to the verdict screen is genuine but ambiguous; interpretation is the player's."
+      }
+    },
+    "character_image": "./assets/characters/en-case-4.png"
+  }
+}

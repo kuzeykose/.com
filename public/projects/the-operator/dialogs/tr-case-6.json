@@ -1,0 +1,542 @@
+{
+  "game_data": {
+    "title": "Doğan Ailesi'nin Harmancı'ya Karşı Medeni Hukuk Davası — İşyeri Güvenliği İhmalı",
+    "suspect": {
+      "name": "Selçuk Harmancı",
+      "role": "Arıcılık işletmecisi — Ege kırsalında küçük ölçekli aile bal üretim çiftliği sahibi",
+      "profile": "Selçuk Harmancı, İzmir'in iç kesimlerinde, Torbalı'ya bağlı bir köyde büyümüştür. Babası da arıcılıkla geçimini sağlardı; işletmeyi 1994'te devraldı ve yaklaşık 280 kovana çıkardı. Bölgesel pazarlarda ve birkaç yerel restoran tedarikçisiyle çalışır; küçük ama istikrarlı bir operasyondur. Mesleğe duyduğu gurur, kimliğinin merkezindedir. Belirgin kişilik özellikleri: sözlü savunmacılık, uzmanlığının sorgulanmasına aşırı tepki ve konuyu değiştirme konusunda görülür beceri. Şüpheli detay: İşletme kayıtları, üç yıl önce ani bir işgücü genişlemesi yaşandığını gösteriyor; bu dönemde işe alım belgeleri eksik ve güvenlik eğitim tutanakları tutarsız. İnsani detay: Köyde kalan tek yakın dostu Orhan Çevik'i haftada bir arar; birlikte büyümüşlerdir. Bu arama rutini son altı aydır kesintisiz sürmektedir; Selçuk'a göre Orhan 'her şeyi bilir.' Akademik sahtecilik meselesine gelince: Selçuk'un çiftlik girişinde çerçevelenmiş 'İleri Düzey Arıcılık Yönetimi Sertifikası' —tarım odası fuarlarında düzenli olarak öne çıkardığı bir belge— aslında tamamlanmamış bir kurs kaydına dayanmaktadır. Sertifika kurumundaki tanıdığı, dönemin yoğun hasat sezonunda katılamadığı son modülü tamamlamış gibi kayıtlara yansıtmıştır. Bu durum hiçbir zaman kamuoyuna yansımamıştır; ancak Selçuk, açılan hukuki davanın belge incelemesine dönüşmesinden son derece çekinmektedir."
+    },
+    "system_config": {
+      "initial_fear_bar": 20,
+      "max_fear_bar": 100,
+      "fear_bar_description": "Oturum boyunca suphelinin biriken psikolojik geriliminin ölçütü — nabız, nefes düzeni, ter tepkisi ve gözlemlenebilir duygusal değişimin tek bir göstergesi.",
+      "heart_rate_baseline": 72,
+      "gsr_baseline": 6
+    },
+    "context": "Mevsimlik işçi Emre Doğan (22 yaş), Haziran 2022'de Selçuk Harmancı'nın Torbalı'daki arıcılık çiftliğinde hasat mevsiminde istihdam edilmiştir. Doğan, çalışmasının üçüncü haftasında toplu bir arı sürüsünün saldırısına uğramış ve aldığı ısırıklardan kaynaklanan anafilaktik şok sonucunda sahada hayatını kaybetmiştir. Emre'nin ailesi, kızının işe alım formunun 'Gıda ve Hayvancılık Alerjileri' bölümünde arı alerjisine yönelik açık bir beyan içerdiğini belirtmektedir. Dava, Harmancı'nın bu bilgiyi bilmiş olması, ancak ne emerjans ilaçları (epinefrin) temin ettiğini, ne de işçilerine uyarı verdiğini ne de arı sürülerinin yakındaki alanlardan uzaklaştırılmasını sağladığını iddia etmektedir. Harmancı, formu düzgün bir şekilde almadığını ve alerjinin bu kadar ciddi olduğunu bilmediğini savunmaktadır. Ancak çiftlik kayıtları tutarsız ve belgeler eksiktir. Medeni davada, işyeri sorumluluğu yasaları uyarınca mevsimlik işçilerin bilinen sağlık risklerine karşı korunması gerekmektedir.",
+    "true_verdict": "GUILTY",
+    "verdict_truth_text": "Selçuk Harmancı, Emre Doğan'ın işe alım formunda yer alan arı alerjisi beyanını bizzat okumuş ve anlamıştır. Formu kasıtlı olarak sahaya iletmemiş, ustabaşını bilgilendirmemiş ve acil tıbbi ekipman temin etmemiş; hasat sezonunda sözleşme baskısı altında bu riski kabul edilebilir bulmuştur. Emre'nin ölümü, bu bilinçli ihmalin doğrudan bir sonucudur.",
+    "dossier": {
+      "age": 54,
+      "identity_summary": "Torbalı iç kırsalında faaliyet gösteren küçük ölçekli arıcılık işletmesinin sahibi. Yaklaşık otuz yıllık sektör deneyimine sahip; bölgesel pazar ağlarında kayıtlı tedarikçi.",
+      "family": [
+        {
+          "relation": "Eski eş",
+          "name": "Filiz Harmancı (evli soyadı: Keleş)",
+          "note": "2014 yılında boşanma gerçekleşmiştir. Farklı ilde ikamet etmektedir. Ortak çocuk bulunmamaktadır."
+        },
+        {
+          "relation": "Çocukluk arkadaşı",
+          "name": "Orhan Çevik",
+          "note": "Aynı köyde büyümüşlerdir. Orhan Çevik Torbalı'da küçük bir inşaat malzemeleri deposu işletmektedir. Düzenli iletişim sürdürülmektedir."
+        },
+        {
+          "relation": "İdari destek / komşu",
+          "name": "Gülay Sarı",
+          "note": "Komşu parselde ikamet etmektedir. Geçici dönemlerde çiftlik muhasebe dosyalarına erişimi bulunmaktadır. Resmi istihdam ilişkisi yoktur."
+        }
+      ],
+      "medical": [],
+      "habits": [
+        {
+          "habit": "Orta düzey günlük kahve tüketimi — günde 3-4 fincan Türk kahvesi",
+          "polygraph_effect": "Sempatik uyarılma eşiğini hafifçe yükseltir; GSR bazal iletkenliğinde ılımlı artışa ve istirahat nabzında minimal yükselmeye yol açabilir."
+        }
+      ],
+      "priors": [
+        "2019: Yerel tarım kooperatifi denetiminde belge eksikliği tespit edilmiş; idari uyarı verilmiş, para cezası uygulanmamıştır.",
+        "2021: Komşu çiftçiyle arazi sınırı anlaşmazlığı nedeniyle sulh hukuk mahkemesine başvurulmuş; taraflar duruşma öncesi uzlaşmıştır.",
+        "2022: Mevsimlik işçi Emre Doğan'ın hasat sezonunda çiftlikte hayatını kaybetmesine ilişkin soruşturma başlatılmış; dosya hâlen açıktır."
+      ],
+      "pressure_points": [
+        "İşe alım ve saha güvenlik belgeleri konuları — bu alanda doğrudan sorularda savunmacı bir ton benimsediği, yanıtlarını genelleştirme yoluna gittiği gözlemlenmiştir; ANALYTICAL yaklaşım kapatma eğilimini artırmaktadır.",
+        "Mesleki yetkinlik ve sertifikasyon geçmişine yapılan atıflar — kısa yanıt verme, konuyu uygulamaya yönlendirme örüntüsü dikkat çekicidir; sorular spesifikleştikçe tempo değişmektedir.",
+        "Emre Doğan'ın ailesiyle olan ilişki ve olayın ardından gerçekleştirilen iletişimler — konuyu doğrudan açmadan çevresinden dolaşma eğilimi görülmüş; EMPATHIC çerçeveleme zaman zaman beklenmedik açılımlara yol açmıştır.",
+        "2022 hasat sezonuna ait operasyonel kararlar ve o döneme ait işgücü planlaması — soruların zaman çizelgesini daraltmasıyla birlikte cevap sürelerinde belirgin dalgalanma gözlemlenmiştir."
+      ],
+      "modifiers": {
+        "heart_rate_suppression": 0,
+        "heart_rate_baseline_shift": 2,
+        "gsr_sensitivity": 1.2,
+        "gsr_baseline_shift": 1,
+        "breathing_instability": 0.05
+      }
+    },
+    "start_node": "node_01_intro",
+    "nodes": {
+      "node_01_intro": {
+        "theme": "İlk Temas",
+        "description": "Selçuk Harmancı sorgu odasına alınır. Elleri masanın üstünde, parmakları hafifçe kenetli. Önünde bir bardak su var; kahve teklifini reddetti. Operatör karşısına oturur ve klasörü yavaşça açar.",
+        "is_end_state": false,
+        "choices": [
+          {
+            "type": "EMPATHIC",
+            "question": "Bugün geldiğiniz için teşekkür ederim, Bey Harmancı. Biliyorum kolay bir gün değil. Bana biraz çiftliğinizden, bu işi ne zamandır yaptığınızdan bahseder misiniz?",
+            "answer": "Otuz yıldan fazla oldu. Babamdan devraldım, '94'te. O günden beri aynı toprakta, aynı kovanlarla. Bu iş bir meslek değil efendim, hayat biçimi. Bunu anlamayan çok konuşur.",
+            "mechanics": {
+              "heart_rate": "STABLE",
+              "breathing": "CALM",
+              "gsr": "BASELINE",
+              "cctv_visual": "RELEASED_SHOULDERS",
+              "korku_bari_delta": 2,
+              "gameplay_note": "ILERLEME: Konfor alanina girildi; saglikli baseline okunuyor. Sonraki tepkileri bu zemine kiyasla."
+            },
+            "next_node": "node_02_career_pride"
+          },
+          {
+            "type": "ANALYTICAL",
+            "question": "Bugün size Haziran 2022'deki olay hakkında sormak istiyorum, Bey Harmancı. Mevsimlik çalışan Emre Doğan'ı işe alırken doldurulan formu hatırlıyor musunuz?",
+            "answer": "Her sezon onlarca form geçiyor elimden. O forma özel olarak ne sordunuz, bilmem ki. Bir şey mi yazıyordu üzerinde ki böyle başlıyorsunuz?",
+            "mechanics": {
+              "heart_rate": "RISE",
+              "breathing": "SHALLOW",
+              "gsr": "INCREASE",
+              "cctv_visual": "EYE_DART",
+              "korku_bari_delta": 5,
+              "gameplay_note": "YALAN SINYALI: 'Bir sey mi yaziyordu' ifadesi bilinmezlik iddiasi, fakat GSR ve goz kacinmasi uyusmuyor."
+            },
+            "next_node": "node_03_hiring_form"
+          }
+        ]
+      },
+      "node_02_career_pride": {
+        "theme": "Mesleğe Duyulan Gurur",
+        "description": "Selçuk arkasına yaslanır; omuzları biraz rahatlar. Çiftliğini anlatırken el hareketleri genişliyor — bu zeminde rahat.",
+        "is_end_state": false,
+        "choices": [
+          {
+            "type": "ANALYTICAL",
+            "question": "Büyük bir operasyon değil ama istikrarlı duyuluyor. İşçi alımlarını kendiniz mi yapıyorsunuz yoksa bir ustabaşınız mı?",
+            "answer": "Genelde ilk aşamaya kendim bakarım. Form doldurtur, konuşurum. Sonra Cengiz ustam sahada eğitim verir. Küçük aile işletmesiyiz sonuçta, kurumsal bir yapımız yok.",
+            "mechanics": {
+              "heart_rate": "RISE",
+              "breathing": "BASELINE",
+              "gsr": "INCREASE",
+              "cctv_visual": "LIP_PRESS",
+              "korku_bari_delta": 4,
+              "gameplay_note": "KISMEN DOGRU: 'Kendim bakarim' iddiasi — bu ifadeyi sonra test etmek icin not alin."
+            },
+            "next_node": "node_03_hiring_form"
+          },
+          {
+            "type": "NARROW_TARGET",
+            "question": "O yaz... 2022 Haziran hasadı yoğun geçmiş. Emre Doğan'ı o sezon için neden seçtiğinizi hatırlıyor musunuz?",
+            "answer": "Genç, çalışkandı. Köyden tanıyanlar iyi söyledi. Elleri kovana alışıktı, arıdan korkmazdı... sanıyorduk.",
+            "mechanics": {
+              "heart_rate": "SPIKE",
+              "breathing": "UNEVEN",
+              "gsr": "SPIKE",
+              "cctv_visual": "LOOK_DOWN",
+              "korku_bari_delta": 7,
+              "gameplay_note": "ILERLEME: Son kelimedeki duraksama kritik; 'saniyorduk' gecmise donuk bir mesafe koyuyor."
+            },
+            "next_node": "node_04_that_morning"
+          }
+        ]
+      },
+      "node_03_hiring_form": {
+        "theme": "Alım Formu",
+        "description": "Operatör dosyadan bir fotokopi çıkarır, masanın üzerine koyar. Selçuk belgeye kısa bir bakış atar, ardından bakışını operatöre çevirir. Parmakları masanın kenarını buluyor.",
+        "is_end_state": false,
+        "choices": [
+          {
+            "type": "FORENSIC",
+            "question": "Bu Emre Doğan'ın imzaladığı alım formu. 'Gıda ve Hayvancılık Alerjileri' bölümüne kendi el yazısıyla 'ARI — ciddi' yazmış. Bu formu siz mi teslim aldınız?",
+            "answer": "O kağıtları Gülay hanım toplar genelde. Komşum. Muhasebeye yardım eder. Ben hepsini tek tek okumam, imza atarım. Bu kadar iş arasında insan her satırı göremez ki.",
+            "mechanics": {
+              "heart_rate": "SPIKE",
+              "breathing": "HOLDING_BREATH",
+              "gsr": "SURGE",
+              "cctv_visual": "HAND_PINCH_UNDER_TABLE",
+              "korku_bari_delta": 9,
+              "gameplay_note": "YALAN SINYALI: Sorumluluk uçuncu kisiye itiliyor; GSR surge + nefes tutma kritik bilgi saklamayla uyumlu."
+            },
+            "next_node": "node_04_that_morning"
+          },
+          {
+            "type": "EMPATHIC",
+            "question": "Küçük bir işletmede her şeye tek başına yetişmek zor olmalı. Formlar sizin sisteminizde kim tarafından okunur, kim sahaya iletir?",
+            "answer": "Ben bakarım genelde. Ama yoğun dönemde bazıları geri planda kalabilir. Mevsimde her gün bir koşuşturma... eksik olan şeyler olmuştur, inkar etmiyorum. Ama kimsenin canını hiçe saymam ben.",
+            "mechanics": {
+              "heart_rate": "RISE",
+              "breathing": "SHALLOW",
+              "gsr": "INCREASE",
+              "cctv_visual": "LOOK_DOWN",
+              "korku_bari_delta": 6,
+              "gameplay_note": "KISMEN ACILDI: 'Eksik olan seyler' kabulu ilerleme. 'Kimsenin canini hice saymam' savunmasi — test edilmeli."
+            },
+            "next_node": "node_04_that_morning"
+          },
+          {
+            "type": "AGGRESSIVE",
+            "question": "Bey Harmancı, bir çocuğun hayatından söz ediyoruz. Siz form okumakla uğraşmıyor musunuz? Bu ihmal ağır bir suçlama demek.",
+            "answer": "Bakın, ben otuz yıldır bu işteyim. Bana böyle bir üslupla konuşulmaz. Kim okumuş kim okumamış... adam arıdan öldü, arıcılıkta olur bu. Üzülürüz ama doğanın kanunu bu.",
+            "mechanics": {
+              "heart_rate": "SPIKE",
+              "breathing": "UNEVEN",
+              "gsr": "SPIKE",
+              "cctv_visual": "DEFENSIVE_CROSS_ARMS",
+              "korku_bari_delta": -4,
+              "gameplay_note": "YANLIS HAMLE: Supheli savunmaci duvarini kurdu; 'deneyim karti' ile alani geri aldi. Zayif dalda devam."
+            },
+            "next_node": "node_05_mechanism_test"
+          }
+        ]
+      },
+      "node_04_that_morning": {
+        "theme": "O Sabah",
+        "description": "Selçuk masadaki su bardağını kendine yaklaştırır ama dokunmaz. Gözleri masanın yüzeyinde belli bir noktaya takılır; bir süre konuşmaz.",
+        "is_end_state": false,
+        "choices": [
+          {
+            "type": "NARROW_TARGET",
+            "question": "O sabahı hatırlıyor musunuz? Emre'yi hangi parsele gönderdiniz, kimin yanına?",
+            "answer": "İkinci parsel, batı tarafı. O bölgede sürüler hareketliydi o hafta. Cengiz usta ile gönderdim... gitti sabah, öğlen olmadan haber geldi.",
+            "mechanics": {
+              "heart_rate": "SPIKE",
+              "breathing": "HOLDING_BREATH",
+              "gsr": "SURGE",
+              "cctv_visual": "JAW_TIGHTEN",
+              "korku_bari_delta": 8,
+              "gameplay_note": "KRITIK: Bolgenin 'hareketli' oldugunu onceden bildigini ifsa etti. Risk bilinci kabulu — protokol eksikligiyle celisir."
+            },
+            "next_node": "node_05_mechanism_test"
+          },
+          {
+            "type": "EMPATHIC",
+            "question": "O günü hâlâ taşıyor olmalısınız. Haberi aldığınızda nerede, ne yapıyordunuz?",
+            "answer": "Ofisteydim. Sözleşme işleri vardı, restoran siparişi geliyordu. Cengiz telefonda bağırıyordu... Çocuk yerde, yüzü şişmiş... ben oraya vardığımda... zaten geçti artık.",
+            "mechanics": {
+              "heart_rate": "SPIKE",
+              "breathing": "CRYING",
+              "gsr": "SURGE",
+              "cctv_visual": "TEAR_POOLING",
+              "korku_bari_delta": 7,
+              "gameplay_note": "GERCEK DUYGUSAL TEPKI: Pismanlik reel gorunuyor fakat sorumluluk kabulu degil; 'sozlesme isleri' detayi altinda cizili kalsin."
+            },
+            "next_node": "node_05_mechanism_test"
+          },
+          {
+            "type": "SYSTEMIC_READ",
+            "question": "İşletmede arı sokmalarına karşı bir protokol var mıydı? Daha önce benzer bir vaka yaşandı mı?",
+            "answer": "Birkaç kez hafif sokma oldu, şişlik falan, hepsi geçti. Ciddi bir vaka hiç... Emre'ye kadar. Protokol dediğiniz... yani işte, uzak durursun, kovan açarken duman verirsin. Herkes bilir bunu.",
+            "mechanics": {
+              "heart_rate": "RISE",
+              "breathing": "SHALLOW",
+              "gsr": "INCREASE",
+              "cctv_visual": "LIP_PRESS",
+              "korku_bari_delta": 4,
+              "gameplay_note": "ZAYIF DAL: 'Herkes bilir' genellemesi protokol eksikligini genisletiyor; mekanizma testini atladiniz."
+            },
+            "next_node": "node_06_followup_gap"
+          }
+        ]
+      },
+      "node_05_mechanism_test": {
+        "theme": "Mekanizma — Acil Protokol",
+        "description": "Operatör yeni bir sayfa açar. Selçuk'un alnında ince bir ter parlıyor; odada özel bir sıcaklık yok. Parmakları artık masanın altında.",
+        "is_end_state": false,
+        "choices": [
+          {
+            "type": "FORENSIC",
+            "question": "Anlatın bana: 280 kovanlı bir çiftlikte ani anafilaktik şok geliştiğinde, sıradaki adım nedir? Kitte ne bulunur, kim müdahale eder, en yakın hastaneye ulaşım süresi ne kadar?",
+            "answer": "Eee, yani... ilkyardım çantası vardır tabii. Antihistaminik, pansuman... Epinefrin... onu sadece alerjisi olanlar taşır genelde, biz toplu temin etmeyiz çünkü reçeteli ilaç. Hastane 22 dakika, Torbalı merkezine. Biz hemen aradık ambulansı.",
+            "mechanics": {
+              "heart_rate": "MAX_SPIKE",
+              "breathing": "HOLDING_BREATH",
+              "gsr": "MAX",
+              "cctv_visual": "HAND_PINCH_UNDER_TABLE",
+              "korku_bari_delta": 12,
+              "gameplay_note": "KRITIK SINYAL: Mekanizma sorusunda MAX GSR + HOLDING_BREATH + MAX_SPIKE — birincil suca iliskin aldatma deseninin altin standardi. 'Epinefrin recetelidir' sorumluluk kacinma hamlesi."
+            },
+            "next_node": "node_06_followup_gap"
+          },
+          {
+            "type": "ANALYTICAL",
+            "question": "Diğer arıcılık işletmeleriyle kıyaslarsak sizin acil müdahale standardınız nerede durur?",
+            "answer": "Bizim büyüklüğümüzdeki çiftlikler... çoğu bizden de az hazırlıklı. Büyük kooperatiflerde daha kurumsal yapı olur, onlarda otomatik enjektör bile bulabilirsin. Bizim ölçekte... pratik olan şeyi yaparsın.",
+            "mechanics": {
+              "heart_rate": "SPIKE",
+              "breathing": "SHALLOW",
+              "gsr": "SURGE",
+              "cctv_visual": "EYE_DART",
+              "korku_bari_delta": 9,
+              "gameplay_note": "YALAN SINYALI: 'Pratik olan' = zorunlu olani atlamak icin bir ortu. Sektor karsilastirmasi sorumluluk yayma taktigi; sinyaller yine de yuksek."
+            },
+            "next_node": "node_06_followup_gap"
+          },
+          {
+            "type": "EMPATHIC",
+            "question": "Zor bir soru soracağım ama sabredin. O gün saha ekipmanında gerçekten ne vardı?",
+            "answer": "...çanta vardı. Ama içinde ne eksikti ne vardı, şimdi söyleyemem. Çantayı Cengiz taşırdı o gün. Bakmadım içine. Yani... olmalıydı diye düşündüm.",
+            "mechanics": {
+              "heart_rate": "SPIKE",
+              "breathing": "UNEVEN",
+              "gsr": "SURGE",
+              "cctv_visual": "LOOK_DOWN",
+              "korku_bari_delta": 10,
+              "gameplay_note": "KRITIK: 'Olmaliydi diye dusundum' pasif cumle yapisi — sorumluluk aktif bilgiden kacirildi. Cengiz ustanin ifadesi sonra can alici."
+            },
+            "next_node": "node_07_certificate_detour"
+          }
+        ]
+      },
+      "node_06_followup_gap": {
+        "theme": "Çelişkinin Üzerine",
+        "description": "Selçuk'un az önceki cümlesi odada asılı kaldı. Operatör defterine bir not düşer ve başını kaldırır. Selçuk beklerken ceketinin düğmesiyle oynuyor.",
+        "is_end_state": false,
+        "choices": [
+          {
+            "type": "FORENSIC_CALL_OUT",
+            "question": "Biraz önce 'epinefrini sadece alerjisi olanlar taşır' dediniz. Ama Emre'nin formunda alerjisi açıkça yazılı. O halde Emre'nin kendisi bir tane taşımalıydı ya da siz temin etmeliydiniz. Ortada böyle bir kit yok. Bu ikisi aynı anda nasıl olur?",
+            "answer": "...Ben... form konusunda önceden bir şey söyledim zaten. Gülay hanım alır formları. Ben... her satırını görmedim. Böyle bir sorumluluk bana mı yükleniyor şimdi? Ben... bir de ben mi düşüneyim çocuğun ne taşıdığını?",
+            "mechanics": {
+              "heart_rate": "MAX_SPIKE",
+              "breathing": "HYPERVENTILATION",
+              "gsr": "MAX",
+              "cctv_visual": "HAND_PINCH_UNDER_TABLE",
+              "korku_bari_delta": 14,
+              "gameplay_note": "KRITIK: Celiski yakalandi; aldatma sinyallerinin zirvesi. Cumle yapisi bozulmaya basladi, ikinci kisiye kacmaya calisiyor."
+            },
+            "next_node": "node_08_reframe_attempt"
+          },
+          {
+            "type": "EMPATHIC",
+            "question": "Sanıyorum o günkü kaosta çok şey gözden kaçtı. Bu arada bir şey merak ettim: Tarım Odası'ndaki sertifikalarınız da süreçte inceleniyor mu? Müfettişler baksa nasıl bir tablo çıkar?",
+            "answer": "Sertifikalarım mı? Ne alakası var sertifikalarımın? Benim sertifikalarım tamamdır, Tarım Odası'ndan alınmış, çerçevelenmiş, duvarda asılı. Bu çocuğun olayıyla... Niye getirdiniz bunu şimdi böyle?",
+            "mechanics": {
+              "heart_rate": "MAX_SPIKE",
+              "breathing": "HOLDING_BREATH",
+              "gsr": "MAX",
+              "cctv_visual": "EYE_DART",
+              "korku_bari_delta": 5,
+              "gameplay_note": "DIKKAT: Sinyaller zirveye cikti ama asil konu degisti. Bu tepki farkli bir stres kaynagina isaret edebilir — bu yuksek okumayi tek basina birincil sucla baglamayin."
+            },
+            "next_node": "node_07_certificate_detour"
+          },
+          {
+            "type": "AGGRESSIVE",
+            "question": "Artık yalan söylemeyi bırakın, Bey Harmancı. O çocuk sizin ihmalinizden öldü, kabul edin bunu.",
+            "answer": "Hah! Bakın, avukatımı arama noktasına geliyorum. Ben kimseyi öldürmedim. Arı sokmasından ölüm benim kararım değil, doğanın bir olayı. Siz şimdi beni katil mi yapacaksınız ortada bir kanıt olmadan?",
+            "mechanics": {
+              "heart_rate": "MAX_SPIKE",
+              "breathing": "UNEVEN",
+              "gsr": "SPIKE",
+              "cctv_visual": "DEFENSIVE_CROSS_ARMS",
+              "korku_bari_delta": -6,
+              "gameplay_note": "YANLIS HAMLE: Erken dogrudan suclama hukuki tehditi masaya getirdi; supheli rayi degistirme firsati buldu."
+            },
+            "next_node": "node_07_certificate_detour"
+          }
+        ]
+      },
+      "node_07_certificate_detour": {
+        "theme": "Sertifika",
+        "description": "Selçuk kollarını masaya yaymış; parmaklarından biri bardağın kenarına sürekli dokunup çekiliyor. Konu kaydı ama gerilim düşmedi — aksine farklı bir ton kazandı.",
+        "is_end_state": false,
+        "choices": [
+          {
+            "type": "FORENSIC",
+            "question": "Tarım Odası'ndan sertifikanızın modül kayıtlarını istedik. Henüz ulaşmadı. Siz bize orada ne göreceğimizi söyler misiniz, Bey Harmancı?",
+            "answer": "...Ne görülecek ki orada? Bir eğitim işte. Yıllar önceydi. Bütün modülleri tamamladım. Herhalde arşivde bir iki kağıt karışık olabilir, o kadar eski belgeler. Bu şu an neyle alakalı... Ben bir şey anlamıyorum.",
+            "mechanics": {
+              "heart_rate": "MAX_SPIKE",
+              "breathing": "HOLDING_BREATH",
+              "gsr": "MAX",
+              "cctv_visual": "HAND_PINCH_UNDER_TABLE",
+              "korku_bari_delta": 6,
+              "gameplay_note": "YANILTICI YOL: MAX tepki evet — ama bu sinyal asil davanin mekanigi ile ilgili OLMAYABILIR. Zaman damgalarini karsilastirin, ayri bir dertten olabilir."
+            },
+            "next_node": "node_09_family_contact"
+          },
+          {
+            "type": "STRATEGIC",
+            "question": "Sertifikalara geri döneriz gerekirse. Şimdi esas konuya dönelim: Cengiz ustanın o gün çantada ne gördüğünü sormak istiyorum.",
+            "answer": "Cengiz... o da tam bilmez aslında ne vardı çantada. O sadece kovanla uğraşır, çantaya bakmaz. Ama ben sorarım kendisine, teyit ettiririm size. Getirelim meseleyi, eksik varsa.",
+            "mechanics": {
+              "heart_rate": "RISE",
+              "breathing": "SHALLOW",
+              "gsr": "INCREASE",
+              "cctv_visual": "RELEASED_SHOULDERS",
+              "korku_bari_delta": 3,
+              "gameplay_note": "DOGRU HAMLE: Supheli yanilticiyi yuturtme cabasini birakti; konuya geri donuldu. Cengiz'in ifadesi artik kilit — bunu not edin."
+            },
+            "next_node": "node_08_reframe_attempt"
+          }
+        ]
+      },
+      "node_08_reframe_attempt": {
+        "theme": "Yeniden Çerçeveleme",
+        "description": "Selçuk öne eğilir. Ses tonu değişir — daha sakin, daha açıklayıcı. Bir şey söyleyecek gibi duruyor; odanın havası bir an tuhaf bir yumuşama geçirir.",
+        "is_end_state": false,
+        "choices": [
+          {
+            "type": "GULLIBLE",
+            "question": "Peki sizin açınızdan Emre o formu nasıl yazmış olabilir? Belki bir yanlış anlaşılma mıdır diyorsunuz?",
+            "answer": "Aynen öyle. Emre belki form soruda 'alerjin var mı' yazınca, geçmişte bir sokma yaşadığını anlatmak istemişti. 'Ciddi' derken kendi aklınca söylemiş, bunu hastane raporlarından bile bilmiyordu belki. Öyle olsa bana söylerdi değil mi? Ben bilseydim tabii önlem alırdım. Ben bu çocuğu koruyacaktım, benim için çalıştı.",
+            "mechanics": {
+              "heart_rate": "DROP",
+              "breathing": "CALM",
+              "gsr": "DECREASE",
+              "cctv_visual": "RELIEVED_EXHALE",
+              "korku_bari_delta": -10,
+              "gameplay_note": "YANLIS HAMLE: Anlatiyi kabul ettiniz; supheli rahatladi ve senaryoyu kendi lehine yeniden kurdu. Fizyoloji dustu — fakat bu gercegi yansitmiyor."
+            },
+            "next_node": "node_09_family_contact"
+          },
+          {
+            "type": "STRATEGIC",
+            "question": "Belki de öyledir, belki değildir. Ama siz bu formu okuyup okumadığınızı hâlâ söylemediniz bana. Basitçe: okudunuz mu, okumadınız mı?",
+            "answer": "Ben... Okudum diyemem kesin olarak. O zaman çok form vardı. Ama bir satır var diye hatırlıyorum gibi... bilmiyorum, belki karıştırıyorum başkasıyla. Çok zaman geçti üzerinden.",
+            "mechanics": {
+              "heart_rate": "SPIKE",
+              "breathing": "UNEVEN",
+              "gsr": "SURGE",
+              "cctv_visual": "LIP_PRESS",
+              "korku_bari_delta": 10,
+              "gameplay_note": "ILERLEME: Yeniden cerceveleme reddedildi; 'hatirliyorum gibi' yarim kabul. Cekilme basladi."
+            },
+            "next_node": "node_10_final_confrontation"
+          },
+          {
+            "type": "TRAP",
+            "question": "Bir an duruyorum. Siz demin 'ben hepsini tek tek okumam' dediniz. Şimdi 'Emre bilseydi söylerdi' diyorsunuz. Onun formunda ne yazdığını okumadıysanız, size sözlü olarak nasıl söyleyecekti? Oraya zaten kendi yazmış.",
+            "answer": "Ha, yani... eğer... eğer orada yazıyorsa... okumamış olamazdım galiba. Ben... bir dakika, kafam karıştı şu an. Biraz su içebilir miyim?",
+            "mechanics": {
+              "heart_rate": "MAX_SPIKE",
+              "breathing": "HYPERVENTILATION",
+              "gsr": "MAX",
+              "cctv_visual": "TEAR_POOLING",
+              "korku_bari_delta": 15,
+              "gameplay_note": "KRITIK: Bilissel kilit an. Celiskiden celiskiye takildi, maske cozuluyor. Itiraf esigindedir."
+            },
+            "next_node": "node_10_final_confrontation"
+          }
+        ]
+      },
+      "node_09_family_contact": {
+        "theme": "Ailesi",
+        "description": "Selçuk'un yüzü solgunlaşmış. Bardaktan ilk kez bir yudum alır, ardından operatöre uzun uzun bakar. Savunmacı öfke yerini yorgunluğa bırakmış görünüyor.",
+        "is_end_state": false,
+        "choices": [
+          {
+            "type": "EMPATHIC",
+            "question": "Emre'nin ailesiyle olayın ardından görüştünüz mü, Bey Harmancı?",
+            "answer": "Anneyi aradım. Bir kez. Ne söyleyeceğimi bilemedim. Başsağlığı diledim kadarınca... kadın bağırdı, kapattı. Sonra mezarlığa gittim, bir fatiha okudum. Ama aileyle yüz yüze görüşmedim. Korktum sanırım.",
+            "mechanics": {
+              "heart_rate": "RISE",
+              "breathing": "SHALLOW",
+              "gsr": "INCREASE",
+              "cctv_visual": "TEAR_POOLING",
+              "korku_bari_delta": 5,
+              "gameplay_note": "KISMEN ACILDI: 'Korktum' kabulu onemli; neden korktugu sorulmadi — bu boslugu finale sakliyoruz."
+            },
+            "next_node": "node_10_final_confrontation"
+          },
+          {
+            "type": "STRATEGIC",
+            "question": "Biraz duralım isterseniz. Su ister misiniz, sigara molası gerekirse söyleyin. Kafanızı toparlamaya ihtiyacınız varsa zaman verebilirim.",
+            "answer": "Olur, teşekkür ederim. Bir dakikaya ihtiyacım var... kafam çok yoruldu. Bu kadar üst üste soru... zordur insana. Ben kötü bir adam değilim, sadece anlasın istiyorum bunu.",
+            "mechanics": {
+              "heart_rate": "DROP",
+              "breathing": "DEEP",
+              "gsr": "DECREASE",
+              "cctv_visual": "RELEASED_SHOULDERS",
+              "korku_bari_delta": -3,
+              "gameplay_note": "TAKTIKSEL RESET: Kisa vadede kayip ama supheli insanilasti; son hamleye yumusak bir zemin hazirlandi."
+            },
+            "next_node": "node_10_final_confrontation"
+          },
+          {
+            "type": "PRESSURE",
+            "question": "Aileyle görüşmekten kaçtınız çünkü ne yaptığınızı biliyordunuz. Öyle değil mi?",
+            "answer": "Siz ne söyleyeceğinize dikkat edin. Ben 22 yaşında çocuğun anasıyla yüz yüze gelemedim diye ne yaptığım varsayılıyor? Çoktan avukatıma dönmeliyim ben. Bu sorgu burada bitsin artık.",
+            "mechanics": {
+              "heart_rate": "MAX_SPIKE",
+              "breathing": "UNEVEN",
+              "gsr": "SURGE",
+              "cctv_visual": "STONE_FACE",
+              "korku_bari_delta": -12,
+              "gameplay_note": "YANLIS HAMLE: Erken suclama supheliyi kapanma moduna itti; avukat talebi an meselesi."
+            },
+            "next_node": "node_fail_deflection"
+          }
+        ]
+      },
+      "node_10_final_confrontation": {
+        "theme": "Son Kapı",
+        "description": "Operatör dosyayı kapatmadan önce üç kağıdı masaya sırayla dizer: alım formu, telefon kaydı özeti, acil müdahale kit listesi. Selçuk üçüne birden bakar; gözleri bir süre orada kalır.",
+        "is_end_state": false,
+        "choices": [
+          {
+            "type": "FORENSIC_CALL_OUT",
+            "question": "Bakın Bey Harmancı. Bu üç belge bir araya geldiğinde tek bir hikaye çıkıyor. Formu okudunuz. Epinefrin yoktu. Cengiz'e uyarı geçilmedi. Hasat sezonu baskısı altında bir karar verdiniz. Bunu bugün burada kabul etmeniz, sizin için de daha kolay olacak sonrasında.",
+            "answer": "...Ben... kovanlardaki sürüler o hafta tuhaftı, biliyordum. Biliyordum. Sözleşme kaybolursa işletme biter diye düşündüm... Yalnız bir haftalık mesele dedim kendime. Epinefrin... biliyordum yoktu. Emre o formu yazdığında... elime aldım, okudum, sonra bıraktım. Sahaya iletmedim. Çocuk öldü. Benim yüzümden öldü.",
+            "mechanics": {
+              "heart_rate": "MAX_SPIKE",
+              "breathing": "CRYING",
+              "gsr": "MAX",
+              "cctv_visual": "BREAKDOWN",
+              "korku_bari_delta": 20,
+              "gameplay_note": "TAM ITIRAF: Mekanizma ayrintisi + bilerek karar alma beyani. Sozel + fizyolojik mutabakat tam."
+            },
+            "next_node": "node_success_breakdown"
+          },
+          {
+            "type": "STRATEGIC",
+            "question": "Her şeyi kabul etmenizi beklemiyorum bugün. Sadece tek bir şey: o formu elinize aldınız mı, Bey Harmancı?",
+            "answer": "Elime... aldım. Gördüm ne yazdığını. Sonra masanın üzerinde kaldı. Sahaya iletmedim, evet. O gün başka işler vardı, önceliklendirmedim. Keşke iletseydim. Ama başka şey söyleyemem şu an. Avukatım burada olmalı sonraki sorular için.",
+            "mechanics": {
+              "heart_rate": "SPIKE",
+              "breathing": "UNEVEN",
+              "gsr": "SURGE",
+              "cctv_visual": "LOOK_DOWN",
+              "korku_bari_delta": 12,
+              "gameplay_note": "KISMEN KABUL: Kontrollu teslim. Birincil eylem (formu okudu, sahaya iletmedi) itiraf edildi; niyet gizli tutuldu."
+            },
+            "next_node": "node_success_partial"
+          },
+          {
+            "type": "AGGRESSIVE",
+            "question": "Yeterince oynadık, Harmancı! Siz o çocuğu öldürdünüz. Kabul edin ve bitirelim!",
+            "answer": "Hayır! Ben kimseyi öldürmedim! Bu sorgu bitti. Avukatım gelene kadar tek kelime daha etmiyorum. Hakarete uğruyorum burada, kayıtları istiyorum, derhal.",
+            "mechanics": {
+              "heart_rate": "MAX_SPIKE",
+              "breathing": "HYPERVENTILATION",
+              "gsr": "SURGE",
+              "cctv_visual": "STONE_FACE",
+              "korku_bari_delta": -15,
+              "gameplay_note": "YANLIS HAMLE: Hukuki kapanma tetiklendi. Sorgu sozel olarak bitti; fizyolojik desen yine de kayda girdi."
+            },
+            "next_node": "node_fail_lockdown"
+          }
+        ]
+      },
+      "node_success_breakdown": {
+        "theme": "Çözülme",
+        "description": "Selçuk masaya kapandı. Omuzları sarsılıyor. Sonra başını kaldırıp konuşmaya devam etti — durdurulamadı.",
+        "is_end_state": true,
+        "result_text": "Selçuk Harmancı mekanizmayı birinci tekil şahısta anlattı: formu elinde tuttuğunu, alerjiyi gördüğünü, epinefrinin çiftlikte olmadığını bildiğini, sözleşme baskısı altında riski kabul ettiğini. Biyometrik dağılım bu sözlü itirafla örtüşüyor — mekanizma testinde (node_05) MAX GSR ve nefes tutma, çelişki yakalandığında (node_06 ve node_08) HR zirvesi ve hiperventilasyon. Sertifika sorusu da yüksek sinyaller üretti ama farklı bir zaman damgasında ve farklı bir tetiklenmeyle; bunu mekanizma tepkileriyle karıştırmayın. Hukmünüzü verirken hangi tepkinin hangi konuya bağlı olduğunu kayıtlardan ayrıştırın."
+      },
+      "node_success_partial": {
+        "theme": "Kontrollü Teslim",
+        "description": "Selçuk geri çekildi ama kırılmadı. Avukat isteğiyle birlikte kontrollü bir kabul bıraktı masada.",
+        "is_end_state": true,
+        "result_text": "Selçuk formu okuduğunu ve sahaya iletmediğini kabul etti, ancak niyet meselesine girmeyi reddederek sorguyu avukat talebiyle kapattı. Tam itiraf yok; temel eylem kabulü var. Biyometrik desende en yüksek kümeler mekanizma testinde (node_05) ve çelişki sahnesinde (node_06, node_08) toplanmış. Sertifika konusunda ayrıca yoğun bir sinyal bölgesi var (node_07) — bunun farklı bir stres kaynağı olabileceğini göz önünde tutun. Hukmünüzü hem sözlü kabulü hem de dağılım kalıbını birlikte okuyarak verin."
+      },
+      "node_fail_deflection": {
+        "theme": "Yumuşak Savuşturma",
+        "description": "Selçuk aile sorusu üzerine taşı attı ve avukatını çağırma sinyalini verdi. Oda bir anda ağırlaştı.",
+        "is_end_state": true,
+        "result_text": "Selçuk erken tırmanan baskı sonrası kapandı; avukat çağırma eşiğini geçmek üzereyken sorgu sona erdirildi. Net bir itiraf yok. Biyometrik veri dağınık: yüksek sinyaller birden fazla konuda — mekanizma, sertifika, aile teması — ortaya çıktı ve birbirlerine karışıyorlar. Hangi yüksek tepkinin hangi konuya bağlı olduğunu net ayırmanız gerekecek; özellikle sertifika spike'larını birincil sucla aynı kefeye koymadan önce iki kez düşünün."
+      },
+      "node_fail_lockdown": {
+        "theme": "Hukuki Kapanma",
+        "description": "Selçuk ayağa kalktı, avukatını aradı. Odada sadece iki cümle asılı kaldı: 'Ben kimseyi öldürmedim' ve 'tek kelime daha etmiyorum'.",
+        "is_end_state": true,
+        "result_text": "Selçuk Harmancı avukatını aradı; sorgu hukuki olarak kapandı. Sözlü itiraf yok. Masada sadece ham biyometrik kayıt kaldı: mekanizma testinde (node_05) zirve sinyaller, çelişki yakalama anında (node_06) hiperventilasyon, sertifika sorusunda (node_07) bir başka yüksek küme, son kapanışta agresif spike. Hukmünüzü tamamen fizyolojik deseni okumak üzerine kurmanız gerekecek — özellikle mekanizma-spesifik tepkilerin, ikincil stres tepkilerinden farklı bir desen izleyip izlemediğine bakın."
+      }
+    },
+    "character_image": "./assets/characters/tr-case-6.png"
+  }
+}

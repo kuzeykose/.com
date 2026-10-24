@@ -1,0 +1,560 @@
+{
+  "game_data": {
+    "title": "Vektör E-Spor Kulübü Antrenörlük Lisansı İptali Dosyası - Serdar Önal",
+    "suspect": {
+      "name": "Serdar Önal",
+      "role": "E-spor kulübü menajeri ve lisanslı e-spor antrenörü",
+      "profile": "Serdar Önal, 35 yaşında, İzmir doğumlu. Üniversitede bilgisayar mühendisliği okumuş ancak mezuniyetinden kısa süre sonra rekabetçi oyun dünyasına geçmiş; önce bağımsız bir organizatör olarak, ardından küçük bir e-spor kulübünde analist sıfatıyla çalışmıştır. Kariyerinin ortasında Türkiye Spor Federasyonu'na bağlı e-spor antrenörlük sertifika programından lisans almış ve bu lisans sayesinde genç sporcu yetiştirme haklarına kavuşmuştur. Şu anda İstanbul merkezli Vektör E-Spor Kulübü'nde genel menajer sıfatıyla görev yapmakta, kulübün 16-22 yaş arası kadrosunu yönetmektedir. Kişilik olarak aşırı işbirlikçidir: sorulara sormadan önce cevap vermeye çalışır, gereksiz ayrıntılar ekler, zaman zaman muhatapların sözünü tamamlamaya kalkar. Bu tavır samimi bir yardımseverlikten mi yoksa bir şeyi örtbas etme refleksinden mi kaynaklandığı belli olmaz. Şüpheli detay: Rakip bir kulübün yöneticisi tarafından yapılan ihbar üzerine, kadrosundaki genç bir oyuncuya psikolojik baskı uyguladığı ve sözleşme imzalaması için aileyi yanıltıcı bilgilendirdiği iddia edilerek antrenörlük lisansının iptali gündeme gelmiştir. Gerçekte Serdar bu iddiayı yapmamıştır; oyuncu başka bir kulübe transferi sürecinde baskıya maruz kalmış ve yanlış ifade vermiştir. Serdar, oyuncunun ailesiyle sessiz bir uzlaşı yoluyla gerçeği örtmüştür çünkü meseleyi kamuoyuna taşıması, henüz küçük olan oyuncuyu medyaya maruz bırakacaktır. İnsani detay: Yıllar önce, üniversite döneminde yakın bir arkadaş çevresi aracılığıyla küçük bir spiritüel grupla (tarikat niteliğinde, devlet tarafından sonradan şüpheli ilan edilmiş bir yapılanma) birkaç yıllık bir bağlantısı olmuştur. Bu ilişki resmi üyelik boyutuna ulaşmadan kopmuştur; ancak ismi grup üyelerinin tutanaklarında geçmektedir. Bu bilginin gün yüzüne çıkması kariyerini ve yaşlı annesini derinden sarstı."
+    },
+    "system_config": {
+      "initial_fear_bar": 20,
+      "max_fear_bar": 100,
+      "fear_bar_description": "Sorgu esnasında suphelinin birikmiş psikolojik gerilimi — kişisel geçmiş ve toplumsal bağlantılarla ilgili sorular ile iddia edilen suç mekaniğinin karşılaştırılması arasında oluşan farkı gösterir.",
+      "heart_rate_baseline": 66,
+      "gsr_baseline": 4
+    },
+    "context": "Rakip bir e-spor kulübünün yöneticisi tarafından yapılan şikayete istinaden, Türkiye Spor Federasyonu Serdar Önal'ın antrenörlük lisansını inceleme altına almıştır. İddiaya göre, Serdar 2024 yılı başlarında kendi kulübünün kadrolarında yer alan 17 yaşındaki bir oyuncuya psikolojik baskı uygulamış, sözleşme koşullarını yanlış sunmuş ve ailesini yanıltıcı ifadelerle ikna etmiştir. Şikayetçi, bu davranışın federasyonun etik kurallarını ve çocuk sporcu koruma yönetmeliğini ihlal ettiğini iddia etmektedir. Serdar iddiaları kategorik şekilde reddetmektedir; ancak söz konusu oyuncu başka bir kulübe transferi sürecinde tutarsız beyanlar vermesi durumu muğlak hale getirmektedir. Lisans iptali kararı, Serdar'ın mesleki statüsü ve ekonomik konumunu doğrudan tehdit etmektedir.",
+    "true_verdict": "NOT_GUILTY",
+    "verdict_truth_text": "Serdar Önal, iddia edilen çocuk baskılama suçunda yer almamıştır. Söz konusu oyuncu, rakip bir e-spor kulübünün menajeri tarafından önceden yönlendirilmiş olarak sözleşme görüşmesine katılmış; Serdar'ın sözleşme teklifi sonrası ortaya çıkan yanlış ifadelerin gerçek kaynağı bu müdahildir. Serdar, bu gerçeği öğrendikten sonra oyuncunun kimliğini medya riskinden korumak amacıyla kamuoyuna açıklamamayı tercih etmiştir — susması çocuk koruma refleksinin bir sonucudur. Yazışma kayıtları Serdar'ın iddia edilen finansal ve psikolojik baskı uygulamadığını doğrulamaktadır.",
+    "dossier": {
+      "age": 35,
+      "identity_summary": "Vektör E-Spor Kulübü genel menajeri ve Türkiye Spor Federasyonu'na bağlı e-spor antrenörlük lisansı sahibi. Lisansı, genç sporcu sözleşmesinde yanıltıcı bilgi sağladığı iddiasıyla inceleme altında.",
+      "family": [
+        {
+          "relation": "Anne",
+          "name": "Neriman Önal",
+          "note": "69 yaşında, tip 2 diyabet ve erken evre kalp yetmezliği tanısı mevcut. 2021'den bu yana Serdar ile aynı konutta ikamet etmekte; resmi kayıtlarda bakıma muhtaç bağımlı olarak tanımlanmaktadır."
+        },
+        {
+          "relation": "Baba",
+          "name": "Tahir Önal",
+          "note": "71 yaşında, emekli. 2019'dan itibaren anne ile ayrı hanede yaşamaktadır; boşanma kararı 2020 tarihlidir."
+        }
+      ],
+      "medical": [
+        {
+          "condition": "Hipotiroidizm (kronik, ilaç kontrolünde)",
+          "polygraph_effect": "Tiroid hormonu eksikliği sempatik sinir sistemi aktivasyonunu genel olarak yavaşlatır; istirahat kalp atış hızı ve galvanik deri iletkenliği klinik popülasyonda düşük seyredebilir. Levotiroksin tedavisi bu etkiyi kısmen dengeler ancak tam normalizasyon sağlanmayan olgularda otonom tepki amplitüdü baskılı kalabilir."
+        }
+      ],
+      "habits": [
+        {
+          "habit": "Levotiroksin (günlük, sabah aç karnına, 75 mcg)",
+          "polygraph_effect": "Tiroid hormon replasman tedavisi metabolik hızı ve sempatik tonu etkiler; yetersiz veya stabil doz yönetiminde kalp atışı tepki amplitüdü azalabilir, GSR taban çizgisi düşük seyredebilir."
+        },
+        {
+          "habit": "Düşük-orta kafein tüketimi (günlük 1-2 fincan filtre kahve)",
+          "polygraph_effect": "Bu düzeyde kafein alımının poligraf ölçümlerine klinik olarak anlamlı bir etkisi beklenmez; belirgin bir baseline kayması öngörülmez."
+        }
+      ],
+      "priors": [
+        "2019: Bir oyuncu transferinde usulsüzlük iddiası; federasyon soruşturması delil yetersizliği gerekçesiyle kapatılmıştır.",
+        "2021: Kulüp adına yapılan reklam anlaşmasında sözleşme ihlali şikayeti; taraflar mahkeme dışı uzlaşıyla sonuçlandırmıştır.",
+        "2023: İş yeri denetiminde eksik belge bildirimi; idari uyarı ile kapatılmıştır."
+      ],
+      "pressure_points": [
+        "Lisans sürecinin teknik ayrıntıları ve federasyonla yazışmalar ele alındığında — yanıtlar gereğinden uzun ve ayrıntılı hale geliyor, bilgi eklemeler kendiliğinden ortaya çıkıyor; ANALYTICAL yaklaşım bu örüntüyü belirginleştiriyor.",
+        "Kulüp dışındaki kişisel ilişkiler ve üniversite sonrası dönem sorgulandığında — konuşma hızı düşüyor, cümleler tamamlanmadan konu değiştiriliyor; AGGRESSIVE yaklaşım savunmayı artırıyor, EMPATHIC yaklaşım daha uzun sessizlikler üretiyor.",
+        "Genç sporculara yönelik etik sorumluluk ve koruma yükümlülükleri genel çerçevede tartışıldığında — aşırı işbirlikçi ton daha da belirginleşiyor, muhatap henüz sormadan alternatif açıklamalar sunulmaya başlanıyor.",
+        "Eski sosyal çevreler ve topluluk üyelikleri dolaylı biçimde gündeme getirildiğinde — cevap vermeden önce soru yeniden çerçeveleniyor, zaman zaman yanıt vermeyi geciktiren kısa duraklamalar gözlemleniyor."
+      ],
+      "modifiers": {
+        "heart_rate_suppression": 0.22,
+        "heart_rate_baseline_shift": -4,
+        "gsr_sensitivity": 0.78,
+        "gsr_baseline_shift": -1,
+        "breathing_instability": 0.06
+      }
+    },
+    "start_node": "node_01_intro",
+    "nodes": {
+      "node_01_intro": {
+        "theme": "İlk Temas",
+        "description": "Serdar Önal sorgu odasına yalnız girer, sakin ve işbirlikçi bir tavırla sandalyeye oturur. Masanın üzerinde federasyon dosyası ve iki kulübün yazışma dökümleri var. Gözlerini size çeviriyor, hafifçe gülümsüyor.",
+        "is_end_state": false,
+        "choices": [
+          {
+            "type": "ANALYTICAL",
+            "question": "Bay Önal, bugün neden burada olduğunuzu biliyorsunuz. Sürecin usulüne uygun ilerlemesi için bazı soruları işin teknik tarafından başlatmak istiyorum. Uygun mu?",
+            "answer": "Tabii, tabii. Ne sorarsanız cevaplarım. Zaten ben de bu işin bir an önce berraklaşmasını istiyorum. Yani federasyonun sürecine saygım tam, dosyayı da okudum... elinizde ne varsa masaya koyalım.",
+            "mechanics": {
+              "heart_rate": "BASELINE",
+              "breathing": "CALM",
+              "gsr": "BASELINE",
+              "cctv_visual": "RELEASED_SHOULDERS",
+              "korku_bari_delta": 4,
+              "gameplay_note": "DOĞRU HAMLE: Profesyonel açılış, baseline sabit. Bastırılmış otonom tepki nedeniyle baseline zaten düşük — ileride oluşacak sapmalar kıymetli olacak."
+            },
+            "next_node": "node_02_opening"
+          },
+          {
+            "type": "EMPATHIC",
+            "question": "Zor bir süreçten geçiyorsunuz. Sizi dinlemek istiyorum — kendi cephenizden, kendi cümlelerinizle. Ne zaman hazırsanız.",
+            "answer": "Teşekkür ederim, gerçekten. Çok az insan bu şekilde yaklaşıyor. Ben... bakın, bu çocuklarla benim derdim hiçbir zaman şey olmadı, yani kişisel bir şey. Hepsi ailem gibi. Her neyse, nereden başlamamı istersiniz?",
+            "mechanics": {
+              "heart_rate": "STABLE",
+              "breathing": "CALM",
+              "gsr": "BASELINE",
+              "cctv_visual": "RELEASED_SHOULDERS",
+              "korku_bari_delta": 2,
+              "gameplay_note": "NÖTR HAMLE: Empatik giriş rapor kuruyor ama biyometriyi maskeliyor. Baseline'ı okumak için birkaç dugum daha gerekecek."
+            },
+            "next_node": "node_02_opening"
+          },
+          {
+            "type": "AGGRESSIVE",
+            "question": "Önal, karşımda bir çocuğu köşeye sıkıştırmakla suçlanan bir menajer oturuyor. Lafı dolandırmaya niyetim yok. Sen başlat.",
+            "answer": "Peki... ben de dolandırmayayım o zaman. Böyle bir şey yapmadım. Ama anlıyorum, işiniz bu, anlıyorum. İddianın nereden çıktığına dair benim de fikirlerim var, onları paylaşırım. Yani nereden başlayalım?",
+            "mechanics": {
+              "heart_rate": "RISE",
+              "breathing": "SHALLOW",
+              "gsr": "INCREASE",
+              "cctv_visual": "JAW_TIGHTEN",
+              "korku_bari_delta": -6,
+              "gameplay_note": "ZAYIF HAMLE: Erken baskı savunma refleksini devreye sokuyor; şüpheli 'sunulmuş bir suçlama' cerçevesine oturuyor, ileride yalancı sinyalleri ayırt etmek zorlaşacak."
+            },
+            "next_node": "node_02_opening"
+          }
+        ]
+      },
+      "node_02_opening": {
+        "theme": "Kulüp İçi Günlük Akış",
+        "description": "Serdar elleri masada kavuşturulmuş, konuşmaya hazır bekliyor. Önünde çay bardağı duruyor ama dokunmuyor. Federasyon şikâyet formunun üst bölümünü ona doğru çeviriyorsunuz.",
+        "is_end_state": false,
+        "choices": [
+          {
+            "type": "STRUCTURED_TIMELINE",
+            "question": "17 yaşındaki oyuncuyla sözleşme görüşmesinin yapıldığı tarihte günün tam olarak nasıl geçtiğini anlatır mısınız? Saatler, kimler odadaydı, telefon trafiği.",
+            "answer": "Şubat sonu, bir perşembeydi sanırım. Sabah antrenman, öğleden sonra taktik toplantısı. Ailesi dörde doğru kulübe geldi, yanında amcası vardı. Ben, sportif direktör Kenan, bir de sözleşme avukatımız Elif Hanım odadaydık. Oyuncu kendi rızasıyla girdi toplantıya, kimse kolundan tutmadı. İki saat kadar sürdü, ara verdik, su içtik. Sonunda aile 'düşünelim' dedi, üç gün sonra geri döndüler.",
+            "mechanics": {
+              "heart_rate": "STABLE",
+              "breathing": "CALM",
+              "gsr": "BASELINE",
+              "cctv_visual": "STONE_FACE",
+              "korku_bari_delta": 6,
+              "gameplay_note": "DOĞRU HAMLE: Olay gününe dair anlatı akıcı ve ayrıntılı. Sinyaller sabit — şüpheli bu dilimi gerçekten yaşamış gibi konuşuyor."
+            },
+            "next_node": "node_03_mechanism"
+          },
+          {
+            "type": "GENERAL_OPENER",
+            "question": "Kulüpteki genel rolünüzden bahsedin. Genç oyuncularla ilişkiniz nasıl şekilleniyor?",
+            "answer": "Ben aslında sadece menajer değilim, bu kulüpte herkesin abisiyim biraz. Yani sabah kim kahvaltı etmemiş, kim uyuyamamış, kim ailesiyle tartışmış — bunları da takip ederim. Çünkü performans dediğiniz şey yüzde yetmiş kafa. Biz çocukları burada yetiştiriyoruz, satmıyoruz. Bu çok önemli bir ayrım.",
+            "mechanics": {
+              "heart_rate": "STABLE",
+              "breathing": "CALM",
+              "gsr": "STABLE",
+              "cctv_visual": "RELEASED_SHOULDERS",
+              "korku_bari_delta": 1,
+              "gameplay_note": "NÖTR HAMLE: Şüpheli hazır anlatısına geçti. Somut bilgi yok ama aşırı işbirlikçi ton onaylanıyor."
+            },
+            "next_node": "node_03_mechanism"
+          }
+        ]
+      },
+      "node_03_mechanism": {
+        "theme": "Sözleşme Mekaniği",
+        "description": "Dosyadan sözleşmenin mali ekini çıkarıyor, Serdar'ın önüne koyuyorsunuz. Serdar belgelere bakıyor, başını sallıyor, sayfaları dikkatle çeviriyor ama bir yerde takılıp takılmadığı okunmuyor.",
+        "is_end_state": false,
+        "choices": [
+          {
+            "type": "FORENSIC_DETAIL",
+            "question": "Bu sözleşmenin 'performans bağlı bonus' maddesini aileye nasıl açıkladınız? Hangi formül kullanılıyor, ceza kalemleri hangi eşikte devreye giriyor? Adım adım anlatın.",
+            "answer": "Şey, o kısmı genelde Elif Hanım, yani avukatımız anlatır ailelere. Ben... yani formülü tam olarak ben... yüzde on beş civarı bir şey olduğunu hatırlıyorum, alt limit bir maç sayısı vardı. Cezalar için de, şey, disiplin ihlalleri için bir tablo var sanırım ekte. Tam sayıları şu an... yani kusura bakmayın, ben sözleşme detayından çok oyuncu tarafıyla ilgilenirim.",
+            "mechanics": {
+              "heart_rate": "STABLE",
+              "breathing": "CALM",
+              "gsr": "BASELINE",
+              "cctv_visual": "EYE_DART",
+              "korku_bari_delta": 12,
+              "gameplay_note": "KRİTİK İPUCU — MEKANİZMA TESTİ: Mali mekaniğin ayrıntısı sorulduğunda sinyaller yükselmedi, düştü. Bilmediği için baskı hissetmiyor. İddia edilen 'aileyi yanıltıcı bilgilendirme' için bu detayları bizzat sunmuş olması gerekirdi."
+            },
+            "next_node": "node_04_followup"
+          },
+          {
+            "type": "PROCEDURAL",
+            "question": "Görüşmeye sizden başka kim katıldı? Avukat odayı ne zaman terk etti? Aileyle yalnız kaldığınız bir moment var mı?",
+            "answer": "Elif Hanım baştan sona odadaydı. Bir kez tuvalete çıktı sanırım, beş dakika falan. O arada ben aileyle... konuştum, ama genel şeylerdi, havadan sudan. Sportif direktör Kenan da girdi çıktı. Odada hiçbir zaman tamamen yalnız kalmadık.",
+            "mechanics": {
+              "heart_rate": "STABLE",
+              "breathing": "CALM",
+              "gsr": "STABLE",
+              "cctv_visual": "STONE_FACE",
+              "korku_bari_delta": 5,
+              "gameplay_note": "İLERLEME: Tanık yapısı sabit bir anlatıyla veriliyor. Mekanik testi için yeterince derin değil ama tutarsızlık yok."
+            },
+            "next_node": "node_05_reframe"
+          },
+          {
+            "type": "SOFT_TRAP",
+            "question": "Çocukları yetiştirdiğinizi söylediniz. Bu çocuk sizden sonra hayatında daha iyi bir yerde mi olacak sizce, hâlâ?",
+            "answer": "Olacağını umuyorum. Ne yaparsa yapsın, ne derse desin, o çocuğun yanındayım ben. Yani bu noktadan sonra bile. Kariyeri bitsin istemem. Ailesi de bunu biliyor aslında.",
+            "mechanics": {
+              "heart_rate": "RISE",
+              "breathing": "UNEVEN",
+              "gsr": "INCREASE",
+              "cctv_visual": "LIP_PRESS",
+              "korku_bari_delta": -3,
+              "gameplay_note": "ZAYIF HAMLE: Duygusal tuzak yerine oturmadı; şüpheli samimi bir cevap verdi ve operatöre empatik bir zemin bıraktı. Mekanik testi atlanmış oldu."
+            },
+            "next_node": "node_05_reframe"
+          }
+        ]
+      },
+      "node_04_followup": {
+        "theme": "Boşluğa Basmak",
+        "description": "Serdar avukattan bahsettikten sonra elini masada istemsiz bir ritimle açıp kapatıyor. Önündeki sayfayı tam okumuyormuş gibi bir ucundan tutuyor.",
+        "is_end_state": false,
+        "choices": [
+          {
+            "type": "FORENSIC_CALL_OUT",
+            "question": "Durun bir saniye. Ailenin dilekçesinde aileye bonus formülünü şahsen sizin anlattığınız yazıyor. Siz şimdi formülü bilmediğinizi söylüyorsunuz. İkisinden biri yanlış. Hangisi?",
+            "answer": "Ben... yani ben aileye şunu anlatmış olabilirim: çocuk performans gösterirse kazanır, göstermezse kazanmaz. Bu kadarını her menajer anlatır. Ama bunu 'formül' diye çerçevelemek... bakın, ben o gün yanlış bir şey söylemedim. Dilekçede ne yazdığını... dilekçeyi ben yazmadım.",
+            "mechanics": {
+              "heart_rate": "INCREASE",
+              "breathing": "SHALLOW",
+              "gsr": "INCREASE",
+              "cctv_visual": "EYE_DART",
+              "korku_bari_delta": 14,
+              "gameplay_note": "DOĞRU HAMLE — TAKİP SÖMÜRMESİ: Tutarsızlık yüzüne söylendi. Sinyaller yükseldi ama MAX seviyede değil; aldatma değil, sıkışma. Son cümle aileyi dilekçenin yazarı olarak suçlamıyor — gerçek müellif başka biri."
+            },
+            "next_node": "node_06_personal"
+          },
+          {
+            "type": "EMPATHIC",
+            "question": "Belki de formül sizin işiniz değildi zaten. Ama o odada siz bir otoritesiniz. Aile size baktı. Siz onlara ne hissettirdiniz?",
+            "answer": "Onlara... güven hissettirmeye çalıştım. Çünkü öyle hissediyordum zaten. Bu çocuk için iyi bir sözleşmeydi. Hâlâ da öyle düşünüyorum. Aileye bir şey dayatmadım. Onlar üç gün düşündüler, özgürce döndüler.",
+            "mechanics": {
+              "heart_rate": "STABLE",
+              "breathing": "CALM",
+              "gsr": "BASELINE",
+              "cctv_visual": "RELEASED_SHOULDERS",
+              "korku_bari_delta": 7,
+              "gameplay_note": "İLERLEME: Empatik çerçeveleme sakin bir iç tutarlılık çıkardı. Şüpheli aileye baskı uyguladığı anlatısını kendi ağzıyla reddediyor."
+            },
+            "next_node": "node_06_personal"
+          },
+          {
+            "type": "EARLY_ESCALATION",
+            "question": "Bu sözlerin bir cümlesi bile mahkemede durmaz Önal. Formülü bilmeyen bir menajer bonus vaadi vermiş. Yani ya yalancısın ya da yetersiz. Hangisi?",
+            "answer": "Ben... ikisi de değilim. Bakın, ben elimden geleni yaptım o toplantıda. Kusurluysam kusurluyum, suçluysam suçlu değilim. Bu iki şey aynı şey değil. Sizin çerçevenizi kabul etmek zorunda değilim.",
+            "mechanics": {
+              "heart_rate": "SPIKE",
+              "breathing": "UNEVEN",
+              "gsr": "INCREASE",
+              "cctv_visual": "DEFENSIVE_CROSS_ARMS",
+              "korku_bari_delta": -8,
+              "gameplay_note": "ZAYIF HAMLE: Erken tırmanma şüpheliye hukuki bir kaçış çerçevesi hediye etti. Artık 'kusur' ile 'suç' arasındaki duvarın arkasına sığınacak."
+            },
+            "next_node": "node_05_reframe"
+          }
+        ]
+      },
+      "node_05_reframe": {
+        "theme": "Yönelim Değiştirme",
+        "description": "Serdar bir an duruyor, sonra gözlerini masadan kaldırıyor. Sesi yumuşuyor; size değil, sanki bir sonraki cümleye kendini ikna ediyor gibi.",
+        "is_end_state": false,
+        "choices": [
+          {
+            "type": "ACCEPT_REFRAME",
+            "question": "Anlıyorum. Belki de bütün bu tabloyu yanlış okuyoruz. Siz bana kendi gözünüzden anlatın, ben dinleyeyim.",
+            "answer": "Teşekkür ederim. Bakın, bu çocuğun ailesi çok iyi insanlar. Bütün bu süreç aslında onlarla değil, başka bir kulübün yönetimiyle alakalı. Ama bunu söylemek istemiyordum çünkü, yani şikâyet mekanizmasını kötüye kullanmak istemem. Sadece... bana biraz zaman verin, ben dosyayı tekrar okuyup net konuşayım.",
+            "mechanics": {
+              "heart_rate": "DROP",
+              "breathing": "DEEP",
+              "gsr": "DECREASE",
+              "cctv_visual": "RELEASED_SHOULDERS",
+              "korku_bari_delta": -12,
+              "gameplay_note": "YANLIŞ HAMLE: Yeniden çerçeveleme kabul edildi. Şüpheli nefes alıyor, bütün sinyaller düştü. Zemini geri verdiniz."
+            },
+            "next_node": "node_08_reset"
+          },
+          {
+            "type": "NARROW_TARGET",
+            "question": "Bir saniye. 'Başka bir kulübün yönetimiyle alakalı' dediniz. Konuyu dağıtmayalım — önce kendi sözleşmenizdeki iddialara dönelim. Oraya sonra geleceğiz.",
+            "answer": "Haklısınız, özür dilerim, dağıttım. Kendi tarafımda kalalım. Ben o çocuğa hiçbir zaman, hiçbir cümlede 'imzalamazsan kariyerin biter' demedim. Bunu net söylüyorum. Bir başka cümleyi çarpıtıyor olabilirler ama o cümle benden çıkmadı.",
+            "mechanics": {
+              "heart_rate": "STABLE",
+              "breathing": "CALM",
+              "gsr": "STABLE",
+              "cctv_visual": "STONE_FACE",
+              "korku_bari_delta": 10,
+              "gameplay_note": "DOĞRU HAMLE: Yeniden çerçeveleme nazikçe reddedildi. Şüpheli konuda kalarak tam inkâr verdi, sinyaller sabit — gerçek anlatı gibi davranıyor."
+            },
+            "next_node": "node_06_personal"
+          },
+          {
+            "type": "FORCE_CONTRADICTION",
+            "question": "'Başka bir kulübün yönetimi' kim? İsim. Şimdi. Eğer bu süreci yönlendiren biri varsa, adını söylemek size değil onlara zarar verir.",
+            "answer": "Ben... bir isim telaffuz etmeyeceğim bugün. Çünkü ispatsız bir iddia ağzımdan çıkarsa bu defa ben hakaret davasıyla uğraşırım. Ama şunu söyleyebilirim: 2019'daki o transfer soruşturmasının arkasındaki şikâyetçiyle, bu sefer beni şikâyet eden isim aynı kişi. Belgeleriyle size gelirim.",
+            "mechanics": {
+              "heart_rate": "INCREASE",
+              "breathing": "SHALLOW",
+              "gsr": "INCREASE",
+              "cctv_visual": "JAW_TIGHTEN",
+              "korku_bari_delta": 6,
+              "gameplay_note": "ORTA HAMLE: Çelişki dayatması yeni bir veri açtı ama şüpheli isimlendirmeyi reddediyor. Yüksek risk, sınırlı getiri."
+            },
+            "next_node": "node_07_evidence"
+          }
+        ]
+      },
+      "node_06_personal": {
+        "theme": "Dar Çevre",
+        "description": "Serdar ilk kez dosyadan gözünü kaldırıp doğrudan size bakıyor. Kolları hâlâ açık ama omuzları bir parça içeri kaymış. Dışarıdaki koridordan gelen ayak sesine bir an kulak kabartıyor.",
+        "is_end_state": false,
+        "choices": [
+          {
+            "type": "SYSTEMIC_READ",
+            "question": "Bu sektörde kimlerle vakit geçiriyorsunuz? İş dışı — güvendiğiniz, ortak geçmişiniz olan isimler.",
+            "answer": "Yani... bu kadar kişisel soruların dosyayla ilgisi ne, emin değilim. Ama peki. Üniversiteden birkaç arkadaşımla hâlâ görüşürüm. Çoğu İzmir'de. İş çevremden yakın dostum sayılmaz; mesafeli yaşarım. Genelde annemle vakit geçiriyorum şu sıralar.",
+            "mechanics": {
+              "heart_rate": "SPIKE",
+              "breathing": "HOLDING_BREATH",
+              "gsr": "SURGE",
+              "cctv_visual": "HAND_PINCH_UNDER_TABLE",
+              "korku_bari_delta": 18,
+              "gameplay_note": "DİKKAT — YÜKSEK SİNYAL KÜMESİ: 'Üniversiteden arkadaşlar' ifadesinde bastırılmış baseline'ı patlatan bir yükselme. Bu sinyal kümesi bu davayla ilgili olmayabilir; kaynağı ayırmak için devam gerek."
+            },
+            "next_node": "node_07_evidence"
+          },
+          {
+            "type": "BACK_OFF",
+            "question": "Kişisel çevrenizi kurcalamak niyetim yok. Sözleşme ve şikâyetçiyle devam edelim.",
+            "answer": "Teşekkür ederim, anlayışınız için. Ben de asıl konuya odaklanmak istiyorum, çünkü orada anlatacaklarım var. Şikâyetçiyle ilgili dediğim gibi, belgelerimi toparlayabilirim, ama asıl mesele o çocuğun ifadesinin nasıl şekillendiği.",
+            "mechanics": {
+              "heart_rate": "DROP",
+              "breathing": "DEEP",
+              "gsr": "DECREASE",
+              "cctv_visual": "RELEASED_SHOULDERS",
+              "korku_bari_delta": -4,
+              "gameplay_note": "ZAYIF HAMLE: Şüpheli nefes aldı, kaçınılması gereken bir bölgeyi atladınız. Gerçek bir baskı noktasından geri çekildiniz ama davanın merkezine hâlâ yaklaşabilirsiniz."
+            },
+            "next_node": "node_09_closing"
+          },
+          {
+            "type": "TAKTIK_RESET",
+            "question": "Biraz duralım. Bir bardak su ister misiniz? Sonra kendi seçtiğiniz bir yerden devam edelim.",
+            "answer": "Aslında... evet, isterim. Teşekkür ederim. Pardon, ben... bazen çok hızlı konuşuyorum, farkındayım. Biraz nefes alayım. Hazır olunca devam ederiz.",
+            "mechanics": {
+              "heart_rate": "DROP",
+              "breathing": "DEEP",
+              "gsr": "DECREASE",
+              "cctv_visual": "RELEASED_SHOULDERS",
+              "korku_bari_delta": -10,
+              "gameplay_note": "TAKTİK RESET: Kısa vadede momentum kaybı. Şüphelinin baseline'ı stabilize oluyor; ancak bu mola sonrası ikincil kanal sorularında daha temiz ayırt etme şansı doğabilir."
+            },
+            "next_node": "node_08_reset"
+          }
+        ]
+      },
+      "node_07_evidence": {
+        "theme": "Yanlış Okunabilecek Kanıt",
+        "description": "Dosyadan Serdar'ın üniversite yıllarına ait bir fotokopiyi çıkarıyorsunuz: bir dernek üye listesi, içinde adı geçen. Serdar fotokopiye bakarken yüzü sabit kalmaya çalışıyor ama alt dudağı bir an kendini ele veriyor.",
+        "is_end_state": false,
+        "choices": [
+          {
+            "type": "PRESSURE",
+            "question": "Bu listede adınız var. 2011 tarihli. İşte — bu, bugünkü suçlamayı besleyen karakter profilini açıklıyor. Gençleri yönlendirme alışkanlığınız o zamandan beri var, değil mi?",
+            "answer": "Hayır. Hayır, bu... bu ikisi aynı şey değil. O liste bambaşka bir şey, o dönem çok gençtim, bir arkadaş çevresiydi, ben oradan ayrıldım. Bunun bugünkü dosyayla alakası yok. Rica ediyorum, o belgeyi bu sürece karıştırmayın — kimse ilgili değil, annem bile bilmiyor.",
+            "mechanics": {
+              "heart_rate": "MAX_SPIKE",
+              "breathing": "HYPERVENTILATION",
+              "gsr": "MAX",
+              "cctv_visual": "TEAR_POOLING",
+              "korku_bari_delta": -16,
+              "gameplay_note": "YANILTICI YOL — KRİTİK UYARI: En yüksek biyometrik küme burada patladı. Ancak bu sinyaller bu davanın suçlamasıyla değil, yıllar önceki bir çevreyle ilgili. Bu yorumu 'karakter kanıtı' olarak okursanız hukuki olarak sürdürülemez bir zemine kayacaksınız."
+            },
+            "next_node": "node_fail_deflection"
+          },
+          {
+            "type": "SEPARATE_CHANNELS",
+            "question": "Bu belgeyi geçiyorum — şu anki sorgu kapsamında delil değeri yok. Şikâyetçi kulüple yazışma trafiğinize geri dönelim.",
+            "answer": "Teşekkür... teşekkür ederim. Ben, şey, toparlayayım. Yazışma trafiği için elimde bir şey var aslında. O çocuğun başka bir kulübün menajeriyle yazışmasına dair bir mesaj dizisi. Ama bunu sunmakta çok ciddi bir problem var, çünkü onun adını açığa çıkarıyor. Bunu kapalı oturumda paylaşabilir miyim?",
+            "mechanics": {
+              "heart_rate": "INCREASE",
+              "breathing": "SHALLOW",
+              "gsr": "INCREASE",
+              "cctv_visual": "LIP_PRESS",
+              "korku_bari_delta": 16,
+              "gameplay_note": "KRİTİK DOĞRU HAMLE: Kanalları doğru ayırdınız. İkincil uyaranı geri çektiğinizde şüpheli birincil kanıt önerdi. Bu davranış masumiyetle tutarlı — gerçek müdahil olsa bu teklifi yapmazdı."
+            },
+            "next_node": "node_09_closing"
+          },
+          {
+            "type": "MORAL_PRESSURE",
+            "question": "Anneniz bilmiyor dediniz. Bilseydi ne düşünürdü sizce?",
+            "answer": "Lütfen... lütfen annemi bu masaya getirmeyin. O yaşlı, kalp yetmezliği var, bu odadaki hiçbir cümlenin onun kulağına gitmemesi lazım. Ben ne sorarsanız cevaplarım ama o değil. O değil.",
+            "mechanics": {
+              "heart_rate": "MAX_SPIKE",
+              "breathing": "CRYING",
+              "gsr": "MAX",
+              "cctv_visual": "BREAKDOWN",
+              "korku_bari_delta": -6,
+              "gameplay_note": "ZAYIF HAMLE — ETİK SINIR: Duygusal tepki çok yüksek ama davaya hizmet etmiyor. Bu kırılmayı birincil suçlulukla karıştırmak kolay; mekanizma testindeki DÜŞÜK sinyalleri hatırlayın."
+            },
+            "next_node": "node_09_closing"
+          }
+        ]
+      },
+      "node_08_reset": {
+        "theme": "Ara",
+        "description": "Serdar bardaktaki suya küçük yudumlar alıyor. Nefesi yavaşlıyor, omuzları düşüyor. Odadaki saatin sesi belirginleşiyor. Bir dakika kadar kimse konuşmuyor.",
+        "is_end_state": false,
+        "choices": [
+          {
+            "type": "RESUME_CAREFUL",
+            "question": "Hazır mısınız? O zaman şu noktadan devam edelim: şikâyetçi kulübün menajeriyle ne tür bir ilişkiniz var?",
+            "answer": "Hazırım. O menajerle 2019'dan beri aramız iyi değil. O zamanki transfer soruşturmasının şikâyetçisi oydu ve delil yetersizliğinden düşmüştü dosya. Bu sefer de aynı dinamik olduğunu düşünüyorum — sadece bu sefer bir çocuğu araya koymuşlar. Bu benim inancım, ispatı kulüp avukatında.",
+            "mechanics": {
+              "heart_rate": "STABLE",
+              "breathing": "CALM",
+              "gsr": "STABLE",
+              "cctv_visual": "STONE_FACE",
+              "korku_bari_delta": 8,
+              "gameplay_note": "İLERLEME: Mola sonrası şüpheli berrak bir alternatif anlatı verdi. Tutarlılık yüksek, yeni bir soruşturma kolu açıldı."
+            },
+            "next_node": "node_09_closing"
+          },
+          {
+            "type": "LONG_PAUSE",
+            "question": "Biraz daha bekleyin. Hazır olduğunuzda siz başlayın.",
+            "answer": "Peki. Şunu söylemek isterim: ben bu süreçte bir şeyleri gizliyormuşum gibi görünüyorsam, gizlediğim tek şey bu çocuğun adı. Başka hiçbir şey değil. Çünkü o 17 yaşında ve bu işin kamuoyuna açılması ona zarar verir. Başka bir sebebim yok.",
+            "mechanics": {
+              "heart_rate": "STABLE",
+              "breathing": "DEEP",
+              "gsr": "BASELINE",
+              "cctv_visual": "RELEASED_SHOULDERS",
+              "korku_bari_delta": 11,
+              "gameplay_note": "DOĞRU HAMLE: Sessiz bekleyiş kontrol edilmiş bir ifşa getirdi. Şüpheli kendi gizleme gerekçesini spontane şekilde ortaya koydu; sinyaller bu açıklamayla tutarlı."
+            },
+            "next_node": "node_09_closing"
+          }
+        ]
+      },
+      "node_09_closing": {
+        "theme": "Kapanışa Doğru",
+        "description": "Serdar artık daha az konuşuyor. Masaya getirilen yeni bir klasörü — telefon yazışmaları dökümü — sessizce izliyor. Federasyon dosyasındaki zaman çizelgesi çapraz okunmaya başlıyor.",
+        "is_end_state": false,
+        "choices": [
+          {
+            "type": "EVIDENCE_CROSS_CHECK",
+            "question": "Elimde o çocukla başka kulüp menajeri arasındaki mesajların zaman damgaları var. Sizinle yaptığı görüşmelerin saatlerinden önce gönderilmişler. Bunu biliyor muydunuz?",
+            "answer": "Bilmiyordum ama... bu açıklar her şeyi. Yani demek istediğim, şey, eğer zaman damgaları doğruysa, çocuğun ifadesi kendi iradesi değil. Benim gözümde bu dosya tam olarak bu noktada çöker. Bu bilgiyi federasyona iletilmesini kabul ediyorum, ama oyuncunun kimliğini koruyan bir formatta.",
+            "mechanics": {
+              "heart_rate": "INCREASE",
+              "breathing": "CALM",
+              "gsr": "INCREASE",
+              "cctv_visual": "LIP_PRESS",
+              "korku_bari_delta": 15,
+              "gameplay_note": "DOĞRU HAMLE: Şüpheli çelişki ile yüzleşmek yerine onu kendi anlatısına dahil etti. Bu, içeriden bilgi sahibi olduğunu değil, anlatının gerçekten böyle işlediğini gösteriyor."
+            },
+            "next_node": "node_10_final"
+          },
+          {
+            "type": "DIRECT_ACCUSATION",
+            "question": "Bütün bu anlatı bir sis perdesi. Siz o çocuğu kendi kulübünüzde tutmak için baskıladınız, yakalanınca 'rakip kulüp' anlatısına sığındınız. Bu kadar basit, değil mi?",
+            "answer": "Hayır, bu kadar basit değil. Ben çocuğu tutmak için baskılamadım, aksine — transfer olmak istediğini bana o söylediğinde, ben 'ailenle konuş, seninle giderim' dedim. Bunu söyleyen bir adamı baskı uygulamakla suçlamak mantıklı değil. Ama biliyorum, ispatı bende değil, kendisinde. O da şu an konuşamıyor.",
+            "mechanics": {
+              "heart_rate": "SPIKE",
+              "breathing": "SHALLOW",
+              "gsr": "INCREASE",
+              "cctv_visual": "JAW_TIGHTEN",
+              "korku_bari_delta": 3,
+              "gameplay_note": "ORTA HAMLE: Doğrudan suçlama savunma tepkisi yarattı ama sözel inkâr iç tutarlı. Sinyaller MAX kombinasyonunu oluşturmadı — bu, birincil suçlulukla uyumsuz bir örüntü."
+            },
+            "next_node": "node_10_final"
+          },
+          {
+            "type": "OVERREACH",
+            "question": "Kabul edin ki bu işin içindesiniz. Şikâyetçi de sizsiniz, mağdur da sizsiniz, her şey sizsiniz. Bu oyun daha ne kadar sürecek?",
+            "answer": "Ben hiçbir oyunu sürdürmüyorum. Bu noktadan sonra avukatım eşlik etmeden tek cümle daha söylemeyeceğim. Tutanağa geçmesini talep ediyorum. İsterseniz formel bir savunma oturumunda devam edelim, ama bu tondan sonra devam etmem mümkün değil.",
+            "mechanics": {
+              "heart_rate": "RISE",
+              "breathing": "SHALLOW",
+              "gsr": "INCREASE",
+              "cctv_visual": "DEFENSIVE_CROSS_ARMS",
+              "korku_bari_delta": -18,
+              "gameplay_note": "YANLIŞ HAMLE: Aşırı baskı hukuki kapanma getirdi. Soru serisi kesildi, sinyal haritasını tamamlayacak son dugum atlanıyor."
+            },
+            "next_node": "node_fail_lockdown"
+          }
+        ]
+      },
+      "node_10_final": {
+        "theme": "Son Öneri",
+        "description": "Masanın iki tarafındaki klasörler artık ortak bir kronolojiyi gösteriyor. Serdar'ın bakışı dosyayla sizin arasında gidip geliyor. Cevap vermeden önce birkaç saniye duruyor — ilk defa bu kadar uzun.",
+        "is_end_state": false,
+        "choices": [
+          {
+            "type": "EMPATHIC",
+            "question": "Bu çocuğu korumak için susmak bir seçimdi, biliyorum. Size başka bir yol sunayım: federasyona kimliği saklanmış bir formatta tüm yazışmaları iletelim. Kararı ben değil, onlar versin.",
+            "answer": "Ben... böyle bir formatı kabul edebilirim. Kabul etmek zorundayım, çünkü böyle gidersem hem ben yanarım hem o çocuk. Kayıtları bu akşam avukatımla hazırlatırım. İsmini açığa çıkaracak hiçbir satır olmasın, yoksa vazgeçerim. Bu benim kırmızı çizgim.",
+            "mechanics": {
+              "heart_rate": "DROP",
+              "breathing": "DEEP",
+              "gsr": "DECREASE",
+              "cctv_visual": "TEAR_POOLING",
+              "korku_bari_delta": 20,
+              "gameplay_note": "DOĞRU HAMLE: Şüpheli kontrol edilmiş bir teslimiyet gösterdi. Birincil iddianın asıl mekaniği (üçüncü tarafın müdahalesi) kendi ağzıyla kabul edildi."
+            },
+            "next_node": "node_success_partial"
+          },
+          {
+            "type": "FORENSIC_CLEAN",
+            "question": "Zaman çizelgesini yan yana koyalım: rakip menajerin mesajı 14:02, sizin toplantınız 16:40. Aile toplantıya zaten yönlendirilmiş bir çocukla geldi. Bunu kabul ediyor musunuz?",
+            "answer": "Kabul ediyorum. Evet. Bu ifadem bu odada olsun. O çocuk o gün benim yanıma gelmeden önce başka bir kulüp tarafından şekillendirilmişti. Ben bunu anlamadan, sözleşmeyi iyi niyetle sundum. Sonradan fark ettiğimde kamuoyuna taşımadım çünkü... çünkü 17 yaşında bir çocuğun medyaya yem olmasını istemedim. Bu karar benim. Vebali de benim.",
+            "mechanics": {
+              "heart_rate": "INCREASE",
+              "breathing": "UNEVEN",
+              "gsr": "INCREASE",
+              "cctv_visual": "BREAKDOWN",
+              "korku_bari_delta": 24,
+              "gameplay_note": "KRİTİK DOĞRU HAMLE: Temiz adli sunum tam kabul getirdi. Sinyaller yüksek ama MAX değil — bu aldatma değil, uzun süre taşınmış bir yükün bırakılması. İddia edilen suçla uyumsuz bir itiraf örüntüsü."
+            },
+            "next_node": "node_success_breakdown"
+          },
+          {
+            "type": "LEGAL_THREAT",
+            "question": "Eğer bu kayıtları bu gece sunmazsanız, yarın sabah savcılığa yönlendirme önerisi yazılır. Son şans.",
+            "answer": "O zaman savcılığa yönlendirin. Ben bu tehditle bir şey imzalamam, bir şey teslim etmem. Bu odanın dışına çıkıyorum, avukatım üzerinden resmi yoldan yanıt verilecek. İyi akşamlar.",
+            "mechanics": {
+              "heart_rate": "RISE",
+              "breathing": "SHALLOW",
+              "gsr": "STABLE",
+              "cctv_visual": "STONE_FACE",
+              "korku_bari_delta": -22,
+              "gameplay_note": "YANLIŞ HAMLE: Hukuki tehdit, kooperatif tonu bir anda çözdü. Şüpheli kapıyı kapattı, kayıtlar elinizden çıktı."
+            },
+            "next_node": "node_fail_lockdown"
+          }
+        ]
+      },
+      "node_success_breakdown": {
+        "theme": "Tam Kırılma",
+        "description": "Serdar koltukta geriye yaslanmış, yüzü elleri arasında. Nefesi düzensiz ama yavaşlıyor. Bir süredir konuşmuyor; konuştuğunda söyleyeceklerini artık kendinden saklamaya çalışmıyor.",
+        "is_end_state": true,
+        "result_text": "Serdar Önal, 17 yaşındaki oyuncunun toplantıya üçüncü bir kulüp tarafından önceden şekillendirilerek geldiğini ve kendisinin bu durumu ancak sonradan fark ettiğini açık sözlerle kabul etti. Oyuncu kimliğini korumak amacıyla susmayı kendi iradesiyle seçtiğini ifade etti. Sorgu boyunca biyometrik kayıtlar karakteristik bir dağılım gösterdi: sözleşme mali mekaniği sorulduğunda sinyaller düşük ve stabil seyretti; 'üniversite çevresi' ve eski çevrelere dair sorularda ise bastırılmış baseline'a rağmen belirgin tepe noktaları ortaya çıktı; iddia edilen çocuk baskılama mekaniğiyle doğrudan yüzleştirildiği anlarda ise spike'lar savunmacı ama MAX kombinasyonu (MAX_SPIKE + MAX GSR + HOLDING_BREATH birlikteliği) kurmadı. Son aşamadaki itirafı, aldatma örüntüsünden çok uzun süredir taşınan bir yükün bırakılması desenine uydu. Avukatı eşliğinde yazışma kayıtları kimliği saklanmış formatta federasyona iletilecek."
+      },
+      "node_success_partial": {
+        "theme": "Kontrollü Teslimiyet",
+        "description": "Serdar dik oturmuş, sakin konuşuyor. Gözleri kızarık ama sesi kırılmıyor. Masadaki dosyaları bir kenara itiyor, telefonundan avukatının numarasını çeviriyor.",
+        "is_end_state": true,
+        "result_text": "Serdar Önal, iddianın merkezindeki olayları kısmen kabul etti: oyuncunun toplantıya başka bir kulüp tarafından yönlendirilerek geldiğini fark ettiğini ama bu bilgiyi kamuoyuyla paylaşmadığını söyledi. Sözleşme görüşmesinde doğrudan baskı uyguladığı iddiasını sonuna kadar reddetti. Biyometrik profil dağınık ama okunabilir: mekanizma ayrıntıları sorulduğunda sinyaller düşük kaldı (birinci elden bilgi yokluğuna işaret); kişisel çevre ve eski topluluk sorularında MAX kümesine yaklaşan yükselmeler vardı ama bu dalgalar bu davanın mekaniğiyle değil, konu değişimiyle eşleşti; doğrudan suçlama anlarında tepkiler savunmacıydı ancak klasik aldatma kompozisyonunu göstermedi. Yazışma kayıtları avukatı üzerinden kontrollü olarak federasyona iletilecek; lisans kararı bu kayıtların incelemesinden sonra şekillenecek."
+      },
+      "node_fail_lockdown": {
+        "theme": "Hukuki Kapanma",
+        "description": "Serdar ayağa kalkmış, ceketini düzeltiyor. Avukatına telefon ettikten sonra odayı terk etmek için kapıya yöneliyor. Sorunuzu duymuyormuş gibi davranıyor.",
+        "is_end_state": true,
+        "result_text": "Serdar Önal avukatını çağırdı ve ifadesini durdurdu. Süreç bundan sonra yazılı savunma ve federasyon oturumu üzerinden yürüyecek. Sorgu yarıda kesildiği için biyometrik profil tamamlanamadı; elde edilen veriler şu örüntüyü gösterdi: sözleşmenin mali mekaniği sorulduğunda sinyaller düşük, 'üniversite çevresi' ve kişisel geçmiş sorularında bastırılmış baseline'a rağmen yüksek dalgalanmalar, doğrudan baskılama suçlamasıyla yüzleştirildiğinde ise orta düzey savunma tepkileri vardı — MAX kombinasyonu bir kez bile stabil olarak kurulmadı. Ancak kapanış anındaki hukuki geri çekilme, sinyal haritasını tamamlayacak son kritik karşılaştırma noktasını kaydetmeyi engelledi. Federasyon kararı eksik veriyle, elinizdeki kısmi kayıtla verilecek."
+      },
+      "node_fail_deflection": {
+        "theme": "Yanlış Yorumlanmış Kanıt",
+        "description": "Serdar titriyor, bardak elinde sabit durmuyor. Dosyadan çıkarılan eski belgeye ısrarla bakıyorsunuz, o başını çevirmiş pencereye bakıyor. Sorgu ilerlemiyor; aynı belge etrafında dönüyor.",
+        "is_end_state": true,
+        "result_text": "Sorgu, üniversite dönemine ait bir dernek üye listesinin bu davaya karakter kanıtı olarak bağlanmaya çalışılmasıyla rayından çıktı. Serdar Önal bu belge etrafında ciddi bir duygusal çöküş yaşadı — bu an sorgunun en yüksek biyometrik kümesini üretti (MAX_SPIKE + MAX GSR + HYPERVENTILATION). Ancak bu sinyaller, iddia edilen çocuk baskılama suçlaması sorulduğunda değil, eski çevresine dair soruda oluştu. Sözleşme mekaniği sorulduğundaki düşük sinyaller ve doğrudan suçlama anındaki orta düzey savunma tepkileri aynı profilin içinde yer aldı. Belge hukuki olarak bu davaya dahil edilemeyecek nitelikte olmasına rağmen sorgu bu eksen üzerinde kapandı ve asıl iddianın mekanik testi tamamlanmadan bırakıldı. Federasyona gidecek rapor, birincil iddianın lehte veya aleyhte hiçbir net örüntüsünü içermeyecek."
+      }
+    },
+    "character_image": "./assets/characters/tr-case-5.png"
+  }
+}
