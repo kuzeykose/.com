@@ -66,9 +66,15 @@ function sameCard(card: TcgCard, row: CollectrRow) {
   return a === b || a.startsWith(b) || b.startsWith(a)
 }
 
+/** Sets already confirmed on TCGdex, used when the set list can't be fetched. */
+const KNOWN_SETS: Record<string, string> = {
+  'chaos rising': 'me04',
+  'perfect order': 'me03',
+}
+
 function findSet(row: CollectrRow, sets: TcgSet[], overrides: Map<string, string>) {
   const wanted = normalizeSetName(row.set)
-  const forced = overrides.get(wanted)
+  const forced = overrides.get(wanted) ?? (sets.length ? undefined : KNOWN_SETS[wanted])
   if (forced) return sets.find((set) => set.id === forced) ?? { id: forced, name: row.set }
   const exact = sets.filter((set) => normalizeSetName(set.name) === wanted)
   if (exact.length === 1) return exact[0]
@@ -99,7 +105,12 @@ function slug(text: string) {
 }
 
 function fallbackCatalog(row: CollectrRow, setId?: string): CatalogSnapshot {
+  // TCGdex asset path is /<lang>/<series>/<set>/<number>; only guess it for known series.
+  const series = setId?.match(/^(me|sv)\d/)?.[1]
+  const base = series ? `https://assets.tcgdex.net/en/${series}/${setId}/${padLocalId(row.number)}` : null
   return {
+    image: base ? `${base}/low.webp` : undefined,
+    imageLarge: base ? `${base}/high.webp` : undefined,
     name: row.name,
     number: row.number,
     rarity: row.rarity,

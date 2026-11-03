@@ -1,6 +1,250 @@
 {
   "cards": [
     {
+      "id": "collectr-pitch-black-094",
+      "quantity": 1,
+      "condition": "NM",
+      "printing": "holofoil",
+      "added": "2026-11-02",
+      "catalog": {
+        "name": "Toucannon",
+        "number": "094",
+        "rarity": "Illustration Rare",
+        "setName": "Pitch Black",
+        "printedTotal": 84
+      }
+    },
+    {
+      "id": "collectr-pitch-black-090",
+      "quantity": 1,
+      "condition": "NM",
+      "printing": "holofoil",
+      "added": "2026-11-01",
+      "catalog": {
+        "name": "Slowbro",
+        "number": "090",
+        "rarity": "Illustration Rare",
+        "setName": "Pitch Black",
+        "printedTotal": 84
+      }
+    },
+    {
+      "id": "collectr-pitch-black-095",
+      "quantity": 1,
+      "condition": "NM",
+      "printing": "holofoil",
+      "added": "2026-11-01",
+      "catalog": {
+        "name": "Silvally",
+        "number": "095",
+        "rarity": "Illustration Rare",
+        "setName": "Pitch Black",
+        "printedTotal": 84
+      }
+    },
+    {
+      "id": "collectr-pitch-black-112",
+      "quantity": 1,
+      "condition": "NM",
+      "printing": "holofoil",
+      "added": "2026-11-01",
+      "catalog": {
+        "name": "Rust Syndicate Grunt",
+        "number": "112",
+        "rarity": "Ultra Rare",
+        "setName": "Pitch Black",
+        "printedTotal": 84
+      }
+    },
+    {
+      "id": "collectr-pitch-black-102",
+      "quantity": 1,
+      "condition": "NM",
+      "printing": "holofoil",
+      "added": "2026-11-02",
+      "catalog": {
+        "name": "Morpeko ex",
+        "number": "102",
+        "rarity": "Ultra Rare",
+        "setName": "Pitch Black",
+        "printedTotal": 84
+      }
+    },
+    {
+      "id": "collectr-pitch-black-111",
+      "quantity": 1,
+      "condition": "NM",
+      "printing": "holofoil",
+      "added": "2026-11-02",
+      "catalog": {
+        "name": "Misty's Vitality",
+        "number": "111",
+        "rarity": "Ultra Rare",
+        "setName": "Pitch Black",
+        "printedTotal": 84
+      }
+    },
+    {
+      "id": "collectr-pitch-black-089",
+      "quantity": 1,
+      "condition": "NM",
+      "printing": "holofoil",
+      "added": "2026-11-01",
+      "catalog": {
+        "name": "Manectric",
+        "number": "089",
+        "rarity": "Illustration Rare",
+        "setName": "Pitch Black",
+        "printedTotal": 84
+      }
+    },
+    {
+      "id": "collectr-pitch-black-096",
+      "quantity": 1,
+      "condition": "NM",
+      "printing": "holofoil",
+      "added": "2026-11-01",
+      "catalog": {
+        "name": "Lurantis ex",
+        "number": "096",
+        "rarity": "Ultra Rare",
+        "setName": "Pitch Black",
+        "printedTotal": 84
+      }
+    },
+    {
+      "id": "collectr-pitch-black-087",
+      "quantity": 1,
+      "condition": "NM",
+      "printing": "holofoil",
+      "added": "2026-11-02",
+      "catalog": {
+        "name": "Goldeen",
+        "number": "087",
+        "rarity": "Illustration Rare",
+        "setName": "Pitch Black",
+        "printedTotal": 84
+      }
+    },
+    {
+      "id": "collectr-pitch-black-107",
+      "quantity": 1,
+      "condition": "NM",
+      "printing": "holofoil",
+      "added": "2026-11-02",
+      "catalog": {
+        "name": "Energy Switch",
+        "number": "107",
+        "rarity": "Ultra Rare",
+        "setName": "Pitch Black",
+        "printedTotal": 84
+      }
+    },
+    {
+      "id": "me03-097",
+      "quantity": 1,
+      "condition": "NM",
+      "printing": "holofoil",
+      "added": "2026-11-01",
+      "catalog": {
+        "image": "https://assets.tcgdex.net/en/me/me03/097/low.webp",
+        "imageLarge": "https://assets.tcgdex.net/en/me/me03/097/high.webp",
+        "name": "Drapion",
+        "number": "097",
+        "rarity": "Illustration Rare",
+        "setId": "me03",
+        "setName": "Perfect Order",
+        "printedTotal": 88
+      }
+    },
+    {
+      "id": "collectr-nihil-zero-113",
+      "quantity": 1,
+      "condition": "NM",
+      "printing": "holofoil",
+      "added": "2026-11-01",
+      "catalog": {
+        "name": "Mega Zygarde ex",
+        "number": "113",
+        "rarity": "Special Art Rare",
+        "setName": "Nihil Zero",
+        "printedTotal": 80
+      }
+    },
+    {
+      "id": "me04-087",
+      "quantity": 1,
+      "condition": "NM",
+      "printing": "holofoil",
+      "added": "2026-11-01",
+      "catalog": {
+        "image": "https://assets.tcgdex.net/en/me/me04/087/low.webp",
+        "imageLarge": "https://assets.tcgdex.net/en/me/me04/087/high.webp",
+        "name": "Chespin",
+        "number": "087",
+        "rarity": "Illustration Rare",
+        "setId": "me04",
+        "setName": "Chaos Rising",
+        "printedTotal": 86
+      }
+    },
+    {
+      "id": "collectr-30th-celebration-134",
+      "quantity": 1,
+      "condition": "NM",
+      "printing": "holofoil",
+      "added": "2026-11-01",
+      "catalog": {
+        "name": "Toxtricity",
+        "number": "134",
+        "rarity": "Illustration Rare",
+        "setName": "30th Celebration",
+        "printedTotal": 128
+      }
+    },
+    {
+      "id": "collectr-30th-celebration-154",
+      "quantity": 1,
+      "condition": "NM",
+      "printing": "holofoil",
+      "added": "2026-11-01",
+      "catalog": {
+        "name": "Gengar ex",
+        "number": "154",
+        "rarity": "Special Illustration Rare",
+        "setName": "30th Celebration",
+        "printedTotal": 128
+      }
+    },
+    {
+      "id": "collectr-30th-celebration-137",
+      "quantity": 1,
+      "condition": "NM",
+      "printing": "holofoil",
+      "added": "2026-11-01",
+      "catalog": {
+        "name": "Chandelure",
+        "number": "137",
+        "rarity": "Illustration Rare",
+        "setName": "30th Celebration",
+        "printedTotal": 128
+      }
+    },
+    {
+      "id": "collectr-30th-celebration-129",
+      "quantity": 1,
+      "condition": "NM",
+      "printing": "holofoil",
+      "added": "2026-11-01",
+      "catalog": {
+        "name": "Alolan Exeggutor",
+        "number": "129",
+        "rarity": "Illustration Rare",
+        "setName": "30th Celebration",
+        "printedTotal": 128
+      }
+    },
+    {
       "id": "sv08-040",
       "quantity": 3,
       "condition": "NM",

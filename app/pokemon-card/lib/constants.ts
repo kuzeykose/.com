@@ -66,6 +66,8 @@ const RARITY_RANKS: Record<string, number> = {
   'secret rare': 7,
   'rare secret': 7,
   'special illustration rare': 7,
+  'special art rare': 7,
+  'art rare': 6,
   'rare rainbow': 7,
   'hyper rare': 8,
   'mega hyper rare': 9,
