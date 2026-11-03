@@ -12,7 +12,7 @@ import { OwnerActions } from '../components/owner-actions'
 import { getEnrichedCard, isWritable, listCollectionEntries, readCollection } from '../lib/collection'
 import { canShowOwnerTools } from '../lib/owner'
 import { CONDITION_LABELS } from '../lib/constants'
-import { formatLongDate, formatMoney, formatUpdated, priceCaption, printingLabel } from '../lib/format'
+import { formatLongDate, printingLabel } from '../lib/format'
 
 export const revalidate = 300
 export const dynamicParams = true
@@ -53,7 +53,7 @@ export default async function Page({ params }: { params: Promise<{ id: string }>
   const rarity = card.tcg?.rarity
   const type = card.tcg?.types?.[0]
   const image = card.tcg?.images?.large ?? card.tcg?.images?.small
-  const updated = formatUpdated(card.quote.updatedAt)
+  const printing = printingLabel(card.printing)
 
   return (
     <section>
@@ -95,6 +95,7 @@ export default async function Page({ params }: { params: Promise<{ id: string }>
               'Trainer'
             )}
           </ListRow>
+          {printing && card.printing !== 'cardmarket' ? <ListRow label="Printing">{printing}</ListRow> : null}
           {canEdit ? null : (
             <>
               <ListRow label="Condition">{CONDITION_LABELS[card.condition] ?? card.condition}</ListRow>
@@ -105,22 +106,6 @@ export default async function Page({ params }: { params: Promise<{ id: string }>
         </div>
       </div>
 
-      <div className="rounded-lg border border-neutral-200 dark:border-neutral-800 p-4 mt-8">
-        <div className="flex justify-between items-baseline gap-3">
-          <span className="text-sm text-neutral-600 dark:text-neutral-400">Market value</span>
-          <span className="text-sm">{card.quote.unit === 'EUR' ? 'Cardmarket' : card.quote.unit === 'USD' ? 'TCGplayer' : 'Price'}</span>
-        </div>
-        <div className="text-2xl font-semibold tracking-tight tabular-nums mt-1">
-          {formatMoney(card.quote.market, card.quote.unit)}
-        </div>
-        <div className="flex justify-between gap-3 text-xs text-neutral-600 dark:text-neutral-400 mt-3">
-          <span>
-            {priceCaption(card.quote.unit, card.quote.variant)}
-            {card.quote.variant && card.quote.variant !== 'cardmarket' ? ` · ${printingLabel(card.quote.variant)}` : ''}
-            {updated ? ` · updated ${updated}` : ''}
-          </span>
-        </div>
-      </div>
 
       {canEdit ? (
         <>

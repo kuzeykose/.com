@@ -18,7 +18,7 @@ import {
   SourceCredit,
 } from './ui'
 import { CONDITIONS } from '../lib/types'
-import { formatMoney, formatShortDate, priceCaption, printingLabel } from '../lib/format'
+import { formatShortDate, printingLabel } from '../lib/format'
 import type { EnrichedCard, SearchCard, TcgSet } from '../lib/types'
 
 type RecentSearch = { q: string; at: string }
@@ -143,7 +143,6 @@ export function AddFlow({
 
   const printings = selected?.printings?.length ? selected.printings : ['holofoil', 'reverseHolofoil', 'normal']
   const activePrinting = printing && printings.includes(printing) ? printing : printings[0]
-  const market = selected?.quotes[activePrinting] ?? null
 
   async function runSearch(nextQuery = query, nextSet = setId) {
     const q = nextQuery.trim()
@@ -416,11 +415,8 @@ export function AddFlow({
             </div>
           </div>
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mt-4 pt-4 border-t border-neutral-200 dark:border-neutral-800">
-            <div className="tabular-nums">
-              {formatMoney(market, selected.quoteUnit)}{' '}
-              <span className="text-xs text-neutral-600 dark:text-neutral-400">
-                {priceCaption(market == null ? null : selected.quoteUnit, activePrinting)}
-              </span>
+            <div className="text-sm text-neutral-600 dark:text-neutral-400">
+              {printingLabel(activePrinting) ?? ''}
             </div>
             <div className="flex gap-2">
               <GhostButton type="button" onClick={() => setStep(editing ? 1 : 2)}>

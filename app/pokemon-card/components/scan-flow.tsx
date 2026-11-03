@@ -17,7 +17,7 @@ import {
 import { cropVideoToGuide, preparePhoto } from '../lib/scan/crop'
 import type { Match, ScanQuery, ScanResult } from '../lib/scan/types'
 import { CONDITIONS, type Condition } from '../lib/types'
-import { formatMoney, priceCaption, printingLabel } from '../lib/format'
+import { printingLabel } from '../lib/format'
 
 type Stage =
   | 'camera'
@@ -121,7 +121,6 @@ export function ScanFlow({
 
   const printings = selected?.printings?.length ? selected.printings : ['normal', 'reverseHolofoil', 'holofoil']
   const activePrinting = printing && printings.includes(printing) ? printing : printings[0]
-  const market = selected?.quotes?.[activePrinting] ?? null
 
   function stopCamera() {
     streamRef.current?.getTracks().forEach((track) => track.stop())
@@ -441,7 +440,6 @@ export function ScanFlow({
           condition={condition}
           quantity={quantity}
           notes={notes}
-          market={market}
           writable={writable}
           saving={saving}
           onPrinting={setPrinting}
@@ -764,13 +762,6 @@ function MatchStage({
               {type ? ` · ${type}` : ''}
             </p>
             <p className="mt-2">High confidence · {Math.round(result.confidence * 100)}%</p>
-            <p className="text-xs text-neutral-600 dark:text-neutral-400 mt-1">
-              {formatMoney(
-                selected.quotes?.[selected.printings?.[0] ?? ''] ?? null,
-                selected.quoteUnit
-              )}{' '}
-              · {priceCaption(selected.quotes?.[selected.printings?.[0] ?? ''] == null ? null : selected.quoteUnit)}
-            </p>
           </div>
         </div>
       </div>
@@ -882,7 +873,6 @@ function ConfirmStage({
   condition,
   quantity,
   notes,
-  market,
   writable,
   saving,
   onPrinting,
@@ -898,7 +888,6 @@ function ConfirmStage({
   condition: Condition
   quantity: number
   notes: string
-  market: number | null
   writable: boolean
   saving: boolean
   onPrinting: (value: string) => void
@@ -958,12 +947,6 @@ function ConfirmStage({
         />
       </Field>
       <div className="pt-4 border-t border-neutral-200 dark:border-neutral-800">
-        <p className="text-sm tabular-nums mb-3">
-          {formatMoney(market, selected.quoteUnit)}{' '}
-          <span className="text-xs text-neutral-600 dark:text-neutral-400">
-            {priceCaption(market == null ? null : selected.quoteUnit, activePrinting)}
-          </span>
-        </p>
         <PrimaryButton type="button" disabled={!writable || saving} onClick={onSave} className="w-full">
           {saving ? 'Saving…' : 'Add to collection'}
         </PrimaryButton>

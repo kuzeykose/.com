@@ -5,17 +5,16 @@ import Link from 'next/link'
 import { usePathname, useRouter, useSearchParams } from 'next/navigation'
 import { List, SquaresFour } from '@phosphor-icons/react'
 import { CardTile, ListRow, SearchField, SelectPill, tileFromEntry } from './ui'
-import { formatCopyCount, formatFilteredCount, formatMoney } from '../lib/format'
-import { usdMarket } from '../lib/prices'
+import { formatCopyCount, formatFilteredCount, formatShortDate } from '../lib/format'
+import { rarityRank } from '../lib/constants'
 import type { EnrichedCard } from '../lib/types'
 
-type SortKey = 'value' | 'value-asc' | 'name' | 'added' | 'set' | 'number'
+type SortKey = 'added' | 'rarity' | 'name' | 'set' | 'number'
 
 const SORT_OPTIONS: { value: SortKey; label: string }[] = [
-  { value: 'value', label: 'Value ↓' },
-  { value: 'value-asc', label: 'Value ↑' },
-  { value: 'name', label: 'Name' },
   { value: 'added', label: 'Added' },
+  { value: 'rarity', label: 'Rarity' },
+  { value: 'name', label: 'Name' },
   { value: 'set', label: 'Set' },
   { value: 'number', label: 'Number' },
 ]
@@ -37,7 +36,10 @@ export function CollectionBrowser({ cards }: { cards: EnrichedCard[] }) {
   const q = param(searchParams, 'q')
   const set = param(searchParams, 'set')
   const rarity = param(searchParams, 'rarity')
-  const sort = (param(searchParams, 'sort') || 'value') as SortKey
+  const rawSort = param(searchParams, 'sort')
+  const sort: SortKey = SORT_OPTIONS.some((option) => option.value === rawSort)
+    ? (rawSort as SortKey)
+    : 'added'
   const layout = param(searchParams, 'layout') === 'list' ? 'list' : 'grid'
   const selectedTypes = searchParams.getAll('type')
 
@@ -98,10 +100,9 @@ export function CollectionBrowser({ cards }: { cards: EnrichedCard[] }) {
     })
 
     next = [...next].sort((a, b) => {
-      const aValue = usdMarket(a.quote) ?? -1
-      const bValue = usdMarket(b.quote) ?? -1
-      if (sort === 'value') return bValue - aValue
-      if (sort === 'value-asc') return aValue - bValue
+      if (sort === 'rarity') {
+        return rarityRank(b.tcg?.rarity) - rarityRank(a.tcg?.rarity) || b.added.localeCompare(a.added)
+      }
       if (sort === 'name') return (a.tcg?.name ?? a.id).localeCompare(b.tcg?.name ?? b.id)
       if (sort === 'added') return b.added.localeCompare(a.added)
       if (sort === 'set') return (a.tcg?.set.name ?? '').localeCompare(b.tcg?.set.name ?? '')
@@ -229,10 +230,12 @@ export function CollectionBrowser({ cards }: { cards: EnrichedCard[] }) {
           <div className="hidden sm:block">
             {filtered.map((card) => (
               <Link key={card.id} href={`/pokemon-card/${card.id}`} className="block">
-                <ListRow label={formatMoney(card.quote.market, card.quote.unit)}>
+                <ListRow label={formatShortDate(card.added)}>
                   <span className="block">{card.tcg?.name ?? card.id}</span>
                   <span className="block text-neutral-600 dark:text-neutral-400 font-normal tracking-normal">
                     {card.tcg?.set.name ?? 'Unknown set'} · {card.tcg?.number ?? '—'}
+                    {card.tcg?.rarity ? ` · ${card.tcg.rarity}` : ''}
+                    {card.quantity > 1 ? ` · ×${card.quantity}` : ''}
                   </span>
                 </ListRow>
               </Link>

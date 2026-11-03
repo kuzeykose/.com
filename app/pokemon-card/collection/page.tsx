@@ -19,7 +19,7 @@ export default async function Page() {
     <section>
       <PageIntro>
         <p className="text-neutral-600 dark:text-neutral-400 mt-2">
-          A small record of what&apos;s in my binders. Prices are estimates.
+          A small record of what&apos;s in my binders.
         </p>
       </PageIntro>
       <SectionTabs active="collection" owner={owner} />

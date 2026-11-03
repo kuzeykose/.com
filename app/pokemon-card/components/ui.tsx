@@ -2,7 +2,6 @@ import type { ButtonHTMLAttributes, InputHTMLAttributes, ReactNode } from 'react
 import Link from 'next/link'
 import { OwnerActions } from './owner-actions'
 import { TYPE_COLORS } from '../lib/constants'
-import { formatMoney } from '../lib/format'
 import type { EnrichedCard } from '../lib/types'
 
 export function PageIntro({
@@ -86,7 +85,7 @@ export function PrivateBadge() {
 export function SourceCredit() {
   return (
     <p className="mt-8 mb-16 text-sm text-neutral-600 dark:text-neutral-400">
-      Card data, images and prices from{' '}
+      Card data and images from{' '}
       <a
         href="https://tcgdex.dev"
         target="_blank"
@@ -95,7 +94,7 @@ export function SourceCredit() {
       >
         TCGdex
       </a>
-      {' '}(api.tcgdex.net). Market prices use TCGplayer USD when present, otherwise Cardmarket EUR, and show as — when unknown.
+      .
     </p>
   )
 }
@@ -152,7 +151,7 @@ export function CardTile({
     image?: string
     type?: string
     line?: string
-    price?: string
+    count?: number
   }
   href?: string
   selected?: boolean
@@ -170,9 +169,9 @@ export function CardTile({
       {meta ?? (
         <div className="flex justify-between gap-2 text-xs text-neutral-600 dark:text-neutral-400">
           <span className="truncate">{card.line}</span>
-          {card.price ? (
+          {card.count && card.count > 1 ? (
             <span className="tabular-nums text-neutral-900 dark:text-neutral-100 shrink-0">
-              {card.price}
+              ×{card.count}
             </span>
           ) : null}
         </div>
@@ -211,7 +210,7 @@ export function tileFromEntry(card: EnrichedCard) {
     image: card.tcg?.images?.small,
     type: card.tcg?.types?.[0],
     line: `${shortSet} · ${card.tcg?.number ?? '—'}`,
-    price: formatMoney(card.quote.market, card.quote.unit),
+    count: card.quantity,
   }
 }
 
