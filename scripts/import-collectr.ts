@@ -24,13 +24,9 @@ import {
   type CollectrRow,
 } from '../app/pokemon-card/lib/collectr.ts'
 import { getCardStore } from '../app/pokemon-card/lib/store.ts'
-import {
-  fetchSetCard,
-  fetchSets,
-  padLocalId,
-  searchTcgdexCards,
-} from '../app/pokemon-card/lib/tcgdex.ts'
-import type { CatalogSnapshot, CollectionEntry, TcgCard, TcgSet } from '../app/pokemon-card/lib/types.ts'
+import { findCardInSet, matchSet } from '../app/pokemon-card/lib/resolve.ts'
+import { fetchSets, padLocalId } from '../app/pokemon-card/lib/tcgdex.ts'
+import type { CatalogSnapshot, CollectionEntry, TcgSet } from '../app/pokemon-card/lib/types.ts'
 
 type Args = { file: string; dryRun: boolean; prune: boolean; setOverrides: Map<string, string> }
 
@@ -52,20 +48,6 @@ function parseArgs(argv: string[]): Args {
   return args
 }
 
-function simpleName(name: string) {
-  return name
-    .toLowerCase()
-    .normalize('NFKD')
-    .replace(/[̀-ͯ]/g, '')
-    .replace(/[^a-z0-9]+/g, '')
-}
-
-function sameCard(card: TcgCard, row: CollectrRow) {
-  const a = simpleName(card.name)
-  const b = simpleName(row.name)
-  return a === b || a.startsWith(b) || b.startsWith(a)
-}
-
 /** Sets already confirmed on TCGdex, used when the set list can't be fetched. */
 const KNOWN_SETS: Record<string, string> = {
   'chaos rising': 'me04',
@@ -76,28 +58,7 @@ function findSet(row: CollectrRow, sets: TcgSet[], overrides: Map<string, string
   const wanted = normalizeSetName(row.set)
   const forced = overrides.get(wanted) ?? (sets.length ? undefined : KNOWN_SETS[wanted])
   if (forced) return sets.find((set) => set.id === forced) ?? { id: forced, name: row.set }
-  const exact = sets.filter((set) => normalizeSetName(set.name) === wanted)
-  if (exact.length === 1) return exact[0]
-  // Same name in several series (e.g. "Base Set"): prefer the printed total match.
-  const pool = exact.length ? exact : sets.filter((set) => normalizeSetName(set.name).includes(wanted))
-  if (row.printedTotal) {
-    const byTotal = pool.find((set) => set.printedTotal === row.printedTotal)
-    if (byTotal) return byTotal
-  }
-  return pool[0] ?? null
-}
-
-async function findCard(row: CollectrRow, setId: string | null) {
-  if (setId) {
-    const direct = await fetchSetCard(setId, row.number)
-    if (direct && sameCard(direct, row)) return direct
-    const named = await searchTcgdexCards({ name: row.name, set: setId }, 30)
-    const byNumber = named.find((card) => padLocalId(card.number) === padLocalId(row.number))
-    if (byNumber) return byNumber
-    if (direct) return direct
-  }
-  const anywhere = await searchTcgdexCards({ name: row.name, localId: padLocalId(row.number) }, 10)
-  return anywhere.find((card) => sameCard(card, row)) ?? null
+  return matchSet(row.set, row.printedTotal, sets)
 }
 
 function slug(text: string) {
@@ -142,7 +103,7 @@ async function main() {
 
   for (const row of rows) {
     const set = findSet(row, sets, args.setOverrides)
-    const card = await findCard(row, set?.id ?? null)
+    const card = await findCardInSet(row, set?.id ?? null)
     const fallbackId = `collectr-${slug(row.set)}-${padLocalId(row.number)}`
     const id = card?.id ?? (set ? `${set.id}-${padLocalId(row.number)}` : fallbackId)
     const printing = mapPrinting(row.variance)

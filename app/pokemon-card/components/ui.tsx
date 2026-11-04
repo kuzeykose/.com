@@ -114,15 +114,18 @@ export function CardArt({
   src,
   name,
   type,
+  label,
 }: {
   src?: string
   name: string
   type?: string
+  /** Shown under the name when there is no image, e.g. "Pitch Black · 111". */
+  label?: string
 }) {
   const color = (type && TYPE_COLORS[type]) || '#A3A3A3'
   return (
     <div
-      className="relative aspect-[63/88] overflow-hidden rounded-[4.5%/3.2%] bg-neutral-200 dark:bg-neutral-800"
+      className="relative aspect-[63/88] overflow-hidden rounded-[4.5%/3.2%] bg-neutral-200 dark:bg-neutral-800 [container-type:inline-size]"
       style={{
         backgroundImage: `linear-gradient(160deg, color-mix(in srgb, ${color} 30%, #d4d4d4), #d4d4d4 55%, #c4c4c4)`,
       }}
@@ -132,7 +135,14 @@ export function CardArt({
         // eslint-disable-next-line @next/next/no-img-element
         <img src={src} alt={name} className="absolute inset-0 h-full w-full object-cover" />
       ) : (
-        <div className="absolute inset-[6%] rounded-[3px] border border-white/35 dark:border-white/10" />
+        <div className="absolute inset-[6%] rounded-[3px] border border-white/40 flex flex-col items-center justify-center gap-1 p-2 text-center">
+          <span className="text-[clamp(10px,7cqw,15px)] font-medium leading-tight tracking-tight text-neutral-700">
+            {name}
+          </span>
+          {label ? (
+            <span className="text-[clamp(9px,5cqw,12px)] text-neutral-500 tabular-nums">{label}</span>
+          ) : null}
+        </div>
       )}
     </div>
   )
@@ -152,6 +162,7 @@ export function CardTile({
     type?: string
     line?: string
     count?: number
+    label?: string
   }
   href?: string
   selected?: boolean
@@ -161,7 +172,7 @@ export function CardTile({
   const inner = (
     <>
       <div className={selected ? 'rounded-md outline outline-1 outline-orange-600 outline-offset-4' : ''}>
-        <CardArt src={card.image} name={card.name} type={card.type} />
+        <CardArt src={card.image} name={card.name} type={card.type} label={card.label} />
       </div>
       <div className="mt-2 text-sm tracking-tight text-neutral-900 dark:text-neutral-100 truncate">
         {card.name}
@@ -211,6 +222,7 @@ export function tileFromEntry(card: EnrichedCard) {
     type: card.tcg?.types?.[0],
     line: `${shortSet} · ${card.tcg?.number ?? '—'}`,
     count: card.quantity,
+    label: `${setName} · ${card.tcg?.number ?? '—'}`,
   }
 }
 

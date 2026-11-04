@@ -8,6 +8,8 @@ import {
   type TcgCard,
 } from './types'
 import { fetchCardById, fetchCardsByIds } from './tcg'
+import { fetchSets } from './tcgdex'
+import { resolveCard, type CardHint } from './resolve'
 import { quoteFor, usdMarket } from './prices'
 import { COLLECTION_CACHE_TAG, COLLECTION_REVALIDATE } from './notion'
 import { getCardStore, isNotionConfigured } from './store'
@@ -51,6 +53,15 @@ export function revalidateCollection(id?: string) {
 export async function getEnrichedCollection(): Promise<EnrichedCard[]> {
   const cards = await listCollectionEntries()
   const tcgById = await fetchCardsByIds(cards.map((card) => card.id))
+  const missing = cards.filter((card) => !tcgById.has(card.id) && hintFor(card))
+  if (missing.length) {
+    const sets = await fetchSets()
+    const found = await Promise.all(missing.map((card) => resolveCard(hintFor(card)!, sets)))
+    missing.forEach((card, index) => {
+      const live = found[index]
+      if (live) tcgById.set(card.id, live)
+    })
+  }
   return cards.map((entry) => enrich(entry, tcgById.get(entry.id) ?? null))
 }
 
@@ -59,7 +70,24 @@ export async function getEnrichedCard(id: string): Promise<EnrichedCard | null> 
   const entry = cards.find((card) => card.id === id)
   if (!entry) return null
   const tcg = await fetchCardById(id)
-  return enrich(entry, tcg)
+  const hint = tcg ? null : hintFor(entry)
+  return enrich(entry, tcg ?? (hint ? await resolveCard(hint) : null))
+}
+
+/**
+ * Cards imported while TCGdex couldn't be reached keep only Collectr's details
+ * (collectr-* ids). Look those up by set name + number when the page renders.
+ */
+function hintFor(entry: CollectionEntry): CardHint | null {
+  const catalog = entry.catalog
+  if (!catalog?.name || !catalog.number || !catalog.setName) return null
+  if (catalog.image && !entry.id.startsWith('collectr-')) return null
+  return {
+    name: catalog.name,
+    number: catalog.number,
+    setName: catalog.setName,
+    printedTotal: catalog.printedTotal,
+  }
 }
 
 function enrich(entry: CollectionEntry, live: TcgCard | null): EnrichedCard {

@@ -193,6 +193,7 @@ function Fan({ cards }: { cards: EnrichedCard[] }) {
                   src={card.tcg?.images?.small}
                   name={name}
                   type={card.tcg?.types?.[0]}
+                  label={`${card.tcg?.set.name ?? ''} · ${card.tcg?.number ?? ''}`}
                 />
               </div>
             </Link>

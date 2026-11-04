@@ -72,9 +72,11 @@ export default async function Page({ params }: { params: Promise<{ id: string }>
 
       <div className="grid grid-cols-1 sm:grid-cols-[232px_1fr] gap-8">
         <div>
-          <CardArt src={image} name={name} type={type} />
+          <CardArt src={image} name={name} type={type} label={`${setName} · ${number}`} />
           <p className="text-xs text-neutral-600 dark:text-neutral-400 mt-2">
-            {card.tcg?.images?.small?.includes('tcgplayer')
+            {!image
+              ? 'No image yet: TCGdex doesn’t have this card'
+              : card.tcg?.images?.small?.includes('tcgplayer')
               ? 'Image via TCGplayer (TCGdex has no asset for this printing)'
               : 'Image via TCGdex'}
           </p>
